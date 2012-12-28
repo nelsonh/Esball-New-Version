@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GameTypes</key>
+	<array>
+		<string>VideoSection</string>
+		<string>SportSection</string>
+		<string>LotterySection</string>
+		<string>SlotSection</string>
+		<string>ServiceSection</string>
+		<string>RecordSection</string>
+	</array>
+</dict>
+</plist>

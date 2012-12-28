@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>keyForItems</key>
+	<array>
+		<string>Euro</string>
+		<string>JinPinMai</string>
+		<string>KungFuLoung</string>
+		<string>London</string>
+		<string>TheMonkey</string>
+		<string>Train</string>
+		<string>TropicalFruit</string>
+		<string>Xmax</string>
+	</array>
+	<key>Items</key>
+	<dict>
+		<key>Euro</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>Euro.jpg</string>
+		</dict>
+		<key>JinPinMai</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>JinPinMai.jpg</string>
+		</dict>
+		<key>KungFuLoung</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>KungFuLoung.jpg</string>
+		</dict>
+		<key>London</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>London.jpg</string>
+		</dict>
+		<key>TheMonkey</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>TheMonkey.jpg</string>
+		</dict>
+		<key>Train</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>Train.jpg</string>
+		</dict>
+		<key>TropicalFruit</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>TropicalFruit.jpg</string>
+		</dict>
+		<key>Xmax</key>
+		<dict>
+			<key>SlotImage</key>
+			<string>Xmax.png</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
