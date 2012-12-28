@@ -3134,9 +3134,9 @@
         <image name="area_T01@2x.png" width="245" height="357"/>
         <image name="area_T02@2x.png" width="250" height="158"/>
         <image name="area_T03@2x.png" width="249" height="158"/>
-        <image name="askB_btn_up.png" width="191" height="134"/>
+        <image name="askB_btn_up.png" width="128" height="82"/>
         <image name="askD_btn_up.png" width="128" height="82"/>
-        <image name="askP_btn_up.png" width="191" height="134"/>
+        <image name="askP_btn_up.png" width="128" height="82"/>
         <image name="askT_btn_up.png" width="128" height="82"/>
         <image name="back_btn_down.png" width="178" height="125"/>
         <image name="back_btn_up.png" width="178" height="125"/>

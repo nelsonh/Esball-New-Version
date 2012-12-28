@@ -10,6 +10,7 @@
 #import "PadMainViewController.h"
 #import "XMLParser.h"
 #import "FileFinder.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface PadLoginViewController ()
@@ -60,7 +61,6 @@
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Login_bg@2x.png"]];
-     
 }
 
 - (void)didReceiveMemoryWarning

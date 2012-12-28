@@ -319,7 +319,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80
                 
                 int bufferSize= kStreamReadBufferSize;
                 
-				uint8_t buffer[bufferSize];
+				uint16_t buffer[bufferSize];
 				int len = 0;
                 UInt32 big5 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingBig5);
                 
