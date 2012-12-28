@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 //Baccarat game skeleton
+//game logic
 
 #import "BaseGameViewController.h"
 #import "PokerView.h"

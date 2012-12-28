@@ -8,6 +8,7 @@
 
 //extend from CommonBaccaratGameViewController
 //Dragon tiger game skeleton
+//game logic same as Baccarat
 
 #import "CommonBaccaratGameViewController.h"
 #import "ImagePull.h"
