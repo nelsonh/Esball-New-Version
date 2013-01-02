@@ -8,6 +8,9 @@
 
 #import "DTRoadmapChart.h"
 
+#define kRoadmapWidth 781
+#define kRoadmapHeight 130
+
 @interface PadDragonTigerRoadmapChart : DTRoadmapChart
 
 @end

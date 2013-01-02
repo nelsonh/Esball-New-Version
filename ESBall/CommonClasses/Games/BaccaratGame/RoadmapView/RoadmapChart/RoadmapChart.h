@@ -9,8 +9,8 @@
 #import "RoadmapDataView.h"
 
 //781, 230 was defined for ipad
-#define kRoadmapWidth 781
-#define kRoadmapHeight 130
+//#define kRoadmapWidth 781
+//#define kRoadmapHeight 130
 
 
 @interface RoadmapChart : RoadmapDataView{
