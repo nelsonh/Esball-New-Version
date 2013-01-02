@@ -56,6 +56,8 @@
 		525507B716538A8C00019C1B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525507B616538A8C00019C1B /* Default-568h@2x.png */; };
 		525507BA16538A8C00019C1B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525507B816538A8C00019C1B /* MainStoryboard_iPhone.storyboard */; };
 		525507BD16538A8C00019C1B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525507BB16538A8C00019C1B /* MainStoryboard_iPad.storyboard */; };
+		527831341693C4BB009D8028 /* CommonSicboGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527831331693C4BB009D8028 /* CommonSicboGameViewController.m */; };
+		527831381693C598009D8028 /* SicboGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527831371693C598009D8028 /* SicboGameViewController.m */; };
 		529351731680095300EE8317 /* SportSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529351721680095300EE8317 /* SportSectionViewController.m */; };
 		5293517B168009C900EE8317 /* LotterySectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5293517A168009C900EE8317 /* LotterySectionViewController.m */; };
 		529354D71680460F00EE8317 /* PadDragonTigerGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529354D61680460F00EE8317 /* PadDragonTigerGameViewController.m */; };
@@ -558,6 +560,10 @@
 		525507B616538A8C00019C1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		525507B916538A8C00019C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		525507BC16538A8C00019C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		527831321693C4BB009D8028 /* CommonSicboGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSicboGameViewController.h; path = SicboGame/CommonSicboGameViewController.h; sourceTree = "<group>"; };
+		527831331693C4BB009D8028 /* CommonSicboGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSicboGameViewController.m; path = SicboGame/CommonSicboGameViewController.m; sourceTree = "<group>"; };
+		527831361693C598009D8028 /* SicboGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SicboGameViewController.h; path = ESBall/PadClasses/VideoSectionClasses/SicboGameViewController/SicboGameViewController.h; sourceTree = SOURCE_ROOT; };
+		527831371693C598009D8028 /* SicboGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SicboGameViewController.m; path = ESBall/PadClasses/VideoSectionClasses/SicboGameViewController/SicboGameViewController.m; sourceTree = SOURCE_ROOT; };
 		529351711680095300EE8317 /* SportSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SportSectionViewController.h; path = SportSectionClasses/SportSectionViewController.h; sourceTree = "<group>"; };
 		529351721680095300EE8317 /* SportSectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SportSectionViewController.m; path = SportSectionClasses/SportSectionViewController.m; sourceTree = "<group>"; };
 		52935179168009C900EE8317 /* LotterySectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LotterySectionViewController.h; path = LotterySectionClasses/LotterySectionViewController.h; sourceTree = "<group>"; };
@@ -1166,6 +1172,7 @@
 		4482871B1663697200CCA5ED /* VideoSectionClasses */ = {
 			isa = PBXGroup;
 			children = (
+				527831351693C556009D8028 /* SicboGameViewController */,
 				5293517D16801E7D00EE8317 /* DragonTiggerGameViewController */,
 				52963A5A167821A00016B1CB /* BaccaratGameViewController */,
 				44528DC71665F85A009CB446 /* ItemDropdownViewController.h */,
@@ -1338,6 +1345,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		527831301693C417009D8028 /* SicboGame */ = {
+			isa = PBXGroup;
+			children = (
+				527831321693C4BB009D8028 /* CommonSicboGameViewController.h */,
+				527831331693C4BB009D8028 /* CommonSicboGameViewController.m */,
+			);
+			name = SicboGame;
+			sourceTree = "<group>";
+		};
+		527831351693C556009D8028 /* SicboGameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				527831361693C598009D8028 /* SicboGameViewController.h */,
+				527831371693C598009D8028 /* SicboGameViewController.m */,
+			);
+			name = SicboGameViewController;
+			sourceTree = "<group>";
+		};
 		5293516F168008EA00EE8317 /* SportSectionClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -1465,6 +1490,7 @@
 		5296BCF5168BE699008FC969 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				527831301693C417009D8028 /* SicboGame */,
 				5296BCF6168BE699008FC969 /* BaccaratGame */,
 				5296BD0B168BE699008FC969 /* DragonTigerGame */,
 			);
@@ -2947,6 +2973,8 @@
 				5296BD48168BF0B5008FC969 /* PadDragonTigerRoadmapView.m in Sources */,
 				5296BD4C168BF223008FC969 /* PadBaccaratPokerView.m in Sources */,
 				5296BD50168BF343008FC969 /* PadDragonTigerPokerView.m in Sources */,
+				527831341693C4BB009D8028 /* CommonSicboGameViewController.m in Sources */,
+				527831381693C598009D8028 /* SicboGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
