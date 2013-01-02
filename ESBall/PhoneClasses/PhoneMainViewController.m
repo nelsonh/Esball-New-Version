@@ -7,6 +7,7 @@
 //
 
 #import "PhoneMainViewController.h"
+#import "BaseGameViewController.h"
 
 @interface PhoneMainViewController ()
 
@@ -21,6 +22,19 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BaccaratGameViewController"];
+    
+    controller.tableNumber = 1;
+    controller.gameType = 3001;
+    
+    [self presentViewController:controller animated:YES completion:nil];
+    
 }
 
 - (void)viewDidLoad

@@ -6,8 +6,8 @@
 //  Copyright (c) 2012年 nelson. All rights reserved.
 //
 
-#import "BaseLoginViewController.h"
+#import "PadLoginViewController.h"
 
-@interface PhoneLoginViewController : BaseLoginViewController
+@interface PhoneLoginViewController : PadLoginViewController
 
 @end

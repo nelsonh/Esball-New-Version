@@ -83,12 +83,24 @@
 #pragma mark - chip display
 -(CGSize)findContentSize
 {
+    /*
+    //origin implement
     CGFloat contentWidth;
     CGFloat contentHeight;
     CGFloat viewHeight = self.frame.size.height-10;
     
     contentWidth = ([chipList count] * sizeOfChip) + (([chipList count] + 1) * spaceWidthOfChip);
     contentHeight = viewHeight + (2 * spaceHeightOfChip);
+    
+    return CGSizeMake(contentWidth, contentHeight);
+    */
+    
+    CGFloat contentWidth;
+    CGFloat contentHeight;
+    CGFloat viewHeight = self.frame.size.height;
+    
+    contentWidth = ([chipList count] * viewHeight) + (([chipList count] + 1) * spaceWidthOfChip);
+    contentHeight = viewHeight;
     
     return CGSizeMake(contentWidth, contentHeight);
 }
@@ -121,7 +133,8 @@
         xPos = (i*viewHeight) + ((i+1)*spaceWidthOfChip);
         yPos = spaceHeightOfChip;
         
-        newChipFrame = CGRectMake(xPos, yPos, sizeOfChip, viewHeight);
+        //newChipFrame = CGRectMake(xPos, yPos, sizeOfChip, viewHeight);
+        newChipFrame = CGRectMake(xPos, yPos, self.frame.size.height, viewHeight);
         
         theChip.frame = newChipFrame;
         

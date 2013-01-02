@@ -7,12 +7,21 @@
 //
 
 #import "PhoneLoginViewController.h"
+#import "PhoneMainViewController.h"
+#import "XMLParser.h"
+#import "FileFinder.h"
 
 @interface PhoneLoginViewController ()
+
+@property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
 @implementation PhoneLoginViewController
+
+@synthesize theDelegate = _theDelegate;
+@synthesize backgroundImageView = _backgroundImageView;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +37,14 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.accountTextFiled.placeholder = NSLocalizedString(@"Your account", @"Login account textfiled placeholder");
-    self.passwordTextField.placeholder = NSLocalizedString(@"Your password", @"Login password textfiled placeholder");
+    FileFinder *fileFinder = [FileFinder fileFinder];
+    _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Login_bgs.png"]];
+#ifdef DEBUG
+    self.accountTextFiled.text=@"james1";
+    self.passwordTextField.text=@"pweptd11";
+#endif
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,13 +56,48 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     //except upside down
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);    
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 //override method from super class
 -(void)LogMe
 {
     NSLog(@"Phone log in class LogMe");
+}
+
+#pragma mark - AsyncSocket delegate
+-(void)AsyncSocket:(AsyncSocket *)socket didLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+{
+    
+    [super AsyncSocket:socket didLoginWithUsername:username andPassword:password];
+}
+
+#pragma mark ServerInterface delegate
+-(void)ServerInterface:(ServerInterface *)interFace didConnectToHost:(NSString *)hostname onPort:(uint16_t)port
+{
+    NSLog(@"did connect to host:%@ on Port:%u", hostname, port);
+}
+
+-(void)ServerInterface:(ServerInterface *)interFace didLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+{
+    [super ServerInterface:interFace didLoginWithUsername:username andPassword:password];
+    
+    if([_theDelegate respondsToSelector:@selector(PadLoginViewControllerDidLogin:)])
+    {
+        [_theDelegate PadLoginViewControllerDidLogin:self];
+    }
+    /*
+     //go to main view
+     PadLoginViewController *mainView = [self.storyboard instantiateViewControllerWithIdentifier:@"PadMainViewController"];
+     [self presentViewController:mainView animated:YES completion:nil];
+     */
+    
+    /*
+     //test
+     ServerInterface *theInterface = [ServerInterface serverInterface];
+     NSString *getUserInfoMsg = @"userInfo\n";
+     [theInterface sendDataToServerWithData:[getUserInfoMsg dataUsingEncoding:NSASCIIStringEncoding]];
+     */
 }
 
 @end
