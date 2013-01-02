@@ -623,6 +623,29 @@
             </objects>
             <point key="canvasLocation" x="1276" y="-1159"/>
         </scene>
+        <!--Sicbo Game View Controller-->
+        <scene sceneID="RG1-mY-rAo">
+            <objects>
+                <viewController storyboardIdentifier="SicboGameViewController" id="RfO-xA-do5" customClass="SicboGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tqE-AA-aRL">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="ral-Iq-UBc">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AIl-bP-98j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1518" y="-4129"/>
+        </scene>
         <!--Pad Dragon Tiger Game View Controller-->
         <scene sceneID="IeJ-Xj-vZv">
             <objects>
@@ -3266,6 +3289,9 @@
                 <relationship kind="outlet" name="dtRoadmap" candidateClass="RoadmapView"/>
             </relationships>
         </class>
+        <class className="CommonSicboGameViewController" superclassName="CommonBaccaratGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonSicboGameViewController.h"/>
+        </class>
         <class className="DTBetView" superclassName="BetView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DTBetView.h"/>
         </class>
@@ -3451,6 +3477,9 @@
                 <relationship kind="outlet" name="roadmapChart" candidateClass="RoadmapChart"/>
                 <relationship kind="outlet" name="tieScoreLabel" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="SicboGameViewController" superclassName="CommonSicboGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SicboGameViewController.h"/>
         </class>
         <class className="SlotItemViewController" superclassName="ItemViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SlotItemViewController.h"/>

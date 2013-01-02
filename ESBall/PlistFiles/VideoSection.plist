@@ -145,7 +145,7 @@
 			<key>GameType</key>
 			<integer>0</integer>
 			<key>StoryboardControllerID</key>
-			<string></string>
+			<string>SicboGameViewController</string>
 		</dict>
 	</dict>
 </dict>
