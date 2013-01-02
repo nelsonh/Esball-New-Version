@@ -46,6 +46,67 @@
     _redrawRoadmap = NO;
 }
 
+#pragma mark - public interface
+-(CGFloat)roadmapChartWidth
+{
+    return 0.0f;
+}
+
+-(CGFloat)roadmapChartHeight
+{
+    return 0.0f;
+}
+
+-(NSString *)roadmapBaseImageName
+{
+    return @"";
+}
+
+-(NSString *)playerImageName
+{
+    return @"";
+}
+
+-(NSString *)bankerImageName
+{
+    return @"";
+}
+
+-(NSString *)tie1ImageName
+{
+    return @"";
+}
+
+-(NSString *)tie2ImageName
+{
+    return @"";
+}
+
+-(NSString *)tie3ImageName
+{
+    return @"";
+}
+
+-(NSString *)smallPlayerImageName
+{
+    return @"";
+}
+
+-(NSString *)smallBankerImageName
+{
+    return @"";
+}
+
+-(NSString *)zingPlayerImageName
+{
+    return @"";
+}
+
+-(NSString *)zingBankerImageName
+{
+    return @"";
+}
+
 #pragma mark - internal
 /*
 -(BOOL)shouldDrawRoadmapData
@@ -194,6 +255,7 @@
     
     NSUInteger i;
     
+    /*
     UIImage *player = [UIImage imageNamed:@"rou_R_big.png"];
     UIImage *banker = [UIImage imageNamed:@"rou_B_big.png"];
     UIImage *tie1 = [UIImage imageNamed:@"rou_Tie_01.png"];
@@ -203,12 +265,23 @@
     UIImage *smallBanker = [UIImage imageNamed:@"rou_B_small2.png"];
     UIImage *zingPlayer = [UIImage imageNamed:@"rou_R_ob.png"];
     UIImage *zingBanker = [UIImage imageNamed:@"rou_B_ob.png"];
+     */
+    UIImage *player = [UIImage imageNamed:[self playerImageName]];
+    UIImage *banker = [UIImage imageNamed:[self bankerImageName]];
+    UIImage *tie1 = [UIImage imageNamed:[self tie1ImageName]];
+    UIImage *tie2 = [UIImage imageNamed:[self tie2ImageName]];
+    UIImage *tie3 = [UIImage imageNamed:[self tie3ImageName]];
+    UIImage *smallPlayer = [UIImage imageNamed:[self smallPlayerImageName]];
+    UIImage *smallBanker = [UIImage imageNamed:[self smallBankerImageName]];
+    UIImage *zingPlayer = [UIImage imageNamed:[self zingPlayerImageName]];
+    UIImage *zingBanker = [UIImage imageNamed:[self zingBankerImageName]];
     
+    /*
     while ([self.subviews count] > 0) {
         //NSLog(@"subviews Count=%d",[[myScrollView subviews]count]);
         [[[self subviews] objectAtIndex:0] removeFromSuperview];
     }
-    
+    */
     
     for (i = 1; i <= 6; i++)
 	{
@@ -222,16 +295,22 @@
 	for (i = 1; i <= numberOfSections; i++)
 	{
         
-        UIGraphicsBeginImageContext(CGSizeMake(kRoadmapWidth,kRoadmapHeight));
+        //UIGraphicsBeginImageContext(CGSizeMake(kRoadmapWidth,kRoadmapHeight));
+        UIGraphicsBeginImageContext(CGSizeMake([self roadmapChartWidth],[self roadmapChartHeight]));
         CGContextRef context= UIGraphicsGetCurrentContext();
         NSString *imageName;
+        
+        /*
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
             imageName = @"Route_bg2s.png";
         else
             imageName = @"Route_bg2@2x.png";
+         */
+        imageName = [self roadmapBaseImageName];
         
         UIImage *image = [UIImage imageNamed:imageName];
-        [image drawInRect:CGRectMake(0, 0,kRoadmapWidth, kRoadmapHeight)];
+        //[image drawInRect:CGRectMake(0, 0,kRoadmapWidth, kRoadmapHeight)];
+        [image drawInRect:CGRectMake(0, 0,[self roadmapChartWidth], [self roadmapChartHeight])];
         CGContextSaveGState(context);
         CGContextRestoreGState(context);
         

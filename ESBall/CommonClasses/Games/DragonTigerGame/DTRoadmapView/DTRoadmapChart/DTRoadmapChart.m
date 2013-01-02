@@ -67,6 +67,7 @@
     
     NSUInteger i;
     
+    /*
     UIImage *player = [UIImage imageNamed:@"DTrou_Y_big.png"];
     UIImage *banker = [UIImage imageNamed:@"DTrou_R_big.png"];
     UIImage *tie1 = [UIImage imageNamed:@"rou_Tie_01.png"];
@@ -76,6 +77,16 @@
     UIImage *smallBanker = [UIImage imageNamed:@"DTrou_R_small2.png"];
     UIImage *zingPlayer = [UIImage imageNamed:@"DTrou_Y_ob.png"];
     UIImage *zingBanker = [UIImage imageNamed:@"DTrou_R_ob.png"];
+     */
+    UIImage *player = [UIImage imageNamed:[self playerImageName]];
+    UIImage *banker = [UIImage imageNamed:[self bankerImageName]];
+    UIImage *tie1 = [UIImage imageNamed:[self tie1ImageName]];
+    UIImage *tie2 = [UIImage imageNamed:[self tie2ImageName]];
+    UIImage *tie3 = [UIImage imageNamed:[self tie3ImageName]];
+    UIImage *smallPlayer = [UIImage imageNamed:[self smallPlayerImageName]];
+    UIImage *smallBanker = [UIImage imageNamed:[self smallBankerImageName]];
+    UIImage *zingPlayer = [UIImage imageNamed:[self zingPlayerImageName]];
+    UIImage *zingBanker = [UIImage imageNamed:[self zingBankerImageName]];
     
     /*
     while ([self.subviews count] > 0) {
@@ -96,16 +107,21 @@
 	for (i = 1; i <= numberOfSections; i++)
 	{
         
-        UIGraphicsBeginImageContext(CGSizeMake(kRoadmapWidth,kRoadmapHeight));
+        //UIGraphicsBeginImageContext(CGSizeMake(kRoadmapWidth,kRoadmapHeight));
+        UIGraphicsBeginImageContext(CGSizeMake([self roadmapChartWidth],[self roadmapChartHeight]));
         CGContextRef context= UIGraphicsGetCurrentContext();
         NSString *imageName;
+        /*
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
             imageName = @"Route_bg2s.png";
         else
             imageName = @"Route_bg2@2x.png";
+         */
+        imageName = [self roadmapBaseImageName];
         
         UIImage *image = [UIImage imageNamed:imageName];
-        [image drawInRect:CGRectMake(0, 0,kRoadmapWidth, kRoadmapHeight)];
+        //[image drawInRect:CGRectMake(0, 0,kRoadmapWidth, kRoadmapHeight)];
+        [image drawInRect:CGRectMake(0, 0,[self roadmapChartWidth], [self roadmapChartHeight])];
         CGContextSaveGState(context);
         CGContextRestoreGState(context);
         

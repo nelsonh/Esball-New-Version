@@ -137,13 +137,13 @@
 		<key>Sicbo</key>
 		<dict>
 			<key>TableNumber</key>
-			<integer>-1</integer>
+			<integer>9</integer>
 			<key>ImageNormal</key>
 			<string>Sicbo@2x.png</string>
 			<key>ImageDown</key>
 			<string>Sicbo_down@2x.png</string>
 			<key>GameType</key>
-			<integer>0</integer>
+			<integer>3008</integer>
 			<key>StoryboardControllerID</key>
 			<string>SicboGameViewController</string>
 		</dict>

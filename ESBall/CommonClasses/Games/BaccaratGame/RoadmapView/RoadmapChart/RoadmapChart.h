@@ -25,6 +25,20 @@
 
 -(void)updateRoadmapData;
 -(void)DrawRoadmapChart;
-- (void)layoutScrollImages;
+-(void)layoutScrollImages;
+
+-(CGFloat)roadmapChartWidth;
+-(CGFloat)roadmapChartHeight;
+-(NSString *)roadmapBaseImageName;
+-(NSString *)playerImageName;
+-(NSString *)bankerImageName;
+-(NSString *)tie1ImageName;
+-(NSString *)tie2ImageName;
+-(NSString *)tie3ImageName;
+-(NSString *)smallPlayerImageName;
+-(NSString *)smallBankerImageName;
+-(NSString *)zingPlayerImageName;
+-(NSString *)zingBankerImageName;
+
 
 @end

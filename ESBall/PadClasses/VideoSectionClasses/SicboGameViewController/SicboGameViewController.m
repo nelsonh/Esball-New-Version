@@ -35,4 +35,37 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - override methods
+//must implement
+-(NSString *)videoImageIPAddressForTableNumber:(NSUInteger)tableNumber
+{
+    //sicbo table is 9 but video link is 1, so we don't use table number
+    return [NSString stringWithFormat:@"http://183.182.66.164/sicbohd%i/sd2.jpg", 1];
+}
+
+-(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
+{
+    return @"";
+}
+
+-(NSString *)backgroundImageNameForGameLessThanThirtyRound
+{
+    return @"";
+}
+
+-(CGFloat)chipSpaceWidth
+{
+    return kChipSpaceWidth;
+}
+
+-(CGFloat)chipSpaceHeight
+{
+    return kChipSpaceHeight;
+}
+
+-(CGFloat)chipSize
+{
+    return kChipSize;
+}
+
 @end
