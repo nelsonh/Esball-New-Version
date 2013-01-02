@@ -2665,7 +2665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9Q-qM-2VN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3512" y="-3100"/>
+            <point key="canvasLocation" x="2646" y="-3100"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="aPV-N9-eec">
@@ -3015,7 +3015,7 @@
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="SZy-F1-NeY">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="qKh-S2-93M">
                                 <rect key="frame" x="493" y="356" width="37" height="37"/>
@@ -3262,6 +3262,11 @@
         <class className="CommonBaccaratGameViewController" superclassName="BaseGameViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonBaccaratGameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="action" name="betConfirm:"/>
+                <relationship kind="action" name="clearBet:"/>
+                <relationship kind="action" name="detail:"/>
+                <relationship kind="action" name="roadmap:"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="betAreaView" candidateClass="BetView"/>
