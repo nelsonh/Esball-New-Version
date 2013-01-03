@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="oRj-6f-ek3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="oRj-6f-ek3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -3287,53 +3287,53 @@
         </scene>
     </scenes>
     <resources>
-        <image name="DTGame_bg@2x.png" width="16" height="16"/>
-        <image name="DTRoute_bg@2x.png" width="16" height="16"/>
-        <image name="DTdeal_bg@2x.png" width="16" height="16"/>
-        <image name="TitleTx_DT.png" width="16" height="16"/>
-        <image name="TitleTx_baccarat.png" width="16" height="16"/>
-        <image name="area_B01@2x.png" width="16" height="16"/>
-        <image name="area_B02@2x.png" width="16" height="16"/>
-        <image name="area_B03@2x.png" width="16" height="16"/>
-        <image name="area_B04@2x.png" width="16" height="16"/>
-        <image name="area_P01@2x.png" width="16" height="16"/>
-        <image name="area_P02@2x.png" width="16" height="16"/>
-        <image name="area_P03@2x.png" width="16" height="16"/>
-        <image name="area_P04@2x.png" width="16" height="16"/>
-        <image name="area_T01@2x.png" width="16" height="16"/>
-        <image name="area_T02@2x.png" width="16" height="16"/>
-        <image name="area_T03@2x.png" width="16" height="16"/>
-        <image name="askB_btn_up.png" width="16" height="16"/>
-        <image name="askD_btn_up.png" width="16" height="16"/>
-        <image name="askP_btn_up.png" width="16" height="16"/>
-        <image name="askT_btn_up.png" width="16" height="16"/>
-        <image name="back_btn_down.png" width="16" height="16"/>
-        <image name="back_btn_up.png" width="16" height="16"/>
-        <image name="basicBtn_01_down.png" width="16" height="16"/>
-        <image name="basicBtn_01_up.png" width="16" height="16"/>
-        <image name="basicBtn_02_down.png" width="16" height="16"/>
-        <image name="basicBtn_02_up.png" width="16" height="16"/>
-        <image name="basicBtn_03_down.png" width="16" height="16"/>
-        <image name="basicBtn_03_up.png" width="16" height="16"/>
-        <image name="basicBtn_04_down.png" width="16" height="16"/>
-        <image name="basicBtn_04_up.png" width="16" height="16"/>
-        <image name="bet_area_sic.png" width="16" height="16"/>
-        <image name="bet_btn_down.png" width="16" height="16"/>
-        <image name="bet_btn_up.png" width="16" height="16"/>
-        <image name="clear_btn_down.png" width="16" height="16"/>
-        <image name="clear_btn_up.png" width="16" height="16"/>
-        <image name="limit_bg.png" width="16" height="16"/>
-        <image name="login_btn_down.png" width="16" height="16"/>
-        <image name="login_btn_up.png" width="16" height="16"/>
-        <image name="other_btn_down.png" width="16" height="16"/>
-        <image name="other_btn_up.png" width="16" height="16"/>
-        <image name="route_btn_down.png" width="16" height="16"/>
-        <image name="route_btn_up.png" width="16" height="16"/>
-        <image name="select_bg@2x.png" width="16" height="16"/>
-        <image name="time_bg.png" width="16" height="16"/>
-        <image name="titletx_sic.png" width="16" height="16"/>
-        <image name="top1_sic.png" width="16" height="16"/>
-        <image name="top2_sic.png" width="16" height="16"/>
+        <image name="DTGame_bg@2x.png" width="2048" height="1536"/>
+        <image name="DTRoute_bg@2x.png" width="2048" height="359"/>
+        <image name="DTdeal_bg@2x.png" width="556" height="655"/>
+        <image name="TitleTx_DT.png" width="211" height="99"/>
+        <image name="TitleTx_baccarat.png" width="211" height="99"/>
+        <image name="area_B01@2x.png" width="271" height="357"/>
+        <image name="area_B02@2x.png" width="274" height="158"/>
+        <image name="area_B03@2x.png" width="306" height="204"/>
+        <image name="area_B04@2x.png" width="289" height="204"/>
+        <image name="area_P01@2x.png" width="272" height="357"/>
+        <image name="area_P02@2x.png" width="275" height="158"/>
+        <image name="area_P03@2x.png" width="305" height="204"/>
+        <image name="area_P04@2x.png" width="290" height="204"/>
+        <image name="area_T01@2x.png" width="245" height="357"/>
+        <image name="area_T02@2x.png" width="250" height="158"/>
+        <image name="area_T03@2x.png" width="249" height="158"/>
+        <image name="askB_btn_up.png" width="128" height="82"/>
+        <image name="askD_btn_up.png" width="128" height="82"/>
+        <image name="askP_btn_up.png" width="128" height="82"/>
+        <image name="askT_btn_up.png" width="128" height="82"/>
+        <image name="back_btn_down.png" width="178" height="125"/>
+        <image name="back_btn_up.png" width="178" height="125"/>
+        <image name="basicBtn_01_down.png" width="650" height="100"/>
+        <image name="basicBtn_01_up.png" width="650" height="100"/>
+        <image name="basicBtn_02_down.png" width="650" height="100"/>
+        <image name="basicBtn_02_up.png" width="650" height="100"/>
+        <image name="basicBtn_03_down.png" width="650" height="100"/>
+        <image name="basicBtn_03_up.png" width="650" height="100"/>
+        <image name="basicBtn_04_down.png" width="650" height="100"/>
+        <image name="basicBtn_04_up.png" width="650" height="100"/>
+        <image name="bet_area_sic.png" width="2048" height="818"/>
+        <image name="bet_btn_down.png" width="301" height="125"/>
+        <image name="bet_btn_up.png" width="301" height="125"/>
+        <image name="clear_btn_down.png" width="178" height="125"/>
+        <image name="clear_btn_up.png" width="178" height="125"/>
+        <image name="limit_bg.png" width="250" height="55"/>
+        <image name="login_btn_down.png" width="258" height="258"/>
+        <image name="login_btn_up.png" width="258" height="258"/>
+        <image name="other_btn_down.png" width="178" height="125"/>
+        <image name="other_btn_up.png" width="178" height="125"/>
+        <image name="route_btn_down.png" width="178" height="125"/>
+        <image name="route_btn_up.png" width="178" height="125"/>
+        <image name="select_bg@2x.png" width="2048" height="1536"/>
+        <image name="time_bg.png" width="229" height="293"/>
+        <image name="titletx_sic.png" width="210" height="100"/>
+        <image name="top1_sic.png" width="2048" height="138"/>
+        <image name="top2_sic.png" width="2048" height="124"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
