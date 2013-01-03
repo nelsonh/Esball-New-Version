@@ -22,7 +22,7 @@
 @end
 
 static ServerInterface *serverInterfaceInstance;
-static NSString *hostToCnnect = @"183.182.66.80";//167, 80
+static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
 
 @implementation ServerInterface
 
