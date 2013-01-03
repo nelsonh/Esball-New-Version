@@ -52,7 +52,6 @@
 		525507B316538A8C00019C1B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 525507B216538A8C00019C1B /* Default.png */; };
 		525507B516538A8C00019C1B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525507B416538A8C00019C1B /* Default@2x.png */; };
 		525507B716538A8C00019C1B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525507B616538A8C00019C1B /* Default-568h@2x.png */; };
-		525507BA16538A8C00019C1B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525507B816538A8C00019C1B /* MainStoryboard_iPhone.storyboard */; };
 		525507BD16538A8C00019C1B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525507BB16538A8C00019C1B /* MainStoryboard_iPad.storyboard */; };
 		527831341693C4BB009D8028 /* CommonSicboGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527831331693C4BB009D8028 /* CommonSicboGameViewController.m */; };
 		527831381693C598009D8028 /* SicboGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527831371693C598009D8028 /* SicboGameViewController.m */; };
@@ -583,6 +582,9 @@
 		52F0EF7B166CA840002A9ACB /* BetAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF7A166CA840002A9ACB /* BetAreaView.m */; };
 		52F0EF82166CA8EC002A9ACB /* ChipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF81166CA8EC002A9ACB /* ChipView.m */; };
 		52F3D8761671EA9B005ECC58 /* ImagePull.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D8751671EA9B005ECC58 /* ImagePull.m */; };
+		7594E5F316943B4E0001B3DE /* MainStoryboard_iPhone35.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7594E5F116943B4E0001B3DE /* MainStoryboard_iPhone35.storyboard */; };
+		7594E5F416943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7594E5F216943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard */; };
+		759D5385169524E700D15EAE /* PhoneBaccaratRoadmapChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 759D5384169524E700D15EAE /* PhoneBaccaratRoadmapChart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -662,7 +664,6 @@
 		525507B216538A8C00019C1B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		525507B416538A8C00019C1B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		525507B616538A8C00019C1B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		525507B916538A8C00019C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		525507BC16538A8C00019C1B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		527831321693C4BB009D8028 /* CommonSicboGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSicboGameViewController.h; path = SicboGame/CommonSicboGameViewController.h; sourceTree = "<group>"; };
 		527831331693C4BB009D8028 /* CommonSicboGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSicboGameViewController.m; path = SicboGame/CommonSicboGameViewController.m; sourceTree = "<group>"; };
@@ -1272,6 +1273,10 @@
 		52F0EF81166CA8EC002A9ACB /* ChipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChipView.m; sourceTree = "<group>"; };
 		52F3D8741671EA9B005ECC58 /* ImagePull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePull.h; path = ImagePull/ImagePull.h; sourceTree = "<group>"; };
 		52F3D8751671EA9B005ECC58 /* ImagePull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePull.m; path = ImagePull/ImagePull.m; sourceTree = "<group>"; };
+		7594E5F116943B4E0001B3DE /* MainStoryboard_iPhone35.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard_iPhone35.storyboard; path = BaseClasses/MainStoryboard_iPhone35.storyboard; sourceTree = "<group>"; };
+		7594E5F216943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard_iPhone40.storyboard; path = BaseClasses/MainStoryboard_iPhone40.storyboard; sourceTree = "<group>"; };
+		759D5383169524E700D15EAE /* PhoneBaccaratRoadmapChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneBaccaratRoadmapChart.h; sourceTree = "<group>"; };
+		759D5384169524E700D15EAE /* PhoneBaccaratRoadmapChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneBaccaratRoadmapChart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1413,8 +1418,7 @@
 		448287331663697D00CCA5ED /* PhoneClasses */ = {
 			isa = PBXGroup;
 			children = (
-				52783B5216942271009D8028 /* PhoneBaccaratGameViewController.h */,
-				52783B5316942271009D8028 /* PhoneBaccaratGameViewController.m */,
+				759D537A1695228400D15EAE /* VideoSectionClasses */,
 				52783B5416942271009D8028 /* PhoneLoginViewController.h */,
 				52783B5516942271009D8028 /* PhoneLoginViewController.m */,
 				52783B5616942271009D8028 /* PhoneMainViewController.h */,
@@ -1550,7 +1554,8 @@
 				448287001663696100CCA5ED /* BaseClasses */,
 				525507AF16538A8C00019C1B /* AppDelegate.h */,
 				525507B016538A8C00019C1B /* AppDelegate.m */,
-				525507B816538A8C00019C1B /* MainStoryboard_iPhone.storyboard */,
+				7594E5F116943B4E0001B3DE /* MainStoryboard_iPhone35.storyboard */,
+				7594E5F216943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard */,
 				525507BB16538A8C00019C1B /* MainStoryboard_iPad.storyboard */,
 				525507A716538A8C00019C1B /* Supporting Files */,
 			);
@@ -2934,6 +2939,41 @@
 			name = ImagePull;
 			sourceTree = "<group>";
 		};
+		759D537A1695228400D15EAE /* VideoSectionClasses */ = {
+			isa = PBXGroup;
+			children = (
+				759D537C1695229E00D15EAE /* BaccaratGameViewController */,
+			);
+			name = VideoSectionClasses;
+			sourceTree = "<group>";
+		};
+		759D537C1695229E00D15EAE /* BaccaratGameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				759D537E1695230B00D15EAE /* PhoneBaccaratRoadmapView */,
+				52783B5216942271009D8028 /* PhoneBaccaratGameViewController.h */,
+				52783B5316942271009D8028 /* PhoneBaccaratGameViewController.m */,
+			);
+			name = BaccaratGameViewController;
+			sourceTree = "<group>";
+		};
+		759D537E1695230B00D15EAE /* PhoneBaccaratRoadmapView */ = {
+			isa = PBXGroup;
+			children = (
+				759D537F1695234A00D15EAE /* PhoneBaccaratRoadmapChart */,
+			);
+			name = PhoneBaccaratRoadmapView;
+			sourceTree = "<group>";
+		};
+		759D537F1695234A00D15EAE /* PhoneBaccaratRoadmapChart */ = {
+			isa = PBXGroup;
+			children = (
+				759D5383169524E700D15EAE /* PhoneBaccaratRoadmapChart.h */,
+				759D5384169524E700D15EAE /* PhoneBaccaratRoadmapChart.m */,
+			);
+			name = PhoneBaccaratRoadmapChart;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2989,7 +3029,6 @@
 				525507B316538A8C00019C1B /* Default.png in Resources */,
 				525507B516538A8C00019C1B /* Default@2x.png in Resources */,
 				525507B716538A8C00019C1B /* Default-568h@2x.png in Resources */,
-				525507BA16538A8C00019C1B /* MainStoryboard_iPhone.storyboard in Resources */,
 				525507BD16538A8C00019C1B /* MainStoryboard_iPad.storyboard in Resources */,
 				4482874F166369BA00CCA5ED /* magnifying-glass.png in Resources */,
 				44828750166369BA00CCA5ED /* magnifying-glass@2x.png in Resources */,
@@ -3474,6 +3513,8 @@
 				52783B4F1694221E009D8028 /* Login_bgs.png in Resources */,
 				52783B501694221E009D8028 /* recordDowns.png in Resources */,
 				52783B511694221E009D8028 /* recordTops.png in Resources */,
+				7594E5F316943B4E0001B3DE /* MainStoryboard_iPhone35.storyboard in Resources */,
+				7594E5F416943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3563,6 +3604,7 @@
 				52783B5B16942271009D8028 /* PhoneLoginViewController.m in Sources */,
 				52783B5C16942271009D8028 /* PhoneMainViewController.m in Sources */,
 				52783B5D16942271009D8028 /* PhoneViewController.m in Sources */,
+				759D5385169524E700D15EAE /* PhoneBaccaratRoadmapChart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3575,14 +3617,6 @@
 				525507AA16538A8C00019C1B /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		525507B816538A8C00019C1B /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				525507B916538A8C00019C1B /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		525507BB16538A8C00019C1B /* MainStoryboard_iPad.storyboard */ = {
