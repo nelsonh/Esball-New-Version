@@ -56,6 +56,8 @@ extern NSString *GameStatusBetting;
     
     BOOL isFirstTime;
     
+    BOOL loginGameTypeCommandSent;//indicate login gametype command sent to server
+    
 }
 
 @property (nonatomic, weak) id<BaseGameViewControllerDelegate> theDelegate;

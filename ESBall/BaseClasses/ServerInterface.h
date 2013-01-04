@@ -56,5 +56,4 @@ static NSString *ConnectionLostNotification = @"ConnectionLost";
 -(void)loginWithUserName:(NSString *)username andPassword:(NSString *)password;
 -(BOOL)sendDataToServerWithData:(NSData *)dataToSend;
 
-
 @end

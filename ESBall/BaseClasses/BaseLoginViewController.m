@@ -32,6 +32,12 @@
     interface.theDelegate = self;
     
     isLogin = NO;
+    reservingSpot= NO;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ReserveSpotSuccessNotification object:nil];
 }
 
 - (void)viewDidLoad
@@ -47,6 +53,8 @@
     
     _accountTextFiled.delegate = self;
     _passwordTextField.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reserveSpotSuccess:) name:ReserveSpotSuccessNotification object:nil];
         
 }
 
@@ -88,6 +96,7 @@
     _passwordLabel.frame = newFrameForPasswordLabel;
 }
 
+#pragma mark - public interface
 -(IBAction)login:(id)sender
 {
     if(isLogin)
@@ -129,21 +138,99 @@
      
 }
 
+-(void)reserveSpot
+{
+    //start point to reserve spot
+    //reserving spot step 1
+    ServerInterface *theInterface = [ServerInterface serverInterface];
+    NSString *msg = @"turn\n";
+    [theInterface sendDataToServerWithData:[msg dataUsingEncoding:NSASCIIStringEncoding]];
+    
+    msg = [NSString stringWithFormat:@"%i\n", 0];
+    [theInterface sendDataToServerWithData:[msg dataUsingEncoding:NSASCIIStringEncoding]];
+    reservingSpot = YES;
+    
+}
+
+-(void)reserveSpotSuccess:(NSNotification *)notification
+{
+    //subclass must overried this method to receive reserving spot notification 
+}
+
+/*
 #pragma mark - AsyncSocket delegate
 -(void)AsyncSocket:(AsyncSocket *)socket didLoginWithUsername:(NSString *)username andPassword:(NSString *)password
 {
-    
-    NSLog(@"Login successful");
-    
-    NSString *account = self.accountTextFiled.text;
-    
-    //save user accout
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setValue:account forKey:LastUserLoginAccount];
-    [userDefault synchronize];
+ 
+    if(reservingSpot)
+    {
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        //inform server we need user information
+        NSString *getUserInfoMsg = @"login\n";
+        [theInterface sendDataToServerWithData:[getUserInfoMsg dataUsingEncoding:NSASCIIStringEncoding]];
+        
+        
+        getUserInfoMsg = [NSString stringWithFormat:@"%i\n", 3001];
+        [theInterface sendDataToServerWithData:[getUserInfoMsg dataUsingEncoding:NSASCIIStringEncoding]];
+    }
+    else
+    {
+        NSLog(@"Login successful");
+        
+        NSString *account = self.accountTextFiled.text;
+        
+        //save user accout
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        [userDefault setValue:account forKey:LastUserLoginAccount];
+        [userDefault synchronize];
+    }
+
 }
+ */
 
 #pragma mark ServerInterface delegate
+-(void)ServerInterface:(ServerInterface *)interface didReceivedRespond:(NSString *)respondStr
+{
+    /**
+     for reserving spot
+     **/
+    if([respondStr rangeOfString:@"onLogin"].length > 0)
+    {
+        //reserving spot step 3
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        NSString *tablelistMsg = @"tableList\n";
+        [theInterface sendDataToServerWithData:[tablelistMsg dataUsingEncoding:NSASCIIStringEncoding]];
+        
+        tablelistMsg = [NSString stringWithFormat:@"%i\n", 3001];
+        [theInterface sendDataToServerWithData:[tablelistMsg dataUsingEncoding:NSASCIIStringEncoding]];
+    }
+    else if([respondStr rangeOfString:@"onTableList"].length>0)
+    {
+        //reserving spot step 4
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        
+        NSString *getUpdateMsg = @"videoLink\n";
+        [theInterface sendDataToServerWithData:[getUpdateMsg dataUsingEncoding:NSASCIIStringEncoding]];
+        
+        getUpdateMsg = [NSString stringWithFormat:@"%i\n", 3001];
+        [theInterface sendDataToServerWithData:[getUpdateMsg dataUsingEncoding:NSASCIIStringEncoding]];
+        
+        getUpdateMsg = [NSString stringWithFormat:@"%i\n", 0];
+        [theInterface sendDataToServerWithData:[getUpdateMsg dataUsingEncoding:NSASCIIStringEncoding]];
+    }
+    else if([respondStr rangeOfString:@"onUpdate"].length>0)
+    {
+        //reserving spot step 5
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        theInterface.theDelegate= nil;
+        
+        //send notification that reserving spot success
+        [[NSNotificationCenter defaultCenter] postNotificationName:ReserveSpotSuccessNotification object:nil];
+    }
+    
+    
+}
+
 -(void)ServerInterface:(ServerInterface *)interface didConnectToHost:(NSString *)hostname onPort:(uint16_t)port
 {
     
@@ -151,6 +238,23 @@
 
 -(void)ServerInterface:(ServerInterface *)interface didLoginWithUsername:(NSString *)username andPassword:(NSString *)password
 {
+    //if we are reserving spot
+    if(reservingSpot)
+    {
+        //reserving spot step 2
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        //inform server we need user information
+        NSString *getUserInfoMsg = @"login\n";
+        [theInterface sendDataToServerWithData:[getUserInfoMsg dataUsingEncoding:NSASCIIStringEncoding]];
+        
+        
+        getUserInfoMsg = [NSString stringWithFormat:@"%i\n", 3001];
+        [theInterface sendDataToServerWithData:[getUserInfoMsg dataUsingEncoding:NSASCIIStringEncoding]];
+        
+        return;
+    }
+    
+    //Login
     NSLog(@"did login server");
     
     isLogin = NO;
@@ -164,6 +268,10 @@
     
     _accountTextFiled.enabled = YES;
     _passwordTextField.enabled = YES;
+    
+    //if we are not reserving spot reserve one
+    if(!reservingSpot)
+        [self reserveSpot];
 }
 
 -(void)ServerInterface:(ServerInterface *)interface errorOccurredWithError:(NSString *)errorMsg

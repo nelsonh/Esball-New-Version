@@ -61,6 +61,7 @@
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Login_bg@2x.png"]];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,21 +77,35 @@
 }
 
 #pragma mark - override method
+-(void)reserveSpotSuccess:(NSNotification *)notification
+{
+    [super reserveSpotSuccess:notification];
+    
+    //inform delegate
+    if([_theDelegate respondsToSelector:@selector(PadLoginViewControllerDidLogin:)])
+    {
+        [_theDelegate PadLoginViewControllerDidLogin:self];
+    }
+}
+
 -(IBAction)login:(id)sender
 {
     [super login:sender];
     
 }
 
+/*
 #pragma mark - AsyncSocket delegate
 -(void)AsyncSocket:(AsyncSocket *)socket didLoginWithUsername:(NSString *)username andPassword:(NSString *)password
 {
     [super AsyncSocket:socket didLoginWithUsername:username andPassword:password];
 }
+*/
 
 #pragma mark ServerInterface delegate
 -(void)ServerInterface:(ServerInterface *)interface didConnectToHost:(NSString *)hostname onPort:(uint16_t)port
 {
+    [super ServerInterface:interface didConnectToHost:hostname onPort:port];
     NSLog(@"did connect to host:%@ on Port:%u", hostname, port);
 }
 
@@ -98,11 +113,13 @@
 {
     [super ServerInterface:interface didLoginWithUsername:username andPassword:password];
     
-    
+    /*
     if([_theDelegate respondsToSelector:@selector(PadLoginViewControllerDidLogin:)])
     {
         [_theDelegate PadLoginViewControllerDidLogin:self];
     }
+     */
+    
     /*
     //go to main view
     PadLoginViewController *mainView = [self.storyboard instantiateViewControllerWithIdentifier:@"PadMainViewController"];
@@ -123,41 +140,7 @@
     
     
 }
-
-//test delegate
--(void)ServerInterface:(ServerInterface *)interface didReceivedRespond:(NSString *)respondStr
-{
-    //NSLog(@"userinfo:\n%@\n\n", respondStr);
-
-    //XMLParser *paser = [[XMLParser alloc] initXMLParser];
-    //[paser paserXMLWithString:respondStr];
     
-    /*
-    NSData *data = [respondStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error;
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&error];
-    
-    if(doc==nil)
-    {
-        NSLog(@"error:%@", error);
-    }
-     */
-     
-    /*
-     //testfile.xml
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"testfile" ofType:@"xml"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSError *error;
-    GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:data options:0 error:&error];
-    
-    if(doc == nil)
-    {
-        NSLog(@"error:%@", error);
-    }
-     */
-}
-    
-
 /*
 //override method from super class
 -(void)LogMe

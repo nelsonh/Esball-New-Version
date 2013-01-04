@@ -45,7 +45,7 @@
 @property (nonatomic, readwrite) CGFloat chipSpaceHeight;
 @property (nonatomic, readwrite) CGFloat chipSize;
 
--(void)displayChips;
+-(BOOL)displayChips;
 -(void)disableCips;
 -(void)enableChips;
 -(void)enableChipsWithSelectedChip:(Chip *)selectedChip;

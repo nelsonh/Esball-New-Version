@@ -72,7 +72,7 @@ void uncaughtExceptionHandler(NSException *exception) {
             [self.window makeKeyAndVisible];
         }
         
-    } else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+    }/* else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
         
     {   // The iOS device = iPad
         
@@ -80,7 +80,7 @@ void uncaughtExceptionHandler(NSException *exception) {
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
         
-    }
+    }*/
 
     // Override point for customization after application launch.
     /*

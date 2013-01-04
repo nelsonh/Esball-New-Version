@@ -9,7 +9,7 @@
 #import "ServerInterface.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 
-#define kStreamReadBufferSize 8192 //8k
+#define kStreamReadBufferSize 32768 //32k
 
 @interface ServerInterface ()
 
@@ -90,7 +90,8 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
     [commonErrors setObject:msg forKey:key];
 }
 
-#pragma mark - interface
+#pragma mark - interface5
+
 -(BOOL)canReachHost
 {
     bool success = false;
@@ -331,6 +332,10 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
                     {
 						
 						NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:big5];
+                        
+#ifdef OutputServerRespond
+                        NSLog(@"Server respond:\n\n\n%@\n\n\n", output);
+#endif
 						
 						if (nil != output)
                         {
@@ -390,9 +395,6 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
 #pragma mark - handle incoming data
 -(void)processMessage:(NSString *)msg
 {
-#ifdef OutputServerRespond
-    NSLog(@"Server respond:\n%@\n\n\n", msg);
-#endif
     
     /**handle server common error**/
     id object = [commonErrors objectForKey:msg];

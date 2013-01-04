@@ -105,15 +105,18 @@
     return CGSizeMake(contentWidth, contentHeight);
 }
 
--(void)displayChips
+-(BOOL)displayChips
 {
     /**
      chip view creation logic
      **/
+#ifdef DEBUG
+    NSLog(@"chips:%@", _chips);
+#endif
     
     if(!_chips)
     {
-        return;
+        return NO;
     }
     
     CGFloat viewHeight = self.frame.size.height;
@@ -141,6 +144,7 @@
         [self addSubview:theChip];
     }
     
+    return YES;
 }
 
 #pragma mark - chip disable enable

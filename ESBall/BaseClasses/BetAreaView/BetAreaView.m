@@ -70,12 +70,17 @@
             _chipListView.chips = self.chips;
             
             //dispaly chip view
-            [_chipListView displayChips];
-            
-            //disable at first place
-            [_chipListView disableCips];
-            
-            isChipViewSetup = YES;
+            if([_chipListView displayChips])
+            {
+                //disable at first place
+                [_chipListView disableCips];
+                
+                isChipViewSetup = YES;
+            }
+            else
+            {
+                isChipViewSetup = NO;
+            }
         }
     }
     else

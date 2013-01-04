@@ -75,11 +75,13 @@
     
     [_scrollView initWithDelegate:self];
 
+    /*
     //test purpose
     tableNumberToChange = 0;
     gameTypeNumberToChange = 3001;
     storyboardControllerID = @"PadBaccaratGameViewController";
     [self enterGame];
+     */
     
 }
 
@@ -154,6 +156,7 @@
 
 -(void)enterGame
 {
+    
     BaseGameViewController *gameController = [self.storyboard instantiateViewControllerWithIdentifier:storyboardControllerID];
     gameController.theDelegate = self;
     gameController.tableNumber = tableNumberToChange;
@@ -348,6 +351,17 @@
     
     //mark it changing table
     //isChangingTable = YES;
+    
+    /*
+    //disconnect previous one 
+    ServerInterface *theInterface = [ServerInterface serverInterface];
+    
+    NSString *msg = @"turn\n";
+    [theInterface sendDataToServerWithData:[msg dataUsingEncoding:NSASCIIStringEncoding]];
+    
+    msg = [NSString stringWithFormat:@"%i\n", 0];
+    [theInterface sendDataToServerWithData:[msg dataUsingEncoding:NSASCIIStringEncoding]];
+     */
     
     /**
      save game info and use it later when enter proper game

@@ -11,10 +11,13 @@
 #import "AppDelegate.h"
 #import "ServerInterface.h"
 
+static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess";
+
 @interface BaseLoginViewController : UIViewController<AsyncSocketDelegate, ServerInterfaceDelegate, UITextFieldDelegate>{
     
     CGFloat spaceLabelToTextfield;
     BOOL isLogin;
+    BOOL reservingSpot;//indicate that it is reserving spot or not
 }
 
 @property (nonatomic, weak) IBOutlet UITextField *accountTextFiled;
@@ -26,5 +29,9 @@
 //-(void)LogMe;
 
 -(IBAction)login:(id)sender;
+//to reserve a spot
+-(void)reserveSpot;
+//implement to receive reserving spot notification
+-(void)reserveSpotSuccess:(NSNotification *)notification;
 
 @end

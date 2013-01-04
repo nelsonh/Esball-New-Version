@@ -47,7 +47,7 @@
 
 -(void)dealloc
 {
-    NSLog(@"game controller dealloc");
+    NSLog(@"game controller %@ dealloc", NSStringFromClass([self class]));
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hidePokerView) object:nil];
     
@@ -502,9 +502,27 @@
     //give chips name array
     //NSLog(@"chiplist:%@", info.chipList);
     NSMutableArray *filtedChipList = [[NSMutableArray alloc] init];
+    NSArray *chipFilter = [info.chipFilter copy];
     
-    for(NSString *chipValue in info.chipFilter)
+#ifdef DEBUG
+    NSLog(@"chip filter:%@", chipFilter);
+#endif
+    
+    if(!chipFilter)
     {
+#ifdef DEBUG
+        InternalErrorAlert(self, @"Internal error", @"chip filter is nil");
+#endif
+    }
+    
+    for(NSString *chipValue in chipFilter)
+    {
+/*
+#ifdef DEBUG
+        NSLog(@"process chip");
+#endif
+ */
+        
         double value = [chipValue doubleValue];
         
         if(value <= info.max)
@@ -516,9 +534,10 @@
             break;
         }
     }
-    
+
     _betAreaView.chips = filtedChipList;
     _betAreaView.userInfo = info;
+
 }
 
 -(void)processUpdateInfo:(NSNotification *)notification

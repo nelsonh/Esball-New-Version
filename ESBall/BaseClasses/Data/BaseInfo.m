@@ -37,8 +37,6 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:notifiStr object:object];
     });
     
-#else
-     [[NSNotificationCenter defaultCenter] postNotificationName:notifiStr object:object];
 #endif
 }
 

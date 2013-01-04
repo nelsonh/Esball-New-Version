@@ -69,6 +69,8 @@ NSString *GameStatusBetting = @"betting";
     theInterface.theDelegate = self;
     
     isFirstTime = YES;
+    
+    loginGameTypeCommandSent = NO;
 
 }
 
@@ -120,6 +122,7 @@ NSString *GameStatusBetting = @"betting";
     NSString *gameTypeMsg = [NSString stringWithFormat:@"%i\n", _gameType];
     [theInterface sendDataToServerWithData:[gameTypeMsg dataUsingEncoding:NSASCIIStringEncoding]];
      */
+    
     
     NSString *msg = @"turn\n";
     [theInterface sendDataToServerWithData:[msg dataUsingEncoding:NSASCIIStringEncoding]];
@@ -229,6 +232,7 @@ NSString *GameStatusBetting = @"betting";
 
 -(void)handleUpdateInfo:(NSNotification*)notification
 {
+    
     if(isFirstTime)
     {
         if([_theDelegate respondsToSelector:@selector(BaseGameViewControllerIsReady:)])
@@ -264,7 +268,7 @@ NSString *GameStatusBetting = @"betting";
 #pragma mark - ServiceInterface delegate
 -(void)ServerInterface:(ServerInterface *)interface didReceivedRespond:(NSString *)respondStr
 {
-    if([respondStr rangeOfString:@"onLogin"].length > 0)
+    if([respondStr rangeOfString:@"onLogin"].length > 0 && loginGameTypeCommandSent)
     {
         ServerInterface *theInterface = [ServerInterface serverInterface];
         //inform server we need user information
@@ -297,7 +301,7 @@ NSString *GameStatusBetting = @"betting";
         
         //NSLog(@"did get marquee");
     }
-    else if([respondStr rangeOfString:@"onUpdate"].length>0)
+    else if([respondStr rangeOfString:@"onUpdate"].length>0 && loginGameTypeCommandSent)
     {
         //init update info and parser xml, assign UpdateInfo as well
         updateInfo = [[UpdateInfo alloc] init];
@@ -319,6 +323,8 @@ NSString *GameStatusBetting = @"betting";
     
     getUserInfoMsg = [NSString stringWithFormat:@"%i\n", _gameType];
     [theInterface sendDataToServerWithData:[getUserInfoMsg dataUsingEncoding:NSASCIIStringEncoding]];
+    
+    loginGameTypeCommandSent = YES;
     
     
     NSLog(@"request login with gameType:%i", _gameType);
