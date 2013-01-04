@@ -90,8 +90,7 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
     [commonErrors setObject:msg forKey:key];
 }
 
-#pragma mark - interface5
-
+#pragma mark - interface
 -(BOOL)canReachHost
 {
     bool success = false;
@@ -339,7 +338,7 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
 						
 						if (nil != output)
                         {
-                            if ([output rangeOfString:@"timeout is expired"].location !=NSNotFound)
+                            if ([output rangeOfString:@"timeout is expired"].location !=NSNotFound || [output rangeOfString:@"Unknow"].location !=NSNotFound)
                             {
                                 NSString *msg = NSLocalizedString(@"连线已中断，请重新登入", @"连线已中断，请重新登入");
                                 UIAlertView *timeoutAlert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
