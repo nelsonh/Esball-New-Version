@@ -137,7 +137,7 @@
         yPos = spaceHeightOfChip;
         
         //newChipFrame = CGRectMake(xPos, yPos, sizeOfChip, viewHeight);
-        newChipFrame = CGRectMake(xPos, yPos, self.frame.size.height, viewHeight);
+        newChipFrame = CGRectMake(xPos, yPos, self.frame.size.height, viewHeight-2);
         
         theChip.frame = newChipFrame;
         

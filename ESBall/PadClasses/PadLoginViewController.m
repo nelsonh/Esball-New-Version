@@ -60,7 +60,8 @@
 	// Do any additional setup after loading the view
     
     FileFinder *fileFinder = [FileFinder fileFinder];
-    _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Login_bg@2x.png"]];
+    UIImage *image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Login_bg@2x.png"]];
+    _backgroundImageView.image = [[UIImage alloc] initWithCGImage:image.CGImage];
     
 }
 

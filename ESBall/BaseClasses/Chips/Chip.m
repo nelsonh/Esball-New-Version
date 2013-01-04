@@ -39,6 +39,7 @@
     NSString *chipDownImageName = [NSString stringWithFormat:@"chip_%@_down.png", chipName];
     NSString *chipNoImageName = [NSString stringWithFormat:@"chip_%@_no.png", chipName];
     NSString *chipNormalImageName = [NSString stringWithFormat:@"chip_%@.png", chipName];
+
     UIImage *imageForDown = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:chipDownImageName]];
     UIImage *imageForNo = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:chipNoImageName]];
     UIImage *imageForNormal = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:chipNormalImageName]];
