@@ -59,12 +59,12 @@
     if((tableNumber+1) >= 1 && (tableNumber+1) <= 3)
     {
         //A,B,C
-        return [NSString stringWithFormat:@"http://183.182.66.164:80/baccarathd%i/sd2.jpg", tableNumber+1];
+        return [NSString stringWithFormat:@"http://183.182.66.165/baccarathd%i/sd2.jpg", tableNumber+1];
     }
     else
     {
         //D,E
-        return [NSString stringWithFormat:@"http://183.182.66.165:80/baccarathd%i/sd2.jpg", tableNumber+1];
+        return [NSString stringWithFormat:@"http://183.182.66.165/baccarathd%i/sd2.jpg", tableNumber+1];
     }
 }
 

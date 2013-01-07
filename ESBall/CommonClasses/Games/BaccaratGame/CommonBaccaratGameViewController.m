@@ -746,14 +746,14 @@
 {
     _videoView.image = image;
     
-    [self performSelector:@selector(loadVideoImage) withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(loadVideoImage) withObject:nil afterDelay:0.0];
     //[self loadVideoImage];
     
 }
 
 -(void)ImagePullDelegateFail:(ImagePull *)imagePull
 {
-    [self performSelector:@selector(loadVideoImage) withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(loadVideoImage) withObject:nil afterDelay:0.0];
     //[self loadVideoImage];
     
 }

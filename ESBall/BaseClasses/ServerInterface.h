@@ -45,6 +45,8 @@ static NSString *ConnectionLostNotification = @"ConnectionLost";
     //is server return common error
     BOOL severReturnError;
     NSString *sid;
+    
+    NSMutableString *pendingDataStr;
 }
 
 @property (nonatomic, weak) id<ServerInterfaceDelegate>theDelegate;

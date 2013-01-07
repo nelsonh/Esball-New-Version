@@ -52,7 +52,7 @@
 -(NSString *)videoImageIPAddressForTableNumber:(NSUInteger)tableNumber
 {
     //dragon tiger table is 5 but video link is 1, so we don't use table number
-    return [NSString stringWithFormat:@"http://183.182.66.165:80/dragontigerhd%i/sd2.jpg", 1];
+    return [NSString stringWithFormat:@"http://183.182.66.165/dragontigerhd%i/sd2.jpg", 1];
 }
 
 -(NSString *)backgroundImageNameForGameGreaterThanThirtyRound

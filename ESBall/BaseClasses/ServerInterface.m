@@ -18,6 +18,7 @@
 //-(BOOL)doSendDataWithData:(NSData *)data;
 -(void)processMessage:(NSString *)msg;
 -(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password;
+-(BOOL)isCompleteXMLWithXMLString:(NSString *)xmlStr;
 
 @end
 
@@ -88,6 +89,25 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
     key = @"TIMEOUT";
     msg = NSLocalizedString(@"连线逾时", @"连线逾时");
     [commonErrors setObject:msg forKey:key];
+}
+
+#pragma mark - internal
+-(BOOL)isCompleteXMLWithXMLString:(NSString *)xmlStr
+{
+    BOOL head = NO;
+    BOOL end = NO;
+    
+    if([xmlStr rangeOfString:@"<beans>"].location != NSNotFound)
+    {
+        head = YES;
+    }
+    
+    if([xmlStr rangeOfString:@"</beans>"].location != NSNotFound)
+    {
+        end = YES;
+    }
+    
+    return (head&&end);
 }
 
 #pragma mark - interface
@@ -333,7 +353,8 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
 						NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:big5];
                         
 #ifdef OutputServerRespond
-                        NSLog(@"Server respond:\n\n\n%@\n\n\n", output);
+
+                        NSLog(@"Server respond:\n\nDataByte:%i\n\n\n%@\n\n\n", len, output);
 #endif
 						
 						if (nil != output)
@@ -351,7 +372,36 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
                                 return;
                             }
                             
+                            /**
+                            Determine if data is complete or wait for data 
+                            **/
+                            if(pendingDataStr)//if there is a pending data
+                            {
+                                //append this part
+                                [pendingDataStr appendString:output];
+                                
+                                //if it is not complete xml wait for next part
+                                if(![self isCompleteXMLWithXMLString:pendingDataStr])
+                                {
+                                    return;
+                                }
+                            }
+                            else if([output rangeOfString:@"<beans>"].location != NSNotFound)
+                            {
+                                //if it is not a complete xml
+                                if(![self isCompleteXMLWithXMLString:output])
+                                {
+                                    //init pending data and wait for next part
+                                    pendingDataStr = nil;
+                                    pendingDataStr = [[NSMutableString alloc] init];
+                                    [pendingDataStr appendString:output];
+                                    
+                                    return;
+                                }
+                            }
+                            
                             [self processMessage:output];
+                            pendingDataStr = nil;//clear pending data
 						}
 					}
 				}
