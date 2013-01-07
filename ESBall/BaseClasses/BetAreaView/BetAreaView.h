@@ -19,6 +19,8 @@
 #import "ChipView.h"
 #import "UpdateInfo.h"
 #import "UserInfo.h"
+#import "Constant.h"
+
 
 @interface BetAreaView : UIView<ChipViewDelegate>{
     

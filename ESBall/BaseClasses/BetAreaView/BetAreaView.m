@@ -103,13 +103,13 @@
     [self setupChipView];
     
     //deal with chip view
-    if([_updateInfo.status isEqualToString:@"dealing"] || [_updateInfo.status isEqualToString:@"waiting"])
+    if([_updateInfo.status isEqualToString:GameStatusDealing] || [_updateInfo.status isEqualToString:GameStatusWaiting])
     {
         [_chipListView disableCips];
         
         self.userInteractionEnabled = NO;
     }
-    else if([_updateInfo.status isEqualToString:@"betting"])
+    else if([_updateInfo.status isEqualToString:GameStatusBetting])
     {
         if(selectedChip)
             [_chipListView enableChipsWithSelectedChip:selectedChip];

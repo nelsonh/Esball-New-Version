@@ -19,12 +19,15 @@
 #import "UpdateInfo.h"
 #import "MarqueeInfo.h"
 #import "FileFinder.h"
+#import "Constant.h"
 
+
+/*
 //game status declare
 extern NSString *GameStatusDealing;
 extern NSString *GameStatusWaiting;
 extern NSString *GameStatusBetting;
-
+*/
 
 @class BaseGameViewController;
 

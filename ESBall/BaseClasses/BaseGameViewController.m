@@ -13,10 +13,7 @@
 
 @end
 
-//game status define
-NSString *GameStatusDealing = @"dealing";
-NSString *GameStatusWaiting = @"waiting";
-NSString *GameStatusBetting = @"betting";
+
 
 @implementation BaseGameViewController
 

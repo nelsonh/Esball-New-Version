@@ -567,6 +567,8 @@
 		5296BD50168BF343008FC969 /* PadDragonTigerPokerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296BD4F168BF343008FC969 /* PadDragonTigerPokerView.m */; };
 		529709C8167B041E00954B30 /* TouchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 529709C7167B041E00954B30 /* TouchDetector.m */; };
 		529709CB167B08F900954B30 /* TouchDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529709CA167B08F900954B30 /* TouchDetectorView.m */; };
+		529759BC169AA30100EAF41B /* SBBetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529759BB169AA30100EAF41B /* SBBetView.m */; };
+		529759BF169AC04200EAF41B /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 529759BE169AC04200EAF41B /* Constant.m */; };
 		5298D8661676D54D00C3F0B6 /* MarqueeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D8651676D54D00C3F0B6 /* MarqueeInfo.m */; };
 		5298D86E1677191C00C3F0B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D86D1677191C00C3F0B6 /* BaseViewController.m */; };
 		5298D8721677195C00C3F0B6 /* PadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D8711677195C00C3F0B6 /* PadViewController.m */; };
@@ -1243,6 +1245,10 @@
 		529709C7167B041E00954B30 /* TouchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchDetector.m; path = TouchDetector/TouchDetector.m; sourceTree = "<group>"; };
 		529709C9167B08F900954B30 /* TouchDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchDetectorView.h; path = TouchDetector/TouchDetectorView.h; sourceTree = "<group>"; };
 		529709CA167B08F900954B30 /* TouchDetectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchDetectorView.m; path = TouchDetector/TouchDetectorView.m; sourceTree = "<group>"; };
+		529759BA169AA30100EAF41B /* SBBetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBBetView.h; path = SicboGame/SBBetView/SBBetView.h; sourceTree = "<group>"; };
+		529759BB169AA30100EAF41B /* SBBetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBBetView.m; path = SicboGame/SBBetView/SBBetView.m; sourceTree = "<group>"; };
+		529759BD169ABD2800EAF41B /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		529759BE169AC04200EAF41B /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		5298D8641676D54D00C3F0B6 /* MarqueeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarqueeInfo.h; path = Data/MarqueeInfo.h; sourceTree = "<group>"; };
 		5298D8651676D54D00C3F0B6 /* MarqueeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarqueeInfo.m; path = Data/MarqueeInfo.m; sourceTree = "<group>"; };
 		5298D86C1677191C00C3F0B6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -1346,6 +1352,8 @@
 				448287031663696100CCA5ED /* MoreSectionBase */,
 				52A01BC616689728003B662B /* XMLParser.h */,
 				52A01BC716689728003B662B /* XMLParser.m */,
+				529759BD169ABD2800EAF41B /* Constant.h */,
+				529759BE169AC04200EAF41B /* Constant.m */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -1579,6 +1587,7 @@
 		527831301693C417009D8028 /* SicboGame */ = {
 			isa = PBXGroup;
 			children = (
+				529759B8169AA26F00EAF41B /* SBBetView */,
 				527831321693C4BB009D8028 /* CommonSicboGameViewController.h */,
 				527831331693C4BB009D8028 /* CommonSicboGameViewController.m */,
 			);
@@ -2851,6 +2860,15 @@
 			name = TouchDetector;
 			sourceTree = "<group>";
 		};
+		529759B8169AA26F00EAF41B /* SBBetView */ = {
+			isa = PBXGroup;
+			children = (
+				529759BA169AA30100EAF41B /* SBBetView.h */,
+				529759BB169AA30100EAF41B /* SBBetView.m */,
+			);
+			name = SBBetView;
+			sourceTree = "<group>";
+		};
 		5298DC50168AFD0A00E3F165 /* CommonClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -3605,6 +3623,8 @@
 				52783B5C16942271009D8028 /* PhoneMainViewController.m in Sources */,
 				52783B5D16942271009D8028 /* PhoneViewController.m in Sources */,
 				759D5385169524E700D15EAE /* PhoneBaccaratRoadmapChart.m in Sources */,
+				529759BC169AA30100EAF41B /* SBBetView.m in Sources */,
+				529759BF169AC04200EAF41B /* Constant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

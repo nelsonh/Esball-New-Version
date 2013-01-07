@@ -105,7 +105,6 @@
     isDisplayPlayerBetResult = YES;
 }
 
-#pragma mark - public interface   result
 -(void)disableBetSquareByRound:(NSUInteger)round currentRound:(NSUInteger)curRound
 {
     if(curRound > round)
@@ -1361,17 +1360,17 @@
     NSString *roundStr = [roundInfo objectAtIndex:1];//round number is at first e.g 3-12
     [self disableBetSquareByRound:30 currentRound:[roundStr intValue]];
     
-    if([self.updateInfo.status isEqualToString:@"dealing"])
+    if([self.updateInfo.status isEqualToString:GameStatusDealing])
     {
         //if player hit confirm bet result displayed and keep until waiting
         if(!isDisplayPlayerBetResult)
             [self clearBets];
     }
-    else if ([self.updateInfo.status isEqualToString:@"betting"])
+    else if ([self.updateInfo.status isEqualToString:GameStatusBetting])
     {
         [self setupBetSquare];
     }
-    else if([self.updateInfo.status isEqualToString:@"waiting"])
+    else if([self.updateInfo.status isEqualToString:GameStatusWaiting])
     {
         isDisplayPlayerBetResult = NO;
         
@@ -1383,7 +1382,7 @@
 #pragma mark - BetSquareView delegate
 -(BOOL)BetSquareViewIsTotalBetOverBalance:(BetSquareView *)betSquare withCurrentBet:(double)currentBet
 {
-    //calculate amount
+    //calculate amount, currentBet wasn't apply to bet square yet
     double amount = _betSquare1.theCurrentBet + _betSquare2.theCurrentBet + _betSquare3.theCurrentBet + _betSquare4.theCurrentBet + _betSquare5.theCurrentBet + _betSquare6.theCurrentBet + _betSquare7.theCurrentBet + _betSquare8.theCurrentBet + _betSquare9.theCurrentBet + _betSquare10.theCurrentBet + _betSquare11.theCurrentBet + currentBet;
     
     if([self isBetOverBalanceWithBetAmount:amount])
