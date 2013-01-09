@@ -38,6 +38,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *countDownLabel;
 @property (nonatomic, weak) IBOutlet UIButton *roadmapButton;
 @property (nonatomic, weak) IBOutlet UIButton *detailButton;
+@property (nonatomic, weak) IBOutlet UIButton *recordButton;
 @property (nonatomic, weak) IBOutlet UIButton *clearBetButton;
 @property (nonatomic, weak) IBOutlet UIButton *betConfirmButton;
 @property (nonatomic, weak) IBOutlet UIButton *backButton;
@@ -53,12 +54,15 @@
 -(void)doDeSelectRoadmap;
 -(void)doSelectDetail;
 -(void)doDeSelectDetail;
+-(void)doSelectRecord;
+-(void)doDeselectRecord;
 -(double)totalBetWithInfos:(NSMutableArray *)infos;
 -(void)loadVideoImage;
--(void)hidePokerView;
+//-(void)hidePokerView;
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info;
 -(void)showRoadmap;
 -(void)showDetail;
+-(void)showRecord;
 -(void)doClearBet;
 -(void)doBetConfirm;
 -(void)processMarqueeInfo:(NSNotification *)notification;

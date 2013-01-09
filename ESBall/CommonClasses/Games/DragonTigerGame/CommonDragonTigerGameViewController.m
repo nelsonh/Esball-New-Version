@@ -134,12 +134,12 @@
 
     [theImagePull pullImageFrom:[NSURL URLWithString:ipAddress]];
 }
-
+/*
 -(void)hidePokerView
 {
     _dtPokerView.visibility = NO;
 }
-
+*/
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info
 {
     //assign information to poker view
@@ -231,7 +231,7 @@
     if([_dtBetView isKindOfClass:[BetView class]])
     {
         BetView *betView = (BetView *)_dtBetView;
-        [betView clearAllBets];
+        [betView clearAllBetsWithHideInfo:YES];
     }
 }
 
@@ -265,6 +265,8 @@
         
         //display player bet result
         [betView displayPlayerBetResult];
+        
+        [betView clearAllBetsWithHideInfo:NO];
     }
 }
 
@@ -283,47 +285,47 @@
         response = [NSString stringWithFormat:@"%@,b11:%.2f",response, [[infos objectAtIndex:1] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:2] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:3] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b5:%.2f",response, [[infos objectAtIndex:3] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:3] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:5] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b3:%.2f",response, [[infos objectAtIndex:5] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:4] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:8] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b4:%.2f",response, [[infos objectAtIndex:8] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:5] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:10] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b9:%.2f",response, [[infos objectAtIndex:10] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:6] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:9] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b8:%.2f",response, [[infos objectAtIndex:9] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:7] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:4] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b2:%.2f",response, [[infos objectAtIndex:4] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:8] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:2] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b7:%.2f",response, [[infos objectAtIndex:2] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:9] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:7] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b6:%.2f",response, [[infos objectAtIndex:7] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:10] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:6] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b1:%.2f",response, [[infos objectAtIndex:6] doubleValue]];
     }
@@ -435,7 +437,7 @@
             [self updatePokerWithUpdateInfo:info];
             
             //hide poker view
-            [self performSelector:@selector(hidePokerView) withObject:nil afterDelay:kPokerViewHideDelay];
+            //[self performSelector:@selector(hidePokerView) withObject:nil afterDelay:kPokerViewHideDelay];
         }
     }
     //_dtPokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
@@ -456,6 +458,7 @@
     }
     else if([info.status isEqualToString:GameStatusBetting])
     {
+        _dtPokerView.visibility = NO;
         
         //update roadmapView
         if(!_dtRoadmap.hidden)

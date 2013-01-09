@@ -71,12 +71,16 @@
 @property (nonatomic, weak) IBOutlet BetSquareView *betSquare52;
 
 -(void)clearBets;
+-(void)showResult;
 -(BOOL)isBetOverBalanceWithBetAmount:(double)amount;
 
 -(void)clearAllBets;
 -(NSMutableArray *)collectBetInfo;//return each signle bet in double as an array
 -(void)displayPlayerBetResult;
 
+-(NSString *)getResultWithResultCode:(NSUInteger)result;
+-(void)showResultWithString:(NSString *)result;
 -(void)setupBetSquare;
+-(void)setupDelegate;
 
 @end

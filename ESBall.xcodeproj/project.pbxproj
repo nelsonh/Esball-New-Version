@@ -40,6 +40,9 @@
 		4482876816636B3500CCA5ED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4482876716636B3500CCA5ED /* QuartzCore.framework */; };
 		5219C76316786B7D00AA4A90 /* LoadingHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5219C76216786B7D00AA4A90 /* LoadingHUD.m */; };
 		5219C767167878D500AA4A90 /* FileFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5219C766167878D500AA4A90 /* FileFinder.m */; };
+		5237978B169D43E8004F008F /* BetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5237978A169D43E8004F008F /* BetRecordDetailViewController.m */; };
+		5237978E169D4435004F008F /* BetRecordDetailRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5237978D169D4435004F008F /* BetRecordDetailRowCell.m */; };
+		52379791169D445B004F008F /* BetRecordDetailTotalRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52379790169D445B004F008F /* BetRecordDetailTotalRowCell.m */; };
 		523C9B0A1675813800CC9D9D /* GameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523C9B091675813800CC9D9D /* GameDetailViewController.m */; };
 		523C9B191675B84900CC9D9D /* SubDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523C9B181675B84900CC9D9D /* SubDetailViewController.m */; };
 		524529381682ED8D00486C6E /* DTGameBetLimitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524529371682ED8D00486C6E /* DTGameBetLimitViewController.m */; };
@@ -549,6 +552,8 @@
 		52963D83167823330016B1CB /* StoryboardID.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52963D7F167823330016B1CB /* StoryboardID.plist */; };
 		52963D84167823330016B1CB /* VideoSection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52963D80167823330016B1CB /* VideoSection.plist */; };
 		52963D86167857580016B1CB /* LoadingAnim.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52963D85167857580016B1CB /* LoadingAnim.plist */; };
+		52964282169BE7D5007540BE /* BetRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964281169BE7D5007540BE /* BetRecordViewController.m */; };
+		52964289169BF268007540BE /* BetRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52964288169BF268007540BE /* BetRecordCell.m */; };
 		5296BD1A168BE699008FC969 /* BetInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296BCF1168BE699008FC969 /* BetInfoView.m */; };
 		5296BD1B168BE699008FC969 /* BetSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296BCF4168BE699008FC969 /* BetSquareView.m */; };
 		5296BD1E168BE699008FC969 /* BetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296BCFF168BE699008FC969 /* BetView.m */; };
@@ -565,6 +570,7 @@
 		5296BD48168BF0B5008FC969 /* PadDragonTigerRoadmapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296BD47168BF0B5008FC969 /* PadDragonTigerRoadmapView.m */; };
 		5296BD4C168BF223008FC969 /* PadBaccaratPokerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296BD4B168BF223008FC969 /* PadBaccaratPokerView.m */; };
 		5296BD50168BF343008FC969 /* PadDragonTigerPokerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296BD4F168BF343008FC969 /* PadDragonTigerPokerView.m */; };
+		5296DD4B169D03C400FE8ED2 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5296DD4A169D03C400FE8ED2 /* HeaderView.m */; };
 		529709C8167B041E00954B30 /* TouchDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 529709C7167B041E00954B30 /* TouchDetector.m */; };
 		529709CB167B08F900954B30 /* TouchDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529709CA167B08F900954B30 /* TouchDetectorView.m */; };
 		529759BC169AA30100EAF41B /* SBBetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529759BB169AA30100EAF41B /* SBBetView.m */; };
@@ -647,6 +653,12 @@
 		5219C76216786B7D00AA4A90 /* LoadingHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingHUD.m; path = HUD/LoadingHUD.m; sourceTree = "<group>"; };
 		5219C765167878D500AA4A90 /* FileFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileFinder.h; path = FileFinder/FileFinder.h; sourceTree = "<group>"; };
 		5219C766167878D500AA4A90 /* FileFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileFinder.m; path = FileFinder/FileFinder.m; sourceTree = "<group>"; };
+		52379789169D43E8004F008F /* BetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetRecordDetailViewController.h; sourceTree = "<group>"; };
+		5237978A169D43E8004F008F /* BetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetRecordDetailViewController.m; sourceTree = "<group>"; };
+		5237978C169D4435004F008F /* BetRecordDetailRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetRecordDetailRowCell.h; sourceTree = "<group>"; };
+		5237978D169D4435004F008F /* BetRecordDetailRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetRecordDetailRowCell.m; sourceTree = "<group>"; };
+		5237978F169D445B004F008F /* BetRecordDetailTotalRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetRecordDetailTotalRowCell.h; sourceTree = "<group>"; };
+		52379790169D445B004F008F /* BetRecordDetailTotalRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetRecordDetailTotalRowCell.m; sourceTree = "<group>"; };
 		523C9B081675813800CC9D9D /* GameDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDetailViewController.h; path = GameDetail/GameDetailViewController.h; sourceTree = "<group>"; };
 		523C9B091675813800CC9D9D /* GameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDetailViewController.m; path = GameDetail/GameDetailViewController.m; sourceTree = "<group>"; };
 		523C9B171675B84900CC9D9D /* SubDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubDetailViewController.h; path = GameDetail/SubDetailViewController/SubDetailViewController.h; sourceTree = "<group>"; };
@@ -1209,6 +1221,10 @@
 		52963D7F167823330016B1CB /* StoryboardID.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StoryboardID.plist; sourceTree = "<group>"; };
 		52963D80167823330016B1CB /* VideoSection.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VideoSection.plist; sourceTree = "<group>"; };
 		52963D85167857580016B1CB /* LoadingAnim.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LoadingAnim.plist; sourceTree = "<group>"; };
+		52964280169BE7D5007540BE /* BetRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BetRecordViewController.h; path = BetRecord/BetRecordViewController.h; sourceTree = "<group>"; };
+		52964281169BE7D5007540BE /* BetRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BetRecordViewController.m; path = BetRecord/BetRecordViewController.m; sourceTree = "<group>"; };
+		52964287169BF268007540BE /* BetRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BetRecordCell.h; path = BetRecord/BetRecordCell.h; sourceTree = "<group>"; };
+		52964288169BF268007540BE /* BetRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BetRecordCell.m; path = BetRecord/BetRecordCell.m; sourceTree = "<group>"; };
 		5296BCF0168BE699008FC969 /* BetInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetInfoView.h; sourceTree = "<group>"; };
 		5296BCF1168BE699008FC969 /* BetInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetInfoView.m; sourceTree = "<group>"; };
 		5296BCF3168BE699008FC969 /* BetSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetSquareView.h; sourceTree = "<group>"; };
@@ -1241,6 +1257,8 @@
 		5296BD4B168BF223008FC969 /* PadBaccaratPokerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PadBaccaratPokerView.m; path = PadBaccaratPokerView/PadBaccaratPokerView.m; sourceTree = "<group>"; };
 		5296BD4E168BF343008FC969 /* PadDragonTigerPokerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PadDragonTigerPokerView.h; path = ESBall/PadClasses/VideoSectionClasses/DragonTiggerGameViewController/PadDragonTigerPokerView/PadDragonTigerPokerView.h; sourceTree = SOURCE_ROOT; };
 		5296BD4F168BF343008FC969 /* PadDragonTigerPokerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PadDragonTigerPokerView.m; path = ESBall/PadClasses/VideoSectionClasses/DragonTiggerGameViewController/PadDragonTigerPokerView/PadDragonTigerPokerView.m; sourceTree = SOURCE_ROOT; };
+		5296DD49169D03C300FE8ED2 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeaderView.h; path = BetRecord/HeaderView.h; sourceTree = "<group>"; };
+		5296DD4A169D03C400FE8ED2 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeaderView.m; path = BetRecord/HeaderView.m; sourceTree = "<group>"; };
 		529709C6167B041E00954B30 /* TouchDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchDetector.h; path = TouchDetector/TouchDetector.h; sourceTree = "<group>"; };
 		529709C7167B041E00954B30 /* TouchDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchDetector.m; path = TouchDetector/TouchDetector.m; sourceTree = "<group>"; };
 		529709C9167B08F900954B30 /* TouchDetectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchDetectorView.h; path = TouchDetector/TouchDetectorView.h; sourceTree = "<group>"; };
@@ -1480,6 +1498,20 @@
 				5219C766167878D500AA4A90 /* FileFinder.m */,
 			);
 			name = FileFinder;
+			sourceTree = "<group>";
+		};
+		52379788169D43E8004F008F /* BetRecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				52379789169D43E8004F008F /* BetRecordDetailViewController.h */,
+				5237978A169D43E8004F008F /* BetRecordDetailViewController.m */,
+				5237978C169D4435004F008F /* BetRecordDetailRowCell.h */,
+				5237978D169D4435004F008F /* BetRecordDetailRowCell.m */,
+				5237978F169D445B004F008F /* BetRecordDetailTotalRowCell.h */,
+				52379790169D445B004F008F /* BetRecordDetailTotalRowCell.m */,
+			);
+			name = BetRecordDetail;
+			path = BetRecord/BetRecordDetail;
 			sourceTree = "<group>";
 		};
 		523C9B06167580F000CC9D9D /* GameDetail */ = {
@@ -2611,6 +2643,7 @@
 		52963A5A167821A00016B1CB /* BaccaratGameViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5296427E169BD79D007540BE /* BetRecord */,
 				5296BD49168BF1EC008FC969 /* PadBaccaratPokerView */,
 				5296BD41168BEF35008FC969 /* PadBaccaratRoadmapView */,
 				52963A66167821A00016B1CB /* Detail */,
@@ -2680,6 +2713,20 @@
 				52963D85167857580016B1CB /* LoadingAnim.plist */,
 			);
 			path = PlistFiles;
+			sourceTree = "<group>";
+		};
+		5296427E169BD79D007540BE /* BetRecord */ = {
+			isa = PBXGroup;
+			children = (
+				52379788169D43E8004F008F /* BetRecordDetail */,
+				52964280169BE7D5007540BE /* BetRecordViewController.h */,
+				52964281169BE7D5007540BE /* BetRecordViewController.m */,
+				52964287169BF268007540BE /* BetRecordCell.h */,
+				52964288169BF268007540BE /* BetRecordCell.m */,
+				5296DD49169D03C300FE8ED2 /* HeaderView.h */,
+				5296DD4A169D03C400FE8ED2 /* HeaderView.m */,
+			);
+			name = BetRecord;
 			sourceTree = "<group>";
 		};
 		5296BCEF168BE699008FC969 /* BetInfo */ = {
@@ -3625,6 +3672,12 @@
 				759D5385169524E700D15EAE /* PhoneBaccaratRoadmapChart.m in Sources */,
 				529759BC169AA30100EAF41B /* SBBetView.m in Sources */,
 				529759BF169AC04200EAF41B /* Constant.m in Sources */,
+				52964282169BE7D5007540BE /* BetRecordViewController.m in Sources */,
+				52964289169BF268007540BE /* BetRecordCell.m in Sources */,
+				5296DD4B169D03C400FE8ED2 /* HeaderView.m in Sources */,
+				5237978B169D43E8004F008F /* BetRecordDetailViewController.m in Sources */,
+				5237978E169D4435004F008F /* BetRecordDetailRowCell.m in Sources */,
+				52379791169D445B004F008F /* BetRecordDetailTotalRowCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

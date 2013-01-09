@@ -177,6 +177,11 @@
     
 }
 
+-(IBAction)record:(id)sender
+{
+    
+}
+
 -(void)pause
 {
     //stop taking info from server interface

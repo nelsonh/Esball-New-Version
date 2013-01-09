@@ -37,7 +37,7 @@
 
 
 -(void)hideBetInfoView;
--(void)resetCurrentBet;
+-(void)resetCurrentBetWithBetInfo:(BOOL)yesOrNo;
 -(void)displayCurrentBetResult;
 
 @end

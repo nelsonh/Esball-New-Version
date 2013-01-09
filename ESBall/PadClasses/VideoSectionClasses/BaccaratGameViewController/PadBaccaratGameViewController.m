@@ -11,6 +11,7 @@
 
 
 
+
 @interface PadBaccaratGameViewController ()
 
 
@@ -93,6 +94,52 @@
     return kChipSize;
 }
 
+-(void)showRecord
+{
+    [super showRecord];
+    
+    BetRecordViewController *betRecordController = nil;
+    
+    for(id controller in self.childViewControllers)
+    {
+        if([controller isKindOfClass:[BetRecordViewController class]])
+        {
+            betRecordController = controller;
+            
+            break;
+        }
+    }
+    
+    if(betRecordController != nil)
+    {
+        //remove
+        [betRecordController removeFromParentViewController];
+        [self performSelector:@selector(doDeselectRecord) withObject:nil afterDelay:0.0];
+    }
+    else
+    {
+        
+        //add
+        betRecordController = [self.storyboard instantiateViewControllerWithIdentifier:@"BetRecordViewController"];
+        
+        betRecordController.theDelegate = self;
+        betRecordController.gameType = self.gameType;
+        
+        if(!betRecordController)
+        {
+#ifdef DEBUG
+            InternalErrorAlert(self, @"Internal error", @"can not find \"BetRecordViewController\" in storyboard");
+#endif
+            return;
+        }
+        
+        
+        [betRecordController addToConrtoller:self inPosition:CGPointMake(0, kDetailViewY)];
+        
+        [self performSelector:@selector(doSelectRecord) withObject:nil afterDelay:0.0];
+    }
+}
+
 
 -(void)PostBeginSetup
 {
@@ -141,5 +188,16 @@
     }
 }
 */
+
+#pragma mark - BetRecordViewController delegate
+-(void)BetRecordViewControllerDidAddToParentController:(BetRecordViewController *)controller
+{
+    
+}
+
+-(void)BetRecordViewControllerDidRemoveFromParentController:(BetRecordViewController *)controller
+{
+    
+}
 
 @end

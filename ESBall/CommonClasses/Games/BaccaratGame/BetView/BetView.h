@@ -29,10 +29,12 @@
 
 @interface BetView : BetAreaView<BetSquareViewDelegate>{
     
-    //player hit confirm this will be yes otherwise no
+    //player hit bet confirm this will be yes otherwise no
     BOOL isDisplayPlayerBetResult;
     
     BOOL isBetSquareDelegateSet;
+    
+    NSString *gameStatus;
 }
 
 @property (nonatomic, weak) id<BetViewDelegate> theBetViewDelegate;
@@ -61,11 +63,11 @@
 @property (nonatomic , weak) IBOutlet UIImageView *square10Result;
 @property (nonatomic , weak) IBOutlet UIImageView *square11Result;
 
--(void)clearBets;
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo;
 -(void)showResult;
 -(BOOL)isBetOverBalanceWithBetAmount:(double)amount;
 
--(void)clearAllBets;
+-(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo;
 -(NSMutableArray *)collectBetInfo;//return each signle bet in double as an array
 -(void)displayPlayerBetResult;
 

@@ -10,7 +10,7 @@
 #import "BetView.h"
 #import "DetailViewController.h"
 
-#define kPokerViewHideDelay 3.0
+//#define kPokerViewHideDelay 3.0
 
 @interface CommonBaccaratGameViewController ()
 
@@ -27,6 +27,7 @@
 @synthesize countDownLabel = _countDownLabel;
 @synthesize roadmapButton = _roadmapButton;
 @synthesize detailButton = _detailButton;
+@synthesize recordButton = _recordButton;
 @synthesize clearBetButton = _clearBetButton;
 @synthesize betConfirmButton = _betConfirmButton;
 @synthesize backButton = _backButton;
@@ -160,6 +161,13 @@
     [self showDetail];
 }
 
+-(IBAction)record:(id)sender
+{
+    [super record:sender];
+    
+    [self showRecord];
+}
+
 -(IBAction)clearBet:(id)sender
 {
     [super clearBet:sender];
@@ -251,6 +259,16 @@
     _detailButton.highlighted = NO;
 }
 
+-(void)doSelectRecord
+{
+    _recordButton.highlighted = YES;
+}
+
+-(void)doDeselectRecord
+{
+    _recordButton.highlighted = NO;
+}
+
 //calculate total bet
 -(double)totalBetWithInfos:(NSMutableArray *)infos
 {
@@ -266,12 +284,12 @@
     
     return totalBet;
 }
-
+/*
 -(void)hidePokerView
 {
     _pokerView.visibility = NO;
 }
-
+*/
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info
 {
     
@@ -360,13 +378,18 @@
     }
 }
 
+-(void)showRecord
+{
+    //subclass and implement your own record view
+}
+
 -(void)doClearBet
 {
     //make sure BetAreaView is a class of BetView before clear all bets
     if([_betAreaView isKindOfClass:[BetView class]])
     {
         BetView *betView = (BetView *)_betAreaView;
-        [betView clearAllBets];
+        [betView clearAllBetsWithHideInfo:YES];
     }
 }
 
@@ -400,6 +423,9 @@
         
         //display player bet result
         [betView displayPlayerBetResult];
+        
+        //clear bet
+        [betView clearAllBetsWithHideInfo:NO];
     }
 }
 
@@ -435,47 +461,47 @@
         response = [NSString stringWithFormat:@"%@,b11:%.2f",response, [[infos objectAtIndex:1] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:2] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:3] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b5:%.2f",response, [[infos objectAtIndex:3] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:3] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:5] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b3:%.2f",response, [[infos objectAtIndex:5] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:4] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:8] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b4:%.2f",response, [[infos objectAtIndex:8] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:5] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:10] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b9:%.2f",response, [[infos objectAtIndex:10] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:6] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:9] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b8:%.2f",response, [[infos objectAtIndex:9] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:7] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:4] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b2:%.2f",response, [[infos objectAtIndex:4] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:8] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:2] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b7:%.2f",response, [[infos objectAtIndex:2] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:9] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:7] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b6:%.2f",response, [[infos objectAtIndex:7] doubleValue]];
     }
     
-    if ([[infos objectAtIndex:10] doubleValue]>=userInfo.min)
+    if ([[infos objectAtIndex:6] doubleValue]>=userInfo.min)
     {
         response = [NSString stringWithFormat:@"%@,b1:%.2f",response, [[infos objectAtIndex:6] doubleValue]];
     }
@@ -583,7 +609,7 @@
             [self updatePokerWithUpdateInfo:info];
             
             //hide poker view
-            [self performSelector:@selector(hidePokerView) withObject:nil afterDelay:kPokerViewHideDelay];
+            //[self performSelector:@selector(hidePokerView) withObject:nil afterDelay:kPokerViewHideDelay];
         }
         
     }
@@ -605,6 +631,8 @@
     }
     else if([info.status isEqualToString:GameStatusBetting])
     {
+        _pokerView.visibility = NO;
+        
         //update roadmapView
         if(!_roadmapView.hidden)
         {

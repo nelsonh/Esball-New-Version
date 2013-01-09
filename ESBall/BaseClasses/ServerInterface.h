@@ -47,6 +47,8 @@ static NSString *ConnectionLostNotification = @"ConnectionLost";
     NSString *sid;
     
     NSMutableString *pendingDataStr;
+    
+    NSMutableString *appendableStr;
 }
 
 @property (nonatomic, weak) id<ServerInterfaceDelegate>theDelegate;

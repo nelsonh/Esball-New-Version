@@ -64,9 +64,9 @@
 }
 
 #pragma mark - public interface
--(void)clearAllBets
+-(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo
 {
-    [self clearBets];
+    [self clearBetsWithHideInfo:yesOrNo];
 }
 
 -(NSMutableArray *)collectBetInfo
@@ -138,32 +138,50 @@
     }
 }
 
--(void)clearBets
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo
 {
-    /**clear all bets info and info view**/
-    [_betSquare1 hideBetInfoView];
-    [_betSquare2 hideBetInfoView];
-    [_betSquare3 hideBetInfoView];
-    [_betSquare4 hideBetInfoView];
-    [_betSquare5 hideBetInfoView];
-    [_betSquare6 hideBetInfoView];
-    [_betSquare7 hideBetInfoView];
-    [_betSquare8 hideBetInfoView];
-    [_betSquare9 hideBetInfoView];
-    [_betSquare10 hideBetInfoView];
-    [_betSquare11 hideBetInfoView];
+    NSLog(@"clear all bet info");
     
-    [_betSquare1 resetCurrentBet];
-    [_betSquare2 resetCurrentBet];
-    [_betSquare3 resetCurrentBet];
-    [_betSquare4 resetCurrentBet];
-    [_betSquare5 resetCurrentBet];
-    [_betSquare6 resetCurrentBet];
-    [_betSquare7 resetCurrentBet];
-    [_betSquare8 resetCurrentBet];
-    [_betSquare9 resetCurrentBet];
-    [_betSquare10 resetCurrentBet];
-    [_betSquare11 resetCurrentBet];
+    if(yesOrNo)
+    {
+        /**clear all bets info and info view**/
+        [_betSquare1 hideBetInfoView];
+        [_betSquare2 hideBetInfoView];
+        [_betSquare3 hideBetInfoView];
+        [_betSquare4 hideBetInfoView];
+        [_betSquare5 hideBetInfoView];
+        [_betSquare6 hideBetInfoView];
+        [_betSquare7 hideBetInfoView];
+        [_betSquare8 hideBetInfoView];
+        [_betSquare9 hideBetInfoView];
+        [_betSquare10 hideBetInfoView];
+        [_betSquare11 hideBetInfoView];
+        
+        [_betSquare1 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare2 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare3 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare4 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare5 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare6 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare7 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare8 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
+    }
+
+    
+    [_betSquare1 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare2 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare3 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare4 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare5 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare6 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare7 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare8 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
 }
 
 -(void)setupBetSquare
@@ -202,6 +220,15 @@
     _square11Result.hidden = YES;
 }
 
+-(BOOL)isBetOverBalanceWithBetAmount:(double)amount
+{
+    if(amount > self.updateInfo.credit)
+        return YES;
+    else
+        return NO;
+}
+
+#pragma mark - Square result
 -(void)showResult
 {
     /**show result**/
@@ -1324,14 +1351,6 @@
 
 }
 
--(BOOL)isBetOverBalanceWithBetAmount:(double)amount
-{
-    if(amount > self.updateInfo.credit)
-        return YES;
-    else
-        return NO;
-}
-
 #pragma mark - override methods
 -(void)updateView
 {
@@ -1362,19 +1381,34 @@
     
     if([self.updateInfo.status isEqualToString:GameStatusDealing])
     {
+        /*
         //if player hit confirm bet result displayed and keep until waiting
         if(!isDisplayPlayerBetResult)
-            [self clearBets];
+            [self clearAllBetsWithHideInfo:YES];
+         */
     }
     else if ([self.updateInfo.status isEqualToString:GameStatusBetting])
     {
+        if(isDisplayPlayerBetResult && gameStatus == GameStatusWaiting)
+        {
+            isDisplayPlayerBetResult = NO;
+            [self clearAllBetsWithHideInfo:YES];
+        }
+        
+        gameStatus = GameStatusBetting;
+        
         [self setupBetSquare];
     }
     else if([self.updateInfo.status isEqualToString:GameStatusWaiting])
     {
+        gameStatus = GameStatusWaiting;
+        
+        /*
         isDisplayPlayerBetResult = NO;
         
-        [self clearBets];
+        [self clearAllBetsWithHideInfo:YES];
+         */
+        
         [self showResult];
     }
 }

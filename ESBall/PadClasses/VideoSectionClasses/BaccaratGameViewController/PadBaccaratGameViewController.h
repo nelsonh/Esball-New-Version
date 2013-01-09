@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CommonBaccaratGameViewController.h"
+#import "BetRecordViewController.h"
 
-@interface PadBaccaratGameViewController : CommonBaccaratGameViewController
+@interface PadBaccaratGameViewController : CommonBaccaratGameViewController<BetRecordViewControllerDelegate>
 
 
 

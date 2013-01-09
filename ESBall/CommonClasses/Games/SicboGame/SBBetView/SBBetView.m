@@ -10,7 +10,7 @@
 
 @interface SBBetView ()
 
--(void)setupDelegate;
+
 
 @end
 
@@ -220,6 +220,60 @@
 -(void)clearBets
 {
     //custom
+    /*
+    [_betSquare1 resetCurrentBet];
+    [_betSquare2 resetCurrentBet];
+    [_betSquare3 resetCurrentBet];
+    [_betSquare4 resetCurrentBet];
+    [_betSquare5 resetCurrentBet];
+    [_betSquare6 resetCurrentBet];
+    [_betSquare7 resetCurrentBet];
+    [_betSquare8 resetCurrentBet];
+    [_betSquare9 resetCurrentBet];
+    [_betSquare10 resetCurrentBet];
+    [_betSquare11 resetCurrentBet];
+    [_betSquare12 resetCurrentBet];
+    [_betSquare13 resetCurrentBet];
+    [_betSquare14 resetCurrentBet];
+    [_betSquare15 resetCurrentBet];
+    [_betSquare16 resetCurrentBet];
+    [_betSquare17 resetCurrentBet];
+    [_betSquare18 resetCurrentBet];
+    [_betSquare19 resetCurrentBet];
+    [_betSquare20 resetCurrentBet];
+    [_betSquare21 resetCurrentBet];
+    [_betSquare22 resetCurrentBet];
+    [_betSquare23 resetCurrentBet];
+    [_betSquare24 resetCurrentBet];
+    [_betSquare25 resetCurrentBet];
+    [_betSquare26 resetCurrentBet];
+    [_betSquare27 resetCurrentBet];
+    [_betSquare28 resetCurrentBet];
+    [_betSquare29 resetCurrentBet];
+    [_betSquare30 resetCurrentBet];
+    [_betSquare31 resetCurrentBet];
+    [_betSquare32 resetCurrentBet];
+    [_betSquare33 resetCurrentBet];
+    [_betSquare34 resetCurrentBet];
+    [_betSquare35 resetCurrentBet];
+    [_betSquare36 resetCurrentBet];
+    [_betSquare37 resetCurrentBet];
+    [_betSquare38 resetCurrentBet];
+    [_betSquare39 resetCurrentBet];
+    [_betSquare40 resetCurrentBet];
+    [_betSquare41 resetCurrentBet];
+    [_betSquare42 resetCurrentBet];
+    [_betSquare43 resetCurrentBet];
+    [_betSquare44 resetCurrentBet];
+    [_betSquare45 resetCurrentBet];
+    [_betSquare46 resetCurrentBet];
+    [_betSquare47 resetCurrentBet];
+    [_betSquare48 resetCurrentBet];
+    [_betSquare49 resetCurrentBet];
+    [_betSquare50 resetCurrentBet];
+    [_betSquare51 resetCurrentBet];
+    [_betSquare52 resetCurrentBet];
+     */
 }
 
 -(void)setupBetSquare
@@ -233,6 +287,28 @@
         return YES;
     else
         return NO;
+}
+
+#pragma mark - Square result
+-(void)showResult
+{
+    /**show result**/
+    
+    NSString *resultStr = [self getResultWithResultCode:self.updateInfo.result];
+    if(resultStr)
+        [self showResultWithString:resultStr];
+    else
+        NSLog(@"Bet view result is nil");
+}
+
+-(NSString *)getResultWithResultCode:(NSUInteger)result
+{
+    return @"";
+}
+
+-(void)showResultWithString:(NSString *)result
+{
+    
 }
 
 #pragma mark - override methods
@@ -269,7 +345,7 @@
         isDisplayPlayerBetResult = NO;
         
         [self clearBets];
-        //[self showResult];
+        [self showResult];
     }
     
 }

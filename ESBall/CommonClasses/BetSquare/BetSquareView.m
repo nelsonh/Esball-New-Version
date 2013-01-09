@@ -91,14 +91,21 @@
     }
 }
 
--(void)resetCurrentBet
+-(void)resetCurrentBetWithBetInfo:(BOOL)yesOrNo
 {
     currentBet = 0;
-    [_betInfoView setCurrentBet:currentBet];
-    [_betInfoView setMaxBet:_maxBet];
     
+    if(yesOrNo)
+    {
+        [_betInfoView setCurrentBet:currentBet];
+        [_betInfoView setMaxBet:_maxBet];
+    }
+
+    
+    /*
     if(_betInfoView)
         _betInfoView.hidden = YES;
+     */
 }
 
 -(void)displayCurrentBetResult

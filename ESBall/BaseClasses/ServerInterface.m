@@ -349,8 +349,9 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
                     
 					if (len > 0)
                     {
-						
+                        
 						NSString *output = [[NSString alloc] initWithBytes:buffer length:len encoding:big5];
+                    
                         
 #ifdef OutputServerRespond
 
@@ -372,9 +373,7 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
                                 return;
                             }
                             
-                            /**
-                            Determine if data is complete or wait for data 
-                            **/
+                            /*
                             if(pendingDataStr)//if there is a pending data
                             {
                                 //append this part
@@ -399,11 +398,19 @@ static NSString *hostToCnnect = @"183.182.66.167";//167, 80, 239
                                     return;
                                 }
                             }
+                             */
                             
-                            [self processMessage:output];
-                            pendingDataStr = nil;//clear pending data
+                            //[self processMessage:output];
+                            //pendingDataStr = nil;//clear pending data
+                            
+                            if(appendableStr == nil)
+                                appendableStr = [[NSMutableString alloc] init];
+                            
+                            [appendableStr appendString:output];
 						}
 					}
+                    [self processMessage:appendableStr];
+                    appendableStr = nil;
 				}
 			}
 			break;
