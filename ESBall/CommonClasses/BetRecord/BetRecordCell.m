@@ -11,10 +11,7 @@
 @implementation BetRecordCell
 
 @synthesize roundSerialLabel = _roundSerialLabel;
-@synthesize bankerLabel = _bankerLabel;
-@synthesize playerLabel = _playerLabel;
-@synthesize totalBetLabel = _totalBetLabel;
-@synthesize totalPayoffLabel = _totalPayoffLabel;
+@synthesize subDetailLabel = _subDetailLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -27,7 +24,7 @@
 
 -(id)initWithReuseIdentifier:(NSString *)identifier
 {
-    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     if(self)
     {
         

@@ -12,9 +12,10 @@
 #import "FileFinder.h"
 #import "BetRecordDetailViewController.h"
 
-
+/*
 #define kNumberOfData 150
 #define kSectionOfData 1
+*/
 
 #pragma mark - Record data
 @interface RecordData : NSObject
@@ -89,6 +90,11 @@
     
     [self pullRecordData];
     
+    if([self presentEmptyModelAtBeginning])
+    {
+        [self showDetailRecordWithCID:@"" withGameType:@""];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,39 +104,44 @@
 }
 
 #pragma mark - public interface overridable
+-(BOOL)presentEmptyModelAtBeginning
+{
+    return NO;
+}
+
 -(NSUInteger)numberOfDataToPull
 {
-    return kNumberOfData;
+    return 0;
 }
 
 -(NSUInteger)sectionToPull
 {
-    return kSectionOfData;
+    return 0;
 }
 
 -(NSString *)cellBackgroundImageName
 {
-    return @"L_row_bet.png";
+    return @"";
 }
 
 -(NSString *)cellSelectedBackgroundImageName
 {
-    return @"L_row_bet2.png";
+    return @"";
 }
 
 -(CGFloat)tableViewHeaderHeight
 {
-    return 22.0f;
+    return 0.0f;
 }
 
 -(NSString *)tableViewHeaderBackgroundImageName
 {
-    return @"L_row_date.png";
+    return @"";
 }
 
 -(CGFloat)tableViewTitleXPosition
 {
-    return 14.0f;
+    return 0.0f;
 }
 
 -(UIColor *)tableViewTitleColor
@@ -141,13 +152,14 @@
 -(NSString *)cellIdentifier
 {
     //must match cell id in IB
-    return @"BetRecordCell";
+    return @"";
 }
 
 -(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType
 {
-    //this is default subclass need implement
+    //subclass need implement it's own  transition style and controller
     
+    /* example ipad
     //if there is one remove it
     for(id controller in self.childViewControllers)
     {
@@ -168,6 +180,7 @@
     controller.gameType = gameType;
     
     [controller addToConrtoller:self inFrame:_referenceView.frame];
+     */
 }
 
 #pragma mark - public interface
@@ -265,17 +278,22 @@
     
     RecordData *data =[records objectAtIndex:indexPath.row];
     
+    NSMutableString *subtitleStr = [[NSMutableString alloc] init];
+    
+    NSString *bankerStr = NSLocalizedString(@"庄:", @"庄:");
+    NSString *playerStr = NSLocalizedString(@"闲:", @"闲:");
+    NSString *totalBetStr = NSLocalizedString(@"总投注", @"总投注");
+    NSString *totalPayoffStr = NSLocalizedString(@"总派采", @"总派采");
+    
     //configure cell with data
     cell.roundSerialLabel.text = data.roundSerial;
     [cell.roundSerialLabel sizeToFit];
-    cell.bankerLabel.text = data.banker;
-    [cell.bankerLabel sizeToFit];
-    cell.playerLabel.text = data.player;
-    [cell.playerLabel sizeToFit];
-    cell.totalBetLabel.text = data.totalBet;
-    [cell.totalBetLabel sizeToFit];
-    cell.totalPayoffLabel.text = data.totalPayoff;
-    [cell.totalPayoffLabel sizeToFit];
+    
+    [subtitleStr appendFormat:@"%@%@ ", bankerStr, data.banker];
+    [subtitleStr appendFormat:@"%@%@ ", playerStr, data.player];
+    [subtitleStr appendFormat:@"%@%@ ", totalBetStr, data.totalBet];
+    [subtitleStr appendFormat:@"%@%@", totalPayoffStr, data.totalPayoff];
+    cell.subDetailLabel.text = subtitleStr;
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     

@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 nelson. All rights reserved.
 //
 
+//need to subclass
+
 #import <UIKit/UIKit.h>
 #import "BetRecordCell.h"
 
@@ -22,7 +24,7 @@
 
 @interface BetRecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate>{
     
-    NSMutableDictionary *recordDatas;
+    NSMutableDictionary *recordDatas;//info of all records
     NSURLConnection *urlConnection;
     NSMutableData *pendingData;
     
@@ -35,6 +37,8 @@
 @property (nonatomic, assign) NSUInteger gameType;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
+//need to implement subclass
+-(BOOL)presentEmptyModelAtBeginning;
 -(NSUInteger)numberOfDataToPull;
 -(NSUInteger)sectionToPull;
 -(NSString *)cellBackgroundImageName;
@@ -44,7 +48,7 @@
 -(CGFloat)tableViewTitleXPosition;
 -(UIColor *)tableViewTitleColor;
 -(NSString *)cellIdentifier;
--(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType;
+-(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType;//for transition
 
 -(void)pullRecordData;
 -(NSMutableDictionary *)convertDataWithString:(NSString *)dataStr;

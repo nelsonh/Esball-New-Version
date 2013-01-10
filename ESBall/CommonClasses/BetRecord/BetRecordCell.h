@@ -12,10 +12,7 @@
 @interface BetRecordCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *roundSerialLabel;
-@property (nonatomic, weak) IBOutlet UILabel *bankerLabel;
-@property (nonatomic, weak) IBOutlet UILabel *playerLabel;
-@property (nonatomic, weak) IBOutlet UILabel *totalBetLabel;
-@property (nonatomic, weak) IBOutlet UILabel *totalPayoffLabel;
+@property (nonatomic, weak) IBOutlet UILabel *subDetailLabel;
 
 -(id)initWithReuseIdentifier:(NSString *)identifier;
 

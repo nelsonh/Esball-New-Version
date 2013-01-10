@@ -576,6 +576,8 @@
 		5298C7CB169E4DE100A8C6DB /* BetRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7C4169E4DE100A8C6DB /* BetRecordViewController.m */; };
 		5298C7CC169E4DE100A8C6DB /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7C6169E4DE100A8C6DB /* HeaderView.m */; };
 		5298C7D0169E514B00A8C6DB /* BaccaratBetRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7CF169E514B00A8C6DB /* BaccaratBetRecordViewController.m */; };
+		5298C7DA169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7D9169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m */; };
+		5298C7DE169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7DD169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m */; };
 		5298D8661676D54D00C3F0B6 /* MarqueeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D8651676D54D00C3F0B6 /* MarqueeInfo.m */; };
 		5298D86E1677191C00C3F0B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D86D1677191C00C3F0B6 /* BaseViewController.m */; };
 		5298D8721677195C00C3F0B6 /* PadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D8711677195C00C3F0B6 /* PadViewController.m */; };
@@ -1270,6 +1272,10 @@
 		5298C7C6169E4DE100A8C6DB /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		5298C7CE169E514B00A8C6DB /* BaccaratBetRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaccaratBetRecordViewController.h; path = BaccaratBetRecord/BaccaratBetRecordViewController.h; sourceTree = "<group>"; };
 		5298C7CF169E514B00A8C6DB /* BaccaratBetRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaccaratBetRecordViewController.m; path = BaccaratBetRecord/BaccaratBetRecordViewController.m; sourceTree = "<group>"; };
+		5298C7D8169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaccaratBetRecordDetailViewController.h; path = BaccaratBetRecord/BaccaratBetRecordDetail/BaccaratBetRecordDetailViewController.h; sourceTree = "<group>"; };
+		5298C7D9169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaccaratBetRecordDetailViewController.m; path = BaccaratBetRecord/BaccaratBetRecordDetail/BaccaratBetRecordDetailViewController.m; sourceTree = "<group>"; };
+		5298C7DC169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonBaccaratBetRecordDetailViewController.h; path = BaccaratBetRecordDetail/CommonBaccaratBetRecordDetailViewController.h; sourceTree = "<group>"; };
+		5298C7DD169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonBaccaratBetRecordDetailViewController.m; path = BaccaratBetRecordDetail/CommonBaccaratBetRecordDetailViewController.m; sourceTree = "<group>"; };
 		5298D8641676D54D00C3F0B6 /* MarqueeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarqueeInfo.h; path = Data/MarqueeInfo.h; sourceTree = "<group>"; };
 		5298D8651676D54D00C3F0B6 /* MarqueeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarqueeInfo.m; path = Data/MarqueeInfo.m; sourceTree = "<group>"; };
 		5298D86C1677191C00C3F0B6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -2632,7 +2638,7 @@
 		52963A5A167821A00016B1CB /* BaccaratGameViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5298C7CD169E50DF00A8C6DB /* BaccaratBetRecrod */,
+				5298C7CD169E50DF00A8C6DB /* BaccaratBetRecord */,
 				5296BD49168BF1EC008FC969 /* PadBaccaratPokerView */,
 				5296BD41168BEF35008FC969 /* PadBaccaratRoadmapView */,
 				52963A66167821A00016B1CB /* Detail */,
@@ -2894,11 +2900,12 @@
 		5298C7B9169E4DE100A8C6DB /* BetRecord */ = {
 			isa = PBXGroup;
 			children = (
-				5298C7BA169E4DE100A8C6DB /* BetRecordCell.h */,
-				5298C7BB169E4DE100A8C6DB /* BetRecordCell.m */,
+				5298C7DB169EA30100A8C6DB /* BaccaratBetRecordDetail */,
 				5298C7BC169E4DE100A8C6DB /* BetRecordDetail */,
 				5298C7C3169E4DE100A8C6DB /* BetRecordViewController.h */,
 				5298C7C4169E4DE100A8C6DB /* BetRecordViewController.m */,
+				5298C7BA169E4DE100A8C6DB /* BetRecordCell.h */,
+				5298C7BB169E4DE100A8C6DB /* BetRecordCell.m */,
 				5298C7C5169E4DE100A8C6DB /* HeaderView.h */,
 				5298C7C6169E4DE100A8C6DB /* HeaderView.m */,
 			);
@@ -2919,13 +2926,32 @@
 			path = BetRecordDetail;
 			sourceTree = "<group>";
 		};
-		5298C7CD169E50DF00A8C6DB /* BaccaratBetRecrod */ = {
+		5298C7CD169E50DF00A8C6DB /* BaccaratBetRecord */ = {
 			isa = PBXGroup;
 			children = (
+				5298C7D7169E9CC500A8C6DB /* BaccaraBetRecordDetail */,
 				5298C7CE169E514B00A8C6DB /* BaccaratBetRecordViewController.h */,
 				5298C7CF169E514B00A8C6DB /* BaccaratBetRecordViewController.m */,
 			);
-			name = BaccaratBetRecrod;
+			name = BaccaratBetRecord;
+			sourceTree = "<group>";
+		};
+		5298C7D7169E9CC500A8C6DB /* BaccaraBetRecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5298C7D8169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.h */,
+				5298C7D9169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m */,
+			);
+			name = BaccaraBetRecordDetail;
+			sourceTree = "<group>";
+		};
+		5298C7DB169EA30100A8C6DB /* BaccaratBetRecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5298C7DC169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.h */,
+				5298C7DD169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m */,
+			);
+			name = BaccaratBetRecordDetail;
 			sourceTree = "<group>";
 		};
 		5298DC50168AFD0A00E3F165 /* CommonClasses */ = {
@@ -3692,6 +3718,8 @@
 				5298C7CB169E4DE100A8C6DB /* BetRecordViewController.m in Sources */,
 				5298C7CC169E4DE100A8C6DB /* HeaderView.m in Sources */,
 				5298C7D0169E514B00A8C6DB /* BaccaratBetRecordViewController.m in Sources */,
+				5298C7DA169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m in Sources */,
+				5298C7DE169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

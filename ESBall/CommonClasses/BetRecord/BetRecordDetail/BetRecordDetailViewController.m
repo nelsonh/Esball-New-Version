@@ -35,6 +35,10 @@
 
 -(void)dealloc
 {
+    
+    if(urlConnection)
+        [urlConnection cancel];
+    
     NSLog(@"BetRecordDetailView dellocate");
 }
 
@@ -50,6 +54,24 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - public interface overridable
+-(NSString *)cellIdentifier
+{
+    //must match id in IB
+    return @"";
+}
+
+-(NSString *)cellIdentifierForTotalBet
+{
+    //must match id in IB
+    return @"";
+}
+
+-(void)showPokerRecord
+{
+    //where you are going to present poker history record
 }
 
 #pragma mark - public interface
@@ -98,7 +120,7 @@
             break;
             
         default:
-            tableName = @"Unknow";
+            tableName = @"";
             break;
             
     }
@@ -206,11 +228,11 @@
             break;
             
         default:
-            return @"Unknow";
+            return @"";
             break;
     }
     
-    return @"Unknow";
+    return @"";
 }
 
 -(BetRecordDetailRowCell *)configureCell:(BetRecordDetailRowCell *)cell withIndexPath:(NSIndexPath *)indexPath
@@ -292,7 +314,7 @@
     {
         NSMutableArray *rowRecords = [detailRecord objectForKey:@"Records"];
         
-        return rowRecords.count;
+        return rowRecords.count+1;
     }
     
     return 0;
@@ -302,10 +324,12 @@
 {
     NSMutableArray *rowRecords = [detailRecord objectForKey:@"Records"];
     
+    NSLog(@"%i", indexPath.row);
+    
     //if it is last row
-    if((indexPath.row+1) == rowRecords.count)
+    if((indexPath.row+1) > rowRecords.count)
     {
-        NSString *cellIdentifier = @"TotalRowCell";
+        NSString *cellIdentifier = [self cellIdentifierForTotalBet];
         
         BetRecordDetailTotalRowCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         
@@ -318,7 +342,7 @@
     }
     else
     {
-        NSString *cellIdentifier = @"RowCell";
+        NSString *cellIdentifier = [self cellIdentifier];
         
         BetRecordDetailRowCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         
@@ -358,6 +382,7 @@
         detailRecord = [self convertDataWithJasonData:pendingData];
         
         [self processData:detailRecord];
+        [self showPokerRecord];
         
         pendingData = nil;
         
