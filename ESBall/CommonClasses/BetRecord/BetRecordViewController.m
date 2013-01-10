@@ -10,6 +10,7 @@
 #import "ServerInterface.h"
 #import "HeaderView.h"
 #import "FileFinder.h"
+#import "BetRecordDetailViewController.h"
 
 
 #define kNumberOfData 150
@@ -54,6 +55,7 @@
 @synthesize theDelegate = _theDelegate;
 @synthesize gameType = _gameType;
 @synthesize tableView = _tableView;
+@synthesize referenceView = _referenceView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -134,6 +136,38 @@
 -(UIColor *)tableViewTitleColor
 {
     return [UIColor darkGrayColor];
+}
+
+-(NSString *)cellIdentifier
+{
+    //must match cell id in IB
+    return @"BetRecordCell";
+}
+
+-(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType
+{
+    //this is default subclass need implement
+    
+    //if there is one remove it
+    for(id controller in self.childViewControllers)
+    {
+        if([controller isKindOfClass:[BetRecordDetailViewController class]])
+        {
+            BetRecordDetailViewController *detailController = controller;
+            
+            [detailController removeFromParentViewController];
+            
+            break;
+        }
+    }
+    
+    //add new one
+    BetRecordDetailViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BetRecordDetailViewController"];
+    
+    controller.cid = cid;
+    controller.gameType = gameType;
+    
+    [controller addToConrtoller:self inFrame:_referenceView.frame];
 }
 
 #pragma mark - public interface
@@ -243,8 +277,6 @@
     cell.totalPayoffLabel.text = data.totalPayoff;
     [cell.totalPayoffLabel sizeToFit];
     
-    cell.theDelegate = self;
-    
     FileFinder *fileFinder = [FileFinder fileFinder];
     
     UIImage *backgroundImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[self cellBackgroundImageName]]];
@@ -330,7 +362,7 @@
         return dataFailCell;
     }
     
-    static NSString *cellIdentifier = @"BetRecordCell";
+    NSString *cellIdentifier = [self cellIdentifier];
     
     BetRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -387,6 +419,15 @@
     
     cell.selectedBackgroundView = selectedBackgroundImageView;
     
+    //show detail record controller
+    NSArray *allKeys = [recordDatas allKeys];
+    allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];
+    NSString *key = [allKeys objectAtIndex:indexPath.section];
+    
+    NSMutableArray *array = [recordDatas objectForKey:key];
+    RecordData *data = [array objectAtIndex:indexPath.row];
+    
+    [self showDetailRecordWithCID:[data.cid copy] withGameType:[NSString stringWithFormat:@"%i", _gameType]];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -403,13 +444,6 @@
     
     BetRecordCell *cell = (BetRecordCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.selectedBackgroundView =nil;
-}
-
-
-#pragma mark - BetRecordCell delegate
--(void)BetRecordCellDidSelected:(BetRecordCell *)cell
-{
-    NSLog(@"cell selected");
 }
 
 #pragma mark - NSURLConnection delegate

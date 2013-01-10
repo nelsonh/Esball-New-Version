@@ -24,11 +24,28 @@
     return self;
 }
 
+-(id)initWithReuseIdentifier:(NSString *)identifier
+{
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    if(self)
+    {
+        
+    }
+    
+    return self;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)prepareForReuse
+{
+    //reset color
+    _totalPayoffLabel.textColor = [UIColor blackColor];
 }
 
 @end

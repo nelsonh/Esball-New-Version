@@ -60,6 +60,8 @@
     //CGRect newRect = CGRectMake(pos.x, pos.y, self.view.frame.size.width, self.view.frame.size.height);
     self.view.frame = newRect;
     
+    NSLog(@"%@", NSStringFromCGRect(self.view.frame));
+    
     if([_theDelegate respondsToSelector:@selector(SubDetailViewControllerDidAddToParentController:)])
     {
         [_theDelegate SubDetailViewControllerDidAddToParentController:self];

@@ -1,25 +1,18 @@
 //
-//  BetRecordDetailViewController.m
+//  BaccaratBetRecordViewController.m
 //  ESBall
 //
-//  Created by Nelson on 1/9/13.
+//  Created by Nelson on 1/10/13.
 //  Copyright (c) 2013 nelson. All rights reserved.
 //
 
-#import "BetRecordDetailViewController.h"
+#import "BaccaratBetRecordViewController.h"
 
-@interface BetRecordDetailViewController ()
+@interface BaccaratBetRecordViewController ()
 
 @end
 
-@implementation BetRecordDetailViewController
-
-@synthesize cid = _cid;
-@synthesize gameType = _gameType;
-@synthesize roundNumberLabel = _roundNumberLabel;
-@synthesize tableNumberLabel = _tableNumberLabel;
-@synthesize dateTimeLabel = _dateTimeLabel;
-@synthesize commentLabel = _commentLabel;
+@implementation BaccaratBetRecordViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

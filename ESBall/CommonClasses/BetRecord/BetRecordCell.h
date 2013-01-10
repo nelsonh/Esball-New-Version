@@ -8,19 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class BetRecordCell;
-
-@protocol BetRecordCellDelegate <NSObject>
-
-@optional
-
--(void)BetRecordCellDidSelected:(BetRecordCell *)cell;
-
-@end
 
 @interface BetRecordCell : UITableViewCell
-
-@property (nonatomic, weak) id<BetRecordCellDelegate> theDelegate;
 
 @property (nonatomic, weak) IBOutlet UILabel *roundSerialLabel;
 @property (nonatomic, weak) IBOutlet UILabel *bankerLabel;

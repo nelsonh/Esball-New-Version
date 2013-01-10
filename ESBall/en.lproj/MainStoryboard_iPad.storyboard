@@ -536,32 +536,32 @@
             </objects>
             <point key="canvasLocation" x="3888" y="1528"/>
         </scene>
-        <!--Bet Record View Controller-->
+        <!--Baccarat Bet Record View Controller-->
         <scene sceneID="7GX-C5-hLK">
             <objects>
-                <viewController storyboardIdentifier="BetRecordViewController" autoresizesArchivedViewToFullSize="NO" id="Tym-82-0vM" customClass="BetRecordViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaccaratBetRecordViewController" autoresizesArchivedViewToFullSize="NO" id="Tym-82-0vM" customClass="BaccaratBetRecordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="96I-sX-sBg">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="645"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Record_bg.png" id="8pP-VK-kF8">
-                                <rect key="frame" x="0.0" y="47" width="394" height="598"/>
+                                <rect key="frame" x="0.0" y="47" width="332" height="598"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="L_row_top.png" id="a4c-IK-v4M">
-                                <rect key="frame" x="0.0" y="0.0" width="394" height="47"/>
+                                <rect key="frame" x="0.0" y="0.0" width="332" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="59" sectionHeaderHeight="10" sectionFooterHeight="10" id="Ir5-kN-5Eq">
-                                <rect key="frame" x="0.0" y="47" width="394" height="598"/>
+                                <rect key="frame" x="0.0" y="47" width="332" height="598"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BetRecordCell" rowHeight="59" id="mrb-2v-z6J" customClass="BetRecordCell">
-                                        <rect key="frame" x="0.0" y="34" width="394" height="61"/>
+                                        <rect key="frame" x="0.0" y="34" width="332" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="374" height="58"/>
+                                            <rect key="frame" x="10" y="1" width="312" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EQF-5C-UH3">
@@ -572,56 +572,56 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="庄:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="csV-L7-lqN">
-                                                    <rect key="frame" x="20" y="29" width="27" height="21"/>
+                                                    <rect key="frame" x="5" y="29" width="27" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WeO-ui-Nib">
-                                                    <rect key="frame" x="55" y="29" width="28" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WeO-ui-Nib">
+                                                    <rect key="frame" x="33" y="29" width="22" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="闲:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P6S-hR-dJ1">
-                                                    <rect key="frame" x="91" y="29" width="27" height="21"/>
+                                                    <rect key="frame" x="54" y="29" width="27" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0VH-cY-2xM">
-                                                    <rect key="frame" x="126" y="29" width="28" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0VH-cY-2xM">
+                                                    <rect key="frame" x="83" y="29" width="23" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="总投注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bps-2k-r3E">
-                                                    <rect key="frame" x="162" y="29" width="46" height="21"/>
+                                                    <rect key="frame" x="114" y="29" width="46" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3u9-2O-Ldy">
-                                                    <rect key="frame" x="216" y="29" width="28" height="21"/>
+                                                    <rect key="frame" x="168" y="29" width="28" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="总派采" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O5e-cE-sHd">
-                                                    <rect key="frame" x="249" y="29" width="46" height="21"/>
+                                                    <rect key="frame" x="194" y="29" width="46" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vzq-2w-dbc">
-                                                    <rect key="frame" x="303" y="29" width="28" height="21"/>
+                                                    <rect key="frame" x="248" y="29" width="28" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -644,6 +644,11 @@
                                     <outlet property="delegate" destination="Tym-82-0vM" id="PpE-03-HUW"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" id="Itl-p7-Ybu">
+                                <rect key="frame" x="332" y="0.0" width="692" height="645"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -652,6 +657,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="referenceView" destination="Itl-p7-Ybu" id="jdn-mv-zhf"/>
                         <outlet property="tableView" destination="Ir5-kN-5Eq" id="kt6-Hx-Awz"/>
                     </connections>
                 </viewController>
@@ -747,16 +753,47 @@
             <point key="canvasLocation" x="1276" y="-1159"/>
         </scene>
         <!--Bet Record Detail View Controller-->
+        <scene sceneID="0kk-jD-mTF">
+            <objects>
+                <viewController storyboardIdentifier="BetRecordDetailViewController1" autoresizesArchivedViewToFullSize="NO" id="vAw-yr-P35" customClass="BetRecordDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z8b-af-TXs">
+                        <rect key="frame" x="0.0" y="0.0" width="630" height="645"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="R_row_top.png" id="gY9-4W-Itf">
+                                <rect key="frame" x="0.0" y="0.0" width="630" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Cn-lx-PO1">
+                                <rect key="frame" x="517" y="218" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95966372280000001" green="0.87951099710000002" blue="0.057041958640000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOO-gK-P6S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-920" y="-3336"/>
+        </scene>
+        <!--Bet Record Detail View Controller-->
         <scene sceneID="rcV-Mg-p7a">
             <objects>
-                <viewController storyboardIdentifier="BetRecordDetailViewController" id="WvB-1C-zYM" customClass="BetRecordDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BetRecordDetailViewController" autoresizesArchivedViewToFullSize="NO" id="WvB-1C-zYM" customClass="BetRecordDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZj-7a-6JF">
                         <rect key="frame" x="0.0" y="0.0" width="630" height="645"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="R_row_top.png" id="Kv3-oV-2ZR">
                                 <rect key="frame" x="0.0" y="0.0" width="630" height="244"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="注单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qTz-8L-BYs">
                                 <rect key="frame" x="116" y="47" width="42" height="21"/>
@@ -766,7 +803,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="結果" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PdC-DX-IuK">
-                                <rect key="frame" x="456" y="47" width="34" height="21"/>
+                                <rect key="frame" x="441" y="47" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -830,32 +867,32 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Record_bg2.png" id="JKO-6S-py4">
                                 <rect key="frame" x="0.0" y="243" width="630" height="402"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="下注类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D0g-xy-4JQ">
                                 <rect key="frame" x="47" y="214" width="180" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="总投注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DpZ-uu-u0D">
                                 <rect key="frame" x="281" y="212" width="167" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="总派采" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gkZ-xU-i7S">
                                 <rect key="frame" x="462" y="212" width="162" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="38" sectionHeaderHeight="22" sectionFooterHeight="22" id="tQy-Rk-6TK">
                                 <rect key="frame" x="0.0" y="243" width="630" height="402"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RowCell" rowHeight="38" id="4pI-1J-Wzc" customClass="BetRecordDetailRowCell">
@@ -900,6 +937,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="characterTypeLabel" destination="hm7-ei-nqZ" id="4Wo-5Y-u5o"/>
+                                            <outlet property="proportionLabel" destination="AEi-fL-URl" id="ab4-qW-rY4"/>
+                                            <outlet property="totalBetLabel" destination="33c-IA-wo5" id="AUR-Wl-rVH"/>
+                                            <outlet property="totalPayoffLabel" destination="FCJ-Y3-uWX" id="7AW-lP-e08"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TotalRowCell" rowHeight="38" id="L55-c8-9tT" customClass="BetRecordDetailTotalRowCell">
                                         <rect key="frame" x="0.0" y="60" width="630" height="38"/>
@@ -936,8 +979,16 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="totalPayoffLabel" destination="xCi-2U-CbN" id="pI6-8Z-iGU"/>
+                                            <outlet property="totalbetLabel" destination="s3D-vl-Wee" id="xaF-Rd-hOE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WvB-1C-zYM" id="ew5-P0-36F"/>
+                                    <outlet property="delegate" destination="WvB-1C-zYM" id="fG5-Yb-rr7"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -951,11 +1002,12 @@
                         <outlet property="dateTimeLabel" destination="5Fa-Fd-Izo" id="Wlh-MI-4P3"/>
                         <outlet property="roundNumberLabel" destination="G5V-W0-GLG" id="a91-uw-jiR"/>
                         <outlet property="tableNumberLabel" destination="MYz-LJ-AUx" id="wK0-iK-jMA"/>
+                        <outlet property="tableView" destination="tQy-Rk-6TK" id="xjx-DY-dRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Muq-RR-OGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-156" y="-3135"/>
+            <point key="canvasLocation" x="208" y="-2989"/>
         </scene>
         <!--Sicbo Game View Controller-->
         <scene sceneID="RG1-mY-rAo">
@@ -3723,6 +3775,9 @@
         <image name="top2_sic.png" width="2048" height="124"/>
     </resources>
     <classes>
+        <class className="BaccaratBetRecordViewController" superclassName="BetRecordViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaccaratBetRecordViewController.h"/>
+        </class>
         <class className="BaseGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseGameViewController.h"/>
             <relationships>
@@ -3783,8 +3838,8 @@
         <class className="BetRecordDetailTotalRowCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BetRecordDetailTotalRowCell.h"/>
             <relationships>
-                <relationship kind="outlet" name="totalPayoff" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalbet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalPayoffLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalbetLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="BetRecordDetailViewController" superclassName="UIViewController">
@@ -3794,11 +3849,13 @@
                 <relationship kind="outlet" name="dateTimeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="roundNumberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="BetRecordViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BetRecordViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="referenceView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>

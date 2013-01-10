@@ -1389,6 +1389,7 @@
     }
     else if ([self.updateInfo.status isEqualToString:GameStatusBetting])
     {
+        //if this is first time enter betting status
         if(isDisplayPlayerBetResult && gameStatus == GameStatusWaiting)
         {
             isDisplayPlayerBetResult = NO;

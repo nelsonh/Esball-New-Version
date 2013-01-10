@@ -20,7 +20,7 @@
 
 @end
 
-@interface BetRecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, BetRecordCellDelegate, NSURLConnectionDelegate>{
+@interface BetRecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate>{
     
     NSMutableDictionary *recordDatas;
     NSURLConnection *urlConnection;
@@ -28,6 +28,8 @@
     
     BOOL isPullingDataFail;
 }
+
+@property (nonatomic, weak) IBOutlet UIView *referenceView;
 
 @property (nonatomic, weak) id<BetRecordViewControllerDelegate> theDelegate;
 @property (nonatomic, assign) NSUInteger gameType;
@@ -41,6 +43,8 @@
 -(NSString *)tableViewHeaderBackgroundImageName;
 -(CGFloat)tableViewTitleXPosition;
 -(UIColor *)tableViewTitleColor;
+-(NSString *)cellIdentifier;
+-(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType;
 
 -(void)pullRecordData;
 -(NSMutableDictionary *)convertDataWithString:(NSString *)dataStr;

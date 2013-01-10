@@ -10,8 +10,6 @@
 
 @implementation BetRecordCell
 
-@synthesize theDelegate = _theDelegate;
-
 @synthesize roundSerialLabel = _roundSerialLabel;
 @synthesize bankerLabel = _bankerLabel;
 @synthesize playerLabel = _playerLabel;
@@ -40,21 +38,11 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    //prevent call twice
-    if(self.selected == selected)
-        return;
     
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
     
-    if(selected)
-    {
-        if([_theDelegate respondsToSelector:@selector(BetRecordCellDidSelected:)])
-        {
-            [_theDelegate BetRecordCellDidSelected:self];
-        }
-    }
 }
 
 @end

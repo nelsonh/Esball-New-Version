@@ -98,11 +98,11 @@
 {
     [super showRecord];
     
-    BetRecordViewController *betRecordController = nil;
+    BaccaratBetRecordViewController *betRecordController = nil;
     
     for(id controller in self.childViewControllers)
     {
-        if([controller isKindOfClass:[BetRecordViewController class]])
+        if([controller isKindOfClass:[BaccaratBetRecordViewController class]])
         {
             betRecordController = controller;
             
@@ -120,7 +120,7 @@
     {
         
         //add
-        betRecordController = [self.storyboard instantiateViewControllerWithIdentifier:@"BetRecordViewController"];
+        betRecordController = [self.storyboard instantiateViewControllerWithIdentifier:@"BaccaratBetRecordViewController"];
         
         betRecordController.theDelegate = self;
         betRecordController.gameType = self.gameType;

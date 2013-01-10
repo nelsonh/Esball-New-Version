@@ -10,8 +10,8 @@
 
 @implementation BetRecordDetailTotalRowCell
 
-@synthesize totalbet = _totalbet;
-@synthesize totalPayoff = _totalPayoff;
+@synthesize totalbetLabel = _totalbetLabel;
+@synthesize totalPayoffLabel = _totalPayoffLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -22,11 +22,28 @@
     return self;
 }
 
+-(id)initWithReuseIdentifier:(NSString *)identifier
+{
+    self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    if(self)
+    {
+        
+    }
+    
+    return self;
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+-(void)prepareForReuse
+{
+    //reset color
+    _totalPayoffLabel.textColor = [UIColor blackColor];
 }
 
 @end

@@ -15,4 +15,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *totalBetLabel;
 @property (nonatomic, weak) IBOutlet UILabel *totalPayoffLabel;
 
+-(id)initWithReuseIdentifier:(NSString *)identifier;
+
 @end

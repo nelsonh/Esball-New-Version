@@ -10,7 +10,9 @@
 
 @interface BetRecordDetailTotalRowCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *totalbet;
-@property (nonatomic, weak) IBOutlet UILabel *totalPayoff;
+@property (nonatomic, weak) IBOutlet UILabel *totalbetLabel;
+@property (nonatomic, weak) IBOutlet UILabel *totalPayoffLabel;
+
+-(id)initWithReuseIdentifier:(NSString *)identifier;
 
 @end
