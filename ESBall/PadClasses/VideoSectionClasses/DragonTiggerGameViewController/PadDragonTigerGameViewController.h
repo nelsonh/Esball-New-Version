@@ -9,9 +9,9 @@
 //subclass of BaccaratGameViewController
 
 #import "CommonDragonTigerGameViewController.h"
+#import "DragonTigerBetRecordViewController.h"
 
-
-@interface PadDragonTigerGameViewController : CommonDragonTigerGameViewController{
+@interface PadDragonTigerGameViewController : CommonDragonTigerGameViewController<BetRecordViewControllerDelegate>{
 
 }
 

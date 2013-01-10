@@ -578,6 +578,9 @@
 		5298C7D0169E514B00A8C6DB /* BaccaratBetRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7CF169E514B00A8C6DB /* BaccaratBetRecordViewController.m */; };
 		5298C7DA169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7D9169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m */; };
 		5298C7DE169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7DD169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m */; };
+		5298C7E2169EC33B00A8C6DB /* DragonTigerBetRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7E1169EC33B00A8C6DB /* DragonTigerBetRecordViewController.m */; };
+		5298C7E7169EC65500A8C6DB /* CommonDragonTigerBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7E6169EC65500A8C6DB /* CommonDragonTigerBetRecordDetailViewController.m */; };
+		5298C7EB169EC83800A8C6DB /* DragonTigerBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7EA169EC83800A8C6DB /* DragonTigerBetRecordDetailViewController.m */; };
 		5298D8661676D54D00C3F0B6 /* MarqueeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D8651676D54D00C3F0B6 /* MarqueeInfo.m */; };
 		5298D86E1677191C00C3F0B6 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D86D1677191C00C3F0B6 /* BaseViewController.m */; };
 		5298D8721677195C00C3F0B6 /* PadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298D8711677195C00C3F0B6 /* PadViewController.m */; };
@@ -1276,6 +1279,12 @@
 		5298C7D9169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaccaratBetRecordDetailViewController.m; path = BaccaratBetRecord/BaccaratBetRecordDetail/BaccaratBetRecordDetailViewController.m; sourceTree = "<group>"; };
 		5298C7DC169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonBaccaratBetRecordDetailViewController.h; path = BaccaratBetRecordDetail/CommonBaccaratBetRecordDetailViewController.h; sourceTree = "<group>"; };
 		5298C7DD169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonBaccaratBetRecordDetailViewController.m; path = BaccaratBetRecordDetail/CommonBaccaratBetRecordDetailViewController.m; sourceTree = "<group>"; };
+		5298C7E0169EC33B00A8C6DB /* DragonTigerBetRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragonTigerBetRecordViewController.h; path = ESBall/PadClasses/VideoSectionClasses/DragonTiggerGameViewController/DragonTigerBetRecord/DragonTigerBetRecordViewController.h; sourceTree = SOURCE_ROOT; };
+		5298C7E1169EC33B00A8C6DB /* DragonTigerBetRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragonTigerBetRecordViewController.m; path = ESBall/PadClasses/VideoSectionClasses/DragonTiggerGameViewController/DragonTigerBetRecord/DragonTigerBetRecordViewController.m; sourceTree = SOURCE_ROOT; };
+		5298C7E5169EC65500A8C6DB /* CommonDragonTigerBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDragonTigerBetRecordDetailViewController.h; path = DragonTigerBetRecordDetail/CommonDragonTigerBetRecordDetailViewController.h; sourceTree = "<group>"; };
+		5298C7E6169EC65500A8C6DB /* CommonDragonTigerBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonDragonTigerBetRecordDetailViewController.m; path = DragonTigerBetRecordDetail/CommonDragonTigerBetRecordDetailViewController.m; sourceTree = "<group>"; };
+		5298C7E9169EC83800A8C6DB /* DragonTigerBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragonTigerBetRecordDetailViewController.h; path = ESBall/PadClasses/VideoSectionClasses/DragonTiggerGameViewController/DragonTigerBetRecord/DragonTigerBetRecordDetail/DragonTigerBetRecordDetailViewController.h; sourceTree = SOURCE_ROOT; };
+		5298C7EA169EC83800A8C6DB /* DragonTigerBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragonTigerBetRecordDetailViewController.m; path = ESBall/PadClasses/VideoSectionClasses/DragonTiggerGameViewController/DragonTigerBetRecord/DragonTigerBetRecordDetail/DragonTigerBetRecordDetailViewController.m; sourceTree = SOURCE_ROOT; };
 		5298D8641676D54D00C3F0B6 /* MarqueeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarqueeInfo.h; path = Data/MarqueeInfo.h; sourceTree = "<group>"; };
 		5298D8651676D54D00C3F0B6 /* MarqueeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarqueeInfo.m; path = Data/MarqueeInfo.m; sourceTree = "<group>"; };
 		5298D86C1677191C00C3F0B6 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -2626,6 +2635,7 @@
 		5293517D16801E7D00EE8317 /* DragonTiggerGameViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5298C7DF169EC2C900A8C6DB /* DragonTigerBetRecord */,
 				5296BD4D168BF315008FC969 /* PadDragonTigerPokerView */,
 				5296BD45168BF04F008FC969 /* PadDragonTigerRoadmapView */,
 				524529301682EC9D00486C6E /* Detail */,
@@ -2900,6 +2910,7 @@
 		5298C7B9169E4DE100A8C6DB /* BetRecord */ = {
 			isa = PBXGroup;
 			children = (
+				5298C7E4169EC60E00A8C6DB /* DragonTigerBetRecordDetail */,
 				5298C7DB169EA30100A8C6DB /* BaccaratBetRecordDetail */,
 				5298C7BC169E4DE100A8C6DB /* BetRecordDetail */,
 				5298C7C3169E4DE100A8C6DB /* BetRecordViewController.h */,
@@ -2952,6 +2963,34 @@
 				5298C7DD169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m */,
 			);
 			name = BaccaratBetRecordDetail;
+			sourceTree = "<group>";
+		};
+		5298C7DF169EC2C900A8C6DB /* DragonTigerBetRecord */ = {
+			isa = PBXGroup;
+			children = (
+				5298C7E3169EC5DF00A8C6DB /* DragonTigerBetRecordDetail */,
+				5298C7E0169EC33B00A8C6DB /* DragonTigerBetRecordViewController.h */,
+				5298C7E1169EC33B00A8C6DB /* DragonTigerBetRecordViewController.m */,
+			);
+			name = DragonTigerBetRecord;
+			sourceTree = "<group>";
+		};
+		5298C7E3169EC5DF00A8C6DB /* DragonTigerBetRecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5298C7E9169EC83800A8C6DB /* DragonTigerBetRecordDetailViewController.h */,
+				5298C7EA169EC83800A8C6DB /* DragonTigerBetRecordDetailViewController.m */,
+			);
+			name = DragonTigerBetRecordDetail;
+			sourceTree = "<group>";
+		};
+		5298C7E4169EC60E00A8C6DB /* DragonTigerBetRecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5298C7E5169EC65500A8C6DB /* CommonDragonTigerBetRecordDetailViewController.h */,
+				5298C7E6169EC65500A8C6DB /* CommonDragonTigerBetRecordDetailViewController.m */,
+			);
+			name = DragonTigerBetRecordDetail;
 			sourceTree = "<group>";
 		};
 		5298DC50168AFD0A00E3F165 /* CommonClasses */ = {
@@ -3720,6 +3759,9 @@
 				5298C7D0169E514B00A8C6DB /* BaccaratBetRecordViewController.m in Sources */,
 				5298C7DA169E9D2E00A8C6DB /* BaccaratBetRecordDetailViewController.m in Sources */,
 				5298C7DE169EA37600A8C6DB /* CommonBaccaratBetRecordDetailViewController.m in Sources */,
+				5298C7E2169EC33B00A8C6DB /* DragonTigerBetRecordViewController.m in Sources */,
+				5298C7E7169EC65500A8C6DB /* CommonDragonTigerBetRecordDetailViewController.m in Sources */,
+				5298C7EB169EC83800A8C6DB /* DragonTigerBetRecordDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
