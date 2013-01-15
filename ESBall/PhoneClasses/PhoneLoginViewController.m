@@ -78,14 +78,26 @@
     NSLog(@"did connect to host:%@ on Port:%u", hostname, port);
 }
 
--(void)ServerInterface:(ServerInterface *)interFace didLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+#pragma mark - override method
+-(void)reserveSpotSuccess:(NSNotification *)notification
 {
-    [super ServerInterface:interFace didLoginWithUsername:username andPassword:password];
+    [super reserveSpotSuccess:notification];
     
+    //inform delegate
     if([_theDelegate respondsToSelector:@selector(PadLoginViewControllerDidLogin:)])
     {
         [_theDelegate PadLoginViewControllerDidLogin:self];
     }
+}
+
+-(void)ServerInterface:(ServerInterface *)interFace didLoginWithUsername:(NSString *)username andPassword:(NSString *)password
+{
+    [super ServerInterface:interFace didLoginWithUsername:username andPassword:password];
+    
+    /*if([_theDelegate respondsToSelector:@selector(PadLoginViewControllerDidLogin:)])
+    {
+        [_theDelegate PadLoginViewControllerDidLogin:self];
+    }*/
     /*
      //go to main view
      PadLoginViewController *mainView = [self.storyboard instantiateViewControllerWithIdentifier:@"PadMainViewController"];

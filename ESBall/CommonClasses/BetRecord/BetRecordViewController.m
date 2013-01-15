@@ -17,6 +17,8 @@
 #define kSectionOfData 1
 */
 
+
+//Record data class
 #pragma mark - Record data
 @interface RecordData : NSObject
 
@@ -88,8 +90,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //pull data
     [self pullRecordData];
     
+    //see if we need to present an empty model of record detail view
+    //ipad yes iphone no
     if([self presentEmptyModelAtBeginning])
     {
         [self showDetailRecordWithCID:@"" withGameType:@""];
@@ -186,9 +191,12 @@
 #pragma mark - public interface
 -(void)pullRecordData
 {
+    //reset mark for download data fail
     isPullingDataFail = NO;
     
     ServerInterface *theInterface = [ServerInterface serverInterface];
+    
+    /*start to download info of record we needed async*/
     
     NSString *addressToPull = [NSString stringWithFormat:@"https://bm.esb886.com/app/api/LiveDealerAPI.php?type=getBetRecord&sid=%@&GameType=%i&Rows=%i&Page=%i&Type=I&Gamekind=3&Second=open", theInterface.theSID, _gameType, [self numberOfDataToPull], [self sectionToPull]];
     
@@ -202,6 +210,7 @@
 
 -(NSMutableDictionary *)convertDataWithString:(NSString *)dataStr
 {
+    /*convert data we just downloaded into a data structure as a dictionary*/
     NSMutableArray *splitedComponents = (NSMutableArray *)[dataStr componentsSeparatedByString:@"CID"];
     
     //trim out first & last we don't needed
@@ -210,6 +219,7 @@
     
     NSLog(@"converted data:%@", splitedComponents);
     
+    //init a dictionary
     NSMutableDictionary *dataCategoryDir = [[NSMutableDictionary alloc] init];
     
     for(NSString *row in splitedComponents)
@@ -219,6 +229,7 @@
         //create new record data
         RecordData *newRecordData = [[RecordData alloc] init];
         
+        /**extract data**/
         newRecordData.cid = [[splitedSubComponents objectAtIndex:0] copy];
         newRecordData.roundSerial = [[splitedSubComponents objectAtIndex:1] copy];
         
@@ -278,6 +289,7 @@
     
     RecordData *data =[records objectAtIndex:indexPath.row];
     
+    //subtitle string at bottom of cell
     NSMutableString *subtitleStr = [[NSMutableString alloc] init];
     
     NSString *bankerStr = NSLocalizedString(@"庄:", @"庄:");
@@ -297,6 +309,7 @@
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     
+    //cell's background image
     UIImage *backgroundImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[self cellBackgroundImageName]]];
     
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
@@ -331,10 +344,10 @@
     }
     else if(isPullingDataFail)
     {
-        return 1;//data fail cell
+        return 1;//pull data fail  only present fail cell
     }
     
-    return 1;//loading cell //if record data not ready
+    return 1;//loading cell //if record data not ready loading cell
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -353,15 +366,15 @@
     }
     else if(isPullingDataFail)
     {
-        return 1;//data fail cell
+        return 1;//pull data fail  only present fail cell
     }
     
-    return 1;//loading cell //if record data not ready
+    return 1;//loading cell //if record data not ready loading cell
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(!recordDatas)//if record data not ready
+    if(!recordDatas)//if record data not ready only loading cell
     {
         UITableViewCell *loadingCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LoadingCell"];
         loadingCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -370,7 +383,7 @@
         
         return loadingCell;
     }
-    else if(isPullingDataFail)
+    else if(isPullingDataFail)// if data download fail only fail cell
     {
         UITableViewCell *dataFailCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"DataFailCell"];
         dataFailCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -396,16 +409,18 @@
 #pragma mark - UITableView delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return [self tableViewHeaderHeight];
+    return [self tableViewHeaderHeight];//table header height
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    //don't give header if there is no record data or pull data fail
     if(!recordDatas || isPullingDataFail)
         return nil;
     
+    //sort date by ascending order date is key in dictionary
     NSArray *allKeys = [recordDatas allKeys];
-    allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];
+    allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];//sort as ascending order
     NSString *categoryKey = [allKeys objectAtIndex:section];
     
     //create header
@@ -420,13 +435,14 @@
     if(!recordDatas)//if record data not ready
         return;
     
-    if(isPullingDataFail)
+    if(isPullingDataFail)//pull data fail and tap cell
     {
         [self pullRecordData];
     }
     
     FileFinder *fileFinder = [FileFinder fileFinder];
-
+    
+    /**change background view**/
     BetRecordCell *cell = (BetRecordCell *)[tableView cellForRowAtIndexPath:indexPath];
     
     UIImage *selectedBackgroundImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[self cellSelectedBackgroundImageName]]];
@@ -434,10 +450,10 @@
     UIImageView *selectedBackgroundImageView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
     selectedBackgroundImageView.image = selectedBackgroundImage;
     
-    
     cell.selectedBackgroundView = selectedBackgroundImageView;
     
-    //show detail record controller
+    
+    /**show detail record controller**/
     NSArray *allKeys = [recordDatas allKeys];
     allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];
     NSString *key = [allKeys objectAtIndex:indexPath.section];
@@ -457,7 +473,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
+    /**deselect cell**/
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     BetRecordCell *cell = (BetRecordCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -467,11 +484,13 @@
 #pragma mark - NSURLConnection delegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    //init appendable data
     pendingData = [[NSMutableData alloc] init];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    //append data
     [pendingData appendData:data];
 }
 
@@ -480,14 +499,18 @@
     [connection cancel];
     urlConnection = nil;
     
+    //data is actually a string
     NSString *dataStr = [[NSString alloc] initWithData:pendingData encoding:NSUTF8StringEncoding];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
+        //convert data 
         recordDatas = [self convertDataWithString:dataStr];
         
+        //tell table to reload
         [_tableView reloadData];
         
+        //clear appendable data
         pendingData = nil;
         
     });
@@ -499,6 +522,7 @@
     pendingData = nil;
     recordDatas = nil;
     
+    //mark fail as yes
     isPullingDataFail = YES;
 }
 

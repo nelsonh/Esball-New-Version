@@ -38,6 +38,9 @@
 {
     if(selectedChip)
         selectedChip = nil;
+    
+    _updateInfo = nil;
+    _userInfo = nil;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder

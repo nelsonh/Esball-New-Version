@@ -21,7 +21,7 @@
 //uncomment to debug data that server interface sent to server
 //#define ServerClientSentDataDebug
 //uncomment to output respond string from server to console
-//#define OutputServerRespond
+#define OutputServerRespond
 //uncomment to use GCD parser xml
 #define XMLParserGCD
 //uncomment to display xml result

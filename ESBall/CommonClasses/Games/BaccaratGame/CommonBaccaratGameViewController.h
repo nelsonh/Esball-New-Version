@@ -14,6 +14,7 @@
 #import "ImagePull.h"
 #import "GameDetailViewController.h"
 #import "RoadmapView.h"
+#import "PromptMessageView.h"
 
 #define kDetailViewY 60 //hardcode value
 
@@ -47,6 +48,7 @@
 @property (nonatomic, weak) IBOutlet PokerView *pokerView;
 @property (nonatomic, weak) IBOutlet BetView *betAreaView;
 @property (nonatomic, weak) IBOutlet RoadmapView *roadmapView;
+@property (nonatomic, weak) IBOutlet PromptMessageView *promptMsgView;
 
 //subclass can override these method
 -(void)PostBeginSetup;
@@ -71,6 +73,7 @@
 -(NSString *)generateBetInfoMessageWithInfos:(NSMutableArray *)infos;
 -(NSUInteger)calculateCardPointForBanker:(NSArray *)cards;
 -(NSUInteger)calculateCardPointForPlayer:(NSArray *)cards;
+-(void)updatePromptMsgWithUpdateInfo:(UpdateInfo *)info;
 
 //must override and implement 
 -(NSString *)videoImageIPAddressForTableNumber:(NSUInteger)tableNumber;//ip for video image

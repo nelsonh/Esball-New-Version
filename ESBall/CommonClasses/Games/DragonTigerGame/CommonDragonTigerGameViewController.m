@@ -495,6 +495,8 @@
     
     //update any necessary views
     [_dtBetView updateView];
+    
+    [self updatePromptMsgWithUpdateInfo:info];
 }
 
 //calculate total bet

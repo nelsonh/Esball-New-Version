@@ -49,7 +49,7 @@
 
 -(NSString *)roadmapBaseImageName
 {
-    return @"Route_bg2@2x.png";
+    return @"Route_bg2s.png";
 }
 
 -(NSString *)playerImageName

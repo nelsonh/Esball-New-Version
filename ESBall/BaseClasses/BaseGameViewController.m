@@ -68,6 +68,9 @@
     isFirstTime = YES;
     
     loginGameTypeCommandSent = NO;
+    
+    isNoneBet5RoundAlertShowed = NO;
+    isNoneBet10RoundAlertShowed = NO;
 
 }
 
@@ -234,6 +237,7 @@
 
 -(void)handleUpdateInfo:(NSNotification*)notification
 {
+    UpdateInfo *info = notification.object;
     
     if(isFirstTime)
     {
@@ -243,6 +247,38 @@
         }
         
         isFirstTime = NO;
+    }
+    
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
+    {
+        noneBetRoundCount++;
+    }
+    
+    lastGameStatus = [info.status copy];
+    
+    if(noneBetRoundCount == 6 && isNoneBet5RoundAlertShowed == NO)
+    {
+        NSString *msg = NSLocalizedString(@"您已五局未下注将於十局返回登入画面", @"您已五局未下注将於十局返回登入画面");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        
+        [alert show];
+        
+        isNoneBet5RoundAlertShowed = YES;
+    }
+    else if (noneBetRoundCount == 11 && isNoneBet10RoundAlertShowed == NO)
+    {
+        NSString *msg = NSLocalizedString(@"您已十局未下注，即将回登入画面", @"您已十局未下注，即将回登入画面");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        
+        [alert show];
+        
+        isNoneBet10RoundAlertShowed = YES;
+    }
+    else if (noneBetRoundCount == 12)
+    {
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        
+        [theInterface logout];
     }
 }
 

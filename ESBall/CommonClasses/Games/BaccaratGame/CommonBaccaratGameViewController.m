@@ -36,6 +36,8 @@
 @synthesize roadmapView = _roadmapView;
 @synthesize betAreaView = _betAreaView;
 @synthesize backgroundImageView = _backgroundImageView;
+@synthesize promptMsgView = _promptMsgView;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -513,6 +515,33 @@
     return response;
 }
 
+-(void)updatePromptMsgWithUpdateInfo:(UpdateInfo *)info
+{
+    if(info.payoff != 0)
+    {
+        _promptMsgView.hidden = NO;
+        
+        NSString *msg;
+        
+        if(info.payoff > 0)
+        {
+            msg = [NSString stringWithFormat:NSLocalizedString(@"您赢了: %.2f", @"您赢了: %.2f"), info.payoff];
+            [_promptMsgView updateWithMessage:msg];
+        }
+        else if(info.payoff < 0)
+        {
+            msg = [NSString stringWithFormat:NSLocalizedString(@"您输了: %.2f", @"您输了: %.2f"), info.payoff*-1];
+            [_promptMsgView updateWithMessage:msg];
+        }
+    }
+    else
+    {
+        
+        _promptMsgView.hidden = YES;
+    }
+        
+}
+
 -(void)processMarqueeInfo:(NSNotification *)notification
 {
     
@@ -668,6 +697,8 @@
     
     //update any necessary views
     [_betAreaView updateView];
+    
+    [self updatePromptMsgWithUpdateInfo:info];
 }
 
 #pragma mark - gameplay rule

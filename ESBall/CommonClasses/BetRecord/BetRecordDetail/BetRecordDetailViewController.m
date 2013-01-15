@@ -47,6 +47,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //start to download data
     [self pullDetailRecordData];
 }
 
@@ -72,14 +73,18 @@
 -(void)showPokerRecord
 {
     //where you are going to present poker history record
+    //subclass need to implement thier own 
 }
 
 #pragma mark - public interface
 -(void)pullDetailRecordData
 {
+    //reset mark for download data fail
     isPullingDataFail = NO;
     
     ServerInterface *theInterface = [ServerInterface serverInterface];
+    
+    /*start to download info of record we needed async*/
     
     NSString *addressToPull = [NSString stringWithFormat:@"https://bm.esb886.com/app/api/LiveDealerAPI.php?type=getBetDetail&sid=%@&WagersID=%@&GameType=%@", theInterface.theSID, _cid, _gameType];
     
@@ -93,6 +98,7 @@
 
 -(BOOL)isAllDigitals:(NSString *)str
 {
+    /**see if passing string contain only digital**/
     NSCharacterSet* nonNumbers = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     NSRange r = [str rangeOfCharacterFromSet: nonNumbers];
     return r.location == NSNotFound;
@@ -100,6 +106,7 @@
 
 -(NSString *)gameCodeNameWithGameCode:(NSUInteger)gameCode
 {
+    /**convert game code to table name**/
     NSString *tableName;
     
     switch (gameCode) {
@@ -130,6 +137,7 @@
 
 -(NSMutableDictionary *)convertDataWithJasonData:(NSData *)jsonData
 {
+    /**convert downloaded Json data into data structure as a dictionary**/
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
     NSMutableDictionary *detailRecordData = [[NSMutableDictionary alloc] init];
@@ -138,7 +146,7 @@
     
     for(NSString *key in allKeys)
     {
-        if([self isAllDigitals:key])
+        if([self isAllDigitals:key])//if key is only digital it is row of record data
         {
             if(![detailRecordData objectForKey:@"Records"])
             {
@@ -170,7 +178,7 @@
 
 -(void)processData:(NSMutableDictionary *)dic
 {
-    //common data
+    //process common data not each row record data
     _roundNumberLabel.text = [detailRecord objectForKey:@"RoundSerial"];
     _dateTimeLabel.text = [detailRecord objectForKey:@"WagersDate"];
     _commentLabel.text = nil;
@@ -182,6 +190,7 @@
 
 -(NSString *)betTypeWithTypeNumber:(NSUInteger)betType
 {
+    /*convert bet type to string*/
     switch (betType) {
         case 1:
             return NSLocalizedString(@"莊", @"莊");
@@ -314,7 +323,7 @@
     {
         NSMutableArray *rowRecords = [detailRecord objectForKey:@"Records"];
         
-        return rowRecords.count+1;
+        return rowRecords.count+1;//plus 1 because there is a row at bottom for sum
     }
     
     return 0;
@@ -358,17 +367,19 @@
 #pragma mark - UITableView delegate
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    return nil;//we are not allow any cell to be select
 }
 
 #pragma mark - NSURLConnection delegate
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    //init appendable data
     pendingData = [[NSMutableData alloc] init];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    //append data
     [pendingData appendData:data];
 }
 
@@ -379,13 +390,17 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
+        //convert downloaded Json data
         detailRecord = [self convertDataWithJasonData:pendingData];
         
+        //process data 
         [self processData:detailRecord];
+        //show poker info 
         [self showPokerRecord];
         
         pendingData = nil;
         
+        //tell table to reload data
         [_tableView reloadData];
         
     });

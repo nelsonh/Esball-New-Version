@@ -1392,7 +1392,13 @@
         //if this is first time enter betting status
         if(isDisplayPlayerBetResult && gameStatus == GameStatusWaiting)
         {
+            //player was confirm bet and first time enter betting status
             isDisplayPlayerBetResult = NO;
+            [self clearAllBetsWithHideInfo:YES];
+        }
+        else if (isDisplayPlayerBetResult == NO && gameStatus == GameStatusWaiting)
+        {
+            //player was not confirm bet and first enter betting status
             [self clearAllBetsWithHideInfo:YES];
         }
         

@@ -8,7 +8,7 @@
 
 #import "PhoneMainViewController.h"
 #import "BaseGameViewController.h"
-
+#import "PhoneVideoSectionChangeControllerViewController.h"
 @interface PhoneMainViewController ()
 
 @end
@@ -28,12 +28,18 @@
 {
     [super viewDidAppear:animated];
     
-    BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BaccaratGameViewController"];
+/*  BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BaccaratGameViewController"];
     
     controller.tableNumber = 1;
     controller.gameType = 3001;
     
-    [self presentViewController:controller animated:YES completion:nil];
+    
+    
+    [self presentViewController:controller animated:YES completion:nil];*/
+    
+   PhoneVideoSectionChangeControllerViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"phoneVideoSectionChangeViewController"];
+    
+   [self presentViewController:controller animated:YES completion:nil];
     
 }
 
@@ -54,5 +60,8 @@
     //except upside down
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
+
+
+
 
 @end

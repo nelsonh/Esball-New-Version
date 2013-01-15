@@ -55,6 +55,7 @@ static NSString *ConnectionLostNotification = @"ConnectionLost";
 @property (nonatomic, readonly) NSString *theSID;
 
 +(id)serverInterface;
+-(void)logout;
 //-(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password;
 -(void)disconnectToHost;
 -(void)loginWithUserName:(NSString *)username andPassword:(NSString *)password;

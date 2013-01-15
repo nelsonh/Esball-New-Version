@@ -7,8 +7,8 @@
 //
 
 #import "RoadmapChart.h"
-#define kRoadmapWidth 781
-#define kRoadmapHeight 130
+#define kRoadmapWidth 260
+#define kRoadmapHeight 126
 
 @interface PhoneBaccaratRoadmapChart : RoadmapChart
 

@@ -61,6 +61,12 @@ extern NSString *GameStatusBetting;
     
     BOOL loginGameTypeCommandSent;//indicate login gametype command sent to server
     
+    NSUInteger noneBetRoundCount;
+    BOOL isNoneBet5RoundAlertShowed;
+    BOOL isNoneBet10RoundAlertShowed;
+    
+    NSString *lastGameStatus;
+    
 }
 
 @property (nonatomic, weak) id<BaseGameViewControllerDelegate> theDelegate;

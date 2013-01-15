@@ -2100,6 +2100,28 @@
                                     <action selector="record:" destination="aa9-v6-k6a" eventType="touchUpInside" id="1Li-ng-cbG"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" id="NTf-Pp-nxk" customClass="PromptMessageView">
+                                <rect key="frame" x="358" y="363" width="307" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="MsgTxt_bg.png" id="enu-xc-MmZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WTN-lg-7tx">
+                                        <rect key="frame" x="20" y="11" width="267" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="promptMsgBackgroundView" destination="enu-xc-MmZ" id="GtV-Ft-PZt"/>
+                                    <outlet property="promptMsgLabel" destination="WTN-lg-7tx" id="XBa-JK-lYh"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -2120,6 +2142,7 @@
                         <outlet property="dtRoadmap" destination="tQf-mS-Qa4" id="oT5-sX-Kc3"/>
                         <outlet property="gameCodeNameLabel" destination="vkg-Iy-Khl" id="bBx-db-x3h"/>
                         <outlet property="gameNumberLabel" destination="SpO-HC-Bgb" id="jVw-Dl-vhc"/>
+                        <outlet property="promptMsgView" destination="NTf-Pp-nxk" id="G77-Wu-Cf0"/>
                         <outlet property="recordButton" destination="o3K-mv-bRc" id="nmu-z6-jmy"/>
                         <outlet property="roadmapButton" destination="mqs-cA-OjY" id="l9y-nf-b2v"/>
                         <outlet property="totalBetLabel" destination="CmX-ux-hgM" id="Rac-Mn-PB5"/>
@@ -3086,6 +3109,28 @@
                                     <action selector="record:" destination="vWM-yZ-Yj5" eventType="touchUpInside" id="Bay-pw-VCG"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" id="yzy-EC-fCL" customClass="PromptMessageView">
+                                <rect key="frame" x="358" y="363" width="307" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="MsgTxt_bg.png" id="mUj-RW-W3d">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0mU-yo-q7w">
+                                        <rect key="frame" x="20" y="11" width="267" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="promptMsgBackgroundView" destination="mUj-RW-W3d" id="RLQ-HR-F5s"/>
+                                    <outlet property="promptMsgLabel" destination="0mU-yo-q7w" id="bWT-U4-Ym6"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -3105,6 +3150,7 @@
                         <outlet property="gameCodeNameLabel" destination="SHc-KG-IMi" id="3js-pN-kGp"/>
                         <outlet property="gameNumberLabel" destination="GfG-LF-2OB" id="7G9-v4-6HZ"/>
                         <outlet property="pokerView" destination="hKc-Pk-kGc" id="6GH-w5-awy"/>
+                        <outlet property="promptMsgView" destination="yzy-EC-fCL" id="ytI-lh-uDO"/>
                         <outlet property="recordButton" destination="LX8-Xp-DaH" id="xIQ-mz-ocW"/>
                         <outlet property="roadmapButton" destination="A7D-So-eWr" id="2lq-2d-n5I"/>
                         <outlet property="roadmapView" destination="Cfl-KB-QdP" id="ZIo-QH-zNg"/>
@@ -4038,6 +4084,7 @@
         <image name="DTRoute_bg@2x.png" width="2048" height="359"/>
         <image name="DTdeal_bg@2x.png" width="556" height="655"/>
         <image name="L_row_top.png" width="640" height="79"/>
+        <image name="MsgTxt_bg.png" width="1038" height="146"/>
         <image name="R_row_01.png" width="1408" height="60"/>
         <image name="R_row_end.png" width="1408" height="66"/>
         <image name="R_row_top.png" width="1408" height="440"/>
@@ -4239,6 +4286,7 @@
                 <relationship kind="outlet" name="gameCodeNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="gameNumberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pokerView" candidateClass="PokerView"/>
+                <relationship kind="outlet" name="promptMsgView" candidateClass="PromptMessageView"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roadmapButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roadmapView" candidateClass="RoadmapView"/>
@@ -4442,6 +4490,13 @@
                 <relationship kind="outlet" name="topLeftCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="topMiddleCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="topRightCard" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PromptMessageView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PromptMessageView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="promptMsgBackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="promptMsgLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="RoadmapChart" superclassName="RoadmapDataView">

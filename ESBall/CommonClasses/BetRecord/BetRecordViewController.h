@@ -26,9 +26,9 @@
     
     NSMutableDictionary *recordDatas;//info of all records
     NSURLConnection *urlConnection;
-    NSMutableData *pendingData;
+    NSMutableData *pendingData;//appendable data for async download
     
-    BOOL isPullingDataFail;
+    BOOL isPullingDataFail;//if data download fail this will be no
 }
 
 @property (nonatomic, weak) IBOutlet UIView *referenceView;

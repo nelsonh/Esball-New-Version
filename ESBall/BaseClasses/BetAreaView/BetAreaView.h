@@ -34,8 +34,8 @@
 
 @property (nonatomic, copy) NSArray *chips;//hold chip name
 @property (nonatomic, weak) IBOutlet ChipView *chipListView;//connect chip view in IB
-@property (nonatomic, weak) UpdateInfo *updateInfo;
-@property (nonatomic, weak) UserInfo *userInfo;
+@property (nonatomic, strong) UpdateInfo *updateInfo;
+@property (nonatomic, strong) UserInfo *userInfo;
 
 //must set to to display proper chip view
 @property (nonatomic, assign) CGFloat chipSpaceWidth;
