@@ -82,5 +82,6 @@
 -(CGFloat)chipSpaceWidth;//chip space width from border
 -(CGFloat)chipSpaceHeight;//chip space height from border
 -(CGFloat)chipSize;//chip size
+-(CGFloat)detailViewPositionY;
 
 @end

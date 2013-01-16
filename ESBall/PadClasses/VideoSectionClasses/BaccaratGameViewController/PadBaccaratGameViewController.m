@@ -94,6 +94,11 @@
     return kChipSize;
 }
 
+-(CGFloat)detailViewPositionY
+{
+    return 60.0f;
+}
+
 -(void)showRecord
 {
     [super showRecord];

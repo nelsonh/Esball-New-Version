@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Vn3-wh-nRc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Vn3-wh-nRc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Phone Main View Controller-->
@@ -79,7 +79,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="234" affinity="minY"/>
+                            <userLayoutGuide location="223" affinity="minY"/>
                             <userLayoutGuide location="232" affinity="minY"/>
                         </userGuides>
                         <subviews>
@@ -1412,7 +1412,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="av8-AX-6oC" customClass="ChipView">
-                                <rect key="frame" x="0.0" y="457" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="452" width="320" height="68"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
                         </subviews>
@@ -1471,55 +1471,55 @@
             </objects>
             <point key="canvasLocation" x="1545" y="-1170"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Phone Detail View Controller-->
         <scene sceneID="Jh0-AX-wNw">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" autoresizesArchivedViewToFullSize="NO" id="Nb7-ny-OFN" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" autoresizesArchivedViewToFullSize="NO" id="Nb7-ny-OFN" customClass="PhoneDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8q-M4-Y9P">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="645"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="uwh-7a-3Z1">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="645"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="detail_options.png" id="uwh-7a-3Z1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="485"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="荷官:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GSI-Zm-I46">
-                                <rect key="frame" x="72" y="73" width="77" height="21"/>
+                                <rect key="frame" x="56" y="33" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="桌号:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pf6-qX-QfX">
-                                <rect key="frame" x="72" y="113" width="77" height="21"/>
+                                <rect key="frame" x="56" y="73" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="币别:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="crA-fP-WQ1">
-                                <rect key="frame" x="72" y="151" width="77" height="21"/>
+                                <rect key="frame" x="56" y="111" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Ym-tT-jyT">
-                                <rect key="frame" x="157" y="73" width="189" height="21"/>
+                                <rect key="frame" x="141" y="33" width="189" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gAR-ai-1gc">
-                                <rect key="frame" x="157" y="113" width="189" height="21"/>
+                                <rect key="frame" x="141" y="73" width="189" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xCW-Gi-pKd">
-                                <rect key="frame" x="157" y="151" width="189" height="21"/>
+                                <rect key="frame" x="141" y="111" width="189" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lo1-qr-wOb">
-                                <rect key="frame" x="50" y="217" width="320" height="46"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lo1-qr-wOb">
+                                <rect key="frame" x="32" y="169" width="256" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="basicBtn_01_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1533,7 +1533,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eu5-zg-sEK">
-                                <rect key="frame" x="50" y="263" width="320" height="46"/>
+                                <rect key="frame" x="32" y="215" width="256" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="basicBtn_02_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1547,7 +1547,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6ll-WH-NEO">
-                                <rect key="frame" x="50" y="309" width="320" height="46"/>
+                                <rect key="frame" x="32" y="262" width="256" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="basicBtn_03_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1561,7 +1561,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V00-Jv-buI">
-                                <rect key="frame" x="50" y="355" width="320" height="46"/>
+                                <rect key="frame" x="32" y="309" width="256" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button" image="basicBtn_04_up.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1575,15 +1575,22 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" id="5F7-TN-pgq">
-                                <rect key="frame" x="414" y="73" width="555" height="527"/>
+                                <rect key="frame" x="414" y="0.0" width="555" height="527"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="GV0-wI-1KK">
+                                <rect key="frame" x="32" y="63" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="7Bg-rm-8jN">
+                                <rect key="frame" x="32" y="102" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="uwh-7a-3Z1" id="utw-bt-A1Y"/>
@@ -1599,33 +1606,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijh-ZF-xXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2646" y="-2236"/>
+            <point key="canvasLocation" x="1726" y="-2172"/>
         </scene>
         <!--Video Setting View Controller-->
         <scene sceneID="AxK-Nm-lx1">
             <objects>
                 <viewController storyboardIdentifier="VideoSettingViewController" autoresizesArchivedViewToFullSize="NO" id="J5w-2L-XPo" customClass="VideoSettingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MTb-ZH-fUr">
-                        <rect key="frame" x="0.0" y="0.0" width="564" height="547"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="启用大视讯(建议wifi品质达2Mbps)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="86S-6x-OjH">
-                                <rect key="frame" x="52" y="53" width="257" height="21"/>
+                                <rect key="frame" x="52" y="55" width="257" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="u7u-G4-qMc">
-                                <rect key="frame" x="324" y="53" width="79" height="27"/>
+                                <rect key="frame" x="324" y="55" width="79" height="27"/>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="视讯流畅度" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Sn-aO-ibE">
-                                <rect key="frame" x="52" y="119" width="85" height="21"/>
+                                <rect key="frame" x="52" y="123" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="BDE-Hx-8qg">
-                                <rect key="frame" x="145" y="118" width="379" height="44"/>
+                                <rect key="frame" x="145" y="123" width="379" height="44"/>
                                 <segments>
                                     <segment title="停止"/>
                                     <segment title="最低"/>
@@ -1638,79 +1645,149 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJN-3b-e7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3722" y="-2172"/>
+            <point key="canvasLocation" x="2098" y="-2268"/>
         </scene>
-        <!--Game Bet Limit View Controller-->
+        <!--Phone Game Bet Limit View Controller-->
         <scene sceneID="32R-pY-fxF">
             <objects>
-                <viewController storyboardIdentifier="GameBetLimitViewController" autoresizesArchivedViewToFullSize="NO" id="y5J-CK-tmi" customClass="GameBetLimitViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LhS-Nz-JMa">
-                        <rect key="frame" x="0.0" y="0.0" width="564" height="547"/>
+                <viewController storyboardIdentifier="GameBetLimitViewController" autoresizesArchivedViewToFullSize="NO" id="y5J-CK-tmi" customClass="PhoneGameBetLimitViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="center" id="LhS-Nz-JMa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="detail_message.png" id="AHW-5Q-IPq">
+                                <rect key="frame" x="0.0" y="43" width="320" height="482"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="fII-97-ILM">
+                                <rect key="frame" x="32" y="100" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="vOM-iR-Mnh">
+                                <rect key="frame" x="42" y="130" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="rwE-cC-ayk">
+                                <rect key="frame" x="32" y="160" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="cPd-OI-wE2">
+                                <rect key="frame" x="32" y="190" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="dfZ-zK-tS4">
+                                <rect key="frame" x="32" y="220" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="6Ru-C7-wyE">
+                                <rect key="frame" x="32" y="250" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="EPf-qq-Dc5">
+                                <rect key="frame" x="32" y="280" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="HMT-Yh-znA">
+                                <rect key="frame" x="32" y="310" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="down_bgs.png" id="BQc-h6-ZrX">
+                                <rect key="frame" x="0.0" y="0.0" width="322" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Del-OK-g6O" userLabel="上一頁">
+                                <rect key="frame" x="10" y="10" width="46" height="31"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="back_btn_up.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="back_btn_down.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="y5J-CK-tmi" eventType="touchUpInside" id="lQr-jx-YNr"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="游戏限额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wh5-GD-Nrr">
-                                <rect key="frame" x="241" y="17" width="81" height="24"/>
+                                <rect key="frame" x="119.5" y="70" width="81" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="最小下注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FH8-EO-wzK">
-                                <rect key="frame" x="241" y="52" width="81" height="24"/>
+                                <rect key="frame" x="119" y="104" width="81" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="udT-Ei-UP3">
-                                <rect key="frame" x="180" y="84" width="199" height="21"/>
+                                <rect key="frame" x="60.5" y="134" width="199" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="单注限额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X4c-Hr-226">
-                                <rect key="frame" x="241" y="118" width="81" height="24"/>
+                                <rect key="frame" x="119.5" y="164" width="81" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dga-5I-91X">
-                                <rect key="frame" x="180" y="155" width="199" height="21"/>
+                                <rect key="frame" x="60.5" y="194" width="199" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="对子上限" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZrH-GW-3nH">
-                                <rect key="frame" x="242" y="190" width="81" height="24"/>
+                                <rect key="frame" x="119.5" y="224" width="81" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tkM-Gr-aQm">
-                                <rect key="frame" x="180" y="227" width="199" height="21"/>
+                                <rect key="frame" x="60.5" y="254" width="199" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="和注限额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ME6-sD-hQ9">
-                                <rect key="frame" x="243" y="262" width="81" height="24"/>
+                                <rect key="frame" x="119.5" y="284" width="81" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="32g-wY-RAx">
-                                <rect key="frame" x="180" y="294" width="199" height="21"/>
+                                <rect key="frame" x="60.5" y="314" width="199" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8dE-Xb-Yku">
+                                <rect key="frame" x="236" y="26" width="29" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="down_bgs.png" id="tZH-GV-yMH">
+                                <rect key="frame" x="0.0" y="523" width="322" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="ouBetLimitLabel" destination="tkM-Gr-aQm" id="ab9-W8-VUd"/>
                         <outlet property="pairBetLimitLabel" destination="32g-wY-RAx" id="VLK-79-InE"/>
@@ -1720,49 +1797,98 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VD5-Iv-GA1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4348" y="-2172"/>
+            <point key="canvasLocation" x="2460" y="-2180"/>
         </scene>
-        <!--Game Rules View Controller-->
+        <!--Phone Game Rules View Controller-->
         <scene sceneID="akD-Wx-3tm">
             <objects>
-                <viewController storyboardIdentifier="GameRulesViewController" autoresizesArchivedViewToFullSize="NO" id="BRP-kW-WwJ" customClass="GameRulesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameRulesViewController" autoresizesArchivedViewToFullSize="NO" id="BRP-kW-WwJ" customClass="PhoneGameRulesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="GameRulesViewController" id="lgg-n0-txp">
-                        <rect key="frame" x="0.0" y="0.0" width="564" height="547"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" id="nXQ-qY-JgQ">
-                                <rect key="frame" x="0.0" y="0.0" width="564" height="547"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="down_bgs.png" id="9BB-Md-wrj">
+                                <rect key="frame" x="0.0" y="0.0" width="322" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zQv-2D-B5W" userLabel="上一頁">
+                                <rect key="frame" x="10" y="10" width="46" height="31"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="back_btn_up.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="back_btn_down.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="y5J-CK-tmi" eventType="touchUpInside" id="g5O-Sg-BWs"/>
+                                    <action selector="exit:" destination="BRP-kW-WwJ" eventType="touchUpInside" id="oVQ-2y-asg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="webView" destination="nXQ-qY-JgQ" id="2W2-hY-DWB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bl8-5h-gJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4954" y="-2172"/>
+            <point key="canvasLocation" x="2842" y="-2260"/>
         </scene>
-        <!--History View Controller-->
+        <!--Phone History View Controller-->
         <scene sceneID="N08-rt-tMn">
             <objects>
-                <viewController storyboardIdentifier="HistoryViewController" autoresizesArchivedViewToFullSize="NO" id="rJH-14-SCv" customClass="HistoryViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" autoresizesArchivedViewToFullSize="NO" id="rJH-14-SCv" customClass="PhoneHistoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PVY-0i-L2P">
-                        <rect key="frame" x="0.0" y="0.0" width="564" height="547"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="center" id="QSl-r4-lVi">
-                                <rect key="frame" x="0.0" y="46" width="564" height="501"/>
+                                <rect key="frame" x="47" y="118" width="222" height="368"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="detail_message.png" id="W2H-8D-aFu">
+                                <rect key="frame" x="0.0" y="43" width="320" height="482"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separate.png" id="HFq-Wq-rpF">
+                                <rect key="frame" x="23" y="108" width="256" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="down_bgs.png" id="r7Y-oY-wOq">
+                                <rect key="frame" x="-2" y="0.0" width="322" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="down_bgs.png" id="0kx-gB-TrK">
+                                <rect key="frame" x="0.0" y="521" width="322" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XUO-Pl-W1r" userLabel="上一頁">
+                                <rect key="frame" x="8" y="10" width="46" height="31"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="back_btn_up.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="back_btn_down.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="exit:" destination="rJH-14-SCv" eventType="touchUpInside" id="Qkj-76-TaD"/>
+                                    <action selector="exit:" destination="y5J-CK-tmi" eventType="touchUpInside" id="f8s-pV-Jbb"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="最新消息" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EEM-15-qI2">
-                                <rect key="frame" x="20" y="17" width="524" height="21"/>
+                                <rect key="frame" x="-111" y="79" width="524" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1771,14 +1897,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="textView" destination="QSl-r4-lVi" id="XB1-mf-ny8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSZ-C4-ls4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5551" y="-2172"/>
+            <point key="canvasLocation" x="3295" y="-2235"/>
         </scene>
         <!--Sport Section View Controller-->
         <scene sceneID="Zap-3x-Ars">
@@ -2213,6 +2338,8 @@
         <image name="clear_btn_up.png" width="178" height="125"/>
         <image name="credit_bgs.png" width="955" height="83"/>
         <image name="deal_bgs.png" width="594" height="199"/>
+        <image name="detail_message.png" width="1280" height="1579"/>
+        <image name="detail_options.png" width="1280" height="1579"/>
         <image name="down_bgs.png" width="1280" height="183"/>
         <image name="history_btn_up.png" width="178" height="125"/>
         <image name="limit_bg.png" width="250" height="55"/>
@@ -2231,6 +2358,7 @@
         <image name="route_mid_bgs.png" width="1280" height="571"/>
         <image name="select_bg@2x.png" width="2048" height="1536"/>
         <image name="select_bgs.png" width="1280" height="1920"/>
+        <image name="separate.png" width="1046" height="12"/>
         <image name="time_bg.png" width="229" height="293"/>
     </resources>
     <classes>
@@ -2323,6 +2451,7 @@
                 <relationship kind="outlet" name="gameCodeNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="gameNumberLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pokerView" candidateClass="PokerView"/>
+                <relationship kind="outlet" name="promptMsgView" candidateClass="PromptMessageView"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roadmapButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roadmapView" candidateClass="RoadmapView"/>
@@ -2439,6 +2568,27 @@
         <class className="PhoneBaccaratRoadmapView" superclassName="RoadmapView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneBaccaratRoadmapView.h"/>
         </class>
+        <class className="PhoneDetailViewController" superclassName="DetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneDetailViewController.h"/>
+        </class>
+        <class className="PhoneGameBetLimitViewController" superclassName="GameBetLimitViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneGameBetLimitViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="exit:"/>
+            </relationships>
+        </class>
+        <class className="PhoneGameRulesViewController" superclassName="GameRulesViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneGameRulesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="exit:"/>
+            </relationships>
+        </class>
+        <class className="PhoneHistoryViewController" superclassName="HistoryViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneHistoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="exit:"/>
+            </relationships>
+        </class>
         <class className="PhoneLoginViewController" superclassName="PadLoginViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PhoneLoginViewController.h"/>
             <relationships>
@@ -2506,6 +2656,13 @@
                 <relationship kind="outlet" name="topLeftCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="topMiddleCard" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="topRightCard" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PromptMessageView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PromptMessageView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="promptMsgBackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="promptMsgLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="RoadmapChart" superclassName="RoadmapDataView">

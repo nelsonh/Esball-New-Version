@@ -14,6 +14,8 @@
 
 @implementation CommonSicboGameViewController
 
+@synthesize sbBetView = _sbBetView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,7 +37,98 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - override
+-(void)PostBeginSetup
+{
+    
+    [self loadVideoImage];
+    
+    self.betConfirmButton.enabled = NO;
+    self.clearBetButton.enabled = NO;
+    self.detailButton.enabled = NO;
+    self.roadmapButton.enabled = NO;
+    self.backButton.enabled = NO;
+    
+    //_sbBetView.theBetViewDelegate = self;
+    
+    //assign properties to bet view for chip view befroe first update
+    //phone need to change value
+    _sbBetView.chipSpaceWidth = [self chipSpaceWidth];
+    _sbBetView.chipSpaceHeight = [self chipSpaceHeight];
+    _sbBetView.chipSize = [self chipSize];
+}
+
+-(void)loadVideoImage
+{
+    
+    theImagePull = [[ImagePull alloc] init];
+    theImagePull.theDelegate = self;
+    
+    /*
+     //video with 183.182.66.165
+     [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"http://183.182.66.165:80/dragontigerhd%i/sd2.jpg", 1]]];
+     */
+    
+    NSString *ipAddress = [self videoImageIPAddressForTableNumber:self.tableNumber];
+    
+    [theImagePull pullImageFrom:[NSURL URLWithString:ipAddress]];
+}
+
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info
+{
+    
+}
+
+-(void)processUserInfo:(NSNotification *)notification
+{
+    UserInfo *info = notification.object;
+    
+    //initial user info related view
+    self.userAccountLabel.text =info.userName;
+    
+    
+    //give chips name array
+    //NSLog(@"chiplist:%@", info.chipList);
+    NSMutableArray *filtedChipList = [[NSMutableArray alloc] init];
+    NSArray *chipFilter = [info.chipFilter copy];
+    
+#ifdef DEBUG
+    NSLog(@"chip filter:%@", chipFilter);
+#endif
+    
+    if(!chipFilter)
+    {
+#ifdef DEBUG
+        InternalErrorAlert(self, @"Internal error", @"chip filter is nil");
+#endif
+    }
+    
+    for(NSString *chipValue in chipFilter)
+    {
+        /*
+         #ifdef DEBUG
+         NSLog(@"process chip");
+         #endif
+         */
+        
+        double value = [chipValue doubleValue];
+        
+        if(value <= info.max)
+        {
+            [filtedChipList addObject:[chipValue copy]];
+        }
+        else
+        {
+            break;
+        }
+    }
+    
+    _sbBetView.chips = filtedChipList;
+    _sbBetView.userInfo = info;
+    
+}
+
+-(void)processMarqueeInfo:(NSNotification *)notification
 {
     
 }
@@ -69,6 +162,8 @@
     
     if(countDown >= 0)
         self.countDownLabel.text = [NSString stringWithFormat:@"%i", info.countDown];
+    else
+        self.countDownLabel.text = @"0";
     
     
     
@@ -144,9 +239,11 @@
     
     //give update information to bet area view
     //_betAreaView.updateInfo = info;
+    _sbBetView.updateInfo = info;
     
     //update any necessary views
     //[_betAreaView updateView];
+    [_sbBetView updateView];
 }
 
 @end

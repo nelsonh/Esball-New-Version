@@ -111,6 +111,11 @@
     return 0.0;
 }
 
+-(CGFloat)detailViewPositionY
+{
+    return kDetailViewY;
+}
+
 #pragma mark - override methods
 -(void)playGame
 {
@@ -374,7 +379,7 @@
         detailController.gameRuleControllerID = @"GameRulesViewController";
         detailController.historyControllerID = @"HistoryViewController";
         
-        [detailController addToConrtoller:self inPosition:CGPointMake(0, kDetailViewY)];
+        [detailController addToConrtoller:self inPosition:CGPointMake(0, [self detailViewPositionY])];
         
         [self performSelector:@selector(doSelectDetail) withObject:nil afterDelay:0.0];
     }

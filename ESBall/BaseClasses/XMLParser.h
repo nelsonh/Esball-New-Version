@@ -33,7 +33,7 @@
 
 
 //not used
-+(id)xmlParser;
++(id)xmlParser NS_DEPRECATED_IOS(2_0, 2_0);
 
 -(id)initXMLParser;
 -(void)paserXMLWithString:(NSString *)xmlStr;

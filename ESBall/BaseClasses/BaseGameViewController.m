@@ -249,13 +249,35 @@
         isFirstTime = NO;
     }
     
+    //update none bet round count
     if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
     {
         noneBetRoundCount++;
     }
     
+    //store last game status
     lastGameStatus = [info.status copy];
     
+    
+    //if idle too long
+    
+    if([self isIdleTooLong])
+    {
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        
+        [theInterface logout];
+    }
+     
+}
+
+-(void)handleMarqueeInfo:(NSNotification*)notification
+{
+
+}
+
+-(BOOL)isIdleTooLong
+{
+    //check if game need to dismiss and back to login view
     if(noneBetRoundCount == 6 && isNoneBet5RoundAlertShowed == NO)
     {
         NSString *msg = NSLocalizedString(@"您已五局未下注将於十局返回登入画面", @"您已五局未下注将於十局返回登入画面");
@@ -264,6 +286,8 @@
         [alert show];
         
         isNoneBet5RoundAlertShowed = YES;
+        
+        return NO;
     }
     else if (noneBetRoundCount == 11 && isNoneBet10RoundAlertShowed == NO)
     {
@@ -273,18 +297,16 @@
         [alert show];
         
         isNoneBet10RoundAlertShowed = YES;
+        
+        return  NO;
     }
     else if (noneBetRoundCount == 12)
     {
-        ServerInterface *theInterface = [ServerInterface serverInterface];
-        
-        [theInterface logout];
+
+        return YES;
     }
-}
-
--(void)handleMarqueeInfo:(NSNotification*)notification
-{
-
+    
+    return NO;
 }
 
 #pragma mark - getter setter

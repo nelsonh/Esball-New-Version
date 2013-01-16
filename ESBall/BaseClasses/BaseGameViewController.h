@@ -61,11 +61,11 @@ extern NSString *GameStatusBetting;
     
     BOOL loginGameTypeCommandSent;//indicate login gametype command sent to server
     
-    NSUInteger noneBetRoundCount;
+    NSUInteger noneBetRoundCount;//number of round we haven't betted reset to 0 if bet happen
     BOOL isNoneBet5RoundAlertShowed;
     BOOL isNoneBet10RoundAlertShowed;
     
-    NSString *lastGameStatus;
+    NSString *lastGameStatus;//last game status
     
 }
 
@@ -84,6 +84,7 @@ extern NSString *GameStatusBetting;
 -(void)handleUserInfo:(NSNotification*)notification;
 -(void)handleUpdateInfo:(NSNotification*)notification;
 -(void)handleMarqueeInfo:(NSNotification*)notification;
+-(BOOL)isIdleTooLong;
 
 -(IBAction)back:(id)sender;
 -(IBAction)roadmap:(id)sender;

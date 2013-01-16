@@ -147,9 +147,9 @@
 }
 
 #pragma mark - public interface
--(void)clearAllBets
+-(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo
 {
-    [self clearBets];
+    [self clearBetsWithHideInfo:yesOrNo];
 }
 
 -(NSMutableArray *)collectBetInfo
@@ -217,7 +217,7 @@
     //custom
 }
 
--(void)clearBets
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo
 {
     //custom
     /*
@@ -330,22 +330,25 @@
     [self disableBetSquareByRound:30 currentRound:[roundStr intValue]];
     */
     
-    if([self.updateInfo.status isEqualToString:@"dealing"])
+    if([self.updateInfo.status isEqualToString:GameStatusDealing])
     {
+        /*
         //if player hit confirm bet result displayed and keep until waiting
         if(!isDisplayPlayerBetResult)
-            [self clearBets];
+            [self clearAllBetsWithHideInfo:YES];
+         */
     }
-    else if ([self.updateInfo.status isEqualToString:@"betting"])
+    else if ([self.updateInfo.status isEqualToString:GameStatusBetting])
     {
         [self setupBetSquare];
     }
-    else if([self.updateInfo.status isEqualToString:@"waiting"])
+    else if([self.updateInfo.status isEqualToString:GameStatusWaiting])
     {
+        /*
         isDisplayPlayerBetResult = NO;
         
-        [self clearBets];
         [self showResult];
+         */
     }
     
 }

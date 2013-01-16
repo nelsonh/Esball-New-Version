@@ -66,6 +66,10 @@
     return 32.0;
 }
 
+-(CGFloat)detailViewPositionY
+{
+    return 40;
+}
 //james_13_0103
 -(void)processUpdateInfo:(NSNotification *)notification
 {

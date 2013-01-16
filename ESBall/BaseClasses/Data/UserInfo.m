@@ -80,11 +80,29 @@
     NSString *kick = [dic objectForKey:@"kick"];
     _kick = [kick isEqualToString:@"N"]? NO:YES;
     
-    _max = [[dic objectForKey:@"max"] doubleValue];
+    //3008 sicbo 
+    if(_gameType == 3008)
+    {
+        _max = [[dic objectForKey:@"roundBetMax"] doubleValue];
+    }
+    else
+    {
+        _max = [[dic objectForKey:@"max"] doubleValue];
+    }
+    
     _ou = [[dic objectForKey:@"ou"] doubleValue];
     _pair = [[dic objectForKey:@"pair"] doubleValue];
     _tie = [[dic objectForKey:@"tie"] doubleValue];
-    _min = [[dic objectForKey:@"min"] doubleValue];
+    
+    if(_gameType == 3008)
+    {
+        _min = [[dic objectForKey:@"roundBetMin"] doubleValue];
+    }
+    else
+    {
+        _min = [[dic objectForKey:@"min"] doubleValue];
+    }
+    
     
     _userID = [dic objectForKey:@"userID"];
     _userName = [dic objectForKey:@"userName"];

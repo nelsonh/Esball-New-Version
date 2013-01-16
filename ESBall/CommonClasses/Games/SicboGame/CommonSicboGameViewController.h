@@ -7,7 +7,10 @@
 //
 
 #import "CommonBaccaratGameViewController.h"
+#import "SBBetView.h"
 
 @interface CommonSicboGameViewController : CommonBaccaratGameViewController
+
+@property (nonatomic, weak) IBOutlet SBBetView *sbBetView;
 
 @end
