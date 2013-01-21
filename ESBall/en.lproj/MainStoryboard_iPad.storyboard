@@ -133,6 +133,17 @@
                                     <action selector="login:" destination="mAr-67-G0j" eventType="touchUpInside" id="2w7-2h-9pq"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="WW4-Ad-gSU">
+                                <rect key="frame" x="424" y="406" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SuR-d0-P99">
+                                <rect key="frame" x="469" y="414" width="135" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.625" green="0.625" blue="0.625" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -141,7 +152,9 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="accountTextFiled" destination="xwQ-Bc-zUV" id="I7k-4O-nbc"/>
+                        <outlet property="activityIndicator" destination="WW4-Ad-gSU" id="6lW-7t-W0E"/>
                         <outlet property="backgroundImageView" destination="fTY-B3-BZ6" id="T4M-a6-vwp"/>
+                        <outlet property="loggingMsgLabel" destination="SuR-d0-P99" id="5fl-nP-h1g"/>
                         <outlet property="loginButton" destination="EK8-dW-v0j" id="jtK-S7-6UP"/>
                         <outlet property="passwordTextField" destination="7o5-OR-yTH" id="zTM-ZN-7xU"/>
                     </connections>
@@ -1116,6 +1129,9 @@
                                 <state key="highlighted" image="route_btn_down.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="roadmap:" destination="RfO-xA-do5" eventType="touchUpInside" id="DPN-ss-vgn"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="time_bg.png" id="ktE-Y1-4aY">
                                 <rect key="frame" x="12" y="201" width="69" height="74"/>
@@ -1144,6 +1160,214 @@
                                 <rect key="frame" x="12" y="319" width="999" height="314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_01.png" id="rTi-0B-Ijr">
+                                        <rect key="frame" x="27" y="15" width="190" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_02.png" id="Qzb-ak-kAT">
+                                        <rect key="frame" x="214" y="15" width="168" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_03.png" id="35I-el-GyC">
+                                        <rect key="frame" x="618" y="13" width="168" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_04.png" id="QXQ-8U-SRh">
+                                        <rect key="frame" x="783" y="13" width="189" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_01.png" id="6Fn-ot-lpb">
+                                        <rect key="frame" x="20" y="68" width="69" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_02.png" id="Yes-9u-o0n">
+                                        <rect key="frame" x="84" y="68" width="69" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_03.png" id="yAj-GV-GXc">
+                                        <rect key="frame" x="148" y="68" width="64" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_04.png" id="rei-jL-yz6">
+                                        <rect key="frame" x="210" y="68" width="65" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_05.png" id="wAs-Ix-Vgj">
+                                        <rect key="frame" x="273" y="68" width="63" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_06.png" id="FWb-W2-kSd">
+                                        <rect key="frame" x="336" y="68" width="62" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_07.png" id="7Wv-ph-5fE">
+                                        <rect key="frame" x="399" y="69" width="203" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_08.png" id="6qn-7x-ldc">
+                                        <rect key="frame" x="602" y="68" width="62" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_09.png" id="azc-5R-aTX">
+                                        <rect key="frame" x="664" y="68" width="63" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_10.png" id="96U-q9-6oT">
+                                        <rect key="frame" x="725" y="68" width="66" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_11.png" id="End-CV-FM4">
+                                        <rect key="frame" x="788" y="68" width="66" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_12.png" id="dWs-aU-9TX">
+                                        <rect key="frame" x="850" y="68" width="66" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_13.png" id="1ga-2y-YD9">
+                                        <rect key="frame" x="912" y="68" width="67" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_01.png" id="tYy-6A-oUP">
+                                        <rect key="frame" x="15" y="140" width="72" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_02.png" id="hGP-ua-X1p">
+                                        <rect key="frame" x="84" y="140" width="72" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_03.png" id="OSO-RW-lKP">
+                                        <rect key="frame" x="154" y="140" width="71" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_04.png" id="bH9-OK-Gui">
+                                        <rect key="frame" x="223" y="140" width="71" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_05.png" id="PPq-rb-d18">
+                                        <rect key="frame" x="293" y="140" width="69" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_06.png" id="wYm-LO-lpz">
+                                        <rect key="frame" x="362" y="140" width="68" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_07.png" id="mMc-9n-2P1">
+                                        <rect key="frame" x="431" y="140" width="68" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_08.png" id="FbF-Jk-06I">
+                                        <rect key="frame" x="501" y="140" width="67" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_09.png" id="dGl-0f-CbG">
+                                        <rect key="frame" x="570" y="140" width="68" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_10.png" id="HDX-0c-UUm">
+                                        <rect key="frame" x="638" y="140" width="69" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_11.png" id="BlY-1v-GXg">
+                                        <rect key="frame" x="707" y="140" width="70" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_12.png" id="U6N-tC-ElF">
+                                        <rect key="frame" x="776" y="140" width="70" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_14.png" id="1O6-x1-MbZ">
+                                        <rect key="frame" x="913" y="140" width="73" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_13.png" id="ofm-5e-S3h">
+                                        <rect key="frame" x="845" y="140" width="71" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_01.png" id="s8N-bk-Z7u">
+                                        <rect key="frame" x="10" y="195" width="67" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_02.png" id="BcX-8f-1GB">
+                                        <rect key="frame" x="75" y="195" width="67" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_03.png" id="Glr-mH-3ev">
+                                        <rect key="frame" x="141" y="195" width="66" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_04.png" id="d55-1y-6FD">
+                                        <rect key="frame" x="206" y="195" width="66" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_05.png" id="MMD-DD-kaj">
+                                        <rect key="frame" x="272" y="195" width="64" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_06.png" id="3vH-kS-5UQ">
+                                        <rect key="frame" x="337" y="195" width="64" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_07.png" id="Rfu-Bb-C88">
+                                        <rect key="frame" x="403" y="195" width="63" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_08.png" id="GLm-fO-xlh">
+                                        <rect key="frame" x="468" y="195" width="63" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_09.png" id="hMe-ly-8jd">
+                                        <rect key="frame" x="534" y="195" width="63" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_10.png" id="yOQ-Vm-HFy">
+                                        <rect key="frame" x="599" y="195" width="63" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_11.png" id="OkZ-zc-Ji9">
+                                        <rect key="frame" x="664" y="195" width="64" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_12.png" id="aAg-ZC-dlV">
+                                        <rect key="frame" x="729" y="195" width="64" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_13.png" id="0ro-ew-SDq">
+                                        <rect key="frame" x="793" y="195" width="66" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_14.png" id="cbR-9Z-cVz">
+                                        <rect key="frame" x="859" y="195" width="66" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_15.png" id="iDr-Ad-FZ5">
+                                        <rect key="frame" x="924" y="195" width="66" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_01.png" id="47B-mV-RS9">
+                                        <rect key="frame" x="2" y="252" width="168" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_02.png" id="RQY-4q-bbo">
+                                        <rect key="frame" x="168" y="252" width="168" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_03.png" id="kvG-QY-UQ0">
+                                        <rect key="frame" x="336" y="252" width="163" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_04.png" id="IBd-vI-IQd">
+                                        <rect key="frame" x="502" y="252" width="162" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_05.png" id="kmz-xX-k53">
+                                        <rect key="frame" x="666" y="252" width="164" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_06.png" id="9wj-i6-siM">
+                                        <rect key="frame" x="830" y="252" width="169" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nqM-mg-35v" customClass="BetSquareView">
                                         <rect key="frame" x="27" y="13" width="190" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -1824,12 +2048,162 @@
                                     <outlet property="betSquare8" destination="1NE-ff-mXW" id="YTC-mT-f2W"/>
                                     <outlet property="betSquare9" destination="GU7-uz-sLJ" id="ejL-my-93T"/>
                                     <outlet property="chipListView" destination="8Td-XV-zxD" id="Hne-34-8FZ"/>
+                                    <outlet property="square10Result" destination="FWb-W2-kSd" id="QZN-qk-svG"/>
+                                    <outlet property="square11Result" destination="7Wv-ph-5fE" id="eki-fi-5le"/>
+                                    <outlet property="square12Result" destination="6qn-7x-ldc" id="QIQ-9K-gHA"/>
+                                    <outlet property="square13Result" destination="azc-5R-aTX" id="nbc-Yd-sHO"/>
+                                    <outlet property="square14Result" destination="96U-q9-6oT" id="dxO-Tf-Goe"/>
+                                    <outlet property="square15Result" destination="End-CV-FM4" id="x7e-YE-UMq"/>
+                                    <outlet property="square16Result" destination="dWs-aU-9TX" id="5r5-45-P7a"/>
+                                    <outlet property="square17Result" destination="1ga-2y-YD9" id="ag0-nt-gow"/>
+                                    <outlet property="square18Result" destination="tYy-6A-oUP" id="mCa-lM-1re"/>
+                                    <outlet property="square19Result" destination="hGP-ua-X1p" id="c9R-S0-2Zu"/>
+                                    <outlet property="square1Result" destination="rTi-0B-Ijr" id="Jga-nk-mYs"/>
+                                    <outlet property="square20Result" destination="OSO-RW-lKP" id="Xvl-ex-iFN"/>
+                                    <outlet property="square21Result" destination="bH9-OK-Gui" id="DcO-iM-lhB"/>
+                                    <outlet property="square22Result" destination="PPq-rb-d18" id="Vdy-8A-eLQ"/>
+                                    <outlet property="square23Result" destination="wYm-LO-lpz" id="gCn-2e-PFd"/>
+                                    <outlet property="square24Result" destination="mMc-9n-2P1" id="OPN-yV-A6B"/>
+                                    <outlet property="square25Result" destination="FbF-Jk-06I" id="g5o-KF-kyl"/>
+                                    <outlet property="square26Result" destination="dGl-0f-CbG" id="bWL-ay-nJH"/>
+                                    <outlet property="square27Result" destination="HDX-0c-UUm" id="lmm-y7-l91"/>
+                                    <outlet property="square28Result" destination="BlY-1v-GXg" id="Ieg-Mv-tqc"/>
+                                    <outlet property="square29Result" destination="U6N-tC-ElF" id="w6b-dW-VQ1"/>
+                                    <outlet property="square2Result" destination="Qzb-ak-kAT" id="Q3i-xl-qXP"/>
+                                    <outlet property="square30Result" destination="ofm-5e-S3h" id="q5q-Y4-ege"/>
+                                    <outlet property="square31Result" destination="1O6-x1-MbZ" id="U0V-2f-fj0"/>
+                                    <outlet property="square32Result" destination="s8N-bk-Z7u" id="Vh6-Lg-zpc"/>
+                                    <outlet property="square33Result" destination="BcX-8f-1GB" id="zn5-Lc-3st"/>
+                                    <outlet property="square34Result" destination="Glr-mH-3ev" id="vgb-eY-aGd"/>
+                                    <outlet property="square35Result" destination="d55-1y-6FD" id="daF-io-9bl"/>
+                                    <outlet property="square36Result" destination="MMD-DD-kaj" id="PCH-Fg-Jcq"/>
+                                    <outlet property="square37Result" destination="3vH-kS-5UQ" id="fhW-PR-dk7"/>
+                                    <outlet property="square38Result" destination="Rfu-Bb-C88" id="oGg-Bh-RTK"/>
+                                    <outlet property="square39Result" destination="GLm-fO-xlh" id="yhf-jf-6C3"/>
+                                    <outlet property="square3Result" destination="35I-el-GyC" id="k2j-03-K8A"/>
+                                    <outlet property="square40Result" destination="hMe-ly-8jd" id="jyE-Vi-Bnx"/>
+                                    <outlet property="square41Result" destination="yOQ-Vm-HFy" id="Ljw-Xg-Rz8"/>
+                                    <outlet property="square42Result" destination="OkZ-zc-Ji9" id="rUm-1Z-2bs"/>
+                                    <outlet property="square43Result" destination="aAg-ZC-dlV" id="nho-3N-Qqo"/>
+                                    <outlet property="square44Result" destination="0ro-ew-SDq" id="TZg-qh-2RD"/>
+                                    <outlet property="square45Result" destination="cbR-9Z-cVz" id="IfH-4a-8tG"/>
+                                    <outlet property="square46Result" destination="iDr-Ad-FZ5" id="feQ-zE-Nly"/>
+                                    <outlet property="square47Result" destination="47B-mV-RS9" id="Jjg-2i-Q5Y"/>
+                                    <outlet property="square48Result" destination="RQY-4q-bbo" id="4G3-V9-ew1"/>
+                                    <outlet property="square49Result" destination="kvG-QY-UQ0" id="P8C-Br-FGa"/>
+                                    <outlet property="square4Result" destination="QXQ-8U-SRh" id="3UH-Bv-b2j"/>
+                                    <outlet property="square50Result" destination="IBd-vI-IQd" id="gIj-tQ-wum"/>
+                                    <outlet property="square51Result" destination="kmz-xX-k53" id="7iG-J3-mm5"/>
+                                    <outlet property="square52Result" destination="9wj-i6-siM" id="ghK-0m-vdF"/>
+                                    <outlet property="square5Result" destination="6Fn-ot-lpb" id="hQt-Vr-YME"/>
+                                    <outlet property="square6Result" destination="Yes-9u-o0n" id="ChV-2e-cHT"/>
+                                    <outlet property="square7Result" destination="yAj-GV-GXc" id="Rmv-35-Ftz"/>
+                                    <outlet property="square8Result" destination="rei-jL-yz6" id="HrY-UB-dav"/>
+                                    <outlet property="square9Result" destination="wAs-Ix-Vgj" id="ZPF-LE-Tq6"/>
                                 </connections>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8Td-XV-zxD" customClass="ChipView">
                                 <rect key="frame" x="237" y="633" width="549" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" id="8Ua-kl-FaU">
+                                <rect key="frame" x="663" y="62" width="361" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" id="cxp-bN-JS3" customClass="SBRoadmapView">
+                                        <rect key="frame" x="181" y="-4" width="184" height="268"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bet_dice_record_sic.png" id="3Q6-ei-qBY">
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="268"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="路纸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lA2-Um-180">
+                                                <rect key="frame" x="20" y="7" width="144" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="w2Y-xX-6rq">
+                                                <rect key="frame" x="8" y="36" width="168" height="224"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SBRoadmapCell" rowHeight="50" id="vuu-4n-DMn" customClass="SBRoadmapCell">
+                                                        <rect key="frame" x="0.0" y="22" width="168" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="49"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="dice_record_field_sic.png" id="Gqn-tl-NTl">
+                                                                    <rect key="frame" x="0.0" y="3" width="168" height="43"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CsA-CK-mIT">
+                                                                    <rect key="frame" x="7" y="11" width="72" height="26"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </label>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yp0-V2-MzN">
+                                                                    <rect key="frame" x="87" y="14" width="32" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </label>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9kB-aq-KKg">
+                                                                    <rect key="frame" x="127" y="14" width="32" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <connections>
+                                                            <outlet property="bigOrSmallLabel" destination="9kB-aq-KKg" id="EoT-sG-Prc"/>
+                                                            <outlet property="diceLabel" destination="CsA-CK-mIT" id="XW8-yt-98B"/>
+                                                            <outlet property="sumLabel" destination="yp0-V2-MzN" id="8oz-Cy-AcX"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="cxp-bN-JS3" id="7OU-vQ-u2Y"/>
+                                                    <outlet property="delegate" destination="cxp-bN-JS3" id="5zr-Oy-FQE"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="tableView" destination="w2Y-xX-6rq" id="hul-d9-I6B"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="Krq-Qf-40h">
+                                        <rect key="frame" x="8" y="-4" width="184" height="268"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bet_dice_record_sic.png" id="VZl-nS-Gbc">
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="268"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="押注纪录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l5n-8r-9mL">
+                                                <rect key="frame" x="20" y="9" width="144" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1848,6 +2222,7 @@
                         <outlet property="gameNumberLabel" destination="Xw8-ca-mcb" id="zWo-Qh-smu"/>
                         <outlet property="recordButton" destination="vNk-75-CnZ" id="FAs-sT-JAM"/>
                         <outlet property="sbBetView" destination="abp-AG-GBD" id="tc6-AD-zYG"/>
+                        <outlet property="sbRoadmap" destination="cxp-bN-JS3" id="ShV-gk-lZb"/>
                         <outlet property="totalBetLabel" destination="TMw-8K-eBZ" id="pge-gp-mnR"/>
                         <outlet property="userAccountLabel" destination="g2n-JZ-bN7" id="xfn-OP-WLc"/>
                         <outlet property="videoView" destination="rkm-5Z-7zF" id="RYb-lz-KHl"/>
@@ -4811,8 +5186,10 @@
         <image name="bet_area_sic.png" width="2048" height="818"/>
         <image name="bet_btn_down.png" width="301" height="125"/>
         <image name="bet_btn_up.png" width="301" height="125"/>
+        <image name="bet_dice_record_sic.png" width="374" height="510"/>
         <image name="clear_btn_down.png" width="178" height="125"/>
         <image name="clear_btn_up.png" width="178" height="125"/>
+        <image name="dice_record_field_sic.png" width="314" height="64"/>
         <image name="history_btn_down.png" width="178" height="125"/>
         <image name="history_btn_up.png" width="178" height="125"/>
         <image name="limit_bg.png" width="250" height="55"/>
@@ -4904,6 +5281,8 @@
                 <relationship kind="action" name="login:"/>
                 <relationship kind="outlet" name="accountLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="accountTextFiled" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="loggingMsgLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
             </relationships>
@@ -5059,6 +5438,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonSicboGameViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="sbBetView" candidateClass="SBBetView"/>
+                <relationship kind="outlet" name="sbRoadmap" candidateClass="SBRoadmapView"/>
             </relationships>
         </class>
         <class className="DTBetView" superclassName="BetView">
@@ -5321,6 +5701,72 @@
                 <relationship kind="outlet" name="betSquare7" candidateClass="BetSquareView"/>
                 <relationship kind="outlet" name="betSquare8" candidateClass="BetSquareView"/>
                 <relationship kind="outlet" name="betSquare9" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="square10Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square11Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square12Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square13Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square14Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square15Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square16Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square17Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square18Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square19Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square1Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square20Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square21Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square22Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square23Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square24Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square25Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square26Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square27Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square28Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square29Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square2Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square30Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square31Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square32Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square33Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square34Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square35Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square36Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square37Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square38Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square39Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square3Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square40Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square41Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square42Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square43Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square44Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square45Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square46Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square47Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square48Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square49Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square4Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square50Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square51Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square52Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square5Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square6Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square7Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square8Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square9Result" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SBRoadmapCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SBRoadmapCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bigOrSmallLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="diceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sumLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SBRoadmapView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SBRoadmapView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="SicboGameViewController" superclassName="CommonSicboGameViewController">

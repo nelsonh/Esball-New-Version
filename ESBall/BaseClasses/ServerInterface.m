@@ -14,7 +14,6 @@
 @interface ServerInterface ()
 
 -(void)loadCommonErrors;
--(BOOL)canReachHost;
 //-(BOOL)doSendDataWithData:(NSData *)data;
 -(void)processMessage:(NSString *)msg;
 -(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password;
@@ -136,7 +135,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         if(inputStream.streamStatus == NSStreamStatusOpen)
             [inputStream close];
         
-        [inputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
         inputStream = nil;
     }
     
@@ -146,7 +145,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         if(outputStream.streamStatus == NSStreamStatusOpen)
             [outputStream close];
         
-        [outputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
         outputStream = nil;
     }
     
@@ -154,6 +153,12 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     {
         isConnected = NO;
         NSLog(@"can not reach host");
+        
+        if([_theDelegate respondsToSelector:@selector(ServerInterface:errorOccurredWithError:)])
+        {
+            [_theDelegate ServerInterface:self errorOccurredWithError:InternetNotAvalible];
+        }
+        
         return;
     }
     
@@ -178,8 +183,8 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     inputStream.delegate = self;
     outputStream.delegate = self;
     
-    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    [outputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    [outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
     
     [inputStream open];
     [outputStream open];
@@ -223,14 +228,14 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     if(inputStream)
     {
         [inputStream close];
-        [inputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
         
         inputStream = nil;
     }
     if(outputStream)
     {
         [outputStream close];
-        [outputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
         
         outputStream = nil;
     }
@@ -258,6 +263,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
 
 -(void)loginWithUserName:(NSString *)username andPassword:(NSString *)password
 {
+    
     if(!isConnected)
         [self connectToHostWithUserName:username andPassword:password];
     /*
@@ -332,8 +338,10 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     switch (streamEvent) {
 			
 		case NSStreamEventOpenCompleted:
+        {
 			NSLog(@"Stream to server was opened");
 			break;
+        }
         case NSStreamEventHasSpaceAvailable:
         {
             //NSLog(@"Stream has space available");
@@ -341,6 +349,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
             break;
         }
 		case NSStreamEventHasBytesAvailable:
+        {
             
 			if (theStream == inputStream) {
                 
@@ -421,8 +430,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
 				}
 			}
 			break;
-            
-			
+        }
 		case NSStreamEventErrorOccurred:
         {
             
@@ -440,17 +448,19 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
             break;
 		}
 		case NSStreamEventEndEncountered:
+        {
             NSLog(@"Stream end");
             
             NSLog(@"Stream closed");
-            [theStream close];
-            [theStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-            theStream = nil;
+
             [self disconnectToHost];
             
 			break;
+        }
 		default:
+        {
             NSLog(@"Stream received unknown event");
+        }
     }
     
 }

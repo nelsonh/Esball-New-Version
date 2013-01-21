@@ -591,6 +591,8 @@
 		529A602216A6B3D0006ADA0D /* PhoneGameBetLimitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529A601C16A6B3D0006ADA0D /* PhoneGameBetLimitViewController.m */; };
 		529A602316A6B3D0006ADA0D /* PhoneGameRulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529A601E16A6B3D0006ADA0D /* PhoneGameRulesViewController.m */; };
 		529A602416A6B3D0006ADA0D /* PhoneHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529A602016A6B3D0006ADA0D /* PhoneHistoryViewController.m */; };
+		529ABADF16A8DF850098129E /* SBRoadmapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529ABADE16A8DF850098129E /* SBRoadmapView.m */; };
+		529ABAE216A8F9E60098129E /* SBRoadmapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529ABAE116A8F9E60098129E /* SBRoadmapCell.m */; };
 		529C86911668BD0E0088C9E6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C86901668BD0E0088C9E6 /* UserInfo.m */; };
 		529EE2441670461100D53F6E /* RoadmapDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529EE2431670461100D53F6E /* RoadmapDataView.m */; };
 		52A01BC816689728003B662B /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A01BC716689728003B662B /* XMLParser.m */; };
@@ -1346,6 +1348,10 @@
 		529A601E16A6B3D0006ADA0D /* PhoneGameRulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneGameRulesViewController.m; sourceTree = "<group>"; };
 		529A601F16A6B3D0006ADA0D /* PhoneHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneHistoryViewController.h; sourceTree = "<group>"; };
 		529A602016A6B3D0006ADA0D /* PhoneHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneHistoryViewController.m; sourceTree = "<group>"; };
+		529ABADD16A8DF850098129E /* SBRoadmapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBRoadmapView.h; path = SicboGame/SBRoadmapView/SBRoadmapView.h; sourceTree = "<group>"; };
+		529ABADE16A8DF850098129E /* SBRoadmapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBRoadmapView.m; path = SicboGame/SBRoadmapView/SBRoadmapView.m; sourceTree = "<group>"; };
+		529ABAE016A8F9E60098129E /* SBRoadmapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBRoadmapCell.h; path = SicboGame/SBRoadmapView/SBRoadmapCell.h; sourceTree = "<group>"; };
+		529ABAE116A8F9E60098129E /* SBRoadmapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBRoadmapCell.m; path = SicboGame/SBRoadmapView/SBRoadmapCell.m; sourceTree = "<group>"; };
 		529C868F1668BD0E0088C9E6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = Data/UserInfo.h; sourceTree = "<group>"; };
 		529C86901668BD0E0088C9E6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = Data/UserInfo.m; sourceTree = "<group>"; };
 		529EE2421670461100D53F6E /* RoadmapDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoadmapDataView.h; path = RoadmapDataView/RoadmapDataView.h; sourceTree = "<group>"; };
@@ -1711,6 +1717,7 @@
 		527831301693C417009D8028 /* SicboGame */ = {
 			isa = PBXGroup;
 			children = (
+				529ABADB16A8DF420098129E /* SBRoadmapView */,
 				529759B8169AA26F00EAF41B /* SBBetView */,
 				527831321693C4BB009D8028 /* CommonSicboGameViewController.h */,
 				527831331693C4BB009D8028 /* CommonSicboGameViewController.m */,
@@ -3116,6 +3123,17 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		529ABADB16A8DF420098129E /* SBRoadmapView */ = {
+			isa = PBXGroup;
+			children = (
+				529ABADD16A8DF850098129E /* SBRoadmapView.h */,
+				529ABADE16A8DF850098129E /* SBRoadmapView.m */,
+				529ABAE016A8F9E60098129E /* SBRoadmapCell.h */,
+				529ABAE116A8F9E60098129E /* SBRoadmapCell.m */,
+			);
+			name = SBRoadmapView;
+			sourceTree = "<group>";
+		};
 		529C868E1668B63F0088C9E6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -3998,6 +4016,8 @@
 				529A602216A6B3D0006ADA0D /* PhoneGameBetLimitViewController.m in Sources */,
 				529A602316A6B3D0006ADA0D /* PhoneGameRulesViewController.m in Sources */,
 				529A602416A6B3D0006ADA0D /* PhoneHistoryViewController.m in Sources */,
+				529ABADF16A8DF850098129E /* SBRoadmapView.m in Sources */,
+				529ABAE216A8F9E60098129E /* SBRoadmapCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

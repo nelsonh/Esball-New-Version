@@ -24,6 +24,8 @@ static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess";
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet UILabel *accountLabel;
 @property (nonatomic, weak) IBOutlet UILabel *passwordLabel;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, weak) IBOutlet UILabel *loggingMsgLabel;
 
 //base method override if needed
 //-(void)LogMe;
@@ -33,5 +35,8 @@ static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess";
 -(void)reserveSpot;
 //implement to receive reserving spot notification
 -(void)reserveSpotSuccess:(NSNotification *)notification;
+
+-(void)showLoginIndicator;
+-(void)hideLoginIndicator;
 
 @end

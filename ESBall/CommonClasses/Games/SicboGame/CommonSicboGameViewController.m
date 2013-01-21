@@ -15,6 +15,7 @@
 @implementation CommonSicboGameViewController
 
 @synthesize sbBetView = _sbBetView;
+@synthesize sbRoadmap = _sbRoadmap;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,6 +57,30 @@
     _sbBetView.chipSpaceWidth = [self chipSpaceWidth];
     _sbBetView.chipSpaceHeight = [self chipSpaceHeight];
     _sbBetView.chipSize = [self chipSize];
+}
+
+-(void)showRoadmap
+{
+    if(_sbRoadmap.hidden)
+    {
+        [self performSelector:@selector(doSelectRoadmap) withObject:nil afterDelay:0.0];
+    }
+    else
+    {
+        [self performSelector:@selector(doDeSelectRoadmap) withObject:nil afterDelay:0.0];
+    }
+    
+    _sbRoadmap.hidden = !_sbRoadmap.hidden;
+    //isRouteDisplay = !_roadmapView.hidden;
+    
+    if(!_sbRoadmap.hidden)
+    {
+        if(updateInfo.roadmap != nil)
+            _sbRoadmap.roadmapInfo = [NSArray arrayWithArray:updateInfo.roadmap];
+        
+        [_sbRoadmap updateView];
+    }
+
 }
 
 -(void)loadVideoImage
@@ -208,11 +233,11 @@
         
         /*
         //update roadmapView
-        if(!_roadmapView.hidden)
+        if(!_sbRoadmap.hidden)
         {
-            _roadmapView.gameType = updateInfo.gameType;
-            _roadmapView.gameCodeName = updateInfo.gameCodeName;
-            [_roadmapView updateView];
+            if(updateInfo.roadmap != nil)
+                _sbRoadmap.roadmapInfo = [NSArray arrayWithArray:updateInfo.roadmap];
+            [_sbRoadmap updateView];
         }
         */
         
@@ -223,14 +248,17 @@
         
     }
     
-    /*
-     if(!_roadmapView.hidden)
+    
+     if(!_sbRoadmap.hidden)
      {
-     _roadmapView.gameType = updateInfo.gameType;
-     _roadmapView.gameCodeName = updateInfo.gameCodeName;
-     [_roadmapView updateView];
+         if(updateInfo.roadmap != nil)
+         {
+             _sbRoadmap.roadmapInfo = [NSArray arrayWithArray:updateInfo.roadmap];
+             [_sbRoadmap updateView];
+         }
+         
      }
-     */
+     
     
     if(!self.detailButton.enabled)
         self.detailButton.enabled = YES;

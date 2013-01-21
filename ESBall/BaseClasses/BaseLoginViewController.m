@@ -21,6 +21,8 @@
 @synthesize passwordTextField = _passwordTextField;
 @synthesize accountLabel = _accountLabel;
 @synthesize passwordLabel = _passwordLabel;
+@synthesize activityIndicator = _activityIndicator;
+@synthesize loggingMsgLabel = _loggingMsgLabel;
 
 -(void)loadView
 {
@@ -53,6 +55,8 @@
     
     _accountTextFiled.delegate = self;
     _passwordTextField.delegate = self;
+    
+    [self hideLoginIndicator];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reserveSpotSuccess:) name:ReserveSpotSuccessNotification object:nil];
         
@@ -99,6 +103,20 @@
 #pragma mark - public interface
 -(IBAction)login:(id)sender
 {
+    //ServerInterFace
+    ServerInterface *interface = [ServerInterface serverInterface];
+    
+    if(![interface canReachHost])
+    {
+        NSString *msg = NSLocalizedString(@"无法连线到网际网路", @"无法连线到网际网路");
+        
+        UIAlertView *loginFailAlert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles:nil];
+        
+        [loginFailAlert show];
+        
+        return;
+    }
+    
     if(isLogin)
         return;
     
@@ -115,14 +133,18 @@
         return;
     }
     
-    //ServerInterFace
-    ServerInterface *interface = [ServerInterface serverInterface];
-    [interface loginWithUserName:_accountTextFiled.text andPassword:_passwordTextField.text];
-    
     _accountTextFiled.enabled = NO;
     _passwordTextField.enabled = NO;
     
+    [self showLoginIndicator];
+    
     isLogin = YES;
+
+    [interface loginWithUserName:_accountTextFiled.text andPassword:_passwordTextField.text];
+    
+
+    
+    
     
     /*
     //AsyncSocket
@@ -154,7 +176,30 @@
 
 -(void)reserveSpotSuccess:(NSNotification *)notification
 {
-    //subclass must overried this method to receive reserving spot notification 
+    //subclass must overried this method to receive reserving spot notification
+    
+    _accountTextFiled.enabled = YES;
+    _passwordTextField.enabled = YES;
+    
+    isLogin = NO;
+    
+    [self hideLoginIndicator];
+}
+
+-(void)showLoginIndicator
+{
+    _activityIndicator.hidden = NO;
+    [_activityIndicator startAnimating];
+    _loggingMsgLabel.hidden = NO;
+    _loggingMsgLabel.text = NSLocalizedString(@"登入中...", @"登入中...");
+}
+
+-(void)hideLoginIndicator
+{
+    _activityIndicator.hidden = YES;
+    [_activityIndicator stopAnimating];
+    _loggingMsgLabel.hidden = YES;
+    _loggingMsgLabel.text = NSLocalizedString(@"登入中...", @"登入中...");
 }
 
 /*
@@ -257,17 +302,12 @@
     //Login
     NSLog(@"did login server");
     
-    isLogin = NO;
-    
+    //save user accout
     NSString *account = self.accountTextFiled.text;
     
-    //save user accout
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setValue:account forKey:LastUserLoginAccount];
     [userDefault synchronize];
-    
-    _accountTextFiled.enabled = YES;
-    _passwordTextField.enabled = YES;
     
     //if we are not reserving spot reserve one
     if(!reservingSpot)
@@ -282,6 +322,19 @@
     _accountTextFiled.enabled = YES;
     _passwordTextField.enabled = YES;
     
+    [self performSelector:@selector(hideLoginIndicator) withObject:nil afterDelay:1.0f];
+    
+    if([errorMsg isEqualToString:InternetNotAvalible])
+    {
+        NSString *msg = NSLocalizedString(@"无法连线到网际网路", @"无法连线到网际网路");
+        
+        UIAlertView *loginFailAlert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles:nil];
+        
+        [loginFailAlert show];
+        
+        return;
+    }
+    
 }
 
 #pragma mark - UITextField delegate
@@ -289,6 +342,9 @@
 {
     [_accountTextFiled resignFirstResponder];
     [_passwordTextField resignFirstResponder];
+    
+    //convenient way to login
+    [self login:nil];
     
     return YES;
 }

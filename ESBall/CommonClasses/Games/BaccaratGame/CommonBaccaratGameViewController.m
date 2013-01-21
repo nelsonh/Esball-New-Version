@@ -117,6 +117,26 @@
 }
 
 #pragma mark - override methods
+-(void)resumeGame
+{
+    [super resumeGame];
+    
+    //resume video
+    [self loadVideoImage];
+}
+
+-(void)pauseGame
+{
+    [super pauseGame];
+    
+    //stop video
+    if(theImagePull)
+    {
+        [theImagePull cancel];
+        theImagePull = nil;
+    }
+}
+
 -(void)playGame
 {
     [super playGame];
@@ -330,9 +350,13 @@
     _roadmapView.hidden = !_roadmapView.hidden;
     //isRouteDisplay = !_roadmapView.hidden;
     
-    _roadmapView.gameType = updateInfo.gameType;
-    _roadmapView.gameCodeName = updateInfo.gameCodeName;
-    [_roadmapView updateView];
+    if(!_roadmapView.hidden)
+    {
+        _roadmapView.gameType = updateInfo.gameType;
+        _roadmapView.gameCodeName = updateInfo.gameCodeName;
+        [_roadmapView updateView];
+    }
+
 }
 
 //phone need to override
@@ -667,7 +691,8 @@
     {
         _pokerView.visibility = NO;
         
-        //update roadmapView
+        
+        //update roadmapView smooth
         if(!_roadmapView.hidden)
         {
             _roadmapView.gameType = updateInfo.gameType;
@@ -686,9 +711,9 @@
     /*
      if(!_roadmapView.hidden)
      {
-     _roadmapView.gameType = updateInfo.gameType;
-     _roadmapView.gameCodeName = updateInfo.gameCodeName;
-     [_roadmapView updateView];
+        _roadmapView.gameType = updateInfo.gameType;
+        _roadmapView.gameCodeName = updateInfo.gameCodeName;
+        [_roadmapView updateView];
      }
      */
     

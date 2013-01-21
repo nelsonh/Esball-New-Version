@@ -70,16 +70,74 @@
 @property (nonatomic, weak) IBOutlet BetSquareView *betSquare51;
 @property (nonatomic, weak) IBOutlet BetSquareView *betSquare52;
 
+@property (nonatomic, weak) IBOutlet UIImageView *square1Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square2Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square3Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square4Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square5Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square6Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square7Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square8Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square9Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square10Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square11Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square12Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square13Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square14Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square15Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square16Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square17Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square18Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square19Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square20Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square21Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square22Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square23Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square24Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square25Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square26Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square27Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square28Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square29Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square30Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square31Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square32Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square33Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square34Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square35Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square36Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square37Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square38Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square39Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square40Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square41Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square42Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square43Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square44Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square45Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square46Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square47Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square48Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square49Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square50Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square51Result;
+@property (nonatomic, weak) IBOutlet UIImageView *square52Result;
+
 -(void)clearBetsWithHideInfo:(BOOL)yesOrNo;
 -(void)showResult;
 -(BOOL)isBetOverBalanceWithBetAmount:(double)amount;
+-(void)showResultForFirstRow;
+-(void)showResultForSecondRow;
+-(void)showResultForThirdRow;
+-(void)showResultForFourthRow;
+-(void)showResultForFifthRow;
 
 -(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo;
 -(NSMutableArray *)collectBetInfo;//return each signle bet in double as an array
 -(void)displayPlayerBetResult;
 
--(NSString *)getResultWithResultCode:(NSUInteger)result;
--(void)showResultWithString:(NSString *)result;
+//-(NSString *)getResultWithResultCode:(NSUInteger)result;
+//-(void)showResultWithString:(NSString *)result;
 -(void)setupBetSquare;
 -(void)setupDelegate;
 

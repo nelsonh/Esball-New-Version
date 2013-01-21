@@ -36,7 +36,7 @@
     [super viewWillAppear:animated];
     
     if(_autoPauseGameWhenDisappear)
-        [self resume];
+        [self resumeGame];
     
 }
 
@@ -45,7 +45,7 @@
     [super viewWillDisappear:animated];
     
     if(_autoPauseGameWhenDisappear)
-        [self pause];
+        [self pauseGame];
 }
 
 -(void)dealloc
@@ -185,14 +185,14 @@
     
 }
 
--(void)pause
+-(void)pauseGame
 {
     //stop taking info from server interface
     ServerInterface *theInterface = [ServerInterface serverInterface];
     theInterface.theDelegate = nil;
 }
 
--(void)resume
+-(void)resumeGame
 {
     //take info from server interface
     ServerInterface *theInterface = [ServerInterface serverInterface];

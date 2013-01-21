@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *ConnectionLostNotification = @"ConnectionLost";
+static NSString *InternetNotAvalible = @"InternetNotAvalible";
 
 @class ServerInterface;
 @protocol ServerInterfaceDelegate <NSObject>
@@ -55,6 +56,7 @@ static NSString *ConnectionLostNotification = @"ConnectionLost";
 @property (nonatomic, readonly) NSString *theSID;
 
 +(id)serverInterface;
+-(BOOL)canReachHost;
 -(void)logout;
 //-(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password;
 -(void)disconnectToHost;

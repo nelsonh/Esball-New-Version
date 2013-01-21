@@ -92,8 +92,8 @@ extern NSString *GameStatusBetting;
 -(IBAction)betConfirm:(id)sender;
 -(IBAction)detail:(id)sender;
 -(IBAction)record:(id)sender;
--(void)pause;
--(void)resume;
+-(void)pauseGame;
+-(void)resumeGame;
 
 
 @end

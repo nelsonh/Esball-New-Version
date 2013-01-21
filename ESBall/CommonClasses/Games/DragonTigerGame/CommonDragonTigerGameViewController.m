@@ -171,9 +171,13 @@
     
     _dtRoadmap.hidden = !_dtRoadmap.hidden;
     
-    _dtRoadmap.gameType = updateInfo.gameType;
-    _dtRoadmap.gameCodeName = updateInfo.gameCodeName;
-    [_dtRoadmap updateView];
+    if(!_dtRoadmap.hidden)
+    {
+        _dtRoadmap.gameType = updateInfo.gameType;
+        _dtRoadmap.gameCodeName = updateInfo.gameCodeName;
+        [_dtRoadmap updateView];
+    }
+
 }
 
 //phone need to override
@@ -460,7 +464,8 @@
     {
         _dtPokerView.visibility = NO;
         
-        //update roadmapView
+        
+        //update roadmapView smooth
         if(!_dtRoadmap.hidden)
         {
             _dtRoadmap.gameType = updateInfo.gameType;
@@ -477,11 +482,11 @@
     }
     
     /*
-     if(!_roadmapView.hidden)
+     if(!_dtRoadmap.hidden)
      {
-     _roadmapView.gameType = updateInfo.gameType;
-     _roadmapView.gameCodeName = updateInfo.gameCodeName;
-     [_roadmapView updateView];
+        _dtRoadmap.gameType = updateInfo.gameType;
+        _dtRoadmap.gameCodeName = updateInfo.gameCodeName;
+        [_dtRoadmap updateView];
      }
      */
     

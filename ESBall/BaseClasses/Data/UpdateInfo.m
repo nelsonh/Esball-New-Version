@@ -30,7 +30,21 @@
 @synthesize payoff = _payoff;
 @synthesize credit = _credit;
 
-
+//trim string only for sicbo what the hell
+-(void)trimString:(NSString *)string
+{
+    if([string rangeOfString:@"{"].location == NSNotFound)
+        return;
+    
+    NSUInteger loc = [string rangeOfString:@"{"].location;
+    NSUInteger loc2 = ([string rangeOfString:@"}"].location-loc)+1;
+    
+    NSRange range = {loc, loc2};
+    
+    NSLog(@"range:%@", NSStringFromRange(range));
+    
+    [string stringByReplacingCharactersInRange:range withString:@""];
+}
 
 #pragma mark - override mehtods
 -(void)convertToDataFromXMLString:(NSString *)xmlStr
@@ -38,6 +52,7 @@
     //make sure xml is matched
     if([xmlStr rangeOfString:@"onUpdate"].length>0)
     {
+        [self trimString:xmlStr];
         [super convertToDataFromXMLString:xmlStr];
     }
     else
