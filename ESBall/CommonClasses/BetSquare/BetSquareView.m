@@ -88,6 +88,11 @@
         {
             [_betInfoView setHidden:NO];
         }
+        
+        if([_theDelegate respondsToSelector:@selector(BetSquareDoBet:)])
+        {
+            [_theDelegate BetSquareDoBet:self];
+        }
     }
 }
 

@@ -17,7 +17,7 @@
  uncomment to send bet information to server
  Warning it does send bet information out to server and play with your money
  **/
-//#define SendRealBetInfo
+#define SendRealBetInfo
 //uncomment to debug data that server interface sent to server
 //#define ServerClientSentDataDebug
 //uncomment to output respond string from server to console

@@ -434,16 +434,22 @@
         //collect bet information
         NSMutableArray *betInfos = [betView collectBetInfo];
         
+        
+        
 #ifdef SendRealBetInfo
         //prepare to bet
         NSString *response  = [NSString stringWithFormat:@"bet\n"];
         [self sendMessageToServerWithMessage:response];
         
-        response = [NSString stringWithFormat:@"%i,%i\n", userInfo.gameType, userInfo.gameCode];
+        response = [NSString stringWithFormat:@"%i\n", userInfo.gameType];
+        [self sendMessageToServerWithMessage:response];
+        
+        response = [NSString stringWithFormat:@"%i\n", userInfo.gameCode];
+        [self sendMessageToServerWithMessage:response];
         
         //generate msg that contain bet info and sending to server
         response = [self generateBetInfoMessageWithInfos:betInfos];
-        //NSLog(@"\nbet confirm message:\n%@\n", response);
+        NSLog(@"\nbet confirm message:\n%@\n", response);
         //send bet info to server
         [self sendMessageToServerWithMessage:response];
 #endif
@@ -679,9 +685,6 @@
         
         [_roadmapView resetUpdateCount];
         
-        //clean total bet
-        _totalBetLabel.text = @"0.00";
-        
         //_changeTableButton.enabled = NO;
         //_detailButton.enabled = NO;
         _clearBetButton.enabled = NO;
@@ -706,6 +709,12 @@
         _clearBetButton.enabled = YES;
         _betConfirmButton.enabled = YES;
         
+    }
+    
+    if([info.status isEqualToString:GameStatusWaiting])
+    {
+        //clean total bet
+        self.totalBetLabel.text = @"0.00";
     }
     
     /*

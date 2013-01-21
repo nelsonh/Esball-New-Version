@@ -367,7 +367,6 @@
         updateInfo = [[UpdateInfo alloc] init];
         [updateInfo convertToDataFromXMLString:respondStr];
     }
-
      
 }
 

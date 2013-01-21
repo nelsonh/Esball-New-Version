@@ -1452,6 +1452,14 @@
             
             return NO;
         }
+        else if(selectedChip.chipValue < self.userInfo.min)
+        {
+            NSString *msg = NSLocalizedString(@"低于最小下注金额", @"低于最小下注金额");
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+            [alertView show];
+            
+            return NO;
+        }
         
         return YES;
     }

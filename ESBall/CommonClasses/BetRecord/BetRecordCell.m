@@ -7,11 +7,16 @@
 //
 
 #import "BetRecordCell.h"
+#import "FileFinder.h"
 
 @implementation BetRecordCell
 
 @synthesize roundSerialLabel = _roundSerialLabel;
 @synthesize subDetailLabel = _subDetailLabel;
+@synthesize defaultBackgroundImageName = _defaultBackgroundImageName;
+@synthesize cellX = _cellX;
+@synthesize cellWidth = _cellWidth;
+
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -40,6 +45,36 @@
 
     // Configure the view for the selected state
     
+}
+
+-(void)prepareForReuse
+{
+    
+    [self setSelected:NO];
+    [self setHighlighted:NO];
+    self.selectedBackgroundView = nil;
+    self.backgroundView = nil;
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    
+    CGRect newRect = self.frame;
+    
+    if(_cellX != 0.0f)
+    {
+        newRect.origin.x = _cellX;
+    }
+    
+    if(_cellWidth != 0.0f)
+    {
+        newRect.size.width = _cellWidth;
+    }
+    
+    
+    self.frame= newRect;
 }
 
 @end

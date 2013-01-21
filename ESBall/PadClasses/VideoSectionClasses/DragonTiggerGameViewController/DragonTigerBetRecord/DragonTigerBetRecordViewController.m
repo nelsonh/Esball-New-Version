@@ -88,6 +88,16 @@
     return @"BetRecordCell";
 }
 
+-(CGFloat)cellX
+{
+    return -8.0f;
+}
+
+-(CGFloat)cellWitdh
+{
+    return 300;
+}
+
 -(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType
 {
     //this is default subclass need implement

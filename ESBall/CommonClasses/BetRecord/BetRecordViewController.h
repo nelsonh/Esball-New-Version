@@ -29,6 +29,8 @@
     NSMutableData *pendingData;//appendable data for async download
     
     BOOL isPullingDataFail;//if data download fail this will be no
+    
+    NSIndexPath *lastSelectedIndex;
 }
 
 @property (nonatomic, weak) IBOutlet UIView *referenceView;
@@ -49,10 +51,13 @@
 -(UIColor *)tableViewTitleColor;
 -(NSString *)cellIdentifier;
 -(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType;//for transition
+-(CGFloat)cellX;
+-(CGFloat)cellWitdh;
 
 -(void)pullRecordData;
 -(NSMutableDictionary *)convertDataWithString:(NSString *)dataStr;
 -(BetRecordCell *)configureCell:(BetRecordCell *)cell withIndexPath:(NSIndexPath *)indexPath;
+-(NSArray *)sortArrayDecendingWithArray:(NSArray *)unsortedArray;
 
 -(void)addToConrtoller:(UIViewController *)parentController inPosition:(CGPoint)pos;
 

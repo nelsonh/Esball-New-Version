@@ -160,6 +160,16 @@
     return @"";
 }
 
+-(CGFloat)cellX
+{
+    return 0.0f;
+}
+
+-(CGFloat)cellWitdh
+{
+    return 0.0f;
+}
+
 -(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType
 {
     //subclass need implement it's own  transition style and controller
@@ -282,7 +292,8 @@
 {
     //find data
     NSArray *allKeys = [recordDatas allKeys];
-    allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];
+    //sort decending
+    allKeys = [self sortArrayDecendingWithArray:allKeys];
     NSString *categoryKey = [allKeys objectAtIndex:indexPath.section];
     
     NSMutableArray *records = [recordDatas objectForKey:categoryKey];
@@ -312,12 +323,23 @@
     //cell's background image
     UIImage *backgroundImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[self cellBackgroundImageName]]];
     
+    
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
     backgroundImageView.image = backgroundImage;
     
     cell.backgroundView = backgroundImageView;
     
+    cell.defaultBackgroundImageName = [self cellBackgroundImageName];
+    
+    
     return cell;
+}
+
+-(NSArray *)sortArrayDecendingWithArray:(NSArray *)unsortedArray
+{
+    NSSortDescriptor *sortOrder = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:NO];
+    
+    return [unsortedArray sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortOrder]];
 }
 
 #pragma mark - override method
@@ -356,7 +378,8 @@
     {
         //string of categroy
         NSArray *allKeys = [recordDatas allKeys];
-        allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];
+        //sort decending
+        allKeys = [self sortArrayDecendingWithArray:allKeys];
         NSString *categoryKey = [allKeys objectAtIndex:section];
         
         //content by category
@@ -403,13 +426,45 @@
     }
     
     //configure cell and return
-    return [self configureCell:cell withIndexPath:indexPath];
+    cell = [self configureCell:cell withIndexPath:indexPath];
+    
+    //if new cell index is equal to last selected index
+    if(lastSelectedIndex && lastSelectedIndex.section == indexPath.section && lastSelectedIndex.row == indexPath.row)
+    {
+        FileFinder *fileFinder = [FileFinder fileFinder];
+        
+        UIImage *selectedBackgroundImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[self cellSelectedBackgroundImageName]]];
+        
+        UIImageView *selectedBackgroundImageView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
+        selectedBackgroundImageView.image = selectedBackgroundImage;
+        
+        cell.backgroundView = selectedBackgroundImageView;
+        
+        [cell setSelected:YES animated:NO];
+        
+    }
+    else
+    {
+        [cell setSelected:NO animated:NO];
+
+    }
+    
+    //cell custom rect
+    cell.cellX = [self cellX];
+    cell.cellWidth = [self cellWitdh];
+    
+    return cell;
 }
 
 #pragma mark - UITableView delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return [self tableViewHeaderHeight];//table header height
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.0f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -420,13 +475,19 @@
     
     //sort date by ascending order date is key in dictionary
     NSArray *allKeys = [recordDatas allKeys];
-    allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];//sort as ascending order
+    //sort decending
+    allKeys = [self sortArrayDecendingWithArray:allKeys];
     NSString *categoryKey = [allKeys objectAtIndex:section];
     
     //create header
     HeaderView *header = [[HeaderView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, [self tableViewHeaderHeight]) withTitleName:categoryKey withTitleXPosition:[self tableViewTitleXPosition] withTitleColor:[self tableViewTitleColor] withBackgroundImageName:[self tableViewHeaderBackgroundImageName]];
     
     return header;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -452,10 +513,13 @@
     
     cell.selectedBackgroundView = selectedBackgroundImageView;
     
+    lastSelectedIndex = indexPath;
+    
     
     /**show detail record controller**/
     NSArray *allKeys = [recordDatas allKeys];
-    allKeys = [allKeys sortedArrayUsingSelector:@selector(compare:)];
+    //sort decending
+    allKeys = [self sortArrayDecendingWithArray:allKeys];
     NSString *key = [allKeys objectAtIndex:indexPath.section];
     
     NSMutableArray *array = [recordDatas objectForKey:key];
@@ -479,6 +543,17 @@
     
     BetRecordCell *cell = (BetRecordCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.selectedBackgroundView =nil;
+    
+    //resetore background view
+    FileFinder *fileFinder = [FileFinder fileFinder];
+    
+    UIImage *backgroundImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[self cellBackgroundImageName]]];
+    
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:cell.contentView.frame];
+    backgroundImageView.image = backgroundImage;
+    
+    cell.backgroundView = backgroundImageView;
+
 }
 
 #pragma mark - NSURLConnection delegate

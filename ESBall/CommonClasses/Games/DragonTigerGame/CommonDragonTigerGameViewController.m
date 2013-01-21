@@ -254,13 +254,17 @@
         NSString *response  = [NSString stringWithFormat:@"bet\n"];
         [self sendMessageToServerWithMessage:response];
         
-        response = [NSString stringWithFormat:@"%i,%i\n", userInfo.gameType, userInfo.gameCode];
+        response = [NSString stringWithFormat:@"%i\n", userInfo.gameType];
+        [self sendMessageToServerWithMessage:response];
+        
+        response = [NSString stringWithFormat:@"%i\n", userInfo.gameCode];
+        [self sendMessageToServerWithMessage:response];
         
         //generate msg that contain bet info and sending to server
         response = [self generateBetInfoMessageWithInfos:betInfos];
-        //NSLog(@"\nbet confirm message:\n%@\n", response);
+        NSLog(@"\nbet confirm message:\n%@\n", response);
         //send bet info to server
-        //[self sendMessageToServerWithMessage:response];
+        [self sendMessageToServerWithMessage:response];
 #endif
         
         //display total bet this round
@@ -452,8 +456,7 @@
         
         [_dtRoadmap resetUpdateCount];
         
-        //clean total bet
-        self.totalBetLabel.text = @"0.00";
+
         
         //_changeTableButton.enabled = NO;
         //_detailButton.enabled = NO;
@@ -479,6 +482,12 @@
         self.clearBetButton.enabled = YES;
         self.betConfirmButton.enabled = YES;
         
+    }
+    
+    if([info.status isEqualToString:GameStatusWaiting])
+    {
+        //clean total bet
+        self.totalBetLabel.text = @"0.00";
     }
     
     /*

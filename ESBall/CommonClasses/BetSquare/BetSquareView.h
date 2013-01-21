@@ -21,6 +21,9 @@
 -(BOOL)BetSquareViewShouldBet:(BetSquareView *)betSquare;
 -(double)BetSquareViewValueToBet:(BetSquareView *)betSquare;
 
+@optional
+-(void)BetSquareDoBet:(BetSquareView *)betSquare;
+
 @end
 
 @interface BetSquareView : UIButton{
