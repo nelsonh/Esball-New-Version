@@ -8,6 +8,7 @@
 
 #import "PadViewController.h"
 #import "PadLoginViewController.h"
+#import "VideoSectionViewController.h"
 
 @interface PadViewController ()
 
@@ -92,7 +93,13 @@
     [self.presentedViewController dismissModalViewControllerAnimated:NO];
     
     [self performSegueWithIdentifier:@"PadMainView" sender:self];
-     
+    
+    /*
+    //go into video section directly
+    VideoSectionViewController *vidController = [self.storyboard instantiateViewControllerWithIdentifier:@"VideoSection"];
+    
+    [self presentViewController:vidController animated:NO completion:nil];
+     */
 }
 
 @end

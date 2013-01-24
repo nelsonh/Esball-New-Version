@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SE_BetConfirm</key>
+	<string>AddStack.WAV</string>
+	<key>SE_BetTap</key>
+	<string>Click.WAV</string>
+	<key>SE_ChipTap</key>
+	<string>click2.WAV</string>
+	<key>SE_ButtonTap</key>
+	<string>buttonHit.WAV</string>
+	<key>SE_StartBet</key>
+	<string>startbetting.WAV</string>
+	<key>SE_CountDownLessThanTwo</key>
+	<string>countdown2.WAV</string>
+	<key>SE_StopBet</key>
+	<string>stopbetting.WAV</string>
+	<key>SE_BankerWin</key>
+	<string>bankerwin.WAV</string>
+	<key>SE_PlayerWin</key>
+	<string>playerwin.WAV</string>
+	<key>SE_Tie</key>
+	<string>Tie.WAV</string>
+	<key>SE_BankerPoint0</key>
+	<string>Bankerpoint0.WAV</string>
+	<key>SE_BankerPoint1</key>
+	<string>Bankerpoint1.WAV</string>
+	<key>SE_BankerPoint2</key>
+	<string>Bankerpoint2.WAV</string>
+	<key>SE_BankerPoint3</key>
+	<string>Bankerpoint3.WAV</string>
+	<key>SE_BankerPoint4</key>
+	<string>Bankerpoint4.WAV</string>
+	<key>SE_BankerPoint5</key>
+	<string>Bankerpoint5.WAV</string>
+	<key>SE_BankerPoint6</key>
+	<string>Bankerpoint6.WAV</string>
+	<key>SE_BankerPoint7</key>
+	<string>Bankerpoint7.WAV</string>
+	<key>SE_BankerPoint8</key>
+	<string>Bankerpoint8.WAV</string>
+	<key>SE_BankerPoint9</key>
+	<string>Bankerpoint9.WAV</string>
+	<key>SE_PlayerPoint0</key>
+	<string>Playerpoint0.WAV</string>
+	<key>SE_PlayerPoint1</key>
+	<string>Playerpoint1.WAV</string>
+	<key>SE_PlayerPoint2</key>
+	<string>Playerpoint2.WAV</string>
+	<key>SE_PlayerPoint3</key>
+	<string>Playerpoint3.WAV</string>
+	<key>SE_PlayerPoint4</key>
+	<string>Playerpoint4.WAV</string>
+	<key>SE_PlayerPoint5</key>
+	<string>Playerpoint5.WAV</string>
+	<key>SE_PlayerPoint6</key>
+	<string>Playerpoint6.WAV</string>
+	<key>SE_PlayerPoint7</key>
+	<string>Playerpoint7.WAV</string>
+	<key>SE_PlayerPoint8</key>
+	<string>Playerpoint8.WAV</string>
+	<key>SE_PlayerPoint9</key>
+	<string>Playerpoint9.WAV</string>
+</dict>
+</plist>

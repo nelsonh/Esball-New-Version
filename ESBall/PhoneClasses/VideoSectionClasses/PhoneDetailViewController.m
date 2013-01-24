@@ -80,8 +80,7 @@
 {
     PhoneHistoryViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryViewController"];
     controller.theDelegate = self;
-    controller.historyDelegate = self;
-    
+    controller.historyDelegate = self;    
     [self presentViewController:controller animated:YES completion:nil ];
     
    /* if(_historyControllerID == nil)

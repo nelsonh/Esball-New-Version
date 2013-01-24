@@ -389,10 +389,10 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
                                 return;
                             }
                             
-                            /*
-                            if(pendingDataStr)//if there is a pending data
+                            //if there is a pending data, last info was not complete received
+                            if(pendingDataStr)
                             {
-                                //append this part
+                                //append this chunk of info to last incomplete info 
                                 [pendingDataStr appendString:output];
                                 
                                 //if it is not complete xml wait for next part
@@ -400,7 +400,15 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
                                 {
                                     return;
                                 }
+                                else
+                                {
+                                    //it is complete xml process message
+                                    [self processMessage:[pendingDataStr copy]];
+                                    pendingDataStr = nil;
+                                    return;
+                                }
                             }
+                            //if it is xml format and it is new pack of info
                             else if([output rangeOfString:@"<beans>"].location != NSNotFound)
                             {
                                 //if it is not a complete xml
@@ -413,19 +421,28 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
                                     
                                     return;
                                 }
+                                else
+                                {
+                                    //it is complete xml process message
+                                    [self processMessage:[output copy]];
+                                    pendingDataStr = nil;
+                                    return;
+                                }
                             }
-                             */
+                            
                             
                             //[self processMessage:output];
                             //pendingDataStr = nil;//clear pending data
                             
+                            //none xml format read chunk from stream 
                             if(appendableStr == nil)
                                 appendableStr = [[NSMutableString alloc] init];
                             
                             [appendableStr appendString:output];
+                             
 						}
 					}
-                    [self processMessage:appendableStr];
+                    [self processMessage:[appendableStr copy]];
                     appendableStr = nil;
 				}
 			}

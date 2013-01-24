@@ -20,6 +20,7 @@
 #import "MarqueeInfo.h"
 #import "FileFinder.h"
 #import "Constant.h"
+#import "SoundManager.h"
 
 
 /*
@@ -78,6 +79,8 @@ extern NSString *GameStatusBetting;
 //default is no
 @property (nonatomic, assign) BOOL autoPauseGameWhenDisappear;
 
+-(NSString *)soundEffectPlistFileName;
+
 //internal
 -(void)sendMessageToServerWithMessage:(NSString *)msg;
 -(void)playGame;
@@ -85,6 +88,10 @@ extern NSString *GameStatusBetting;
 -(void)handleUpdateInfo:(NSNotification*)notification;
 -(void)handleMarqueeInfo:(NSNotification*)notification;
 -(BOOL)isIdleTooLong;
+-(void)initBackgroundMusic;
+-(void)playBackgroundMusic;
+-(void)initSoundEffects;
+-(NSString *)videoIpAddressWithGameShortName:(NSString *)shortName withTableNumber:(int)tableNumber;
 
 -(IBAction)back:(id)sender;
 -(IBAction)roadmap:(id)sender;

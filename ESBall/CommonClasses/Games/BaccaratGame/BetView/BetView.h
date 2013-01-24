@@ -34,7 +34,7 @@
     
     BOOL isBetSquareDelegateSet;
     
-    NSString *gameStatus;
+    NSString *lastGameStatus;
 }
 
 @property (nonatomic, weak) id<BetViewDelegate> theBetViewDelegate;

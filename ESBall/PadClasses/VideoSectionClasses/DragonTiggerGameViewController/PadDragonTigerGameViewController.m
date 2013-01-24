@@ -56,6 +56,11 @@
     return [NSString stringWithFormat:@"http://183.182.66.165/dragontigerhd%i/sd2.jpg", 1];
 }
 
+-(NSString *)sdOrhdForVideoImage
+{
+    return @"hd";
+}
+
 -(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
 {
     return @"DTGame_bg2@2x.png";

@@ -43,6 +43,11 @@
     return [NSString stringWithFormat:@"http://183.182.66.164/sicbohd%i/sd2.jpg", 1];
 }
 
+-(NSString *)sdOrhdForVideoImage
+{
+    return @"hd";
+}
+
 -(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
 {
     return @"";

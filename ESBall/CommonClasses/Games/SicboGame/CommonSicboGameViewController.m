@@ -8,6 +8,7 @@
 
 #import "CommonSicboGameViewController.h"
 
+
 @interface CommonSicboGameViewController ()
 
 @end
@@ -39,16 +40,23 @@
 }
 
 #pragma mark - override
+-(NSString *)soundEffectPlistFileName
+{
+    return @"GameSoundEffectList";
+}
+
 -(void)PostBeginSetup
 {
     
     [self loadVideoImage];
     
+    /*
     self.betConfirmButton.enabled = NO;
     self.clearBetButton.enabled = NO;
     self.detailButton.enabled = NO;
     self.roadmapButton.enabled = NO;
     self.backButton.enabled = NO;
+    */
     
     //_sbBetView.theBetViewDelegate = self;
     
@@ -89,14 +97,22 @@
     theImagePull = [[ImagePull alloc] init];
     theImagePull.theDelegate = self;
     
+    int videoTableNumber = 1;
+    
+    NSString *videoQuality = [self sdOrhdForVideoImage];
+    NSString *ipStr = [self videoIpAddressWithGameShortName:@"SB" withTableNumber:videoTableNumber];
+    NSString *videoAddr = [NSString stringWithFormat:@"http://%@/sicbo%@%i/sd2.jpg", ipStr, videoQuality, videoTableNumber];
+    [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"%@", videoAddr]]];
+    
     /*
      //video with 183.182.66.165
      [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"http://183.182.66.165:80/dragontigerhd%i/sd2.jpg", 1]]];
      */
-    
+    /*
     NSString *ipAddress = [self videoImageIPAddressForTableNumber:self.tableNumber];
     
     [theImagePull pullImageFrom:[NSURL URLWithString:ipAddress]];
+     */
 }
 
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info
@@ -115,7 +131,7 @@
     //give chips name array
     //NSLog(@"chiplist:%@", info.chipList);
     NSMutableArray *filtedChipList = [[NSMutableArray alloc] init];
-    NSArray *chipFilter = [info.chipFilter copy];
+    NSArray *chipFilter = [NSArray arrayWithArray:info.chipFilter];
     
 #ifdef DEBUG
     NSLog(@"chip filter:%@", chipFilter);
@@ -160,7 +176,7 @@
 
 -(void)processUpdateInfo:(NSNotification *)notification
 {
-    self.backButton.enabled = YES;
+    //self.backButton.enabled = YES;
     
     UpdateInfo *info = notification.object;
     
@@ -259,11 +275,12 @@
          
      }
      
-    
+    /*
     if(!self.detailButton.enabled)
         self.detailButton.enabled = YES;
     if(!self.roadmapButton.enabled)
         self.roadmapButton.enabled = YES;
+    */
     
     //give update information to bet area view
     //_betAreaView.updateInfo = info;
@@ -272,6 +289,74 @@
     //update any necessary views
     //[_betAreaView updateView];
     [_sbBetView updateView];
+}
+
+-(void)doClearBet
+{
+    //make sure BetAreaView is a class of BetView before clear all bets
+    if([_sbBetView isKindOfClass:[SBBetView class]])
+    {
+        SBBetView *betView = (SBBetView *)_sbBetView;
+        [betView clearAllBetsWithHideInfo:YES];
+    }
+}
+
+-(void)showDetail
+{
+    DetailViewController *detailController = nil;
+    
+    for(id controller in self.childViewControllers)
+    {
+        if([controller isKindOfClass:[DetailViewController class]])
+        {
+            detailController = controller;
+            
+            break;
+        }
+    }
+    
+    if(detailController != nil)
+    {
+        //remove
+        [detailController removeFromParentViewController];
+        [self performSelector:@selector(doDeSelectDetail) withObject:nil afterDelay:0.0];
+        
+        
+    }
+    else
+    {
+        
+        //add
+        detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+        
+        if(!detailController)
+        {
+#ifdef DEBUG
+            InternalErrorAlert(self, @"Internal error", @"can not find \"DetailViewController\" in storyboard");
+#endif
+            return;
+        }
+        
+        detailController.theDelegate = self;
+        
+        //specify storyboard controller id
+        detailController.videoSettingControllerID = @"VideoSettingViewController";
+        detailController.gameBetLimitControllerID = @"SBGameBetLimitViewController";
+        detailController.gameRuleControllerID = @"GameRulesViewController";
+        detailController.historyControllerID = @"HistoryViewController";
+        
+        [detailController addToConrtoller:self inPosition:CGPointMake(0, [self detailViewPositionY])];
+        
+        [self performSelector:@selector(doSelectDetail) withObject:nil afterDelay:0.0];
+        
+        
+    }
+}
+
+#pragma mark - GameDetailViewController delegate
+-(NSString *)GameDetailViewControllerGameRuleWebAddress:(GameDetailViewController *)controller
+{
+    return @"https://es.esball-in.com/app/help.php?GameType=3008&lang=zh-cn&HALLID=6&State=0";
 }
 
 @end

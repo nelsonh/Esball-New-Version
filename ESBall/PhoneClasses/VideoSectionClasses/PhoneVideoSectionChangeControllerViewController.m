@@ -18,6 +18,8 @@
 @synthesize labchang1,labchang2,labchang3,labchang4,labchang5,labchang6,labchang7,labchang8,labchang9,labchang10;
 @synthesize btnchang1,btnchang2,btnchang3,btnchang4,btnchang5,btnchang6,btnchang7,btnchang8,btnchang9,btnchang10,btnPrevious;
 
+@synthesize loadingHUD;
+
 
 int tableIndex;
 NSTimer *allCountTimer;   //選桌倒數使用
@@ -166,46 +168,46 @@ NSTimer *allCountTimer;   //選桌倒數使用
         switch (index) {
             case 1:
                 [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
                 changeTitle.text=@"百家乐 A";
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"a",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"a"] ;
                 [btnchang1 setImage:[UIImage imageNamed: @"bacA_btn_down.png"] forState:UIControlStateNormal];
                 break;
             case 2:
                 [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
                 changeTitle.text=@"百家乐 B";
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"b",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"b"] ;
                 [btnchang2 setImage:[UIImage imageNamed: @"bacB_btn_down.png"] forState:UIControlStateNormal];
                 break;
             case 3:
                 [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
                 changeTitle.text=@"百家乐 C";
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"c",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"c"] ;
                 [btnchang3 setImage:[UIImage imageNamed: @"bacC_btn_down.png"] forState:UIControlStateNormal];
                 break;
             case 4:
                 [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
                 changeTitle.text=@"百家乐 D";
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"d",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"d"] ;
                 [btnchang4 setImage:[UIImage imageNamed: @"bacD_btn_down.png"] forState:UIControlStateNormal];
                 break;
                 
             case 5:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bg.png", index]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bg.png"]]];
                 [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_down_bg.png", index%4]]];
                 changeTitle.text=@"百家乐 E";
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"e",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"e"] ;
                 [btnchang5 setImage:[UIImage imageNamed: @"bacE_btn_down.png"] forState:UIControlStateNormal];
                 break;
                 
             case 6:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bg.png", index]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bg.png"]]];
                 [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_down_bg.png", index%4]]];
                 changeTitle.text=@"龙虎斗 A";
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3003/%@/0/0.htm" ,@"a",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3003/%@/0/0.htm" ,@"a"] ;
                 [btnchang6 setImage:[UIImage imageNamed: @"DT_btn_down.png"] forState:UIControlStateNormal];
                 break;
                 
@@ -236,14 +238,14 @@ NSTimer *allCountTimer;   //選桌倒數使用
         
         UIGraphicsBeginImageContext(CGSizeMake(298,112));
         CGContextRef context= UIGraphicsGetCurrentContext();
-        NSString *imageName = [NSString stringWithFormat:@"route_bg_bac.png", i];
+        NSString *imageName = [NSString stringWithFormat:@"route_bg_bac.png"];
         UIImage *image = [UIImage imageNamed:imageName];
         [image drawInRect:CGRectMake(0, 0,298, 112)];
         CGContextSaveGState(context);
         CGContextRestoreGState(context);
         
         NSURL *url = [NSURL URLWithString:strUrl];
-        roadmapData= [NSString stringWithContentsOfURL:url];
+        roadmapData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
         NSLog(@"jamestest4%@",roadmapData);
         
         int col=0,row=0;
@@ -330,26 +332,28 @@ NSTimer *allCountTimer;   //選桌倒數使用
         
         switch (index) {
             case 1:
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"a",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"a"] ;
                 [btnchang1 setImage:[UIImage imageNamed: @"BaccaratA_down@2x.png"] forState:UIControlStateNormal];
                 break;
             case 2:
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"b",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"b"] ;
                 [btnchang2 setImage:[UIImage imageNamed: @"BaccaratB_down@2x.png"] forState:UIControlStateNormal];
                 break;
             case 3:
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"c",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"c"] ;
                 [btnchang3 setImage:[UIImage imageNamed: @"BaccaratC_down@2x.png"] forState:UIControlStateNormal];
                 break;
             case 4:
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"d",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"d"] ;
                 [btnchang4 setImage:[UIImage imageNamed: @"BaccaratD_down@2x.png"] forState:UIControlStateNormal];
                 break;
                 
             case 5:
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"e",0,0] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"e"] ;
                 [btnchang5 setImage:[UIImage imageNamed: @"BaccaratE_down@2x.png"] forState:UIControlStateNormal]; 
                 break;
+                
+                
                 
             default:
                 break;
@@ -368,7 +372,7 @@ NSTimer *allCountTimer;   //選桌倒數使用
     NSString *tempAnalyze;
     NSArray *currentTimes;
     NSURL *url = [NSURL URLWithString:@"http://183.182.66.167/8eea62084ca7e541d918e823422bd82e.htm"];
-    tempAnalyze= [NSString stringWithContentsOfURL:url];
+    tempAnalyze= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     
     currentTimes=   [ tempAnalyze componentsSeparatedByString:@";"];
     if (currentTimes.count>100)
@@ -442,15 +446,21 @@ NSTimer *allCountTimer;   //選桌倒數使用
 -(IBAction)down_changetable
 {
     
+    if (tableIndex<=5)
+    {
+        BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BaccaratGameViewController"];
     
-    BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BaccaratGameViewController"];
-    
-    controller.tableNumber = tableIndex-1;
-    controller.gameType = 3001;    
-    [self presentViewController:controller animated:YES completion:nil];
-    
-    
-    
+        controller.tableNumber = tableIndex-1;
+        controller.gameType = 3001;    
+        [self presentViewController:controller animated:YES completion:nil];       
+    }else if(tableIndex==6)
+    {
+        BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"DragonTigerGameViewController"];
+        
+        controller.tableNumber = tableIndex-1;
+        controller.gameType = 3003;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
  
 }
 

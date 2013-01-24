@@ -47,9 +47,9 @@ static NSString *InternetNotAvalible = @"InternetNotAvalible";
     BOOL severReturnError;
     NSString *sid;
     
-    NSMutableString *pendingDataStr;
+    NSMutableString *pendingDataStr;//for xml format
     
-    NSMutableString *appendableStr;
+    NSMutableString *appendableStr;//for normal string msg specially read from stream
 }
 
 @property (nonatomic, weak) id<ServerInterfaceDelegate>theDelegate;

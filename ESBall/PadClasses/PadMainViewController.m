@@ -95,6 +95,7 @@ const static NSString *keyGameTypes = @"GameTypes";
     self.tabBar.backgroundGradientColors = colors;
     
     self.selectedViewController = [controllersToAdd objectAtIndex:0];
+     
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,5 +120,6 @@ const static NSString *keyGameTypes = @"GameTypes";
 {
     return YES;
 }
+
 
 @end

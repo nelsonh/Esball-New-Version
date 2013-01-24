@@ -8,7 +8,8 @@
 
 #import "CommonBaccaratGameViewController.h"
 #import "BetView.h"
-#import "DetailViewController.h"
+
+
 
 //#define kPokerViewHideDelay 3.0
 
@@ -87,6 +88,11 @@
     return @"";
 }
 
+-(NSString *)sdOrhdForVideoImage
+{
+    return @"";
+}
+
 -(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
 {
     return @"";
@@ -117,6 +123,11 @@
 }
 
 #pragma mark - override methods
+-(NSString *)soundEffectPlistFileName
+{
+    return @"GameSoundEffectList";
+}
+
 -(void)resumeGame
 {
     [super resumeGame];
@@ -162,9 +173,9 @@
     /**
      game update
      **/
-    [super handleUpdateInfo:notification];
-    
     [self processUpdateInfo:notification];
+    
+    [super handleUpdateInfo:notification];
     
     
 }
@@ -172,6 +183,10 @@
 -(IBAction)back:(id)sender
 {
     [super back:sender];
+    
+    //sound effect
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager playSoundEffectWithKey:@"SE_ButtonTap"];
 }
 
 -(IBAction)roadmap:(id)sender
@@ -179,6 +194,10 @@
     [super roadmap:sender];
     
     [self showRoadmap];
+    
+    //sound effect
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager playSoundEffectWithKey:@"SE_ButtonTap"];
 }
 
 -(IBAction)detail:(id)sender
@@ -186,6 +205,10 @@
     [super detail:sender];
     
     [self showDetail];
+    
+    //sound effect
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager playSoundEffectWithKey:@"SE_ButtonTap"];
 }
 
 -(IBAction)record:(id)sender
@@ -193,6 +216,10 @@
     [super record:sender];
     
     [self showRecord];
+    
+    //sound effect
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager playSoundEffectWithKey:@"SE_ButtonTap"];
 }
 
 -(IBAction)clearBet:(id)sender
@@ -200,6 +227,10 @@
     [super clearBet:sender];
     
     [self doClearBet];
+    
+    //sound effect
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager playSoundEffectWithKey:@"SE_ButtonTap"];
 }
 
 -(IBAction)betConfirm:(id)sender
@@ -207,6 +238,10 @@
     [super betConfirm:sender];
     
     [self doBetConfirm];
+    
+    //play sound effect
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager playSoundEffectWithKey:@"SE_BetConfirm"];
 }
 
 #pragma mark - public interface
@@ -216,12 +251,14 @@
     //start to get video image
     [self loadVideoImage];
     
+    /*
     //any necessary button disable
     _betConfirmButton.enabled = NO;
     _clearBetButton.enabled = NO;
     _detailButton.enabled = NO;
     _roadmapButton.enabled = NO;
     _backButton.enabled = NO;
+    */
     
     //assign bet view delegate
     _betAreaView.theBetViewDelegate = self;
@@ -245,55 +282,89 @@
     theImagePull = [[ImagePull alloc] init];
     theImagePull.theDelegate = self;
     
+    int videoTableNumber = self.tableNumber+1;
+    
+    NSString *videoQuality = [self sdOrhdForVideoImage];
+    NSString *ipStr = [self videoIpAddressWithGameShortName:@"BC" withTableNumber:videoTableNumber];
+    NSString *videoAddr = [NSString stringWithFormat:@"http://%@/baccarat%@%i/sd2.jpg", ipStr, videoQuality, videoTableNumber];
+    [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"%@", videoAddr]]];
+    
+    /*
     if((self.tableNumber+1) >= 1 && (self.tableNumber+1) <= 3)
     {
         //A,B,C
-        /*
-        [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"http://183.182.66.164:80/baccarathd%i/sd2.jpg", self.tableNumber+1]]];
-         */
+        
+        //[theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"http://183.182.66.164:80/baccarathd%i/sd2.jpg", self.tableNumber+1]]];
+         
         NSString *ipAddress = [self videoImageIPAddressForTableNumber:self.tableNumber];
         [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"%@", ipAddress]]];
     }
     else
     {
         //D,E
-        /*
-        [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"http://183.182.66.165:80/baccarathd%i/sd2.jpg", self.tableNumber+1]]];
-         */
+        
+        //[theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"http://183.182.66.165:80/baccarathd%i/sd2.jpg", self.tableNumber+1]]];
+         
         NSString *ipAddress = [self videoImageIPAddressForTableNumber:self.tableNumber];
         [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"%@", ipAddress]]];
     }
+     */
     
+
 }
 
 -(void)doSelectRoadmap
 {
     _roadmapButton.highlighted = YES;
+    
+    _backButton.enabled = NO;
+    _detailButton.enabled = NO;
+    _recordButton.enabled = NO;
 }
 
 -(void)doDeSelectRoadmap
 {
     _roadmapButton.highlighted = NO;
+    
+    _backButton.enabled = YES;
+    _detailButton.enabled = YES;
+    _recordButton.enabled = YES;
 }
 
 -(void)doSelectDetail
 {
     _detailButton.highlighted = YES;
+    
+    _roadmapButton.enabled = NO;
+    _backButton.enabled = NO;
+    _recordButton.enabled = NO;
 }
 
 -(void)doDeSelectDetail
 {
     _detailButton.highlighted = NO;
+    
+    _roadmapButton.enabled = YES;
+    _backButton.enabled = YES;
+    _recordButton.enabled = YES;
 }
 
 -(void)doSelectRecord
 {
     _recordButton.highlighted = YES;
+    
+    _roadmapButton.enabled = NO;
+    _backButton.enabled = NO;
+    _detailButton.enabled = NO;
 }
 
 -(void)doDeselectRecord
 {
     _recordButton.highlighted = NO;
+    
+    _roadmapButton.enabled = YES;
+    _backButton.enabled = YES;
+    _detailButton.enabled = YES;
 }
 
 //calculate total bet
@@ -341,10 +412,13 @@
     if(_roadmapView.hidden)
     {
         [self performSelector:@selector(doSelectRoadmap) withObject:nil afterDelay:0.0];
+        
     }
     else
     {
         [self performSelector:@selector(doDeSelectRoadmap) withObject:nil afterDelay:0.0];
+        
+
     }
     
     _roadmapView.hidden = !_roadmapView.hidden;
@@ -380,6 +454,8 @@
         //remove
         [detailController removeFromParentViewController];
         [self performSelector:@selector(doDeSelectDetail) withObject:nil afterDelay:0.0];
+        
+
     }
     else
     {
@@ -406,6 +482,8 @@
         [detailController addToConrtoller:self inPosition:CGPointMake(0, [self detailViewPositionY])];
         
         [self performSelector:@selector(doSelectDetail) withObject:nil afterDelay:0.0];
+        
+
     }
 }
 
@@ -550,31 +628,57 @@
     return response;
 }
 
--(void)updatePromptMsgWithUpdateInfo:(UpdateInfo *)info
+-(void)hidePromptMsg
 {
-    if(info.payoff != 0)
+    _promptMsgView.hidden = YES;
+}
+
+-(void)promptStartBettingIndicator
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hidePromptMsg) object:nil];
+    
+    _promptMsgView.hidden = NO;
+    
+    NSString *msg;
+    
+    msg = NSLocalizedString(@"开始下注", @"开始下注");
+    [_promptMsgView updateWithMessage:msg];
+    
+    [self performSelector:@selector(hidePromptMsg) withObject:nil afterDelay:2.0f];
+}
+
+-(void)promptWinOrLoseIndicatorWithInfo:(UpdateInfo *)info
+{
+    NSString *msg;
+    
+    if(info.payoff != 0 && winOrLosePromptShowed == NO)
     {
         _promptMsgView.hidden = NO;
         
-        NSString *msg;
-        
         if(info.payoff > 0)
         {
+            
+            
             msg = [NSString stringWithFormat:NSLocalizedString(@"您赢了: %.2f", @"您赢了: %.2f"), info.payoff];
             [_promptMsgView updateWithMessage:msg];
+            
+            [self performSelector:@selector(hidePromptMsg) withObject:nil afterDelay:2.0f];
+            
+            winOrLosePromptShowed = YES;
+            
         }
         else if(info.payoff < 0)
         {
+            
             msg = [NSString stringWithFormat:NSLocalizedString(@"您输了: %.2f", @"您输了: %.2f"), info.payoff*-1];
             [_promptMsgView updateWithMessage:msg];
+            
+            [self performSelector:@selector(hidePromptMsg) withObject:nil afterDelay:2.0f];
+            
+            winOrLosePromptShowed = YES;
         }
-    }
-    else
-    {
         
-        _promptMsgView.hidden = YES;
     }
-        
 }
 
 -(void)processMarqueeInfo:(NSNotification *)notification
@@ -592,7 +696,7 @@
     //give chips name array
     //NSLog(@"chiplist:%@", info.chipList);
     NSMutableArray *filtedChipList = [[NSMutableArray alloc] init];
-    NSArray *chipFilter = [info.chipFilter copy];
+    NSArray *chipFilter = [NSArray arrayWithArray:info.chipFilter];
     
 #ifdef DEBUG
     NSLog(@"chip filter:%@", chipFilter);
@@ -632,7 +736,9 @@
 
 -(void)processUpdateInfo:(NSNotification *)notification
 {
-    _backButton.enabled = YES;
+    SoundManager *soundManager = [SoundManager soundManager];
+    
+    //_backButton.enabled = YES;
     
     UpdateInfo *info = notification.object;
     
@@ -658,13 +764,14 @@
     _countDownLabel.text = [NSString stringWithFormat:@"%i", info.countDown];
     
     
-    
-    if([info.status isEqualToString:GameStatusDealing])
+    if([info.status isEqualToString:GameStatusDealing] || [info.status isEqualToString:GameStatusWaiting])
     {
+        //update poker
         _pokerView.visibility = YES;
         
         [self updatePokerWithUpdateInfo:info];
     }
+    /*
     else if([info.status isEqualToString:GameStatusWaiting])
     {
         if(_pokerView.visibility)
@@ -676,6 +783,27 @@
             //[self performSelector:@selector(hidePokerView) withObject:nil afterDelay:kPokerViewHideDelay];
         }
         
+    }
+     */
+    
+    if([lastGameStatus isEqualToString:GameStatusDealing] && [info.status isEqualToString:GameStatusWaiting])
+    {
+        //play sound effect
+        NSUInteger bankerPoint = [self calculateCardPointForBanker:info.poker];
+        NSUInteger playerPoint = [self calculateCardPointForPlayer:info.poker];
+        
+        if(bankerPoint > playerPoint)
+        {
+            [soundManager playSoundEffectWithKey:@"SE_BankerWin"];
+        }
+        else if(playerPoint > bankerPoint)
+        {
+            [soundManager playSoundEffectWithKey:@"SE_PlayerWin"];
+        }
+        else if(bankerPoint == playerPoint)
+        {
+            [soundManager playSoundEffectWithKey:@"SE_Tie"];
+        }
     }
     
     //_pokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
@@ -692,6 +820,7 @@
     }
     else if([info.status isEqualToString:GameStatusBetting])
     {
+        
         _pokerView.visibility = NO;
         
         
@@ -717,6 +846,33 @@
         self.totalBetLabel.text = @"0.00";
     }
     
+    if([info.status isEqualToString:GameStatusBetting])
+    {
+        //reset
+        winOrLosePromptShowed = NO;
+    }
+    
+    //start betting indicator
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
+    {
+        [self promptStartBettingIndicator];
+        
+        //play sound effect
+        [soundManager playSoundEffectWithKey:@"SE_StartBet"];
+    }
+    
+    //show win or lose
+    if([info.status isEqualToString:GameStatusWaiting])
+    {
+        [self promptWinOrLoseIndicatorWithInfo:info];
+    }
+    
+    if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])
+    {
+        //play sound effect
+        [soundManager playSoundEffectWithKey:@"SE_StopBet"];
+    }
+    
     /*
      if(!_roadmapView.hidden)
      {
@@ -726,18 +882,18 @@
      }
      */
     
+    /*
     if(!_detailButton.enabled)
         _detailButton.enabled = YES;
     if(!_roadmapButton.enabled)
         _roadmapButton.enabled = YES;
+    */
     
     //give update information to bet area view
     _betAreaView.updateInfo = info;
     
     //update any necessary views
     [_betAreaView updateView];
-    
-    [self updatePromptMsgWithUpdateInfo:info];
 }
 
 #pragma mark - gameplay rule

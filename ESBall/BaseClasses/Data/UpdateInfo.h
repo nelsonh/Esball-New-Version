@@ -35,6 +35,6 @@ static NSString *UpdateInfoReayNotification = @"UpdateInfoIsReady";
 @property (nonatomic, assign) double payoff;
 @property (nonatomic, assign) double credit;
 
--(void)trimString:(NSString *)string;//trim string only for sicbo what the hell
+-(NSString *)trimString:(NSString *)string;//trim string only for sicbo what the hell
 
 @end

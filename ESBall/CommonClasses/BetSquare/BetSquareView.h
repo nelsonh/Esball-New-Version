@@ -22,6 +22,7 @@
 -(double)BetSquareViewValueToBet:(BetSquareView *)betSquare;
 
 @optional
+-(void)BetSquareWillDoBet:(BetSquareView *)betSquare;
 -(void)BetSquareDoBet:(BetSquareView *)betSquare;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BetSquareView.h"
+#import "SoundManager.h"
 
 @interface BetSquareView ()
 
@@ -51,6 +52,10 @@
                 //ask value for bet
                 double betValue = [_theDelegate BetSquareViewValueToBet:self];
                 [self doBet:betValue];
+                
+                //play sound effect
+                SoundManager *soundManager = [SoundManager soundManager];
+                [soundManager playSoundEffectWithKey:@"SE_BetTap"];
             }
         }
     }
@@ -66,9 +71,15 @@
 {
     if([_theDelegate respondsToSelector:@selector(BetSquareViewIsTotalBetOverBalance:withCurrentBet:)])
     {
-        //if total bet over balance, pass newBet cause current bet is not set yet
+        //if total bet over balance, pass newBet because current bet is not set yet
         if([_theDelegate BetSquareViewIsTotalBetOverBalance:self withCurrentBet:newBet])
             return;
+    }
+    
+    
+    if([_theDelegate respondsToSelector:@selector(BetSquareWillDoBet:)])
+    {
+        [_theDelegate BetSquareWillDoBet:self];
     }
     
     double maxBet = 0;

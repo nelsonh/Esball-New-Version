@@ -69,6 +69,11 @@
     }
 }
 
+-(NSString *)sdOrhdForVideoImage
+{
+    return @"hd";
+}
+
 -(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
 {
     return @"Game_bg2@2x.png";

@@ -67,6 +67,53 @@
 -(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo
 {
     [self clearBetsWithHideInfo:yesOrNo];
+    
+}
+
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo
+{
+    NSLog(@"clear all bet info");
+    
+    if(yesOrNo)
+    {
+        /**clear all bets info and info view**/
+        [_betSquare1 hideBetInfoView];
+        [_betSquare2 hideBetInfoView];
+        [_betSquare3 hideBetInfoView];
+        [_betSquare4 hideBetInfoView];
+        [_betSquare5 hideBetInfoView];
+        [_betSquare6 hideBetInfoView];
+        [_betSquare7 hideBetInfoView];
+        [_betSquare8 hideBetInfoView];
+        [_betSquare9 hideBetInfoView];
+        [_betSquare10 hideBetInfoView];
+        [_betSquare11 hideBetInfoView];
+        
+        [_betSquare1 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare2 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare3 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare4 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare5 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare6 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare7 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare8 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
+        [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
+    }
+    
+    
+    [_betSquare1 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare2 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare3 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare4 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare5 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare6 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare7 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare8 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
+    [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
 }
 
 -(NSMutableArray *)collectBetInfo
@@ -138,51 +185,7 @@
     }
 }
 
--(void)clearBetsWithHideInfo:(BOOL)yesOrNo
-{
-    NSLog(@"clear all bet info");
-    
-    if(yesOrNo)
-    {
-        /**clear all bets info and info view**/
-        [_betSquare1 hideBetInfoView];
-        [_betSquare2 hideBetInfoView];
-        [_betSquare3 hideBetInfoView];
-        [_betSquare4 hideBetInfoView];
-        [_betSquare5 hideBetInfoView];
-        [_betSquare6 hideBetInfoView];
-        [_betSquare7 hideBetInfoView];
-        [_betSquare8 hideBetInfoView];
-        [_betSquare9 hideBetInfoView];
-        [_betSquare10 hideBetInfoView];
-        [_betSquare11 hideBetInfoView];
-        
-        [_betSquare1 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare2 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare3 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare4 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare5 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare6 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare7 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare8 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
-    }
 
-    
-    [_betSquare1 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare2 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare3 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare4 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare5 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare6 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare7 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare8 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
-    [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
-}
 
 -(void)setupBetSquare
 {
@@ -1390,25 +1393,25 @@
     else if ([self.updateInfo.status isEqualToString:GameStatusBetting])
     {
         //if this is first time enter betting status
-        if(isDisplayPlayerBetResult && gameStatus == GameStatusWaiting)
+        if(isDisplayPlayerBetResult && lastGameStatus == GameStatusWaiting)
         {
             //player was confirm bet and first time enter betting status
             isDisplayPlayerBetResult = NO;
             [self clearAllBetsWithHideInfo:YES];
         }
-        else if (isDisplayPlayerBetResult == NO && gameStatus == GameStatusWaiting)
+        else if (isDisplayPlayerBetResult == NO && lastGameStatus == GameStatusWaiting)
         {
             //player was not confirm bet and first enter betting status
             [self clearAllBetsWithHideInfo:YES];
         }
         
-        gameStatus = GameStatusBetting;
+        lastGameStatus = GameStatusBetting;
         
         [self setupBetSquare];
     }
     else if([self.updateInfo.status isEqualToString:GameStatusWaiting])
     {
-        gameStatus = GameStatusWaiting;
+        lastGameStatus = GameStatusWaiting;
         
         /*
         isDisplayPlayerBetResult = NO;

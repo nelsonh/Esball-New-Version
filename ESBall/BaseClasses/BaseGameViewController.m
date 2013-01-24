@@ -51,11 +51,17 @@
 -(void)dealloc
 {
     NSLog(@"game dealloc");
+    
+    //unload sound resources
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager unloadAllSoundResources];
+    
    //remove notification
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UserInfoReadyNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UpdateInfoReayNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MarqueeInfoReadyNotification object:nil];
     
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 -(void)loadView
@@ -147,6 +153,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - overridable methods
+-(NSString *)soundEffectPlistFileName
+{
+    return @"";
+}
+
 #pragma mark - public interface
 -(IBAction)back:(id)sender
 {
@@ -190,6 +202,10 @@
     //stop taking info from server interface
     ServerInterface *theInterface = [ServerInterface serverInterface];
     theInterface.theDelegate = nil;
+    
+    //pause bg music
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager pauseBackgroundMusic];
 }
 
 -(void)resumeGame
@@ -197,6 +213,79 @@
     //take info from server interface
     ServerInterface *theInterface = [ServerInterface serverInterface];
     theInterface.theDelegate = self;
+    
+    //resume bg music
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager resumeBackgroundMusic];
+}
+
+-(NSString *)videoIpAddressWithGameShortName:(NSString *)shortName withTableNumber:(int)tableNumber
+{
+    //short name is like BC for example
+    //return format is nsstring 183.182.66.239, nil if not found
+    /**
+     BC1,183.182.66.239,183.182.66.239
+     BC2,183.182.66.239,183.182.66.239
+     BC3,183.182.66.239,183.182.66.239
+     BC4,183.182.66.239,183.182.66.239
+     BC5,183.182.66.239,183.182.66.239
+     DT1,183.182.66.239,183.182.66.239
+     MT1,183.182.66.164,183.182.66.164
+     PG1,183.182.66.164,183.182.66.164
+     SB1,183.182.66.164,183.182.66.164
+     **/
+    
+    NSString *key = [NSString stringWithFormat:@"%@%i", shortName, tableNumber];
+    
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://183.182.66.167/b7eafc46175e078c6ffd932e9c209f51.png"]];
+    
+    NSString *contentStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSArray *contentList = [contentStr componentsSeparatedByString:@"\n"];
+    
+    for(NSString *rowStr in contentList)
+    {
+        NSArray *splited = [rowStr componentsSeparatedByString:@","];
+        
+        NSString *mark = [splited objectAtIndex:0];
+        
+        if([key isEqualToString:mark])
+        {
+            int min = 1;
+            int max = splited.count-1;
+            
+            int randNumber = rand() % (max - min) + min;
+            
+            NSString *ipAddr = [NSString stringWithString:[splited objectAtIndex:randNumber]];
+            
+            return ipAddr;
+        }
+    }
+    
+    return nil;
+}
+
+#pragma mark - sound
+-(void)initBackgroundMusic
+{
+    //preload bg music
+    SoundManager *soundManager = [SoundManager soundManager];
+    
+    [soundManager preloadBackgroundMusic:@"Background.WAV"];
+}
+
+-(void)playBackgroundMusic
+{
+    //play bg music
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager playBackgroundMusicWithLoop:YES];
+}
+
+-(void)initSoundEffects
+{
+    SoundManager *soundManager = [SoundManager soundManager];
+    
+    [soundManager preloadSoundEffectWithPlist:[self soundEffectPlistFileName]];
 }
 
 #pragma mark - Internal
@@ -241,6 +330,13 @@
     
     if(isFirstTime)
     {
+        //init background music
+        [self initBackgroundMusic];
+        //init sound effect
+        [self initSoundEffects];
+        //play background music
+        [self playBackgroundMusic];
+        
         if([_theDelegate respondsToSelector:@selector(BaseGameViewControllerIsReady:)])
         {
             [_theDelegate BaseGameViewControllerIsReady:self];

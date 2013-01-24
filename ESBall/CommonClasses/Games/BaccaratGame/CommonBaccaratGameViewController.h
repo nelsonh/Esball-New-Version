@@ -12,6 +12,7 @@
 #import "PokerView.h"
 #import "BetView.h"
 #import "ImagePull.h"
+#import "DetailViewController.h"
 #import "GameDetailViewController.h"
 #import "RoadmapView.h"
 #import "PromptMessageView.h"
@@ -28,6 +29,8 @@
     NSTimer *timerForVideo;
     NSMutableDictionary *cardPoints;
     ImagePull *theImagePull;
+    
+    BOOL winOrLosePromptShowed;
 }
 
 @property (nonatomic, weak) IBOutlet UILabel *userAccountLabel;
@@ -60,6 +63,7 @@
 -(void)doDeselectRecord;
 -(double)totalBetWithInfos:(NSMutableArray *)infos;
 -(void)loadVideoImage;
+-(NSString *)sdOrhdForVideoImage;
 //-(void)hidePokerView;
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info;
 -(void)showRoadmap;
@@ -73,7 +77,9 @@
 -(NSString *)generateBetInfoMessageWithInfos:(NSMutableArray *)infos;
 -(NSUInteger)calculateCardPointForBanker:(NSArray *)cards;
 -(NSUInteger)calculateCardPointForPlayer:(NSArray *)cards;
--(void)updatePromptMsgWithUpdateInfo:(UpdateInfo *)info;
+-(void)hidePromptMsg;
+-(void)promptStartBettingIndicator;
+-(void)promptWinOrLoseIndicatorWithInfo:(UpdateInfo *)info;
 
 //must override and implement 
 -(NSString *)videoImageIPAddressForTableNumber:(NSUInteger)tableNumber;//ip for video image

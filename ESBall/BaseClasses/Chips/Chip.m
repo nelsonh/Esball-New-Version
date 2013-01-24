@@ -8,6 +8,7 @@
 
 #import "Chip.h"
 #import "FileFinder.h"
+#import "SoundManager.h"
 
 @interface Chip ()
 
@@ -58,6 +59,10 @@
         //prevent touch up indside 
         [self performSelector:@selector(doHighlight) withObject:nil afterDelay:0.0];
         [_theDelegate ChipDidTapped:self];
+        
+        //sound effect
+        SoundManager *soundManager = [SoundManager soundManager];
+        [soundManager playSoundEffectWithKey:@"SE_ChipTap"];
     }
 }
 

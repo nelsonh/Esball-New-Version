@@ -10,4 +10,6 @@
 
 @interface SBBetSquareView : BetSquareView
 
+-(void)changeMaxBetAndBetInfoWithNewMaxBet:(double)newMaxBet;
+
 @end

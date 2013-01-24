@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "FSVerticalTabBarController.h"
 
+
 @interface PadMainViewController : FSVerticalTabBarController<FSTabBarControllerDelegate>
 
 @end
+
+

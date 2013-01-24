@@ -7,7 +7,7 @@
 //
 
 #import "CommonDragonTigerGameViewController.h"
-#import "DetailViewController.h"
+
 
 #define kPokerViewHideDelay 3.0
 
@@ -93,16 +93,23 @@
 }
 
 #pragma mark - override
+-(NSString *)soundEffectPlistFileName
+{
+    return @"GameSoundEffectList";
+}
+
 -(void)PostBeginSetup
 {
     
     [self loadVideoImage];
     
+    /*
     self.betConfirmButton.enabled = NO;
     self.clearBetButton.enabled = NO;
     self.detailButton.enabled = NO;
     self.roadmapButton.enabled = NO;
     self.backButton.enabled = NO;
+    */
     
     _dtBetView.theBetViewDelegate = self;
     
@@ -130,9 +137,18 @@
     [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"http://183.182.66.165:80/dragontigerhd%i/sd2.jpg", 1]]];
     */
 
+    /*
     NSString *ipAddress = [self videoImageIPAddressForTableNumber:self.tableNumber];
 
     [theImagePull pullImageFrom:[NSURL URLWithString:ipAddress]];
+    */
+    
+    int videoTableNumber = 1;
+    
+    NSString *videoQuality = [self sdOrhdForVideoImage];
+    NSString *ipStr = [self videoIpAddressWithGameShortName:@"DT" withTableNumber:videoTableNumber];
+    NSString *videoAddr = [NSString stringWithFormat:@"http://%@/dragontiger%@%i/sd2.jpg", ipStr, videoQuality, videoTableNumber];
+    [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"%@", videoAddr]]];
 }
 /*
 -(void)hidePokerView
@@ -362,7 +378,7 @@
     //give chips name array
     //NSLog(@"chiplist:%@", info.chipList);
     NSMutableArray *filtedChipList = [[NSMutableArray alloc] init];
-    NSArray *chipFilter = [info.chipFilter copy];
+    NSArray *chipFilter = [NSArray arrayWithArray:info.chipFilter];
     
 #ifdef DEBUG
     NSLog(@"chip filter:%@", chipFilter);
@@ -403,7 +419,9 @@
 
 -(void)processUpdateInfo:(NSNotification *)notification
 {
-    self.backButton.enabled = YES;
+    SoundManager *soundManager = [SoundManager soundManager];
+    
+    //self.backButton.enabled = YES;
     
     UpdateInfo *info = notification.object;
     
@@ -437,6 +455,7 @@
         [self updatePokerWithUpdateInfo:info];
         
     }
+    /*
     else if([info.status isEqualToString:GameStatusWaiting])
     {
         if(_dtPokerView.visibility)
@@ -448,6 +467,28 @@
             //[self performSelector:@selector(hidePokerView) withObject:nil afterDelay:kPokerViewHideDelay];
         }
     }
+     */
+    
+    if([lastGameStatus isEqualToString:GameStatusDealing] && [info.status isEqualToString:GameStatusWaiting])
+    {
+        //play sound effect
+        NSUInteger bankerPoint = [self calculateCardPointForDragon:info.poker];
+        NSUInteger playerPoint = [self calculateCardPointForTiger:info.poker];
+        
+        if(bankerPoint > playerPoint)
+        {
+            [soundManager playSoundEffectWithKey:@"SE_BankerWin"];
+        }
+        else if(playerPoint > bankerPoint)
+        {
+            [soundManager playSoundEffectWithKey:@"SE_PlayerWin"];
+        }
+        else if(bankerPoint == playerPoint)
+        {
+            [soundManager playSoundEffectWithKey:@"SE_Tie"];
+        }
+    }
+    
     //_dtPokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
     
     
@@ -490,6 +531,33 @@
         self.totalBetLabel.text = @"0.00";
     }
     
+    if([info.status isEqualToString:GameStatusBetting])
+    {
+        //reset
+        winOrLosePromptShowed = NO;
+    }
+    
+    //start betting indicator
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
+    {
+        [self promptStartBettingIndicator];
+        
+        //play sound effect
+        [soundManager playSoundEffectWithKey:@"SE_StartBet"];
+    }
+    
+    //show win or lose
+    if([info.status isEqualToString:GameStatusWaiting])
+    {
+        [self promptWinOrLoseIndicatorWithInfo:info];
+    }
+    
+    if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])
+    {
+        //play sound effect
+        [soundManager playSoundEffectWithKey:@"SE_StopBet"];
+    }
+    
     /*
      if(!_dtRoadmap.hidden)
      {
@@ -499,10 +567,12 @@
      }
      */
     
+    /*
     if(!self.detailButton.enabled)
         self.detailButton.enabled = YES;
     if(!self.roadmapButton.enabled)
         self.roadmapButton.enabled = YES;
+    */
     
     //give update information to bet area view
     _dtBetView.updateInfo = info;
@@ -510,7 +580,6 @@
     //update any necessary views
     [_dtBetView updateView];
     
-    [self updatePromptMsgWithUpdateInfo:info];
 }
 
 //calculate total bet
@@ -528,7 +597,7 @@
     
     return totalBet;
 }
-
+/*
 -(void)playGame
 {
     [super playGame];
@@ -546,9 +615,9 @@
 
 -(void)handleUpdateInfo:(NSNotification*)notification
 {
-    /**
-     game update
-     **/
+    
+     //game update
+
     
     [super handleUpdateInfo:notification];
 }
@@ -577,6 +646,7 @@
 {
     [super betConfirm:sender];
 }
+ */
 
 //phone need to override and specify image name
 #pragma mark - BetView delegate
