@@ -12,7 +12,9 @@
 #import "BaseGameViewController.h"
 #import "LoadingHUD.h"
 
-@interface VideoSectionViewController : UIViewController<ListScrollViewDelegate, ItemDropdownViewControllerDelegate, BaseGameViewControllerDelegate, ServerInterfaceDelegate>{
+@class ItemViewController;
+
+@interface VideoSectionViewController : UIViewController<ListScrollViewDelegate, ItemDropdownViewControllerDelegate, BaseGameViewControllerDelegate, ServerInterfaceDelegate, NSURLConnectionDelegate>{
 
     //hold initial ListScrollView's rect
     CGRect rectForListScrollView;
@@ -34,6 +36,26 @@
     NSString *storyboardControllerID;
     
     LoadingHUD *loadingHUD;
+    
+    
+    
+    __weak ItemViewController *selectedItem;//track item we current selected
+    NSTimer *pullCountDownDataTimer;
+    NSMutableData *countDownData;
+    NSURLConnection *countDownDataConnection;
 }
+
+-(IBAction)enterGameBtnTapped:(id)sender;
+
+//stop resume update related
+-(void)stopAnyUpdate;
+-(void)startUpdate;
+
+//time count down related 
+-(void)startPullDataForCountDown;
+-(void)stopPullDataForCounDown;
+-(void)doPullDataForCountDown;
+-(void)updateCountDownTime;
+-(NSArray *)parseCountDownTimeDataWithData:(NSData *)data;
 
 @end

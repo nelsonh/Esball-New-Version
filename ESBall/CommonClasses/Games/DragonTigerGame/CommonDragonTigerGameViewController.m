@@ -169,7 +169,8 @@
     }
     _dtPokerView.dragonPoint = dragonPoint;
     _dtPokerView.tigerPoint = tigerPoint;
-    _dtPokerView.cardImages = info.poker;
+    _dtPokerView.cardImages = [NSArray arrayWithArray:info.poker];
+    
     
     [_dtPokerView updateView];
 }
@@ -447,7 +448,7 @@
     self.countDownLabel.text = [NSString stringWithFormat:@"%i", info.countDown];
     
     
-    if([info.status isEqualToString:GameStatusDealing])
+    if([info.status isEqualToString:GameStatusDealing]|| [info.status isEqualToString:GameStatusWaiting])
     {
         
         _dtPokerView.visibility = YES;

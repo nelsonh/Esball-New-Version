@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kConnectionTimeout 60//connection timeout
+
 static NSString *ConnectionLostNotification = @"ConnectionLost";
 static NSString *InternetNotAvalible = @"InternetNotAvalible";
 
@@ -60,6 +62,7 @@ static NSString *InternetNotAvalible = @"InternetNotAvalible";
 -(void)logout;
 //-(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password;
 -(void)disconnectToHost;
+-(void)timeout;
 -(void)loginWithUserName:(NSString *)username andPassword:(NSString *)password;
 -(BOOL)sendDataToServerWithData:(NSData *)dataToSend;
 

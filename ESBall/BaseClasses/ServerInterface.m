@@ -194,6 +194,11 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     NSData *data = [[NSData alloc] initWithData:[respond dataUsingEncoding:NSASCIIStringEncoding]];
     code = [outputStream write:[data bytes] maxLength:[data length]];
     
+    if(code == -1)
+    {
+        NSLog(@"connect to server error");
+    }
+    
     respond = [NSString stringWithFormat:@"%@,%@\n", username, password];
     data = [[NSData alloc] initWithData:[respond dataUsingEncoding:NSASCIIStringEncoding]];
     code = [outputStream write:[data bytes] maxLength:[data length]];
@@ -251,6 +256,24 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     if([_theDelegate respondsToSelector:@selector(ServerInterface:didDisconnectToHost:onPort:)])
     {
         [_theDelegate ServerInterface:self didDisconnectToHost:connectedHost onPort:connectedPort];
+    }
+}
+
+-(void)timeout
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeout) object:nil];
+    
+    [self disconnectToHost];
+    
+    NSString *msg = NSLocalizedString(@"连线逾时", @"连线逾时");
+    
+    UIAlertView *timeoutAlert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+    
+    [timeoutAlert show];
+    
+    if([_theDelegate respondsToSelector:@selector(ServerInterface:errorOccurredWithError:)])
+    {
+        [_theDelegate ServerInterface:self errorOccurredWithError:@"timeout"];
     }
 }
 
@@ -340,6 +363,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
 		case NSStreamEventOpenCompleted:
         {
 			NSLog(@"Stream to server was opened");
+            [self performSelector:@selector(timeout) withObject:nil afterDelay:kConnectionTimeout];
 			break;
         }
         case NSStreamEventHasSpaceAvailable:
@@ -350,12 +374,13 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         }
 		case NSStreamEventHasBytesAvailable:
         {
+            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeout) object:nil];
             
 			if (theStream == inputStream) {
                 
                 int bufferSize= kStreamReadBufferSize;
                 
-				uint16_t buffer[bufferSize];
+				uint8_t buffer[bufferSize];
 				int len = 0;
                 UInt32 big5 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingBig5);
                 
@@ -450,6 +475,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         }
 		case NSStreamEventErrorOccurred:
         {
+            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeout) object:nil];
             
             NSLog(@"Stream has occured an error");
             NSLog(@"Stream error:%@", theStream.streamError);
@@ -466,6 +492,8 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
 		}
 		case NSStreamEventEndEncountered:
         {
+            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeout) object:nil];
+            
             NSLog(@"Stream end");
             
             NSLog(@"Stream closed");
@@ -476,6 +504,8 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         }
 		default:
         {
+            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeout) object:nil];
+            
             NSLog(@"Stream received unknown event");
         }
     }

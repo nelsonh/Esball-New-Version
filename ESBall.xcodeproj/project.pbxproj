@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		44528DD21665F85A009CB446 /* ItemDropdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44528DC81665F85A009CB446 /* ItemDropdownViewController.m */; };
-		44528DD31665F85A009CB446 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44528DCA1665F85A009CB446 /* ItemViewController.m */; };
 		44528DD41665F85A009CB446 /* ListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44528DCC1665F85A009CB446 /* ListScrollView.m */; };
 		44528DD61665F85A009CB446 /* VideoSectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44528DD01665F85A009CB446 /* VideoSectionViewController.m */; };
 		44528DD916660646009CB446 /* ServerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 44528DD816660646009CB446 /* ServerInterface.m */; };
@@ -615,6 +614,7 @@
 		5295112116B109B800ACC473 /* SBGameBetLimitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5295112016B109B800ACC473 /* SBGameBetLimitViewController.m */; };
 		5295112516B10A3E00ACC473 /* SicboBetRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5295112416B10A3E00ACC473 /* SicboBetRecordViewController.m */; };
 		5295112916B10ADF00ACC473 /* SicboBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5295112816B10ADF00ACC473 /* SicboBetRecordDetailViewController.m */; };
+		5295113316B11FFF00ACC473 /* Bankerpoint2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5295113216B11FFF00ACC473 /* Bankerpoint2.wav */; };
 		52963A7E167821A00016B1CB /* PadBaccaratGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52963A5C167821A00016B1CB /* PadBaccaratGameViewController.m */; };
 		52963A82167821A00016B1CB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52963A68167821A00016B1CB /* DetailViewController.m */; };
 		52963A83167821A00016B1CB /* GameBetLimitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52963A6B167821A00016B1CB /* GameBetLimitViewController.m */; };
@@ -646,6 +646,7 @@
 		529709CB167B08F900954B30 /* TouchDetectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529709CA167B08F900954B30 /* TouchDetectorView.m */; };
 		529759BC169AA30100EAF41B /* SBBetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529759BB169AA30100EAF41B /* SBBetView.m */; };
 		529759BF169AC04200EAF41B /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 529759BE169AC04200EAF41B /* Constant.m */; };
+		5298581B16B262DE006324CF /* route_bg_bac.png in Resources */ = {isa = PBXBuildFile; fileRef = 5298581A16B262DE006324CF /* route_bg_bac.png */; };
 		5298C7C7169E4DE100A8C6DB /* BetRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7BB169E4DE100A8C6DB /* BetRecordCell.m */; };
 		5298C7C8169E4DE100A8C6DB /* BetRecordDetailRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7BE169E4DE100A8C6DB /* BetRecordDetailRowCell.m */; };
 		5298C7C9169E4DE100A8C6DB /* BetRecordDetailTotalRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5298C7C0169E4DE100A8C6DB /* BetRecordDetailTotalRowCell.m */; };
@@ -730,6 +731,9 @@
 		529A8B8C16AE34B6003A1E5A /* turnChange.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 529A8B6516AE34B6003A1E5A /* turnChange.WAV */; };
 		529ABADF16A8DF850098129E /* SBRoadmapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529ABADE16A8DF850098129E /* SBRoadmapView.m */; };
 		529ABAE216A8F9E60098129E /* SBRoadmapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 529ABAE116A8F9E60098129E /* SBRoadmapCell.m */; };
+		529AC62A16B6158200FD67E1 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AC62916B6158200FD67E1 /* ItemViewController.m */; };
+		529AC62E16B6160800FD67E1 /* BaccaratItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AC62D16B6160800FD67E1 /* BaccaratItemViewController.m */; };
+		529AC63216B617BE00FD67E1 /* DTItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 529AC63116B617BE00FD67E1 /* DTItemViewController.m */; };
 		529C86911668BD0E0088C9E6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 529C86901668BD0E0088C9E6 /* UserInfo.m */; };
 		529D0FB116AD38D9008ACE31 /* SBBetSquareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529D0FB016AD38D9008ACE31 /* SBBetSquareView.m */; };
 		529EE2441670461100D53F6E /* RoadmapDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529EE2431670461100D53F6E /* RoadmapDataView.m */; };
@@ -818,8 +822,6 @@
 /* Begin PBXFileReference section */
 		44528DC71665F85A009CB446 /* ItemDropdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemDropdownViewController.h; path = ESBall/PadClasses/VideoSectionClasses/ItemDropdownViewController.h; sourceTree = SOURCE_ROOT; };
 		44528DC81665F85A009CB446 /* ItemDropdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemDropdownViewController.m; path = ESBall/PadClasses/VideoSectionClasses/ItemDropdownViewController.m; sourceTree = SOURCE_ROOT; };
-		44528DC91665F85A009CB446 /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemViewController.h; path = ESBall/PadClasses/VideoSectionClasses/ItemViewController.h; sourceTree = SOURCE_ROOT; };
-		44528DCA1665F85A009CB446 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemViewController.m; path = ESBall/PadClasses/VideoSectionClasses/ItemViewController.m; sourceTree = SOURCE_ROOT; };
 		44528DCB1665F85A009CB446 /* ListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListScrollView.h; path = ESBall/PadClasses/VideoSectionClasses/ListScrollView.h; sourceTree = SOURCE_ROOT; };
 		44528DCC1665F85A009CB446 /* ListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListScrollView.m; path = ESBall/PadClasses/VideoSectionClasses/ListScrollView.m; sourceTree = SOURCE_ROOT; };
 		44528DCF1665F85A009CB446 /* VideoSectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoSectionViewController.h; path = ESBall/PadClasses/VideoSectionClasses/VideoSectionViewController.h; sourceTree = SOURCE_ROOT; };
@@ -1511,6 +1513,7 @@
 		5295112416B10A3E00ACC473 /* SicboBetRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SicboBetRecordViewController.m; path = ESBall/PadClasses/VideoSectionClasses/SicboGameViewController/SicboBetRecord/SicboBetRecordViewController.m; sourceTree = SOURCE_ROOT; };
 		5295112716B10ADF00ACC473 /* SicboBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SicboBetRecordDetailViewController.h; path = ESBall/PadClasses/VideoSectionClasses/SicboGameViewController/SicboBetRecord/BetRecordDetail/SicboBetRecordDetailViewController.h; sourceTree = SOURCE_ROOT; };
 		5295112816B10ADF00ACC473 /* SicboBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SicboBetRecordDetailViewController.m; path = ESBall/PadClasses/VideoSectionClasses/SicboGameViewController/SicboBetRecord/BetRecordDetail/SicboBetRecordDetailViewController.m; sourceTree = SOURCE_ROOT; };
+		5295113216B11FFF00ACC473 /* Bankerpoint2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bankerpoint2.wav; sourceTree = "<group>"; };
 		52963A5B167821A00016B1CB /* PadBaccaratGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadBaccaratGameViewController.h; sourceTree = "<group>"; };
 		52963A5C167821A00016B1CB /* PadBaccaratGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadBaccaratGameViewController.m; sourceTree = "<group>"; };
 		52963A67167821A00016B1CB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -1568,6 +1571,7 @@
 		529759BB169AA30100EAF41B /* SBBetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBBetView.m; path = SicboGame/SBBetView/SBBetView.m; sourceTree = "<group>"; };
 		529759BD169ABD2800EAF41B /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		529759BE169AC04200EAF41B /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
+		5298581A16B262DE006324CF /* route_bg_bac.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_bg_bac.png; sourceTree = "<group>"; };
 		5298C7BA169E4DE100A8C6DB /* BetRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetRecordCell.h; sourceTree = "<group>"; };
 		5298C7BB169E4DE100A8C6DB /* BetRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetRecordCell.m; sourceTree = "<group>"; };
 		5298C7BD169E4DE100A8C6DB /* BetRecordDetailRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetRecordDetailRowCell.h; sourceTree = "<group>"; };
@@ -1671,6 +1675,12 @@
 		529ABADE16A8DF850098129E /* SBRoadmapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBRoadmapView.m; path = SicboGame/SBRoadmapView/SBRoadmapView.m; sourceTree = "<group>"; };
 		529ABAE016A8F9E60098129E /* SBRoadmapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBRoadmapCell.h; path = SicboGame/SBRoadmapView/SBRoadmapCell.h; sourceTree = "<group>"; };
 		529ABAE116A8F9E60098129E /* SBRoadmapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBRoadmapCell.m; path = SicboGame/SBRoadmapView/SBRoadmapCell.m; sourceTree = "<group>"; };
+		529AC62816B6158200FD67E1 /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
+		529AC62916B6158200FD67E1 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
+		529AC62C16B6160800FD67E1 /* BaccaratItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaccaratItemViewController.h; path = BaccaratItemViewController/BaccaratItemViewController.h; sourceTree = "<group>"; };
+		529AC62D16B6160800FD67E1 /* BaccaratItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaccaratItemViewController.m; path = BaccaratItemViewController/BaccaratItemViewController.m; sourceTree = "<group>"; };
+		529AC63016B617BE00FD67E1 /* DTItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DTItemViewController.h; path = DragonTigerItemViewController/DTItemViewController.h; sourceTree = "<group>"; };
+		529AC63116B617BE00FD67E1 /* DTItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DTItemViewController.m; path = DragonTigerItemViewController/DTItemViewController.m; sourceTree = "<group>"; };
 		529C868F1668BD0E0088C9E6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = Data/UserInfo.h; sourceTree = "<group>"; };
 		529C86901668BD0E0088C9E6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = Data/UserInfo.m; sourceTree = "<group>"; };
 		529D0FAF16AD38D9008ACE31 /* SBBetSquareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBBetSquareView.h; path = SicboGame/SBBetSquareView/SBBetSquareView.h; sourceTree = "<group>"; };
@@ -1935,17 +1945,16 @@
 		4482871B1663697200CCA5ED /* VideoSectionClasses */ = {
 			isa = PBXGroup;
 			children = (
-				527831351693C556009D8028 /* SicboGameViewController */,
-				5293517D16801E7D00EE8317 /* DragonTiggerGameViewController */,
-				52963A5A167821A00016B1CB /* BaccaratGameViewController */,
+				529AC62716B6158200FD67E1 /* ItemViewController */,
 				44528DC71665F85A009CB446 /* ItemDropdownViewController.h */,
 				44528DC81665F85A009CB446 /* ItemDropdownViewController.m */,
-				44528DC91665F85A009CB446 /* ItemViewController.h */,
-				44528DCA1665F85A009CB446 /* ItemViewController.m */,
 				44528DCB1665F85A009CB446 /* ListScrollView.h */,
 				44528DCC1665F85A009CB446 /* ListScrollView.m */,
 				44528DCF1665F85A009CB446 /* VideoSectionViewController.h */,
 				44528DD01665F85A009CB446 /* VideoSectionViewController.m */,
+				527831351693C556009D8028 /* SicboGameViewController */,
+				5293517D16801E7D00EE8317 /* DragonTiggerGameViewController */,
+				52963A5A167821A00016B1CB /* BaccaratGameViewController */,
 			);
 			name = VideoSectionClasses;
 			path = SportGameSectionClasses;
@@ -2147,6 +2156,7 @@
 		527837271694221E009D8028 /* Pad */ = {
 			isa = PBXGroup;
 			children = (
+				5298581916B262DE006324CF /* Menu */,
 				527837281694221E009D8028 /* BaccaratArt */,
 				5278389B1694221E009D8028 /* DragonTiggerArt */,
 				527838CD1694221E009D8028 /* SicboArt */,
@@ -3641,6 +3651,14 @@
 			name = SBBetView;
 			sourceTree = "<group>";
 		};
+		5298581916B262DE006324CF /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5298581A16B262DE006324CF /* route_bg_bac.png */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		5298C7B9169E4DE100A8C6DB /* BetRecord */ = {
 			isa = PBXGroup;
 			children = (
@@ -3796,6 +3814,7 @@
 				529A8B4116AE34B6003A1E5A /* Background.WAV */,
 				529A8B4216AE34B6003A1E5A /* Bankerpoint0.WAV */,
 				529A8B4316AE34B6003A1E5A /* Bankerpoint1.WAV */,
+				5295113216B11FFF00ACC473 /* Bankerpoint2.wav */,
 				529A8B4416AE34B6003A1E5A /* Bankerpoint3.WAV */,
 				529A8B4516AE34B6003A1E5A /* Bankerpoint4.WAV */,
 				529A8B4616AE34B6003A1E5A /* Bankerpoint5.WAV */,
@@ -3843,6 +3862,36 @@
 				529ABAE116A8F9E60098129E /* SBRoadmapCell.m */,
 			);
 			name = SBRoadmapView;
+			sourceTree = "<group>";
+		};
+		529AC62716B6158200FD67E1 /* ItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				529AC62F16B6178400FD67E1 /* DragonTigerItemViewController */,
+				529AC62B16B615BA00FD67E1 /* BaccaratItemViewController */,
+				529AC62816B6158200FD67E1 /* ItemViewController.h */,
+				529AC62916B6158200FD67E1 /* ItemViewController.m */,
+			);
+			name = ItemViewController;
+			path = ESBall/PadClasses/VideoSectionClasses/ItemViewController;
+			sourceTree = SOURCE_ROOT;
+		};
+		529AC62B16B615BA00FD67E1 /* BaccaratItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				529AC62C16B6160800FD67E1 /* BaccaratItemViewController.h */,
+				529AC62D16B6160800FD67E1 /* BaccaratItemViewController.m */,
+			);
+			name = BaccaratItemViewController;
+			sourceTree = "<group>";
+		};
+		529AC62F16B6178400FD67E1 /* DragonTigerItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				529AC63016B617BE00FD67E1 /* DTItemViewController.h */,
+				529AC63116B617BE00FD67E1 /* DTItemViewController.m */,
+			);
+			name = DragonTigerItemViewController;
 			sourceTree = "<group>";
 		};
 		529C868E1668B63F0088C9E6 /* Data */ = {
@@ -4831,6 +4880,8 @@
 				5280565816AFE13D003374B1 /* feld_sic_02s.png in Resources */,
 				5280565916AFE13D003374B1 /* field_sic_01s.png in Resources */,
 				5280565A16AFE13D003374B1 /* open_dice_sics.png in Resources */,
+				5295113316B11FFF00ACC473 /* Bankerpoint2.wav in Resources */,
+				5298581B16B262DE006324CF /* route_bg_bac.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4859,7 +4910,6 @@
 				445EC7DB16649E6900634F3A /* SlotSectionViewController.m in Sources */,
 				445EC7E01664A4E900634F3A /* SlotItemViewController.m in Sources */,
 				44528DD21665F85A009CB446 /* ItemDropdownViewController.m in Sources */,
-				44528DD31665F85A009CB446 /* ItemViewController.m in Sources */,
 				44528DD41665F85A009CB446 /* ListScrollView.m in Sources */,
 				44528DD61665F85A009CB446 /* VideoSectionViewController.m in Sources */,
 				44528DD916660646009CB446 /* ServerInterface.m in Sources */,
@@ -4979,6 +5029,9 @@
 				5295112116B109B800ACC473 /* SBGameBetLimitViewController.m in Sources */,
 				5295112516B10A3E00ACC473 /* SicboBetRecordViewController.m in Sources */,
 				5295112916B10ADF00ACC473 /* SicboBetRecordDetailViewController.m in Sources */,
+				529AC62A16B6158200FD67E1 /* ItemViewController.m in Sources */,
+				529AC62E16B6160800FD67E1 /* BaccaratItemViewController.m in Sources */,
+				529AC63216B617BE00FD67E1 /* DTItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

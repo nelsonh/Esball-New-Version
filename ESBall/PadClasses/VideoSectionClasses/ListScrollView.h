@@ -39,6 +39,7 @@
 }
 
 @property (nonatomic, weak) id<ListScrollViewDelegate> theDelegate;
+@property (nonatomic, readonly) int itemCount;
 
 -(void)initWithDelegate:(id<ListScrollViewDelegate>)delegate;
 -(void)reloadData;

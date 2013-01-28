@@ -30,6 +30,9 @@
     NSMutableDictionary *cardPoints;
     ImagePull *theImagePull;
     
+    NSUInteger bankerPointTemp;//temp storage of banker point
+    NSUInteger playerPointTemp;//temp storage of player point
+    
     BOOL winOrLosePromptShowed;
 }
 
@@ -80,6 +83,9 @@
 -(void)hidePromptMsg;
 -(void)promptStartBettingIndicator;
 -(void)promptWinOrLoseIndicatorWithInfo:(UpdateInfo *)info;
+-(void)playSoundOfFinalPointForBanker;
+-(void)playSoundOfFinalPointForPlayer;
+-(void)playSoundOfWinLoseOrTie;
 
 //must override and implement 
 -(NSString *)videoImageIPAddressForTableNumber:(NSUInteger)tableNumber;//ip for video image

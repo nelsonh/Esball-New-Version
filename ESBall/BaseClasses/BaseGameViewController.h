@@ -44,7 +44,7 @@ extern NSString *GameStatusBetting;
 @interface BaseGameViewController : UIViewController<ServerInterfaceDelegate>{
 
     //hold user information
-    UserInfo *userInfo;
+    UserInfo *userInfo; 
     
     //update information changed every time server announcing
     UpdateInfo *updateInfo;
@@ -91,6 +91,7 @@ extern NSString *GameStatusBetting;
 -(void)initBackgroundMusic;
 -(void)playBackgroundMusic;
 -(void)initSoundEffects;
+-(void)unloadSoundResource;
 -(NSString *)videoIpAddressWithGameShortName:(NSString *)shortName withTableNumber:(int)tableNumber;
 
 -(IBAction)back:(id)sender;

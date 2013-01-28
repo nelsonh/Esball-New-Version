@@ -8,8 +8,8 @@
 
 #import "ListScrollView.h"
 
-
-#define kSpaceWidth 90 //changable
+#define kSpaceWidth 100
+//#define kSpaceWidth 90 //changable
 #define kSpaceHeight 9 //changable
 #define kItemForRow 3 //changable
 #define kNumberOfRow 2 //don't change
@@ -26,6 +26,7 @@
 @implementation ListScrollView
 
 @synthesize theDelegate = _theDelegate;
+@synthesize itemCount = _itemCount;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -189,6 +190,7 @@
         //number of item in row form a page
         pages+=1;
         remains = 0;
+        NSLog(@"remains:%i", remains);
     }
     
     //the height of item
@@ -354,6 +356,12 @@
 -(ItemViewController *)itemViewControllerByIndex:(NSUInteger)index
 {
     return [itemViewControlllers objectAtIndex:index];
+}
+
+#pragma mark - getter setter
+-(int)itemCount
+{
+    return numberOfItem;
 }
 
 #pragma mark - ItemViewController delegate

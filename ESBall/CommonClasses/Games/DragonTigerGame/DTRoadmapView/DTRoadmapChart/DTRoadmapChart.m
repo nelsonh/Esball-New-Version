@@ -19,6 +19,17 @@
     return self;
 }
 
+#pragma mark - public interface
+-(NSString *)dtPlayerImageName
+{
+    return @"";
+}
+
+-(NSString *)dtBankerImageName
+{
+    return @"";
+}
+
 #pragma mark - override
 -(void)updateRoadmapData
 {
@@ -80,6 +91,8 @@
      */
     UIImage *player = [UIImage imageNamed:[self playerImageName]];
     UIImage *banker = [UIImage imageNamed:[self bankerImageName]];
+    UIImage *dtPlayer = [UIImage imageNamed:[self dtPlayerImageName]];
+    UIImage *dtBanker = [UIImage imageNamed:[self dtBankerImageName]];
     UIImage *tie1 = [UIImage imageNamed:[self tie1ImageName]];
     UIImage *tie2 = [UIImage imageNamed:[self tie2ImageName]];
     UIImage *tie3 = [UIImage imageNamed:[self tie3ImageName]];
@@ -201,11 +214,14 @@
                                 
                                 
                                 if ([[data objectAtIndex:0] intValue]==1)
-                                {  [player drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {
+                                    //[player drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                    [dtPlayer drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     // count_play_temp+=1;
                                 }
                                 else if ([[data objectAtIndex:0] intValue]==2)
-                                {    [banker drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {    //[banker drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                    [dtBanker drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     //  count_bank_temp+=1;
                                 }
                                 if ([[data objectAtIndex:1] intValue]>=1)
@@ -245,11 +261,13 @@
                                 
                                 
                                 if ([[data objectAtIndex:0] intValue]==1)
-                                {  [player drawInRect: CGRectMake(357+col*w, 1+row*h,9, 9) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {
+                                    [player drawInRect: CGRectMake(357+col*w, 1+row*h,9, 9) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     // count_play_temp+=1;
                                 }
                                 else if ([[data objectAtIndex:0] intValue]==2)
-                                {    [banker drawInRect: CGRectMake(357+col*w, 1+row*h,9, 9) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {
+                                    [banker drawInRect: CGRectMake(357+col*w, 1+row*h,9, 9) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     //  count_bank_temp+=1;
                                 }
                                 
@@ -370,11 +388,13 @@
                                 
                                 
                                 if ([[data objectAtIndex:0] intValue]==1)
-                                {  [player drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {  //[player drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                    [dtPlayer drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     // count_play_temp+=1;
                                 }
                                 else if ([[data objectAtIndex:0] intValue]==2)
-                                {    [banker drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {    //[banker drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                    [dtBanker drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     //  count_bank_temp+=1;
                                 }
                                 if ([[data objectAtIndex:1] intValue]>=1)

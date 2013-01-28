@@ -45,10 +45,21 @@
 
 -(NSString *)playerImageName
 {
-    return @"DTrou_Y_big.png";
+    return @"rou_R_big.png";
 }
 
 -(NSString *)bankerImageName
+{
+    return @"rou_B_big.png";
+
+}
+
+-(NSString *)dtPlayerImageName
+{
+    return @"DTrou_Y_big.png";
+}
+
+-(NSString *)dtBankerImageName
 {
     return @"DTrou_R_big.png";
 }
@@ -70,22 +81,26 @@
 
 -(NSString *)smallPlayerImageName
 {
-    return @"DTrou_Y_small2.png";
+    //return @"DTrou_Y_small2.png";
+    return @"rou_R_small2.png";
 }
 
 -(NSString *)smallBankerImageName
 {
-    return @"DTrou_R_small2.png";
+    //return @"DTrou_R_small2.png";
+    return @"rou_B_small2.png";
 }
 
 -(NSString *)zingPlayerImageName
 {
-    return @"DTrou_Y_ob.png";
+    //return @"DTrou_Y_ob.png";
+    return @"rou_R_ob.png";
 }
 
 -(NSString *)zingBankerImageName
 {
-    return @"DTrou_R_ob.png";
+    //return @"DTrou_R_ob.png";
+    return @"rou_B_ob.png";
 }
 
 @end

@@ -788,6 +788,7 @@
     
     if([lastGameStatus isEqualToString:GameStatusDealing] && [info.status isEqualToString:GameStatusWaiting])
     {
+        /*
         //play sound effect
         NSUInteger bankerPoint = [self calculateCardPointForBanker:info.poker];
         NSUInteger playerPoint = [self calculateCardPointForPlayer:info.poker];
@@ -804,6 +805,15 @@
         {
             [soundManager playSoundEffectWithKey:@"SE_Tie"];
         }
+         */
+        
+        bankerPointTemp = [self calculateCardPointForBanker:info.poker];
+        playerPointTemp = [self calculateCardPointForPlayer:info.poker];
+        
+        //delay is order and important
+        [self performSelector:@selector(playSoundOfFinalPointForBanker) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(playSoundOfFinalPointForPlayer) withObject:nil afterDelay:3.0f];
+        [self performSelector:@selector(playSoundOfWinLoseOrTie) withObject:nil afterDelay:6.0f];
     }
     
     //_pokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
@@ -894,6 +904,43 @@
     
     //update any necessary views
     [_betAreaView updateView];
+}
+
+#pragma mark - public interface play sound
+-(void)playSoundOfFinalPointForBanker
+{
+    SoundManager *soundManager = [SoundManager soundManager];
+    
+    NSString *soundKey = [NSString stringWithFormat:@"SE_BankerPoint%i", bankerPointTemp];
+    
+    [soundManager playSoundEffectWithKey:soundKey];
+}
+
+-(void)playSoundOfFinalPointForPlayer
+{
+    SoundManager *soundManager = [SoundManager soundManager];
+    
+    NSString *soundKey = [NSString stringWithFormat:@"SE_PlayerPoint%i", playerPointTemp];
+    
+    [soundManager playSoundEffectWithKey:soundKey];
+}
+
+-(void)playSoundOfWinLoseOrTie
+{
+    SoundManager *soundManager = [SoundManager soundManager];
+    
+    if(bankerPointTemp > playerPointTemp)
+    {
+        [soundManager playSoundEffectWithKey:@"SE_BankerWin"];
+    }
+    else if(playerPointTemp > bankerPointTemp)
+    {
+        [soundManager playSoundEffectWithKey:@"SE_PlayerWin"];
+    }
+    else if(bankerPointTemp == playerPointTemp)
+    {
+        [soundManager playSoundEffectWithKey:@"SE_Tie"];
+    }
 }
 
 #pragma mark - gameplay rule
@@ -1016,12 +1063,14 @@
 #pragma mark - GameDetailViewController delegate
 -(NSString *)GameDetailViewControllerNameForDealer:(GameDetailViewController *)controller
 {
-    return  [NSString stringWithString:updateInfo.dealerName];
+    //return  [NSString stringWithString:updateInfo.dealerName];
+    return self.dealerNameLabel.text;
 }
 
 -(NSString *)GameDetailViewControllerNameForTable:(GameDetailViewController *)controller
 {
-    return [NSString stringWithString:updateInfo.gameCodeName];
+    //return [NSString stringWithString:updateInfo.gameCodeName];
+    return self.gameCodeNameLabel.text;
 }
 
 -(NSString *)GameDetailViewControllerNameForCurrency:(GameDetailViewController *)controller
@@ -1031,6 +1080,7 @@
 
 -(double)GameDetailViewControllerSmallBetLimit:(GameDetailViewController *)controller
 {
+
     return userInfo.min;
 }
 

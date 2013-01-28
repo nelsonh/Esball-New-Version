@@ -33,6 +33,7 @@
 @synthesize scrollView = _scrollView;
 
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -44,6 +45,8 @@
 
 -(void)dealloc
 {
+    [self stopAnyUpdate];
+    
     NSLog(@"video section dealloc");
 }
 
@@ -83,12 +86,194 @@
     [self enterGame];
      */
     
+    [self startUpdate];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - stop update
+-(void)stopAnyUpdate
+{
+    //stop count down update
+    [self stopPullDataForCounDown];
+    
+    
+    for(int i = 0; i < _scrollView.itemCount; i++)
+    {
+        ItemViewController *item = [_scrollView itemViewControllerByIndex:i];
+        
+        [item stopRoadmapUpdate];
+    }
+}
+
+-(void)startUpdate
+{
+    //start count down update
+    [self startPullDataForCountDown];
+    
+    for(int i = 0; i < _scrollView.itemCount; i++)
+    {
+        ItemViewController *item = [_scrollView itemViewControllerByIndex:i];
+        
+        [item startRoadmapUpdate];
+    }
+}
+
+#pragma mark - count down time
+-(void)startPullDataForCountDown
+{
+    [self stopPullDataForCounDown];
+    
+    pullCountDownDataTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(doPullDataForCountDown) userInfo:nil repeats:YES];
+    
+}
+
+-(void)stopPullDataForCounDown
+{
+    //stop timer
+    if(pullCountDownDataTimer)
+    {
+        [pullCountDownDataTimer invalidate];
+        pullCountDownDataTimer = nil;
+    }
+    
+    //stop connection
+    if(countDownDataConnection)
+    {
+        [countDownDataConnection cancel];
+        countDownDataConnection = nil;
+    }
+    
+    //clear data
+    countDownData = nil;
+}
+
+-(void)doPullDataForCountDown
+{
+    if(countDownData == nil)
+    {
+        NSURL *url = [NSURL URLWithString:@"http://183.182.66.167/8eea62084ca7e541d918e823422bd82e.htm"];
+        NSMutableURLRequest *countDownDataRequest = [NSMutableURLRequest requestWithURL:url];
+        [countDownDataRequest setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+        countDownDataConnection = [NSURLConnection connectionWithRequest:countDownDataRequest delegate:self];
+    }
+}
+
+-(NSArray *)parseCountDownTimeDataWithData:(NSData *)data
+{
+    /** example
+     3001;1;A;23-0;29272267;MICHELLE;waiting;0;,,,,,;25;
+     3001;2;B;22-0;29272257;JONA;waiting;0;,,,,,;5;
+     3001;3;C;22-61;29272321;MARIEL;waiting;0;H.1,D.11,S.11,H.2,H.9,C.9;25;
+     3001;6;D;22-4;29272332;TONI;betting;9;,,,,,;0;
+     3001;7;E;22-57;29272322;MICHELLE P.;waiting;0;H.3,D.13,C.3,C.11,,C.6;83;
+     3002;1;A;151-2;29272336;MARIZ Q.;betting;19;,,,,,,,;0;;
+     3003;1;A;15-66;29272325;PREE;waiting;0;S.7,S.10;689;
+     3006;1;A;366-2;29272318;MARIZ;dealing;0;D.6,D.4,H.10,S.3,S.4,,D.8,H.12;0;1,3;
+     3007;1;A;1-3030;29272326;YHAN;betting;17;;0;
+     3008;1;A;1-1623;29272333;ZELLE;betting;8;;0;
+     HTTP/1.1 END,
+     
+     **/
+    
+    
+    if(!itemsData)
+        return nil;
+    
+    
+    NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSArray *splited = [dataStr componentsSeparatedByString:@"\n"];
+    
+    NSMutableArray *returnData = [[NSMutableArray alloc] init];
+    
+    for(NSString *rowStr in splited)
+    {
+        if([rowStr hasPrefix:@"HTTP"] || [rowStr isEqualToString:@""])
+            continue;
+        
+        NSArray *subSplited = [rowStr componentsSeparatedByString:@";"];
+        
+        int gameType = [[subSplited objectAtIndex:0] intValue];
+        int infoTableNumber = [[subSplited objectAtIndex:1] intValue];
+
+        
+        for(ItemViewController *item in itemsData)
+        {
+            if(gameType == item.gameType && infoTableNumber == item.infoTableNumber)
+            {
+                [returnData addObject:[subSplited objectAtIndex:7]];
+                
+                break;
+            }
+        }
+        
+        /*
+        switch (gameType) {
+            case 3001:
+            {
+                [returnData addObject:[subSplited objectAtIndex:7]];
+                break;
+            }
+            case 3003:
+            {
+                [returnData addObject:[subSplited objectAtIndex:7]];
+                break;
+            }
+            default:
+                break;
+        }
+         */
+    }
+    
+    return returnData;
+}
+
+-(void)updateCountDownTime
+{
+    if(countDownData == nil)
+        return;
+    
+    NSArray *parsedData = [self parseCountDownTimeDataWithData:countDownData];
+    
+    if(!parsedData || parsedData.count == 0)
+        return;
+    
+    for(int i = 0; i < _scrollView.itemCount; i++)
+    {
+        ItemViewController *item = [_scrollView itemViewControllerByIndex:i];
+        NSUInteger time = [[parsedData objectAtIndex:i] intValue];
+        
+        [item updateTimeWithTime:time];
+    }
+}
+
+#pragma mark - public interface
+-(IBAction)enterGameBtnTapped:(id)sender
+{
+    if(selectedItem)
+    {
+        //enter game
+        [self enterGame];
+        
+        //loading view
+        [self displayLoadingView];
+        
+        //stop any update
+        [self stopAnyUpdate];
+    }
+    else
+    {
+        NSString *msg = NSLocalizedString(@"请选择想要进入的游戏", @"请选择想要进入的游戏");
+        
+        UIAlertView *noneSelectAlert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        
+        [noneSelectAlert show];
+    }
 }
 
 #pragma mark - Internal
@@ -124,13 +309,20 @@
             NSLog(@"%@ not found", imageName);
         
         NSNumber *tableNumber = [content objectForKey:@"TableNumber"];
+        NSNumber *infoTableNumber = [content objectForKey:@"InfoTableNumber"];
         NSNumber *gameTypeNumber = [content objectForKey:@"GameType"];
         int tableNo = [tableNumber intValue];
+        int infoTableNo = [infoTableNumber intValue];
         int gameType = [gameTypeNumber intValue];
+        NSString *tableName = [content objectForKey:@"TableName"];
         NSString *controllerIdentifier = [content objectForKey:@"StoryboardControllerID"];
         
+        NSString *itemControllerIdentifier = [content objectForKey:@"ItemControllerID"];
+        if([itemControllerIdentifier isEqualToString:@""])
+            continue;
         
-        ItemViewController *item = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemViewController"];
+        
+        ItemViewController *item = [self.storyboard instantiateViewControllerWithIdentifier:itemControllerIdentifier];
         
        /*
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 330, 300)];
@@ -143,7 +335,9 @@
         item.imageForDown = imageDown;
         item.index = index;
         item.tableNumber = tableNo;
+        item.infoTableNumber = infoTableNo;
         item.gameType = gameType;
+        item.tableName = tableName;
         item.storyboardControllerID = controllerIdentifier;
         
         [itemsData addObject:item];
@@ -307,6 +501,7 @@
      **/
     NSLog(@"tap on item :%i", itemIndex);
     
+    //extract info
     ItemViewController *item = [scrollView itemViewControllerByIndex:itemIndex];
     int tableNo = item.tableNumber;
     int gameTypeNo = item.gameType;
@@ -323,6 +518,7 @@
     }
     
 
+    /**current not use**/
     
     //ServerInterface *theInterface  = [ServerInterface serverInterface];
     
@@ -363,6 +559,8 @@
     [theInterface sendDataToServerWithData:[msg dataUsingEncoding:NSASCIIStringEncoding]];
      */
     
+    /**current not use**/
+    
     /**
      save game info and use it later when enter proper game
      **/
@@ -370,10 +568,19 @@
     gameTypeNumberToChange = gameTypeNo;
     storyboardControllerID = controllerID;
     
+    /*
     [self enterGame];
     
     //loading view
     [self displayLoadingView];
+     */
+
+    //deselect current selected item if needed
+    if(selectedItem)
+    {
+        [selectedItem deselectItem];
+    }
+    selectedItem = item;//track item
 }
 
 -(void)ListScrollView:(ListScrollView *)scrollView didDropdownItemWithItem:(ItemViewController *)item
@@ -421,6 +628,44 @@
     //NSLog(@"child count:%i", self.childViewControllers.count);
     ServerInterface *theInterface = [ServerInterface serverInterface];
     theInterface.theDelegate = self;
+    
+    //start update that was suspended
+    [self startUpdate];
+}
+
+#pragma mark - NSURLConnection delegate
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    /**
+     a new connection to count down data has established
+     **/
+    countDownData = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    //append data
+    [countDownData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    [connection cancel];
+    
+    //update count down time
+    [self updateCountDownTime];
+    
+    //clear data
+    countDownData = nil;
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    [connection cancel];
+    
+    //clear data
+    countDownData = nil;
+    
 }
 
 /*

@@ -10,10 +10,6 @@
 		<string>BaccaratD</string>
 		<string>BaccaratE</string>
 		<string>DragonTiger</string>
-		<string>MahjongTiles</string>
-		<string>PaiGow</string>
-		<string>Roulette</string>
-		<string>Sicbo</string>
 	</array>
 	<key>Items</key>
 	<dict>
@@ -21,131 +17,115 @@
 		<dict>
 			<key>TableNumber</key>
 			<integer>0</integer>
+			<key>InfoTableNumber</key>
+			<integer>1</integer>
 			<key>ImageNormal</key>
 			<string>BaccaratA@2x.png</string>
 			<key>ImageDown</key>
 			<string>BaccaratA_down@2x.png</string>
 			<key>GameType</key>
 			<integer>3001</integer>
+			<key>TableName</key>
+			<string>A</string>
 			<key>StoryboardControllerID</key>
 			<string>PadBaccaratGameViewController</string>
+			<key>ItemControllerID</key>
+			<string>BaccaratItemViewController</string>
 		</dict>
 		<key>BaccaratB</key>
 		<dict>
 			<key>TableNumber</key>
 			<integer>1</integer>
+			<key>InfoTableNumber</key>
+			<integer>2</integer>
 			<key>ImageNormal</key>
 			<string>BaccaratB@2x.png</string>
 			<key>ImageDown</key>
 			<string>BaccaratB_down@2x.png</string>
 			<key>GameType</key>
 			<integer>3001</integer>
+			<key>TableName</key>
+			<string>B</string>
 			<key>StoryboardControllerID</key>
 			<string>PadBaccaratGameViewController</string>
+			<key>ItemControllerID</key>
+			<string>BaccaratItemViewController</string>
 		</dict>
 		<key>BaccaratC</key>
 		<dict>
 			<key>TableNumber</key>
 			<integer>2</integer>
+			<key>InfoTableNumber</key>
+			<integer>3</integer>
 			<key>ImageNormal</key>
 			<string>BaccaratC@2x.png</string>
 			<key>ImageDown</key>
 			<string>BaccaratC_down@2x.png</string>
 			<key>GameType</key>
 			<integer>3001</integer>
+			<key>TableName</key>
+			<string>C</string>
 			<key>StoryboardControllerID</key>
 			<string>PadBaccaratGameViewController</string>
+			<key>ItemControllerID</key>
+			<string>BaccaratItemViewController</string>
 		</dict>
 		<key>BaccaratD</key>
 		<dict>
 			<key>TableNumber</key>
 			<integer>3</integer>
+			<key>InfoTableNumber</key>
+			<integer>6</integer>
 			<key>ImageNormal</key>
 			<string>BaccaratD@2x.png</string>
 			<key>ImageDown</key>
 			<string>BaccaratD_down@2x.png</string>
 			<key>GameType</key>
 			<integer>3001</integer>
+			<key>TableName</key>
+			<string>D</string>
 			<key>StoryboardControllerID</key>
 			<string>PadBaccaratGameViewController</string>
+			<key>ItemControllerID</key>
+			<string>BaccaratItemViewController</string>
 		</dict>
 		<key>BaccaratE</key>
 		<dict>
 			<key>TableNumber</key>
 			<integer>4</integer>
+			<key>InfoTableNumber</key>
+			<integer>7</integer>
 			<key>ImageNormal</key>
 			<string>BaccaratE@2x.png</string>
 			<key>ImageDown</key>
 			<string>BaccaratE_down@2x.png</string>
 			<key>GameType</key>
 			<integer>3001</integer>
+			<key>TableName</key>
+			<string>E</string>
 			<key>StoryboardControllerID</key>
 			<string>PadBaccaratGameViewController</string>
+			<key>ItemControllerID</key>
+			<string>BaccaratItemViewController</string>
 		</dict>
 		<key>DragonTiger</key>
 		<dict>
 			<key>TableNumber</key>
 			<integer>5</integer>
+			<key>InfoTableNumber</key>
+			<integer>1</integer>
 			<key>ImageNormal</key>
 			<string>DragonTiger@2x.png</string>
 			<key>ImageDown</key>
 			<string>DragonTiger_down@2x.png</string>
 			<key>GameType</key>
 			<integer>3003</integer>
+			<key>TableName</key>
+			<string>A</string>
 			<key>StoryboardControllerID</key>
 			<string>PadDragonTigerGameViewController</string>
-		</dict>
-		<key>MahjongTiles</key>
-		<dict>
-			<key>TableNumber</key>
-			<integer>-1</integer>
-			<key>ImageNormal</key>
-			<string>MahjongTiles@2x.png</string>
-			<key>ImageDown</key>
-			<string>MahjongTiles_down@2x.png</string>
-			<key>GameType</key>
-			<integer>0</integer>
-			<key>StoryboardControllerID</key>
-			<string></string>
-		</dict>
-		<key>PaiGow</key>
-		<dict>
-			<key>TableNumber</key>
-			<integer>-1</integer>
-			<key>ImageNormal</key>
-			<string>PaiGow@2x.png</string>
-			<key>ImageDown</key>
-			<string>PaiGow_down@2x.png</string>
-			<key>GameType</key>
-			<integer>0</integer>
-			<key>StoryboardControllerID</key>
-			<string></string>
-		</dict>
-		<key>Roulette</key>
-		<dict>
-			<key>TableNumber</key>
-			<integer>-1</integer>
-			<key>ImageNormal</key>
-			<string>Roulette@2x.png</string>
-			<key>ImageDown</key>
-			<string>Roulette_down@2x.png</string>
-			<key>GameType</key>
-			<integer>0</integer>
-			<key>StoryboardControllerID</key>
-			<string></string>
-		</dict>
-		<key>Sicbo</key>
-		<dict>
-			<key>TableNumber</key>
-			<integer>8</integer>
-			<key>ImageNormal</key>
-			<string>Sicbo@2x.png</string>
-			<key>ImageDown</key>
-			<string>Sicbo_down@2x.png</string>
-			<key>GameType</key>
-			<integer>3008</integer>
-			<key>StoryboardControllerID</key>
-			<string>SicboGameViewController</string>
+			<key>ItemControllerID</key>
+			<string>DTItemViewController</string>
 		</dict>
 	</dict>
 </dict>

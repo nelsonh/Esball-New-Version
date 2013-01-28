@@ -53,8 +53,7 @@
     NSLog(@"game dealloc");
     
     //unload sound resources
-    SoundManager *soundManager = [SoundManager soundManager];
-    [soundManager unloadAllSoundResources];
+    [self unloadSoundResource];
     
    //remove notification
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UserInfoReadyNotification object:nil];
@@ -162,6 +161,9 @@
 #pragma mark - public interface
 -(IBAction)back:(id)sender
 {
+    //unload sound resources
+    [self unloadSoundResource];
+    
     [self.view removeFromSuperview];
     [self willMoveToParentViewController:nil];
     [self removeFromParentViewController];
@@ -263,6 +265,13 @@
     }
     
     return nil;
+}
+
+-(void)unloadSoundResource
+{
+    //unload sound resources
+    SoundManager *soundManager = [SoundManager soundManager];
+    [soundManager unloadAllSoundResources];
 }
 
 #pragma mark - sound

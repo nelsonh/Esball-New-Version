@@ -12,4 +12,7 @@
 
 @interface DTRoadmapChart : RoadmapChart
 
+-(NSString *)dtPlayerImageName;
+-(NSString *)dtBankerImageName;
+
 @end
