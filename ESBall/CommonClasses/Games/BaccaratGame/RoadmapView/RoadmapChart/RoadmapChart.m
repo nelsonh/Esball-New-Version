@@ -325,6 +325,7 @@
             switch (i) {
                     
                 case 1:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -507,6 +508,7 @@
                     break;
                     
                 case 2:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -579,7 +581,9 @@
                         }
                     }
                     break;
+                    
                 case 3:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -642,7 +646,9 @@
                         }
                     }
                     break;
+                    
                 case 4:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -699,7 +705,9 @@
                         
                     }
                     break;
+                    
                 case 5:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -783,6 +791,7 @@
                     break;
                     
                 case 6:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;

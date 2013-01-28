@@ -149,6 +149,7 @@
             switch (i) {
                     
                 case 1:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -336,6 +337,7 @@
                     break;
                     
                 case 2:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -410,7 +412,9 @@
                         }
                     }
                     break;
+                    
                 case 3:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -473,7 +477,9 @@
                         }
                     }
                     break;
+                    
                 case 4:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -530,7 +536,9 @@
                         
                     }
                     break;
+                    
                 case 5:
+                    
                     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
                     {
                         col=0,row=0;
@@ -586,48 +594,48 @@
                             [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col %6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                             
                             /*
-                            if (([[data objectAtIndex:0] intValue]/3)==1)
-                            {
-                                tmpimg= [UIImage imageNamed:@"rou_R_small3.png" ];
-                                [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
-                            }
-                            if (([[data objectAtIndex:0] intValue]/3)==2)
-                            {
-                                tmpimg= [UIImage imageNamed:@"rou_G_small3.png" ];
-                                [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
-                            }
-                            if (([[data objectAtIndex:0] intValue]/3)==3)
-                            {
-                                tmpimg= [UIImage imageNamed:@"rou_G_small3.png" ];
-                                [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
-                                tmpimg= [UIImage imageNamed:@"rou_R_small3.png" ];
-                                [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
-                            }
+                             if (([[data objectAtIndex:0] intValue]/3)==1)
+                             {
+                             tmpimg= [UIImage imageNamed:@"rou_R_small3.png" ];
+                             [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                             }
+                             if (([[data objectAtIndex:0] intValue]/3)==2)
+                             {
+                             tmpimg= [UIImage imageNamed:@"rou_G_small3.png" ];
+                             [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                             }
+                             if (([[data objectAtIndex:0] intValue]/3)==3)
+                             {
+                             tmpimg= [UIImage imageNamed:@"rou_G_small3.png" ];
+                             [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                             tmpimg= [UIImage imageNamed:@"rou_R_small3.png" ];
+                             [tmpimg drawInRect: CGRectMake(2+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                             }
                              */
                         }
                         /*
-                        allLines =[roadmapData[i] componentsSeparatedByString: @"\n"];
-                        col=0,row=0;
-                        w=23.8,h=21.2;
-                        if (lines<0)
-                        { break;}
-                        allLines =[[allLines objectAtIndex:1] componentsSeparatedByString: @":"];
-                        if (allLines.count<2)
-                            break;
-                        
-                        allLines=[[allLines objectAtIndex:1] componentsSeparatedByString: @";"];
-                        
-                        for(col=0;col<[allLines count]-1;col++)
-                        {   NSArray *data =[[allLines objectAtIndex:col] componentsSeparatedByString: @","];
-                            UIImage *tmpimg ;
-                            if ([[data objectAtIndex:0] intValue]==1)
-                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"rou_big.png"] ];
-                            if ([[data objectAtIndex:0] intValue]==2)
-                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"rou_small.png"] ];
-                            
-                            [tmpimg drawInRect: CGRectMake(405+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
-                            
-                        }
+                         allLines =[roadmapData[i] componentsSeparatedByString: @"\n"];
+                         col=0,row=0;
+                         w=23.8,h=21.2;
+                         if (lines<0)
+                         { break;}
+                         allLines =[[allLines objectAtIndex:1] componentsSeparatedByString: @":"];
+                         if (allLines.count<2)
+                         break;
+                         
+                         allLines=[[allLines objectAtIndex:1] componentsSeparatedByString: @";"];
+                         
+                         for(col=0;col<[allLines count]-1;col++)
+                         {   NSArray *data =[[allLines objectAtIndex:col] componentsSeparatedByString: @","];
+                         UIImage *tmpimg ;
+                         if ([[data objectAtIndex:0] intValue]==1)
+                         tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"rou_big.png"] ];
+                         if ([[data objectAtIndex:0] intValue]==2)
+                         tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"rou_small.png"] ];
+                         
+                         [tmpimg drawInRect: CGRectMake(405+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                         
+                         }
                          */
                     }
                     break;
