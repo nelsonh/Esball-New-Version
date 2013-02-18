@@ -13,7 +13,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *totalbetLabel;
 @property (nonatomic, weak) IBOutlet UILabel *totalPayoffLabel;
 
-/*
+/**
  * A method to initialize total bet cell
  *
  * @param identifier string of cell id

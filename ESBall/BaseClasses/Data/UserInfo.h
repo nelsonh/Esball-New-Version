@@ -14,14 +14,14 @@
 #import <Foundation/Foundation.h>
 #import "BaseInfo.h"
 
-/*
+/**
  * Pre-define string for notification name
  */
 __unused static NSString *UserInfoReadyNotification = @"UserInfoIsReady";
 
 @interface UserInfo : BaseInfo
 
-/*
+/**
  * these properties hold information that extract from XML
  */
 @property (nonatomic, strong) NSString *identifier;

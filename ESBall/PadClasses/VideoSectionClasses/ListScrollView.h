@@ -12,7 +12,7 @@
 @class ListScrollView;
 @class ItemViewController;
 
-/*
+/**
  * A protocol of ListScrollView
  */
 @protocol ListScrollViewDelegate <NSObject>
@@ -22,12 +22,12 @@
  Data source
  **/
 
-/*
+/**
  * Fire when ask number of item to display
  */
 -(NSUInteger)ListScrollViewNumberOfItem:(ListScrollView *)scrollView;
 
-/*
+/**
  * Fire when need a specific item to dispaly
  */
 -(ItemViewController *)ListScrollView:(ListScrollView *)scrollView itemForIndex:(NSUInteger)itemIndex;
@@ -37,12 +37,12 @@
  When item selected, dropdown tapped
  **/
 
-/*
+/**
  * Fire when an item selected
  */
 -(void)ListScrollView:(ListScrollView *)scrollView didSelectItemAtIndex:(NSUInteger)itemIndex;
 
-/*
+/**
  * Fire when tapped drop down on an item
  */
 -(void)ListScrollView:(ListScrollView *)scrollView didDropdownItemWithItem:(ItemViewController *)item;
@@ -64,19 +64,19 @@
 @property (nonatomic, weak) id<ListScrollViewDelegate> theDelegate;
 @property (nonatomic, readonly) int itemCount;
 
-/*
+/**
  * A method to initialize 
  *
  * @param delegate the delegate 
  */
 -(void)initWithDelegate:(id<ListScrollViewDelegate>)delegate;
 
-/*
+/**
  * A method to reload data
  */
 -(void)reloadData;
 
-/*
+/**
  * A method return item by given index
  *
  * @param index index of item

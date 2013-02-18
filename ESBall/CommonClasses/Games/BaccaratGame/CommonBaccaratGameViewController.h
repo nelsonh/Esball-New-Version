@@ -70,49 +70,49 @@
 
 //subclass can override these method
 
-/*
+/**
  * A method called when ViewDidLoad
  * Any init stuff can be done in this method
  */
 -(void)PostBeginSetup;
 
-/*
+/**
  * A method called when roadmap button selected
  * Highlight button purpose
  */
 -(void)doSelectRoadmap;
 
-/*
+/**
  * A method called when roadmap button deselected
  * Unhighlight button purpose
  */
 -(void)doDeSelectRoadmap;
 
-/*
+/**
  * A method called when detail button selected
  * Highlight button purpose
  */
 -(void)doSelectDetail;
 
-/*
-* A method called when detail button deselected
-* Unhighlight button purpose
-*/
+/**
+ * A method called when detail button deselected
+ * Unhighlight button purpose
+ */
 -(void)doDeSelectDetail;
 
-/*
+/**
  * A method called when record button selected
  * Highlight button purpose
  */
 -(void)doSelectRecord;
 
-/*
+/**
  * A method called when record button deselected
  * Unhighlight button purpose
  */
 -(void)doDeselectRecord;
 
-/*
+/**
  * A method calculate amount of bet
  *
  * @param infos each bet, every elements in array is type of NSNumber
@@ -120,12 +120,12 @@
  */
 -(double)totalBetWithInfos:(NSMutableArray *)infos;
 
-/*
+/**
  * A method to start live video which is a continuous JEPG image 
  */
 -(void)loadVideoImage;
 
-/*
+/**
  * A method called when game request the quality of live video
  * SD for ipod, iphone. HD for pad
  *
@@ -135,7 +135,7 @@
 
 //-(void)hidePokerView;
 
-/*
+/**
  * A method to update poker which is a view area for display cards,
  * player and banker point
  *
@@ -143,37 +143,37 @@
  */
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info;
 
-/*
+/**
  * A method to show roadmap
  * roadmap itself will determind should appear or not
  * roadmap will update first time it appear
  */
 -(void)showRoadmap;
 
-/*
+/**
  * A method to show detail
  * detail itself will determind should appear or not
  */
 -(void)showDetail;
 
-/*
+/**
  * A method to show record
  * record itself will determind should appear or not
  */
 -(void)showRecord;
 
-/*
+/**
  * A method to clear all bets in bet area
  */
 -(void)doClearBet;
 
-/*
+/**
  * A method to confirm bet
  * also send all info of bet to server
  */
 -(void)doBetConfirm;
 
-/*
+/**
  * A method to handle information of marquee
  * method called when there is a marquee
  *
@@ -181,7 +181,7 @@
  */
 -(void)processMarqueeInfo:(NSNotification *)notification;
 
-/*
+/**
  * A method to handle information of userinfo
  * method called when there is a userinfo
  *
@@ -189,7 +189,7 @@
  */
 -(void)processUserInfo:(NSNotification *)notification;
 
-/*
+/**
  * A method to handle information of updateinfo
  * method called when there is a updateinfo
  * game logic
@@ -198,7 +198,7 @@
  */
 -(void)processUpdateInfo:(NSNotification *)notification;
 
-/*
+/**
  * A method to handle information of respond of bet
  * when bet info send to server it will return a info about success or fail
  * this method is responsible to handle it
@@ -207,7 +207,7 @@
  */
 -(void)processBetRespondInfo:(NSNotification *)notification;
 
-/*
+/**
  * A method to genereate a string which contain bet information
  * the bet information that server can read
  *
@@ -216,7 +216,7 @@
  */
 -(NSString *)generateBetInfoMessageWithInfos:(NSMutableArray *)infos;
 
-/*
+/**
  * A method to calculate point for banker base on cards
  *
  * @param cards contain string in array
@@ -224,7 +224,7 @@
  */
 -(NSUInteger)calculateCardPointForBanker:(NSArray *)cards;
 
-/*
+/**
  * A method to calculate point for player base on cards
  *
  * @param cards contain string in array
@@ -232,24 +232,24 @@
  */
 -(NSUInteger)calculateCardPointForPlayer:(NSArray *)cards;
 
-/*
+/**
  * A method to hide prompt message view
  */
 -(void)hidePromptMsg;
 
-/*
+/**
  * A method manage to show up prompt message view for start betting
  */
 -(void)promptStartBettingIndicator;
 
-/*
+/**
  * A method manage to show up prompt message view for win or lose
  *
  * @param info a UpdateInfo has result
  */
 -(void)promptWinOrLoseIndicatorWithInfo:(UpdateInfo *)info;
 
-/*
+/**
  * A method to save bet info as local data for each round
  * therefore these data can be restored and displayed when player
  * back to game again
@@ -257,7 +257,7 @@
  */
 -(void)saveBetInfo;
 
-/*
+/**
  * A method to restore bet info from local data, if round
  * is not matched it will not be restored.
  * this method called when first time game received UpdateInfo
@@ -266,12 +266,12 @@
 
 //sound
 
-/*
+/**
  * A method to play sound of score point for banker
  */
 -(void)playSoundOfFinalPointForBanker;
 
-/*
+/**
  * A method to play sound of score point for player
  */
 -(void)playSoundOfFinalPointForPlayer;
@@ -283,12 +283,12 @@
 
 //must override and implement
 
-/*
+/**
  * Not used 
  */
 -(NSString *)videoImageIPAddressForTableNumber:(NSUInteger)tableNumber;//ip for video image
 
-/*
+/**
  * A method called when round is greater than certain round
  *
  * @param round current round
@@ -296,7 +296,7 @@
  */
 -(NSString *)backgroundImageNameForGameGreaterThanCertainRound:(NSUInteger)round;
 
-/*
+/**
  * A method called when round is less than certain round
  *
  * @param round current round
@@ -304,7 +304,7 @@
  */
 -(NSString *)backgroundImageNameForGameLessThanCertainRound:(NSUInteger)round;
 
-/*
+/**
  * A method called when game about to display chips
  * chip space width from border
  *
@@ -312,7 +312,7 @@
  */
 -(CGFloat)chipSpaceWidth;
 
-/*
+/**
  * A method called when game about to display chips
  * chip space height from border
  *
@@ -320,7 +320,7 @@
  */
 -(CGFloat)chipSpaceHeight;
 
-/*
+/**
  * A method called when game about to display chips
  * chip size
  *
@@ -328,7 +328,7 @@
  */
 -(CGFloat)chipSize;
 
-/*
+/**
  * A method called when game about to display detail view
  * Y position for detail view
  *

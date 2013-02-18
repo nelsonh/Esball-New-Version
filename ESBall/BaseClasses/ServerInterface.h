@@ -10,7 +10,7 @@
 
 #define kConnectionTimeout 60//connection timeout period 
 
-/*
+/**
  * Pre-define string
  */
 __unused static NSString *ConnectionLostNotification = @"ConnectionLost";
@@ -18,39 +18,39 @@ __unused static NSString *InternetNotAvalible = @"InternetNotAvalible";
 
 @class ServerInterface;
 
-/*
+/**
  * A protocol of ServerInterface
  */
 @protocol ServerInterfaceDelegate <NSObject>
 
 @optional
 
-/*
+/**
  * Fire when connect to host
  */
 -(void)ServerInterface:(ServerInterface *)interface didConnectToHost:(NSString *)hostname onPort:(uint16_t)port;
 
-/*
+/**
  * Fire when disconnect to host
  */
 -(void)ServerInterface:(ServerInterface *)interface didDisconnectToHost:(NSString *)hostname onPort:(uint16_t)port;
 
-/*
+/**
  * Fire when login
  */
 -(void)ServerInterface:(ServerInterface *)interface didLoginWithUsername:(NSString *)username andPassword:(NSString *)password;
 
-/*
+/**
  * Fire when receive respond data from server
  */
 -(void)ServerInterface:(ServerInterface *)interface didReceivedRespond:(NSString *)respondStr;
 
-/*
+/**
  * Fire when it is about to send data to server
  */
 -(void)ServerInterface:(ServerInterface *)interface didSendDataWithData:(NSData *)data;
 
-/*
+/**
  * Fire when error happend
  */
 -(void)ServerInterface:(ServerInterface *)interface errorOccurredWithError:(NSString *)errorMsg;
@@ -102,40 +102,40 @@ __unused static NSString *InternetNotAvalible = @"InternetNotAvalible";
 @property (nonatomic, weak) id<ServerInterfaceDelegate>theDelegate;//delegate
 @property (nonatomic, readonly) NSString *theSID;//getter method for SID
 
-/*
+/**
  * A method return ServerInterface instance which can be only one in app
  * ServerInterface is a singleton, there is no second one
  */
 +(id)serverInterface;
 
-/*
+/**
  * A method return host server IP
  */
 -(NSString *)serverIP;
 
-/*
+/**
  * A method to check if can reach host server
  */
 -(BOOL)canReachHost;
 
-/*
+/**
  * A method to logout from server
  */
 -(void)logout;
 
 //-(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password;
 
-/*
+/**
  * A method to disconnect from host server
  */
 -(void)disconnectToHost;
 
-/*
+/**
  * A method that get call when timeout
  */
 -(void)timeout;
 
-/*
+/**
  * A method used to login server
  *
  * @param username login user name
@@ -143,7 +143,7 @@ __unused static NSString *InternetNotAvalible = @"InternetNotAvalible";
  */
 -(void)loginWithUserName:(NSString *)username andPassword:(NSString *)password;
 
-/*
+/**
  * A method used to send data to host server
  *
  * @param dataToSend NSData that will be send to host server

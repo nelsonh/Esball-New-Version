@@ -13,14 +13,14 @@
 
 #import "BaseInfo.h"
 
-/*
+/**
  * Pre-define string for notification name
  */
 __unused static NSString *BetRespondInfoReayNotification = @"BetRespondInfoReady";
 
 @interface BetRespondInfo : BaseInfo
 
-/*
+/**
  * these properties hold information that extract from XML
  */
 @property (nonatomic, assign) NSUInteger gameType;

@@ -21,7 +21,7 @@
 @property (nonatomic, assign) CGFloat cellWidth;
 
 
-/*
+/**
  * A method to initialize cell
  *
  * @param identifier id for cell

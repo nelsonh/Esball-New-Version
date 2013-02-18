@@ -10,24 +10,24 @@
 
 @class XMLParser;
 
-/*
+/**
  * A protocol of XMLParser
  */
 @protocol XMLParserDelegate <NSObject>
 
 @optional
 
-/*
+/**
  * Fire when xml parser start an element
  */
 -(void)XMLParser:(XMLParser *)parser didStartElementWithAttDic:(NSDictionary *)attDic;
 
-/*
+/**
  * Fire when parser process end
  */
 -(void)XMLParserDidEnd:(XMLParser *)parser;
 
-/*
+/**
  * Fire when xml parser detect xml is not validate
  */
 -(void)XMLParser:(XMLParser *)parser invalidateXML:(NSString *)xmlStr;
@@ -49,12 +49,12 @@
 //not used
 +(id)xmlParser NS_DEPRECATED_IOS(2_0, 2_0);
 
-/*
+/**
  * A method to create XMLParser instance
  */
 -(id)initXMLParser;
 
-/*
+/**
  * A method start to parse xml
  *
  * @param xmlStr string of XML

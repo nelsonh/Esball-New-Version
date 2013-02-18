@@ -16,7 +16,7 @@
     UIImageView *loadingAnimView;
 }
 
-/*
+/**
  * A method to create loading HUD
  *
  * @param frame the frame for loading HUD 

@@ -10,7 +10,7 @@
 
 @interface HeaderView : UIView
 
-/*
+/**
  * A method to initialze header for table view
  * 
  * @param frame rect

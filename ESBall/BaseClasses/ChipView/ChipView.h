@@ -18,14 +18,14 @@
 
 @class ChipView;
 
-/*
+/**
  * A protocol of ChipView
  */
 @protocol ChipViewDelegate <NSObject>
 
 @optional
 
-/*
+/**
  * Fire when any of chip tapped
  */
 -(void)ChipView:(ChipView *)chipView aChipTapped:(Chip *)chip;
@@ -54,7 +54,7 @@
 @property (nonatomic, readwrite) CGFloat chipSpaceHeight;
 @property (nonatomic, readwrite) CGFloat chipSize;
 
-/*
+/**
  * A method to display chips
  *
  * @return Yes display success
@@ -62,17 +62,17 @@
  */
 -(BOOL)displayChips;
 
-/*
+/**
  * A method to disable all chips
  */
 -(void)disableCips;
 
-/*
+/**
  * A method to enable all chips
  */
 -(void)enableChips;
 
-/*
+/**
  * A method to enable all chips and selected chip will be selected
  *
  * @param selectedChip chip that was selected 

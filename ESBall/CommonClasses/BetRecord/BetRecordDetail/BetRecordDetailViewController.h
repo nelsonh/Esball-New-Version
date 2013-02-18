@@ -60,31 +60,31 @@
 
 //subclass need to implement thier own if needed
 
-/*
+/**
  * A method ask cell identifier
  *
  * @return cell id string
  */
 -(NSString *)cellIdentifier;
 
-/*
+/**
  * A method ask total bet cell identifier
  *
  * @retun total bet cell id string
  */
 -(NSString *)cellIdentifierForTotalBet;
 
-/*
+/**
  * A method to present poker record
  */
 -(void)showPokerRecord;
 
-/*
+/**
  * A method to download specific detail record data 
  */
 -(void)pullDetailRecordData;
 
-/*
+/**
  * A method to convert json data to a dictionary
  *
  * @param jsonData a jason format data
@@ -92,7 +92,7 @@
  */
 -(NSMutableDictionary *)convertDataWithJasonData:(NSData *)jsonData;
 
-/*
+/**
  * A method to process common data
  * not each row record data
  *
@@ -100,7 +100,7 @@
  */
 -(void)processData:(NSMutableDictionary *)dic;
 
-/*
+/**
  * A method to check if given string is digital exclusively
  *
  * @param str string that is going to be checked
@@ -108,7 +108,7 @@
  */
 -(BOOL)isAllDigitals:(NSString *)str;
 
-/*
+/**
  * A method to find game code name by game code number
  *
  * @param gameCode integer game code number
@@ -116,7 +116,7 @@
  */
 -(NSString *)gameCodeNameWithGameCode:(NSUInteger)gameCode;
 
-/*
+/**
  * A method to configure cell
  *
  * @param cell the cell is going to be configured
@@ -125,14 +125,14 @@
  */
 -(BetRecordDetailRowCell*)configureCell:(BetRecordDetailRowCell *)cell withIndexPath:(NSIndexPath *)indexPath;
 
-/*
+/**
  * A method to configure total bet cell
  *
  * @param cell the cell is going to be configured
  */
 -(BetRecordDetailTotalRowCell *)configureCellForBetTotal:(BetRecordDetailTotalRowCell *)cell;
 
-/*
+/**
  * A method to find bet type by bet type number
  *
  * @param betType number of bet type
@@ -141,7 +141,7 @@
 -(NSString *)betTypeWithTypeNumber:(NSUInteger)betType;
 
 
-/*
+/**
  * A method to add this controller to another controller
  *
  * @param parentController the controller this controller will be added to

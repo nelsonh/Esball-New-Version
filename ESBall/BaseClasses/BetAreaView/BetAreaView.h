@@ -53,7 +53,7 @@
 @property (nonatomic, assign) CGFloat chipSpaceHeight;
 @property (nonatomic, assign) CGFloat chipSize;
 
-/*
+/**
  * A method to update view and logic 
  */
 -(void)updateView;

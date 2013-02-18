@@ -18,19 +18,19 @@
 
 @class BetView;
 
-/*
+/**
  * A protocol of BetView
  */
 @protocol BetViewDelegate <NSObject>
 
 @optional
 
-/*
+/**
  * Fire when round greater than certain round
  */
 -(void)BetViewGreaterThanCertainRound:(BetView *)betView round:(NSUInteger)round;
 
-/*
+/**
  * Fire when round less than certain round
  */
 -(void)BetViewLessThanCertainRound:(BetView *)betView round:(NSUInteger)round;
@@ -77,13 +77,13 @@
 @property (nonatomic , weak) IBOutlet UIImageView *square10Result;
 @property (nonatomic , weak) IBOutlet UIImageView *square11Result;
 
-/*
+/**
  * A method clear bet but the final set
  * if betinfoview display final result it will not be cleared
  */
 -(void)clearBetsWithoutFinalSet;
 
-/*
+/**
  * A method clear single bet
  * 
  * @param yesOrNo hide info view or not
@@ -91,13 +91,13 @@
  */
 -(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
 
-/*
+/**
  * A method to show result
  * which square should be flash 
  */
 -(void)showResult;
 
-/*
+/**
  * A method to check if all bet amount over player's credit
  *
  * @param amount amount of bet squares
@@ -105,18 +105,18 @@
  */
 -(BOOL)isBetOverBalanceWithBetAmount:(double)amount;
 
-/*
+/**
  * A mehtod to restore every bet square to last state
  */
 -(void)restoreBetToLastState;
 
-/*
+/**
  * A method to clear all bet
  * directly call -(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
  */
 -(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
 
-/*
+/**
  * A method to collect all bet squares' bet
  * return each signle bet in double as an array
  *
@@ -124,7 +124,7 @@
  */
 -(NSMutableArray *)collectBetInfo;
 
-/*
+/**
  * A method to collect all bet squares' history bet
  * return history bet in double as an array
  *
@@ -132,20 +132,20 @@
  */
 -(NSMutableArray *)collectHistoryBetInfo;
 
-/*
+/**
  * A method to collect all bet squares
  *
  * @return array contain UIButton for each bet square
  */
 -(NSArray *)collectAllBetSqaures;
 
-/*
+/**
  * A method to display bet result
  * every current bet
  */
 -(void)displayPlayerBetResult;
 
-/*
+/**
  * A method to display bet history
  * every bet accumulation for history
  */
@@ -153,7 +153,7 @@
 
 //result
 
-/*
+/**
  * A method generate string contain info about which square should flash for result
  *
  * @param result integer from server
@@ -161,7 +161,7 @@
  */
 -(NSString *)getResultWithResultCode:(NSUInteger)result;
 
-/*
+/**
  * A method to show flashing result
  * work with -(NSString *)getResultWithResultCode:(NSUInteger)result;
  *
@@ -169,7 +169,7 @@
  */
 -(void)showResultWithString:(NSString *)result;
 
-/*
+/**
  * A method to disable square by round
  *
  * @param round target round
@@ -177,24 +177,24 @@
  */
 -(void)disableBetSquareByRound:(NSUInteger)round currentRound:(NSUInteger)curRound;
 
-/*
+/**
  * A method to setup bet square
  */
 -(void)setupBetSquare;
 
-/*
+/**
  * A method to apply all pending bet squares
  * pending bet info
  */
 -(void)applyAllBets;
 
-/*
+/**
  * A mehtod to clear all pending bet info
  * must call when clear bet or between round
  */
 -(void)clearAllBetTemp;
 
-/*
+/**
  * A method called when game ask how many round
  * certain bet square should be disabled
  * number of round to disable bet square or enable

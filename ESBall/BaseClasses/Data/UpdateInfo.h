@@ -13,14 +13,14 @@
 
 #import "BaseInfo.h"
 
-/*
+/**
  * Pre-define string for notification name
  */
 __unused static NSString *UpdateInfoReayNotification = @"UpdateInfoIsReady";
 
 @interface UpdateInfo : BaseInfo
 
-/*
+/**
  * these properties hold information that extract from XML
  */
 @property (nonatomic, strong) NSString *identifier;
@@ -41,6 +41,12 @@ __unused static NSString *UpdateInfoReayNotification = @"UpdateInfoIsReady";
 @property (nonatomic, assign) double payoff;
 @property (nonatomic, assign) double credit;
 
--(NSString *)trimString:(NSString *)string;//trim string only for sicbo what the hell
+/**
+ * A method to trim string
+ * trim string only for sicbo what the hell
+ *
+ * @param string string to trim
+ */
+-(NSString *)trimString:(NSString *)string;
 
 @end

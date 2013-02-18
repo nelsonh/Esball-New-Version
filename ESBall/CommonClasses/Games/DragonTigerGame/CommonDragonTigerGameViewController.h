@@ -34,7 +34,7 @@
 @property (nonatomic, weak) IBOutlet DTPokerView *dtPokerView;
 @property (nonatomic, weak) IBOutlet RoadmapView *dtRoadmap;
 
-/*
+/**
  * A method to calculate card point for dragon
  *
  * @param cards dragon's cards
@@ -42,7 +42,7 @@
  */
 -(NSUInteger)calculateCardPointForDragon:(NSArray *)cards;
 
-/*
+/**
  * A method to calculate card point for tiger
  *
  * @param cards tiger's cards
@@ -50,12 +50,12 @@
  */
 -(NSUInteger)calculateCardPointForTiger:(NSArray *)cards;
 
-/*
+/**
  * A method to play sound for dragon point
  */
 -(void)playSoundOfFinalPointForDragon;
 
-/*
+/**
  * A method to play sound for tiger point
  */
 -(void)playSoundOfFinalPointForTiger;

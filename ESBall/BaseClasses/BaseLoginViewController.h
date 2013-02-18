@@ -42,30 +42,30 @@ __unused static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess"
 //base method override if needed
 //-(void)LogMe;
 
-/*
+/**
  * A back button which is connected in Interface Builder
  * Trigger login event
  */
 -(IBAction)login:(id)sender;
 
-/*
+/**
  * A method to reserve a spot on host server
  */
 -(void)reserveSpot;
 
-/*
+/**
  * A method get call when reserve spot on server success
  *
  * @param notification not use
  */
 -(void)reserveSpotSuccess:(NSNotification *)notification;
 
-/*
+/**
  * A method to show up login spin indicator and message
  */
 -(void)showLoginIndicator;
 
-/*
+/**
  * A method to hide login spin indicator and message
  */
 -(void)hideLoginIndicator;

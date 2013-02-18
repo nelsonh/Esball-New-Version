@@ -19,14 +19,14 @@
     __block XMLParser *xmlParser;
 }
 
-/*
+/**
  * A method to convert XML to usable data(a NSObject)
  *
  * @param xmlStr xml string
  */
 -(void)convertToDataFromXMLString:(NSString *)xmlStr;
 
-/*
+/**
  * A method to post a notification
  *
  * @param notifiStr notification's name

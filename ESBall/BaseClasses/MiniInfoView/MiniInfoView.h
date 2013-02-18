@@ -16,7 +16,7 @@
 
 @property (nonatomic, readwrite) BOOL visibility;//getter setter for visibility
 
-/*
+/**
  * A method to update view and logic 
  */
 -(void)updateView;

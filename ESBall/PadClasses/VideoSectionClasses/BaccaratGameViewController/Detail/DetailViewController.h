@@ -48,25 +48,25 @@ typedef enum {
 
 //internal
 
-/*
+/**
  * A method to create video setting controller
  * add to this controller
  */
 -(void)createVideoSetting;
 
-/*
+/**
  * A method to create game bet limit controller
  * add to this controller
  */
 -(void)createGameBetLimit;
 
-/*
+/**
  * A method to create game rule controller
  * add to this controller
  */
 -(void)createGameRules;
 
-/*
+/**
  * A method to create history message view controller
  * add to this controller
  */

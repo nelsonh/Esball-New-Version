@@ -43,36 +43,36 @@
 @property (nonatomic, weak) IBOutlet UIButton *playerAskButton;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
 
-/*
+/**
  * A player ask button which is connected in Interface Builder
  * Trigger asking roadmap event
  */
 -(IBAction)playerAsk:(id)sender;
 
-/*
+/**
  * A bank ask button which is connected in Interface Builder
  * Trigger asking roadmap event
  */
 -(IBAction)bankerAsk:(id)sender;
 
-/*
+/**
  * A method to update view
  */
 -(void)updateView;
 
-/*
+/**
  * A method to stop update
  * must call to stop update and timer
  */
 -(void)stopUpdate;
 
-/*
+/**
  * A method to reset UpdateCount
  * call each time after updateView(prevent draw too many time)
  */
 -(void)resetUpdateCount;
 
-/*
+/**
  * A method to stop asking roadmap
  */
 -(void)stopAsking;

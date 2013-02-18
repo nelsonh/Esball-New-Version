@@ -13,7 +13,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *promptMsgBackgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *promptMsgLabel;
 
-/*
+/**
  * A method to update prompt message
  * 
  * @param msg the message to be displayed

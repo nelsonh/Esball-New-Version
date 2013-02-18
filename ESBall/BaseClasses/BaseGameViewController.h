@@ -34,17 +34,17 @@ extern NSString *GameStatusBetting;
 
 @class BaseGameViewController;
 
-/*
+/**
  * A protocol of BaseGameViewController
  */
 @protocol BaseGameViewControllerDelegate <NSObject>
 
-/*
+/**
  * Fire when this game is ready and for player to play
  */
 -(void)BaseGameViewControllerIsReady:(BaseGameViewController *)controller;
 
-/*
+/**
  * Fire when this game is close and dismiss
  */
 -(void)BaseGameViewControllerDidDismiss:(BaseGameViewController *)controller;
@@ -101,7 +101,7 @@ extern NSString *GameStatusBetting;
 @property (nonatomic, assign) NSUInteger tableNumber;//table number must given
 @property (nonatomic, assign) NSUInteger gameType;//game type must given
 
-/*
+/**
  * A boolean value indicate that game controller should pause game when game
  * view disappear or not.
  *
@@ -111,14 +111,14 @@ extern NSString *GameStatusBetting;
  */
 @property (nonatomic, assign) BOOL autoPauseGameWhenDisappear;
 
-/*
+/**
  * Return file name of plist file that contain sound file name.
  * plist file contain is a type of NSDictionary key and value where
  * key is pre-define string and value is sound file name.
  */
 -(NSString *)soundEffectPlistFileName;
 
-/*
+/**
  * A method to receive message as string and turn it in to a NSData,
  * then send that data to server through Serverinterface class.
  *
@@ -126,12 +126,12 @@ extern NSString *GameStatusBetting;
  */
 -(void)sendMessageToServerWithMessage:(NSString *)msg;
 
-/*
+/**
  * A point where to start game
  */
 -(void)playGame;
 
-/*
+/**
  * A method that receive notification after XMLPaser complete XML parsing process
  * and generate a new UserInfo class instance which hold by NSNotification passed in parameter.
  *
@@ -139,7 +139,7 @@ extern NSString *GameStatusBetting;
  */
 -(void)handleUserInfo:(NSNotification*)notification;
 
-/*
+/**
  * A method that receive notification after XMLPaser complete XML parsing process
  * and generate a new UpdateInfo class instance which hold by NSNotification passed in parameter.
  *
@@ -147,7 +147,7 @@ extern NSString *GameStatusBetting;
  */
 -(void)handleUpdateInfo:(NSNotification*)notification;
 
-/*
+/**
  * A method that receive notification after XMLPaser complete XML parsing process
  * and generate a new MarqueeInfo class instance which hold by NSNotification passed in parameter.
  *
@@ -155,7 +155,7 @@ extern NSString *GameStatusBetting;
  */
 -(void)handleMarqueeInfo:(NSNotification*)notification;
 
-/*
+/**
  * A method that receive notification after XMLPaser complete XML parsing process
  * and generate a new BetRespondInfo class instance which hold by NSNotification passed in parameter.
  * This notification received when player betted and server return information
@@ -164,34 +164,34 @@ extern NSString *GameStatusBetting;
  */
 -(void)handleBetRespondInfo:(NSNotification*)notification;
 
-/*
+/**
  * A method to check if game is idle too long specificly player did not bet for 5 and 10 rounds
  * and then show alert at mathch rounds
  */
 -(void)checkIsIdleTooLong;
 
-/*
+/**
  * A method to initialize game's background music
  */
 -(void)initBackgroundMusic;
 
-/*
+/**
  * A method to play background music
  */
 -(void)playBackgroundMusic;
 
-/*
+/**
  * A method to initialize sound effect
  */
 -(void)initSoundEffects;
 
-/*
+/**
  * A method to unload sound resource
  * Normally, call this method when game is about to close
  */
 -(void)unloadSoundResource;
 
-/*
+/**
  * A method return live video IP address 
  *
  * @param shortName an abreviation of game name 
@@ -200,7 +200,7 @@ extern NSString *GameStatusBetting;
  */
 -(NSString *)videoIpAddressWithGameShortName:(NSString *)shortName withTableNumber:(int)tableNumber;
 
-/*
+/**
  * A method to dismiss alert view which prompt when player idle too long
  *
  * @param yesOrNoNumber type of NSNumber hold the boolean value that indicate game controller
@@ -208,58 +208,58 @@ extern NSString *GameStatusBetting;
  */
 -(void)hideNoneBetRoundAlertWithDismiss:(NSNumber*)yesOrNoNumber;
 
-/*
+/**
  * A method to close game
  */
 -(void)dismissGameController;
 
-/*
+/**
  * A back button which is connected in Interface Builder
  * Trigger close game event
  */
 -(IBAction)back:(id)sender;
 
-/*
+/**
  * A back button which is connected in Interface Builder
  * Trigger show roadmap event
  */
 -(IBAction)roadmap:(id)sender;
 
-/*
+/**
  * A back button which is connected in Interface Builder
  * Trigger clear bet event
  */
 -(IBAction)clearBet:(id)sender;
 
-/*
+/**
  * A back button which is connected in Interface Builder
  * Trigger bet confirm event
  */
 -(IBAction)betConfirm:(id)sender;
 
-/*
+/**
  * A back button which is connected in Interface Builder
  * Trigger show detail event
  */
 -(IBAction)detail:(id)sender;
 
-/*
+/**
  * A back button which is connected in Interface Builder
  * Trigger show record event
  */
 -(IBAction)record:(id)sender;
 
-/*
+/**
  * A method to pause game
  */
 -(void)pauseGame;
 
-/*
+/**
  * A method to resume game
  */
 -(void)resumeGame;
 
-/*
+/**
  * A method get call when enter game and game received first UpdateInfo
  * This method is called only once
  */
