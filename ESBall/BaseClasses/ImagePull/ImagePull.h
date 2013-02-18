@@ -52,4 +52,20 @@
  */
 -(void)cancel;
 
+/**
+ * A method to turn NSData into string of hex
+ *
+ * @param data the data of image 
+ * @return string in hex
+ */
+-(NSString *)nsdataToHex:(NSData *)data;
+
+/**
+ * A method to check JPEG image is valid
+ *
+ * @param inImageData NSData of image
+ * @return yes JPEG is vaild otherwise no
+ */
+-(BOOL)isValidJPEG:(NSData *)inImageData;
+
 @end
