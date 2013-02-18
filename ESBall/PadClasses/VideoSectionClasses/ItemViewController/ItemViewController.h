@@ -50,14 +50,44 @@
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
 //@property (nonatomic, weak) IBOutlet UIView *roadmapRefView;
 
--(void)deselectItem;//tell this item to not select
+/*
+ * A method ask which page of roadmap should download data from
+ *
+ * @return integer page
+ */
+-(NSUInteger)page;
+
+/*
+ * A method to deselect this item
+ * tell this item to not select
+ */
+-(void)deselectItem;
+
+/*
+ * A method to update count down time
+ *
+ * @param time count down time
+ */
 -(void)updateTimeWithTime:(NSUInteger)time;
 
-
+/*
+ * A method to start roadmap update
+ */
 -(void)startRoadmapUpdate;
+
+/*
+ * A method to stop roadmap update
+ */
 -(void)stopRoadmapUpdate;
+
+/*
+ * A method to download roadmap data
+ */
 -(void)doPullRoadmapData;
-//need to implement by subclass
+
+/*
+ * A method to display roadmap
+ */
 -(void)displayRoadmap;
 
 @end

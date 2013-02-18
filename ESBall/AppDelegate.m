@@ -28,6 +28,8 @@ void uncaughtExceptionHandler(NSException *exception) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 
 {
+    gameRestoreBetInfos = [[NSMutableDictionary alloc] init];
+    
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
     {    // The iOS device = iPhone or iPod Touch
         
@@ -172,6 +174,77 @@ void uncaughtExceptionHandler(NSException *exception) {
 -(void)initializeStoryBoardBasedOnScreenSize {
     
    }
+
+#pragma mark - Restore bet info
+-(NSDictionary *)restoreBetInfoWithGameType:(NSUInteger)gameType WithSerialNumber:(NSString *)serialNumber
+{
+    if(serialNumber == nil || [serialNumber isEqualToString:@""])
+        return nil;
+    
+    NSString *keyInfo = @"Info";
+    NSString *keySerialNumber = @"SerialNumber";
+    
+    NSString *gameTypeStr = [NSString stringWithFormat:@"%i", gameType];
+    
+    //if there is a match gamecode
+    if([gameRestoreBetInfos objectForKey:gameTypeStr])
+    {
+        NSMutableDictionary *mutableDic = [gameRestoreBetInfos objectForKey:gameTypeStr];
+        
+        NSString *serialNumberStr = [mutableDic objectForKey:keySerialNumber];
+        
+        //if not match serial number return nil
+        if(![serialNumberStr isEqualToString:serialNumber])
+            return nil;
+        
+        //retrive data
+        NSDictionary *info = [mutableDic objectForKey:keyInfo];
+        
+        //return data
+        return info;
+    }
+    else
+    {
+        return nil;
+    }
+
+    return nil;
+}
+
+-(BOOL)setRestoreBetInfo:(NSDictionary *)info WithGameType:(NSUInteger)gameType WithSerialNumber:(NSString *)serialNumber
+{
+    if(info == nil || serialNumber == nil || [serialNumber isEqualToString:@""])
+        return NO;
+    
+    NSString *keyInfo = @"Info";
+    NSString *keySerialNumber = @"SerialNumber";
+    
+    NSString *gameTypeStr = [NSString stringWithFormat:@"%i", gameType];
+    
+    //if there is a info for specific gamecode already
+    if([gameRestoreBetInfos objectForKey:gameTypeStr])
+    {
+        //replace old data with new one
+        
+        NSMutableDictionary *mutableDic = [gameRestoreBetInfos objectForKey:gameTypeStr];
+        
+        [mutableDic setObject:serialNumber forKey:keySerialNumber];
+        [mutableDic setObject:info forKey:keyInfo];
+    }
+    else
+    {
+        //create new data with given info
+        
+        NSMutableDictionary *mutableDic = [[NSMutableDictionary alloc] init];
+        
+        [mutableDic setObject:serialNumber forKey:keySerialNumber];
+        [mutableDic setObject:info forKey:keyInfo];
+        
+        [gameRestoreBetInfos setObject:mutableDic forKey:gameTypeStr];
+    }
+    
+    return YES;
+}
 
 
 #pragma mark - AsyncSocket delegate

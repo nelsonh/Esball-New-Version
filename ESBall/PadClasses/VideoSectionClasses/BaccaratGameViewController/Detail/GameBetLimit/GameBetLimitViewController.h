@@ -17,6 +17,8 @@
 -(double)GameBetLimitViewControllerLimitForOUBet:(GameBetLimitViewController *)controller;
 -(double)GameBetLimitViewControllerLimitForPairBet:(GameBetLimitViewController *)controller;
 -(double)GameBetLimitViewControllerLimitForTieBet:(GameBetLimitViewController *)controller;
+-(double)GameBetLimitViewControllerLimitForTheBigSmallBet:(GameBetLimitViewController *)controller;
+
 
 @end
 
@@ -28,6 +30,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *singleBetLimitLabel;
 @property (nonatomic, weak) IBOutlet UILabel *ouBetLimitLabel;
 @property (nonatomic, weak) IBOutlet UILabel *pairBetLimitLabel;
+@property (nonatomic, weak) IBOutlet UILabel *theBigSmallBetLimitLabel;
 
 
 @end

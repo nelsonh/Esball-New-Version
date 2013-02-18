@@ -8,10 +8,16 @@
 
 #import "BaseInfo.h"
 
-static NSString *MarqueeInfoReadyNotification = @"MarqueeInfoIsReady";
+/*
+ * Pre-define string for notification name
+ */
+__unused static NSString *MarqueeInfoReadyNotification = @"MarqueeInfoIsReady";
 
 @interface MarqueeInfo : BaseInfo
 
+/*
+ * these properties hold information that extract from XML
+ */
 @property (nonatomic, strong) NSString *let;
 @property (nonatomic, strong) NSString *sid;
 @property (nonatomic, assign) NSUInteger gameType;

@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 
+//similar to PokerView 
+
 #import "MiniInfoView.h"
 #import "FileFinder.h"
 

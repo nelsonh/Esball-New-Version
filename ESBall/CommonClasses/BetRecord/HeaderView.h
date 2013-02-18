@@ -10,6 +10,16 @@
 
 @interface HeaderView : UIView
 
+/*
+ * A method to initialze header for table view
+ * 
+ * @param frame rect
+ * @param title title string
+ * @param titleXPos title string x position
+ * @param titleColor title string color
+ * @param imageName background image name for title
+ * @return header view
+ */
 -(id)initWithFrame:(CGRect)frame withTitleName:(NSString *)title withTitleXPosition:(CGFloat)titleXPos withTitleColor:(UIColor *)titleColor withBackgroundImageName:(NSString *)imageName;
 
 @end

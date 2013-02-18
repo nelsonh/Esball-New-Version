@@ -12,13 +12,21 @@
 @interface BetRecordCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *roundSerialLabel;
-@property (nonatomic, weak) IBOutlet UILabel *subDetailLabel;
+@property (nonatomic, weak) IBOutlet UILabel *bankerPointLabel;
+@property (nonatomic, weak) IBOutlet UILabel *playerPointLabel;
+@property (nonatomic, weak) IBOutlet UILabel *totalBetLabel;
+@property (nonatomic, weak) IBOutlet UILabel *totalPayoffLabel;
 @property (nonatomic, copy) NSString *defaultBackgroundImageName;
 @property (nonatomic, assign) CGFloat cellX;
 @property (nonatomic, assign) CGFloat cellWidth;
 
 
-
+/*
+ * A method to initialize cell
+ *
+ * @param identifier id for cell
+ * @return cell
+ */
 -(id)initWithReuseIdentifier:(NSString *)identifier;
 
 @end

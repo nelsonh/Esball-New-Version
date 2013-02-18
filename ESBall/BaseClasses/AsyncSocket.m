@@ -138,7 +138,7 @@ static AsyncSocket *socketInstance;
 {
     
     tempUsername = username;
-    tempPassword = tempPassword;
+    tempPassword = password;
     
 
     NSString *sendStr = [NSString stringWithFormat:@"%@,%@\n", username, password];

@@ -22,7 +22,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *playerPointLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
 
-@property (nonatomic, copy) NSArray *cardImages;
+@property (nonatomic, copy) NSArray *cardImages;//card image name string
 @property (nonatomic, assign) NSUInteger bankerPoint;
 @property (nonatomic, assign) NSUInteger playerPoint;
 

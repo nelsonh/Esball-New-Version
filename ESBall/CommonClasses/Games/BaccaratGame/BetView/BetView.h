@@ -18,12 +18,22 @@
 
 @class BetView;
 
+/*
+ * A protocol of BetView
+ */
 @protocol BetViewDelegate <NSObject>
 
 @optional
 
--(void)BetViewGreaterThanThirtyRound:(BetView *)betView;
--(void)BetViewLessThanThirtyRound:(BetView *)betView;
+/*
+ * Fire when round greater than certain round
+ */
+-(void)BetViewGreaterThanCertainRound:(BetView *)betView round:(NSUInteger)round;
+
+/*
+ * Fire when round less than certain round
+ */
+-(void)BetViewLessThanCertainRound:(BetView *)betView round:(NSUInteger)round;
 
 @end
 
@@ -32,9 +42,13 @@
     //player hit bet confirm this will be yes otherwise no
     BOOL isDisplayPlayerBetResult;
     
+    //indeicate bet square's delegate is set or not
     BOOL isBetSquareDelegateSet;
     
+    //game status
     NSString *lastGameStatus;
+    
+
 }
 
 @property (nonatomic, weak) id<BetViewDelegate> theBetViewDelegate;
@@ -63,17 +77,128 @@
 @property (nonatomic , weak) IBOutlet UIImageView *square10Result;
 @property (nonatomic , weak) IBOutlet UIImageView *square11Result;
 
--(void)clearBetsWithHideInfo:(BOOL)yesOrNo;
+/*
+ * A method clear bet but the final set
+ * if betinfoview display final result it will not be cleared
+ */
+-(void)clearBetsWithoutFinalSet;
+
+/*
+ * A method clear single bet
+ * 
+ * @param yesOrNo hide info view or not
+ * @param hisYesOrNo clear bet history
+ */
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
+
+/*
+ * A method to show result
+ * which square should be flash 
+ */
 -(void)showResult;
+
+/*
+ * A method to check if all bet amount over player's credit
+ *
+ * @param amount amount of bet squares
+ * @return yes it is over no it is not
+ */
 -(BOOL)isBetOverBalanceWithBetAmount:(double)amount;
 
--(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo;
--(NSMutableArray *)collectBetInfo;//return each signle bet in double as an array
+/*
+ * A mehtod to restore every bet square to last state
+ */
+-(void)restoreBetToLastState;
+
+/*
+ * A method to clear all bet
+ * directly call -(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
+ */
+-(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
+
+/*
+ * A method to collect all bet squares' bet
+ * return each signle bet in double as an array
+ *
+ * @return array that contain NSNumber for each bet sqaures' bet
+ */
+-(NSMutableArray *)collectBetInfo;
+
+/*
+ * A method to collect all bet squares' history bet
+ * return history bet in double as an array
+ *
+ * @return array that contain NSNumber for each bet sqaures' history bet
+ */
+-(NSMutableArray *)collectHistoryBetInfo;
+
+/*
+ * A method to collect all bet squares
+ *
+ * @return array contain UIButton for each bet square
+ */
+-(NSArray *)collectAllBetSqaures;
+
+/*
+ * A method to display bet result
+ * every current bet
+ */
 -(void)displayPlayerBetResult;
 
+/*
+ * A method to display bet history
+ * every bet accumulation for history
+ */
+-(void)displayPlayerHistoryBetResult;
+
+//result
+
+/*
+ * A method generate string contain info about which square should flash for result
+ *
+ * @param result integer from server
+ * @return string a specific format
+ */
 -(NSString *)getResultWithResultCode:(NSUInteger)result;
+
+/*
+ * A method to show flashing result
+ * work with -(NSString *)getResultWithResultCode:(NSUInteger)result;
+ *
+ * @param result specific string format
+ */
 -(void)showResultWithString:(NSString *)result;
+
+/*
+ * A method to disable square by round
+ *
+ * @param round target round
+ * @param curRound current round
+ */
 -(void)disableBetSquareByRound:(NSUInteger)round currentRound:(NSUInteger)curRound;
+
+/*
+ * A method to setup bet square
+ */
 -(void)setupBetSquare;
+
+/*
+ * A method to apply all pending bet squares
+ * pending bet info
+ */
+-(void)applyAllBets;
+
+/*
+ * A mehtod to clear all pending bet info
+ * must call when clear bet or between round
+ */
+-(void)clearAllBetTemp;
+
+/*
+ * A method called when game ask how many round
+ * certain bet square should be disabled
+ * number of round to disable bet square or enable
+ */
+-(NSUInteger)numberOfRoundToDisableBetSquare;
 
 @end

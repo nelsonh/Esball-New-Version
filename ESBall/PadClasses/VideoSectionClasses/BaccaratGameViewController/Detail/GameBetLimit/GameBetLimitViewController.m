@@ -23,7 +23,8 @@
 @synthesize singleBetLimitLabel = _singleBetLimitLabel;
 @synthesize ouBetLimitLabel = _ouBetLimitLabel;
 @synthesize pairBetLimitLabel = _pairBetLimitLabel;
- 
+@synthesize theBigSmallBetLimitLabel = _theBigSmallBetLimitLabel;
+
 
 @synthesize gameBetDelegate = _gameBetDelegate;
 
@@ -71,6 +72,14 @@
         
         _pairBetLimitLabel.text = [NSString stringWithFormat:@"%i", value];
     }
+    
+    if([_gameBetDelegate respondsToSelector:@selector(GameBetLimitViewControllerLimitForTheBigSmallBet:)])
+    {
+        int value = [_gameBetDelegate GameBetLimitViewControllerLimitForTheBigSmallBet:self];
+        
+        _theBigSmallBetLimitLabel.text = [NSString stringWithFormat:@"%i", value];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

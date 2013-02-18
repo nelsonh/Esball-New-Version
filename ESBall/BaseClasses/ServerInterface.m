@@ -127,6 +127,23 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         return NO;
 }
 
+-(NSString *)serverIP
+{
+    NSString *serverIPs = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://183.182.66.167/rtmppyeouupdooaoIP.png"] encoding:NSUTF8StringEncoding error:nil];
+    
+    NSLog(@"%@", serverIPs);
+    
+    NSArray *splited = [serverIPs componentsSeparatedByString:@","];
+    
+    int min = 1;
+    int max = splited.count - 1;
+    int randNumber  = rand() % (max - min) + min;
+    
+    NSString *ip = [splited objectAtIndex:randNumber];
+    
+    return ip;
+}
+
 -(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password
 {
     //remove previous inpustream if needed 
@@ -168,10 +185,13 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         return;
     }
     
+    NSString *serverIP = [self serverIP];
+    
     int code = 0;
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
-    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)hostToCnnect, 10243, &readStream, &writeStream);
+    //CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)hostToCnnect, 10243, &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)serverIP, 10243, &readStream, &writeStream);
 
     
     inputStream = (__bridge NSInputStream*)readStream;
@@ -318,6 +338,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     
     if(code == -1)
     {
+        NSLog(@"Client send data to server fail");
         return NO;
     }
     else
@@ -380,7 +401,7 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
                 
                 int bufferSize= kStreamReadBufferSize;
                 
-				uint8_t buffer[bufferSize];
+				uint16_t buffer[bufferSize];
 				int len = 0;
                 UInt32 big5 = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingBig5);
                 
@@ -565,6 +586,15 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
             [_theDelegate ServerInterface:self didLoginWithUsername:loginUsername andPassword:loginPassword];
         }
          
+    }
+    else if ([msg rangeOfString:@"onBet"].length > 0)
+    {
+        NSLog(@"onBet:%@", msg);
+        //dispatch data to delegate
+        if([_theDelegate respondsToSelector:@selector(ServerInterface:didReceivedRespond:)])
+        {
+            [_theDelegate ServerInterface:self didReceivedRespond:msg];
+        }
     }
     /*
     else if([msg rangeOfString:@"onLogin"].length > 0)

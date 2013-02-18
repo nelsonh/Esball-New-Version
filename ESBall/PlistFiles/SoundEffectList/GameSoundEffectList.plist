@@ -14,6 +14,8 @@
 	<string>startbetting.WAV</string>
 	<key>SE_CountDownLessThanTwo</key>
 	<string>countdown2.WAV</string>
+	<key>SE_CountDown</key>
+	<string>CountDown.WAV</string>
 	<key>SE_StopBet</key>
 	<string>stopbetting.WAV</string>
 	<key>SE_BankerWin</key>
@@ -27,7 +29,7 @@
 	<key>SE_BankerPoint1</key>
 	<string>Bankerpoint1.WAV</string>
 	<key>SE_BankerPoint2</key>
-	<string>Bankerpoint2.WAV</string>
+	<string>Bankerpoint2.wav</string>
 	<key>SE_BankerPoint3</key>
 	<string>Bankerpoint3.WAV</string>
 	<key>SE_BankerPoint4</key>

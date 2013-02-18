@@ -300,13 +300,19 @@
     
     RecordData *data =[records objectAtIndex:indexPath.row];
     
+    /*
     //subtitle string at bottom of cell
     NSMutableString *subtitleStr = [[NSMutableString alloc] init];
     
     NSString *bankerStr = NSLocalizedString(@"庄:", @"庄:");
     NSString *playerStr = NSLocalizedString(@"闲:", @"闲:");
+    if(_gameType == 3003)
+    {
+        bankerStr = NSLocalizedString(@"虎:", @"虎:");
+        playerStr = NSLocalizedString(@"龙:", @"龙:");
+    }
     NSString *totalBetStr = NSLocalizedString(@"总投注", @"总投注");
-    NSString *totalPayoffStr = NSLocalizedString(@"总派采", @"总派采");
+    NSString *totalPayoffStr = NSLocalizedString(@"总派彩", @"总派彩");
     
     //configure cell with data
     cell.roundSerialLabel.text = data.roundSerial;
@@ -316,7 +322,26 @@
     [subtitleStr appendFormat:@"%@%@ ", playerStr, data.player];
     [subtitleStr appendFormat:@"%@%@ ", totalBetStr, data.totalBet];
     [subtitleStr appendFormat:@"%@%@", totalPayoffStr, data.totalPayoff];
-    cell.subDetailLabel.text = subtitleStr;
+     */
+    cell.roundSerialLabel.text = data.roundSerial;
+    cell.bankerPointLabel.text = [NSString stringWithFormat:@"(%@)", data.banker];
+    cell.playerPointLabel.text = [NSString stringWithFormat:@"(%@)", data.player];
+    cell.totalBetLabel.text = [NSString stringWithFormat:@"%@", data.totalBet];
+    cell.totalPayoffLabel.text = [NSString stringWithFormat:@"%@", data.totalPayoff];
+    
+    //color up
+    cell.totalBetLabel.textColor = [UIColor blueColor];
+    double payoff = [data.totalPayoff doubleValue];
+    if(payoff<0)
+    {
+        cell.totalPayoffLabel.textColor = [UIColor redColor];
+    }
+    else
+    {
+        cell.totalPayoffLabel.textColor = [UIColor blackColor];
+    }
+    
+    //cell.subDetailLabel.text = subtitleStr;
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     

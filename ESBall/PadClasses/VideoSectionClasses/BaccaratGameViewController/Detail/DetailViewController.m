@@ -63,7 +63,8 @@
 {
     [super loadView];
     
-    selectedMethod = VideoSetting;
+    //which detail view should present in begin
+    selectedMethod = GameBetLimit;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -84,6 +85,12 @@
         selectedBtn = nil;
     
     [self removePreviousSubDetailViewController];
+    
+    //phone don't select anything
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+    {
+        selectedMethod = -1;
+    }
     
     switch (selectedMethod)
     {
@@ -326,5 +333,16 @@
     
     return 0.0;
 }
+
+-(double)GameBetLimitViewControllerLimitForTheBigSmallBet:(GameBetLimitViewController *)controller
+{
+    if([self.theDelegate respondsToSelector:@selector(GameDetailViewControllerTheBigSmallBetLimit:)])
+    {
+        return [self.theDelegate GameDetailViewControllerTheBigSmallBetLimit:self];
+    }
+    
+    return 0.0;
+}
+
 
 @end

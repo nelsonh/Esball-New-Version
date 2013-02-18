@@ -202,6 +202,11 @@
 }
 
 #pragma mark - public interface
+-(void)clearBetsWithoutFinalSet
+{
+    
+}
+
 -(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo
 {
     [self clearBetsWithHideInfo:yesOrNo];

@@ -13,11 +13,21 @@
 
 @class BetRecordViewController;
 
-
+/*
+ * A protocol of BetRecordViewController
+ */
 @protocol BetRecordViewControllerDelegate <NSObject>
 
 @optional
+
+/*
+ * Fire when this controller added to another controller
+ */
 -(void)BetRecordViewControllerDidAddToParentController:(BetRecordViewController *)controller;
+
+/*
+ * Fire when this controller remove from parent controller
+ */
 -(void)BetRecordViewControllerDidRemoveFromParentController:(BetRecordViewController *)controller;
 
 @end
@@ -25,12 +35,12 @@
 @interface BetRecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate>{
     
     NSMutableDictionary *recordDatas;//info of all records
-    NSURLConnection *urlConnection;
+    NSURLConnection *urlConnection;//connection instance
     NSMutableData *pendingData;//appendable data for async download
     
     BOOL isPullingDataFail;//if data download fail this will be no
     
-    NSIndexPath *lastSelectedIndex;
+    NSIndexPath *lastSelectedIndex;//select index 
 }
 
 @property (nonatomic, weak) IBOutlet UIView *referenceView;
@@ -40,25 +50,135 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 //need to implement subclass
+
+/*
+ * A method ask should present a empty model when controller show up
+ * ipod iphone no, ipad yes
+ *
+ * @return yes to present a empty model, no don't present
+ */
 -(BOOL)presentEmptyModelAtBeginning;
+
+/*
+ * A method ask how many data should download at a time
+ *
+ * @return integer number of data to download
+ */
 -(NSUInteger)numberOfDataToPull;
+
+/*
+ * A method ask how many section to download
+ *
+ * @return integer number of section;
+ */
 -(NSUInteger)sectionToPull;
+
+/*
+ * A method ask image name for cell background
+ *
+ * @return string image name
+ */
 -(NSString *)cellBackgroundImageName;
+
+/*
+ * A method ask image name for cell background when selected
+ *
+ * @return string image name
+ */
 -(NSString *)cellSelectedBackgroundImageName;
+
+/*
+ * A method ask section header height in table view
+ *
+ * @return CGFloat height for header
+ */
 -(CGFloat)tableViewHeaderHeight;
+
+/*
+ * A method ask image name for table header's background
+ *
+ * @return string image name
+ */
 -(NSString *)tableViewHeaderBackgroundImageName;
+
+/*
+ * A method ask title string position on x
+ *
+ * @retun CGFloat value for x position
+ */
 -(CGFloat)tableViewTitleXPosition;
+
+/*
+ * A method ask color for title string
+ *
+ * @return UIColor for title string
+ */
 -(UIColor *)tableViewTitleColor;
+
+/*
+ * A method ask cell identifier
+ *
+ * @return string cell identififer
+ */
 -(NSString *)cellIdentifier;
+
+/*
+ * A method to show detail record controller
+ *
+ * @param cid string of cid
+ * @param gameType string of gametype
+ */
 -(void)showDetailRecordWithCID:(NSString *)cid withGameType:(NSString *)gameType;//for transition
+
+/*
+ * A method ask for cell's x position
+ *
+ * @return CGFloat value of x position
+ */
 -(CGFloat)cellX;
+
+/*
+ * A method ask for cell's width
+ * 
+ * @return CGFloat value of width for cell
+ */
 -(CGFloat)cellWitdh;
 
+/*
+ * A method to download record data
+ */
 -(void)pullRecordData;
+
+/*
+ * A method to convert data from string
+ * 
+ * @param dataStr data as string
+ * @return dictionary that contain data that had been converted
+ */
 -(NSMutableDictionary *)convertDataWithString:(NSString *)dataStr;
+
+/*
+ * A method to configure cell
+ *
+ * @param cell is about to be configured
+ * @param indexPath index of cell and data
+ * @return configured cell
+ */
 -(BetRecordCell *)configureCell:(BetRecordCell *)cell withIndexPath:(NSIndexPath *)indexPath;
+
+/*
+ * A method to sort data decending
+ *
+ * @param unsortedArray array that has not yet sorted 
+ */
 -(NSArray *)sortArrayDecendingWithArray:(NSArray *)unsortedArray;
 
+/*
+ * A method to add this controller to another controller as child
+ *
+ * @param parentController the controller this controller will be add to
+ * @param pos position in parent controller 
+ */
 -(void)addToConrtoller:(UIViewController *)parentController inPosition:(CGPoint)pos;
 
 @end

@@ -76,6 +76,23 @@
     //subclass need to implement thier own 
 }
 
+#pragma mark - sort record data array function
+NSInteger SortRecordData(id num1, id num2, void *context)
+{
+    NSDictionary *dic1 = num1;
+    NSDictionary *dic2 = num2;
+    
+    int serialType1 = [[dic1 objectForKey:@"SerialType"] intValue];
+    int serialType2 = [[dic2 objectForKey:@"SerialType"] intValue];
+    
+    if(serialType1 < serialType2)
+        return NSOrderedAscending;
+    else if (serialType1 > serialType2)
+        return NSOrderedDescending;
+    else
+        return NSOrderedSame;
+}
+
 #pragma mark - public interface
 -(void)pullDetailRecordData
 {
@@ -170,6 +187,10 @@
         }
     }
     
+    //sort ascending
+    NSMutableArray *noneSortedRecord = [detailRecordData objectForKey:@"Records"];
+    [noneSortedRecord sortUsingFunction:SortRecordData context:NULL];
+    
     NSLog(@"%@", detailRecordData);
     
     //return detailRecordData;
@@ -193,11 +214,11 @@
     /*convert bet type to string*/
     switch (betType) {
         case 1:
-            return NSLocalizedString(@"莊", @"莊");
+            return NSLocalizedString(@"庄", @"庄");
             break;
             
         case 2:
-            return NSLocalizedString(@"閑", @"閑");
+            return NSLocalizedString(@"闲", @"闲");
             break;
             
         case 3:
@@ -205,11 +226,11 @@
             break;
             
         case 4:
-            return NSLocalizedString(@"莊對", @"莊對");
+            return NSLocalizedString(@"庄对", @"庄对");
             break;
             
         case 5:
-            return NSLocalizedString(@"閑對", @"閑對");
+            return NSLocalizedString(@"闲对", @"闲对");
             break;
             
         case 6:
@@ -221,19 +242,19 @@
             break;
             
         case 8:
-            return NSLocalizedString(@"莊單", @"莊單");
+            return NSLocalizedString(@"庄单", @"庄单");
             break;
             
         case 9:
-            return NSLocalizedString(@"莊雙", @"莊雙");
+            return NSLocalizedString(@"庄双", @"庄双");
             break;
             
         case 10:
-            return NSLocalizedString(@"閒單", @"閒單");
+            return NSLocalizedString(@"闲单", @"闲单");
             break;
             
         case 11:
-            return NSLocalizedString(@"閒雙", @"閒雙");
+            return NSLocalizedString(@"闲双", @"闲双");
             break;
             
         default:

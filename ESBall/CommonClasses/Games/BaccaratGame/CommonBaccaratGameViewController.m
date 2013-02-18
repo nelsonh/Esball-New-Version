@@ -11,6 +11,7 @@
 
 
 
+
 //#define kPokerViewHideDelay 3.0
 
 @interface CommonBaccaratGameViewController ()
@@ -93,12 +94,12 @@
     return @"";
 }
 
--(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
+-(NSString *)backgroundImageNameForGameGreaterThanCertainRound:(NSUInteger)round
 {
     return @"";
 }
 
--(NSString *)backgroundImageNameForGameLessThanThirtyRound
+-(NSString *)backgroundImageNameForGameLessThanCertainRound:(NSUInteger)round
 {
     return @"";
 }
@@ -148,6 +149,14 @@
     }
 }
 
+-(void)receiveFirstUpdateInfo
+{
+    [super receiveFirstUpdateInfo];
+    
+    //recover bet info
+    [self recoverBetInfo];
+}
+
 -(void)playGame
 {
     [super playGame];
@@ -177,7 +186,13 @@
     
     [super handleUpdateInfo:notification];
     
+}
+
+-(void)handleBetRespondInfo:(NSNotification*)notification
+{
+    [self processBetRespondInfo:notification];
     
+    [super handleBetRespondInfo:notification];
 }
 
 -(IBAction)back:(id)sender
@@ -273,6 +288,10 @@
     _betAreaView.chipSize = kChipSize;
      */
     
+    //Video IP
+    int videoTableNumber = self.tableNumber+1;
+    videoIPStr = [self videoIpAddressWithGameShortName:@"BC" withTableNumber:videoTableNumber];
+    
 }
 
 //phone need to override
@@ -285,8 +304,9 @@
     int videoTableNumber = self.tableNumber+1;
     
     NSString *videoQuality = [self sdOrhdForVideoImage];
-    NSString *ipStr = [self videoIpAddressWithGameShortName:@"BC" withTableNumber:videoTableNumber];
-    NSString *videoAddr = [NSString stringWithFormat:@"http://%@/baccarat%@%i/sd2.jpg", ipStr, videoQuality, videoTableNumber];
+    //NSString *ipStr = [self videoIpAddressWithGameShortName:@"BC" withTableNumber:videoTableNumber];
+    //NSString *videoAddr = [NSString stringWithFormat:@"http://%@/baccarat%@%i/sd2.jpg", ipStr, videoQuality, videoTableNumber];
+    NSString *videoAddr = [NSString stringWithFormat:@"http://%@/baccarat%@%i/sd2.jpg", videoIPStr, videoQuality, videoTableNumber];
     [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"%@", videoAddr]]];
     
     /*
@@ -317,7 +337,7 @@
 {
     _roadmapButton.highlighted = YES;
     
-    _backButton.enabled = NO;
+    //_backButton.enabled = NO;
     _detailButton.enabled = NO;
     _recordButton.enabled = NO;
 }
@@ -326,7 +346,7 @@
 {
     _roadmapButton.highlighted = NO;
     
-    _backButton.enabled = YES;
+    //_backButton.enabled = YES;
     _detailButton.enabled = YES;
     _recordButton.enabled = YES;
 }
@@ -338,6 +358,8 @@
     _roadmapButton.enabled = NO;
     _backButton.enabled = NO;
     _recordButton.enabled = NO;
+    _clearBetButton.enabled = NO;
+    _betConfirmButton.enabled = NO;
 }
 
 -(void)doDeSelectDetail
@@ -347,6 +369,8 @@
     _roadmapButton.enabled = YES;
     _backButton.enabled = YES;
     _recordButton.enabled = YES;
+    _clearBetButton.enabled = YES;
+    _betConfirmButton.enabled = YES;
 }
 
 -(void)doSelectRecord
@@ -356,6 +380,8 @@
     _roadmapButton.enabled = NO;
     _backButton.enabled = NO;
     _detailButton.enabled = NO;
+    _clearBetButton.enabled = NO;
+    _betConfirmButton.enabled = NO;
 }
 
 -(void)doDeselectRecord
@@ -365,6 +391,8 @@
     _roadmapButton.enabled = YES;
     _backButton.enabled = YES;
     _detailButton.enabled = YES;
+    _clearBetButton.enabled = YES;
+    _betConfirmButton.enabled = YES;
 }
 
 //calculate total bet
@@ -418,7 +446,6 @@
     {
         [self performSelector:@selector(doDeSelectRoadmap) withObject:nil afterDelay:0.0];
         
-
     }
     
     _roadmapView.hidden = !_roadmapView.hidden;
@@ -498,7 +525,9 @@
     if([_betAreaView isKindOfClass:[BetView class]])
     {
         BetView *betView = (BetView *)_betAreaView;
-        [betView clearAllBetsWithHideInfo:YES];
+        //[betView clearAllBetsWithHideInfo:YES];
+        [betView clearBetsWithoutFinalSet];
+        [betView clearAllBetTemp];
     }
 }
 
@@ -512,7 +541,29 @@
         //collect bet information
         NSMutableArray *betInfos = [betView collectBetInfo];
         
-        
+        //if any bet smaller than min
+        for(NSNumber *num in betInfos)
+        {
+            double betNum = [num doubleValue];
+            
+            if(betNum == 0)
+                continue;
+            
+            if(betNum < userInfo.min)
+            {
+                NSLog(@"A bet under bet min");
+                
+                NSString *msg = NSLocalizedString(@"低于最小下注金额", @"低于最小下注金额");
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+                [alertView show];
+                
+                //[betView clearAllBetsWithHideInfo:YES WithHistory:NO];
+                [betView clearBetsWithoutFinalSet];
+                [betView clearAllBetTemp];
+                
+                return;
+            }
+        }
         
 #ifdef SendRealBetInfo
         //prepare to bet
@@ -532,6 +583,10 @@
         [self sendMessageToServerWithMessage:response];
 #endif
         
+        //clear bet
+        [betView clearAllBetsWithHideInfo:NO WithHistory:NO];
+        
+        /*
         //display total bet this round
         double totalBet = [self totalBetWithInfos:betInfos];
         _totalBetLabel.text = [NSString stringWithFormat:@"%.2f", totalBet];
@@ -541,6 +596,10 @@
         
         //clear bet
         [betView clearAllBetsWithHideInfo:NO];
+        
+        //reset none bet round count
+        noneBetRoundCount = 0;
+         */
     }
 }
 
@@ -641,7 +700,7 @@
     
     NSString *msg;
     
-    msg = NSLocalizedString(@"开始下注", @"开始下注");
+    msg = NSLocalizedString(@"请下注", @"请下注");
     [_promptMsgView updateWithMessage:msg];
     
     [self performSelector:@selector(hidePromptMsg) withObject:nil afterDelay:2.0f];
@@ -657,9 +716,19 @@
         
         if(info.payoff > 0)
         {
+            //msg = [NSString stringWithFormat:NSLocalizedString(@"您赢了: %.2f", @"您赢了: %.2f"), info.payoff];
             
+            NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
+            [doubleValueWithMaxTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
+            [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:2];
             
-            msg = [NSString stringWithFormat:NSLocalizedString(@"您赢了: %.2f", @"您赢了: %.2f"), info.payoff];
+            NSString *payOffStr = [doubleValueWithMaxTwoDecimalPlaces stringFromNumber:[NSNumber numberWithDouble:info.payoff]];
+            
+
+            msg = [NSString stringWithFormat:NSLocalizedString(@"您赢了: %@元", @"您赢了: %@元"), payOffStr];
+            
+            doubleValueWithMaxTwoDecimalPlaces = nil;
+            
             [_promptMsgView updateWithMessage:msg];
             
             [self performSelector:@selector(hidePromptMsg) withObject:nil afterDelay:2.0f];
@@ -669,8 +738,18 @@
         }
         else if(info.payoff < 0)
         {
+            //msg = [NSString stringWithFormat:NSLocalizedString(@"您输了: %.2f", @"您输了: %.2f"), info.payoff*-1];
             
-            msg = [NSString stringWithFormat:NSLocalizedString(@"您输了: %.2f", @"您输了: %.2f"), info.payoff*-1];
+            NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
+            [doubleValueWithMaxTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
+            [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:2];
+            
+            NSString *payOffStr = [doubleValueWithMaxTwoDecimalPlaces stringFromNumber:[NSNumber numberWithDouble:(info.payoff*-1)]];
+            
+            msg = [NSString stringWithFormat:NSLocalizedString(@"您输了: %@元", @"您输了: %@元"), payOffStr];
+            
+            doubleValueWithMaxTwoDecimalPlaces = nil;
+
             [_promptMsgView updateWithMessage:msg];
             
             [self performSelector:@selector(hidePromptMsg) withObject:nil afterDelay:2.0f];
@@ -709,6 +788,7 @@
 #endif
     }
     
+    //filt chips
     for(NSString *chipValue in chipFilter)
     {
 /*
@@ -729,7 +809,10 @@
         }
     }
 
+    //give bet view chips
     _betAreaView.chips = filtedChipList;
+    
+    //give bet view userinfo
     _betAreaView.userInfo = info;
 
 }
@@ -762,8 +845,28 @@
     
     //count down
     _countDownLabel.text = [NSString stringWithFormat:@"%i", info.countDown];
+    if(info.countDown <= 5)
+    {
+        _countDownLabel.textColor = [UIColor redColor];
+    }
+    else
+    {
+        _countDownLabel.textColor = [UIColor blackColor];
+    }
     
+    if(info.countDown == 5)
+    {
+        [soundManager playSoundEffectWithKey:@"SE_CountDown"];
+    }
     
+    //clear bet
+    if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])
+    {
+        //clear bet but confirm one
+        [_betAreaView clearBetsWithoutFinalSet];
+    }
+    
+    //update poker
     if([info.status isEqualToString:GameStatusDealing] || [info.status isEqualToString:GameStatusWaiting])
     {
         //update poker
@@ -786,6 +889,7 @@
     }
      */
     
+    //win, lose or tie
     if([lastGameStatus isEqualToString:GameStatusDealing] && [info.status isEqualToString:GameStatusWaiting])
     {
         /*
@@ -811,24 +915,26 @@
         playerPointTemp = [self calculateCardPointForPlayer:info.poker];
         
         //delay is order and important
-        [self performSelector:@selector(playSoundOfFinalPointForBanker) withObject:nil afterDelay:0.0f];
-        [self performSelector:@selector(playSoundOfFinalPointForPlayer) withObject:nil afterDelay:3.0f];
+        [self performSelector:@selector(playSoundOfFinalPointForPlayer) withObject:nil afterDelay:0.0f];
+        [self performSelector:@selector(playSoundOfFinalPointForBanker) withObject:nil afterDelay:3.0f];
         [self performSelector:@selector(playSoundOfWinLoseOrTie) withObject:nil afterDelay:6.0f];
     }
     
     //_pokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
     
+    //reset roadmap update count
     if([info.status isEqualToString:GameStatusWaiting] || [info.status isEqualToString:GameStatusDealing])
     {
-        
+        //reset roadmap update count
         [_roadmapView resetUpdateCount];
         
         //_changeTableButton.enabled = NO;
         //_detailButton.enabled = NO;
+        
         _clearBetButton.enabled = NO;
         _betConfirmButton.enabled = NO;
     }
-    else if([info.status isEqualToString:GameStatusBetting])
+    else if([info.status isEqualToString:GameStatusBetting])//hide poker view and update roadmap if needed
     {
         
         _pokerView.visibility = NO;
@@ -845,20 +951,28 @@
         
         //_changeTableButton.enabled = YES;
         //_detailButton.enabled = YES;
-        _clearBetButton.enabled = YES;
-        _betConfirmButton.enabled = YES;
+        
+        if(_detailButton.highlighted == NO && _recordButton.highlighted == NO)
+        {
+            _clearBetButton.enabled = YES;
+            _betConfirmButton.enabled = YES;
+        }
         
     }
     
-    if([info.status isEqualToString:GameStatusWaiting])
+    //new round
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
     {
         //clean total bet
         self.totalBetLabel.text = @"0.00";
+        
+        //tell roadmap to stop asking
+        [_roadmapView stopAsking];
     }
     
     if([info.status isEqualToString:GameStatusBetting])
     {
-        //reset
+        //don't show prompt for win or lose
         winOrLosePromptShowed = NO;
     }
     
@@ -906,6 +1020,123 @@
     [_betAreaView updateView];
 }
 
+-(void)processBetRespondInfo:(NSNotification *)notification
+{
+    BetRespondInfo *info = notification.object;
+    
+    //if bet respond fail
+    if([info.error isEqualToString:@"BET_FAILED"] || [info.error isEqualToString:@"UNDER_MIN"])
+    {
+        NSString *msg = NSLocalizedString(@"下注失败", @"下注失败");
+        UIAlertView *betFailAlertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        [betFailAlertView show];
+        
+        BetView *betView = (BetView *)_betAreaView;
+        [betView clearBetsWithoutFinalSet];
+        //[betView restoreBetToLastState];
+        //[betView clearAllBetTemp];
+        
+        return;
+    }
+    
+    BetView *betView = (BetView *)_betAreaView;
+    
+    //apply pending bets
+    [betView applyAllBets];
+    
+    //collect history bet information
+    NSMutableArray *betInfos = [betView collectHistoryBetInfo];
+    
+    //display total bet this round
+    double totalBet = [self totalBetWithInfos:betInfos];
+    _totalBetLabel.text = [NSString stringWithFormat:@"%.2f", totalBet];
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hidePromptMsg) object:nil];
+    _promptMsgView.hidden = NO;
+    [_promptMsgView updateWithMessage:[NSString stringWithFormat:NSLocalizedString(@"您共下注%.2f元", @"您共下注%.2f元"), totalBet]];
+    [self performSelector:@selector(hidePromptMsg) withObject:nil afterDelay:3.0f];
+    
+    //display player accumulated bet result
+    [betView displayPlayerHistoryBetResult];
+    
+    //save bet info
+    [self saveBetInfo];
+    
+    //reset none bet round count
+    noneBetRoundCount = 0;
+    
+    
+    
+}
+
+-(void)saveBetInfo
+{
+    //data store in app delegate
+    AppDelegate *mainApp = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    BetView *betView = (BetView *)_betAreaView;
+    
+    //collect all BetSquares
+    NSArray *squares = [betView collectAllBetSqaures];
+    NSMutableDictionary *infos = [[NSMutableDictionary alloc] init];
+    
+    for(BetSquareView *square in squares)
+    {
+        //store each BetSqaure's bet history and tag as dictionary
+        //tag is pre-define in interface builder
+        NSString *squareTag = [NSString stringWithFormat:@"%i", square.tag];
+        NSNumber *betHistory = [NSNumber numberWithDouble:square.betHistory];
+        
+        //tag as key bet history as value
+        [infos setObject:betHistory forKey:squareTag];
+    }
+    
+    NSString *serialNumber = [updateInfo.roundNumber stringByAppendingFormat:@" %@", updateInfo.roundSerial];
+    
+    //save data
+    [mainApp setRestoreBetInfo:infos WithGameType:self.gameType WithSerialNumber:serialNumber];
+}
+
+-(void)recoverBetInfo
+{
+    //data store in app delegate
+    AppDelegate *mainApp = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    BetView *betView = (BetView *)_betAreaView;
+    
+    NSString *serialNumber = [updateInfo.roundNumber stringByAppendingFormat:@" %@", updateInfo.roundSerial];
+    
+    //retrieve data by gametype and serial number
+    NSDictionary *dic = [mainApp restoreBetInfoWithGameType:self.gameType WithSerialNumber:serialNumber];
+    
+    if(dic == nil)
+        return;
+    
+    //go through betview's subview find BetSquareView
+    for(BetSquareView *square in betView.subviews)
+    {
+        if([square isKindOfClass:[BetSquareView class]])
+        {
+            NSNumber *betHistoryNumber = [dic objectForKey:[NSString stringWithFormat:@"%i", square.tag]];
+            
+            if(betHistoryNumber == nil)
+                continue;
+            
+            double betHistory = [betHistoryNumber doubleValue];
+            
+            //assign bet history
+            [square applyBetHistoryWithValue:betHistory];
+            
+            //show info if bet history is greater than 0
+            if(betHistory > 0)
+                [square showBetInfoView];
+        }
+    }
+    
+    //display them
+    [betView displayPlayerHistoryBetResult];
+}
+
 #pragma mark - public interface play sound
 -(void)playSoundOfFinalPointForBanker
 {
@@ -943,7 +1174,7 @@
     }
 }
 
-#pragma mark - gameplay rule
+#pragma mark - calculate point
 -(NSUInteger)calculateCardPointForBanker:(NSArray *)cards
 {
     NSString *cardName1 = [cards objectAtIndex:1];
@@ -972,6 +1203,7 @@
         cardPoint3 = ([carPointStr intValue]>=10)? 0:[carPointStr intValue];
     }
     
+    //amount is 10 equal 0
     total = (cardPoint1 + cardPoint2 + cardPoint3)%10;
     
     
@@ -1008,6 +1240,7 @@
         
     }
     
+    //amount is 10 equal 0
     total = (cardPoint1 + cardPoint2 + cardPoint3)%10;
     
     
@@ -1017,7 +1250,7 @@
 
 //phone need to override and specify image name
 #pragma mark - BetView delegate
--(void)BetViewGreaterThanThirtyRound:(BetView *)betView
+-(void)BetViewGreaterThanCertainRound:(BetView *)betView round:(NSUInteger)round
 {
     FileFinder *fileFinder = [FileFinder fileFinder];
     
@@ -1025,12 +1258,13 @@
     _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Game_bg2@2x.png"]];
      */
     
-    NSString *imageName = [self backgroundImageNameForGameGreaterThanThirtyRound];
-    _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:imageName]];
+    NSString *imageName = [self backgroundImageNameForGameGreaterThanCertainRound:round];
+    UIImage *newImage = [[UIImage alloc] initWithCGImage:[UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:imageName]].CGImage];
+    _backgroundImageView.image = newImage;
                                   
 }
 
--(void)BetViewLessThanThirtyRound:(BetView *)betView
+-(void)BetViewLessThanCertainRound:(BetView *)betView round:(NSUInteger)round
 {
     FileFinder *fileFinder = [FileFinder fileFinder];
     
@@ -1038,8 +1272,10 @@
     _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Game_bg@2x.png"]];
      */
     
-    NSString *imageName = [self backgroundImageNameForGameLessThanThirtyRound];
-    _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:imageName]];
+    NSString *imageName = [self backgroundImageNameForGameLessThanCertainRound:round];
+    UIImage *newImage = [[UIImage alloc] initWithCGImage:[UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:imageName]].CGImage];
+    _backgroundImageView.image = newImage;
+    
 }
 
 #pragma mark - ImagePull delegate
@@ -1063,14 +1299,13 @@
 #pragma mark - GameDetailViewController delegate
 -(NSString *)GameDetailViewControllerNameForDealer:(GameDetailViewController *)controller
 {
-    //return  [NSString stringWithString:updateInfo.dealerName];
-    return self.dealerNameLabel.text;
+    return  [NSString stringWithString:updateInfo.dealerName];
 }
 
 -(NSString *)GameDetailViewControllerNameForTable:(GameDetailViewController *)controller
 {
-    //return [NSString stringWithString:updateInfo.gameCodeName];
-    return self.gameCodeNameLabel.text;
+    return [NSString stringWithString:updateInfo.gameCodeName];
+
 }
 
 -(NSString *)GameDetailViewControllerNameForCurrency:(GameDetailViewController *)controller
@@ -1102,6 +1337,11 @@
 -(double)GameDetailViewControllerTieBetLimit:(GameDetailViewController *)controller
 {
     return userInfo.tie;
+}
+
+-(double)GameDetailViewControllerTheBigSmallBetLimit:(GameDetailViewController *)controller
+{
+    return userInfo.pair;
 }
 
 -(NSString *)GameDetailViewControllerGameRuleWebAddress:(GameDetailViewController *)controller

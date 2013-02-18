@@ -36,17 +36,24 @@
     
     
     [self presentViewController:controller animated:YES completion:nil];*/
-    
+   /*
    PhoneVideoSectionChangeControllerViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"phoneVideoSectionChangeViewController"];
     
    [self presentViewController:controller animated:YES completion:nil];
-    
+    */
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    /*
+    PhoneVideoSectionChangeControllerViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"phoneVideoSectionChangeViewController"];
+    
+    [self addChildViewController:controller];
+    [self.view addSubview:controller.view];
+    */
 }
 
 - (void)didReceiveMemoryWarning

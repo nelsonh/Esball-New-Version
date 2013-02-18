@@ -12,7 +12,10 @@
 @implementation BetRecordCell
 
 @synthesize roundSerialLabel = _roundSerialLabel;
-@synthesize subDetailLabel = _subDetailLabel;
+@synthesize bankerPointLabel = _bankerPointLabel;
+@synthesize playerPointLabel = _playerPointLabel;
+@synthesize totalBetLabel = _totalBetLabel;
+@synthesize totalPayoffLabel = _totalPayoffLabel;
 @synthesize defaultBackgroundImageName = _defaultBackgroundImageName;
 @synthesize cellX = _cellX;
 @synthesize cellWidth = _cellWidth;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LoadingHUD.h"
+#import "BaseGameViewController.h"
 
 @interface PhoneVideoSectionChangeControllerViewController : UIViewController
 {
@@ -36,4 +37,8 @@
 - (IBAction) down_changeICO9;
 - (IBAction) down_changeIC10;
 - (IBAction) down_changetable;
+-(void)dismiss;
+
+-(IBAction)logout:(id)sender;
+
 @end

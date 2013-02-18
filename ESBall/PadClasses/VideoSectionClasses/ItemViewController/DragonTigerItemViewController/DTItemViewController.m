@@ -38,19 +38,22 @@
 }
 
 #pragma mark - override
+-(NSUInteger)page
+{
+    return 4;
+}
+
 -(void)displayRoadmap
 {
     UIImage *player;
     UIImage *banker;
-    UIImage *tie1;
-    UIImage *tie2;
-    UIImage *tie3;
+    UIImage *tie;
+
     
-    player = [UIImage imageNamed:@"DTrou_Y_big.png"];
-    banker = [UIImage imageNamed:@"DTrou_R_big.png"];
-    tie1 = [UIImage imageNamed:@"rou_Tie_01.png"];
-    tie2 = [UIImage imageNamed:@"rou_Tie_02.png"];
-    tie3 = [UIImage imageNamed:@"rou_Tie_03.png"];
+    player = [UIImage imageNamed:@"DTrou_Y_Tiger.png"];
+    banker = [UIImage imageNamed:@"DTrou_R_Dragon.png"];
+    tie = [UIImage imageNamed:@"DTrou_G_Tie.png"];
+
     
     /*
      if(self.gameType == 3001)
@@ -129,7 +132,28 @@
     CGFloat w=squareWidth-inset, h=squareHeight-inset;
     int start;
     NSArray *allLines =[roadmapDataStr componentsSeparatedByString: @"\n"];
-    int lines= [ allLines count]-2;
+    int lines= [allLines count]-3;
+    
+    if(lines <= 0)
+    {
+        image=UIGraphicsGetImageFromCurrentImageContext();
+        
+        UIImageView *imageView  = [[UIImageView alloc] initWithFrame:_roadmapRefView.frame];
+        imageView.image = [UIImage imageWithCGImage:image.CGImage];
+        imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        
+        UIGraphicsEndImageContext();
+        
+        [self.view addSubview:imageView];
+        roadmapImageView = imageView;
+        
+        roadmapData = nil;
+        
+        
+        return;
+    }
+    
+    
     
     if (lines>0)
     {
@@ -137,47 +161,75 @@
         //w=20.2,h=19;
         //   int count_bank_temp=0,count_play_temp=0,count_tie_temp=0;
         
-        if (lines<=16)
-            start=0;
-        else
-        {   start=lines-17;
-            lines=17;
+        NSArray *splited = [[allLines objectAtIndex:1] componentsSeparatedByString:@":"];
+        
+        if(splited.count<2)
+        {
+            image=UIGraphicsGetImageFromCurrentImageContext();
+            
+            UIImageView *imageView  = [[UIImageView alloc] initWithFrame:_roadmapRefView.frame];
+            imageView.image = [UIImage imageWithCGImage:image.CGImage];
+            imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+            
+            UIGraphicsEndImageContext();
+            
+            [self.view addSubview:imageView];
+            roadmapImageView = imageView;
+            
+            roadmapData = nil;
+            
+            
+            return;
         }
         
-        for(col=0;col<lines-1;col++)
+        NSArray *numOfData = [[splited objectAtIndex:1] componentsSeparatedByString:@";"];
+        
+        if((numOfData.count-1)<(13*6))
         {
-            NSArray *allrows =[[allLines objectAtIndex:col+1+start] componentsSeparatedByString: @":"];
-            //NSLog([allrows objectAtIndex:1],nil);
-            allrows=[[allrows objectAtIndex:1] componentsSeparatedByString: @";"];
-            
-            for(row=0;row<6;row++)
-            {   NSArray *data =[[allrows objectAtIndex:row] componentsSeparatedByString: @","];
-                
-                
-                if ([[data objectAtIndex:0] intValue]==1)
-                {  [player drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
-                    // count_play_temp+=1;
-                }
-                else if ([[data objectAtIndex:0] intValue]==2)
-                {    [banker drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
-                    //   count_bank_temp+=1;
-                }
-                if ([[data objectAtIndex:1] intValue]>=1)
-                {[tie1 drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
-                    //   count_tie_temp+=[[data objectAtIndex:1] intValue];
-                }
-                if ([[data objectAtIndex:1] intValue]>=2)
-                    [tie2 drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
-                
-                if ([[data objectAtIndex:1] intValue]>=3)
-                    [tie3 drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
-            }
+            start = 0;
         }
-        // countBanker.text =[NSString stringWithFormat:@"%d", count_bank_temp];
-        //  countPlayer.text =[NSString stringWithFormat:@"%d", count_play_temp];;
-        //  countTie.text =   [NSString stringWithFormat:@"%d", count_tie_temp];;
+        else
+        {
+            start = (numOfData.count-1)-((13*6)+1);
+        }
+        
+        for(int i = start; i < (numOfData.count-1); i++)
+        {
+            
+            NSString *data = [numOfData objectAtIndex:i];
+            NSArray *marks = [data componentsSeparatedByString:@","];
+            int relMark = [[marks objectAtIndex:0] intValue];
+            
+            if (relMark==1)
+            {  [player drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
+                // count_play_temp+=1;
+            }
+            if (relMark==2)
+            {    [banker drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
+                //   count_bank_temp+=1;
+            }
+            if(relMark==0)
+            {    [tie drawInRect: CGRectMake(col*(w+inset)+inset, row*(h+inset)+inset, w, h) blendMode:kCGBlendModeNormal alpha:1.0f];
+                //   count_bank_temp+=1;
+            }
+                
+            if(row==5)
+            {
+               row = 0;
+                col++;
+            }
+            else
+            {
+                row++;
+            }
+            
+            if(col>13)
+                break;
+                
+        }
         
     }
+
     
     image=UIGraphicsGetImageFromCurrentImageContext();
     

@@ -33,6 +33,14 @@
 #pragma mark - override
 -(void)updateRoadmapData
 {
+
+    //datatemp=[strUrl componentsSeparatedByString: @";"];
+    //NSLog(strUrl);
+    //countBanker.text =[datatemp objectAtIndex:1];
+    //countPlayer.text =[datatemp objectAtIndex:0];
+    //countTie.text =   [datatemp objectAtIndex:2];
+    //datatemp=datatemp;
+    
     NSError *error;
     int i=0 ,j=0;
     NSString *strUrl ;
@@ -40,17 +48,17 @@
     //NSArray *datatemp;
     for(j=0;j<3;j++)
     {
-        for (i = 1; i <= 5; i++)
+        for (i = 1; i <= 6; i++)
         {
             
-            if (i==5)
+            if (i==5||i==6)
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3003/%@/%i/0.htm" ,self.table,i-1] ;
             else
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3003/%@/%i/%i.htm" ,self.table,i-1,j] ;
             
             //  NSLog(strUrl);
             NSURL *url = [NSURL URLWithString:strUrl];
-            allRoadmapData[i+j*5]= [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];
+            allRoadmapData[i+j*6]= [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];
             
             
         }
@@ -59,12 +67,6 @@
     strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3003/%@/7/0.htm" ,self.table] ;
     NSURL *url = [NSURL URLWithString:strUrl];
     strUrl=  [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];
-    //datatemp=[strUrl componentsSeparatedByString: @";"];
-    //NSLog(strUrl);
-    //countBanker.text =[datatemp objectAtIndex:1];
-    //countPlayer.text =[datatemp objectAtIndex:0];
-    //countTie.text =   [datatemp objectAtIndex:2];
-    //datatemp=datatemp;
 }
 
 -(void)DrawRoadmapChart
@@ -93,8 +95,8 @@
     UIImage *banker = [UIImage imageNamed:[self bankerImageName]];
     UIImage *dtPlayer = [UIImage imageNamed:[self dtPlayerImageName]];
     UIImage *dtBanker = [UIImage imageNamed:[self dtBankerImageName]];
-    UIImage *tie1 = [UIImage imageNamed:[self tie1ImageName]];
-    UIImage *tie2 = [UIImage imageNamed:[self tie2ImageName]];
+    UIImage *tie1 = [UIImage imageNamed:[self tie2ImageName]];
+    UIImage *tie2 = [UIImage imageNamed:[self tie1ImageName]];
     UIImage *tie3 = [UIImage imageNamed:[self tie3ImageName]];
     UIImage *smallPlayer = [UIImage imageNamed:[self smallPlayerImageName]];
     UIImage *smallBanker = [UIImage imageNamed:[self smallBankerImageName]];
@@ -173,11 +175,13 @@
                                 
                                 
                                 if ([[data objectAtIndex:0] intValue]==1)
-                                {  [player drawInRect: CGRectMake(1+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {  //[player drawInRect: CGRectMake(1+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                    [dtPlayer drawInRect: CGRectMake(1+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     // count_play_temp+=1;
                                 }
                                 else if ([[data objectAtIndex:0] intValue]==2)
-                                {    [banker drawInRect: CGRectMake(1+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                {    //[banker drawInRect: CGRectMake(1+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                    [dtBanker drawInRect: CGRectMake(1+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                                     //  count_bank_temp+=1;
                                 }
                                 if ([[data objectAtIndex:1] intValue]>=1)
@@ -555,9 +559,11 @@
                         {   NSArray *data =[[allLines objectAtIndex:col] componentsSeparatedByString: @","];
                             UIImage *tmpimg ;
                             if ([[data objectAtIndex:0] intValue]==1)
-                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"rou_big.png"] ];
+                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"DTrou_Y_Tiger.png"] ];
                             if ([[data objectAtIndex:0] intValue]==2)
-                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"rou_small.png"] ];
+                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"DTrou_R_Dragon.png"] ];
+                            if([[data objectAtIndex:0] intValue]==0)
+                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"DTrou_G_Tie.png"] ];
                             
                             [tmpimg drawInRect: CGRectMake(1+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                             

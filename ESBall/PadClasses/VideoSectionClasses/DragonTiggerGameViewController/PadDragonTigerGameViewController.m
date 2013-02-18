@@ -61,12 +61,12 @@
     return @"hd";
 }
 
--(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
+-(NSString *)backgroundImageNameForGameGreaterThanCertainRound:(NSUInteger)round
 {
     return @"DTGame_bg2@2x.png";
 }
 
--(NSString *)backgroundImageNameForGameLessThanThirtyRound
+-(NSString *)backgroundImageNameForGameLessThanCertainRound:(NSUInteger)round
 {
     return @"DTGame_bg@2x.png";
 }

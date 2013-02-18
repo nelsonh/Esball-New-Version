@@ -7,6 +7,7 @@
 //
 
 #import "DTBetView.h"
+#import "FileFinder.h"
 
 @interface DTBetView ()
 
@@ -26,128 +27,258 @@
 }
 
 #pragma mark - override methods
+-(NSUInteger)numberOfRoundToDisableBetSquare
+{
+    //50 round to disable bet square
+    return 50;
+}
+
 -(void)updateView
 {
     [super updateView];
 }
 
--(NSString *)getResultWithResultCode:(NSUInteger)result
+-(void)showResult
+{
+    /**show result**/
+    /**override use our own logic**/
+
+    [self showResultWithResultCode:self.updateInfo.result];
+
+}
+
+-(void)showResultWithResultCode:(NSUInteger)result
 {
     int indexResult = result;
-    NSString *returnStr ;
     
     if (indexResult>0)
     {
-        bool BPlayer=NO ;//0
-        bool PO=NO;//1
-        bool PE=NO;//2
-        bool PP=NO;//3
-        bool BP=NO;//4
-        bool BE=NO;//5
-        bool BO=NO;//6
-        bool Banker=NO;//7
-        bool BIG=NO;//8
-        bool Tie=NO;//9
-        bool Small=NO;//10
-        
-        if ((indexResult & 7) ==1)
-            Banker=YES;
-        
-        if ((indexResult & 7) ==2)
-            BPlayer=YES;
-        
-        if ((indexResult & 7) ==4)
-            Tie=YES;
-        
-        if ((indexResult & 24) ==8)
-            BE=YES;
-        
-        if ((indexResult & 24) ==16)
-            BP=YES;
-        
-        if ((indexResult & 96) ==32)
-            PE=YES;
-        
-        if ((indexResult & 96) ==64)
-            PP=YES;
-        
-        if ((indexResult & 384) ==128)
-            BO=YES;
-        
-        if ((indexResult & 384) ==256)
-            BIG=YES;
-        
-        if ((indexResult & 1536) ==512)
-            PO=YES;
-        
-        if ((indexResult & 1536) ==1024)
-            Small=YES;
-        
-        returnStr=@"";
-        if ( BPlayer==YES )//0
-            returnStr = [returnStr stringByAppendingString:@"BPlayer,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( PO==YES )//1
-            returnStr = [returnStr stringByAppendingString:@"PO,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( PE==YES )//2
-            returnStr = [returnStr stringByAppendingString:@"PE,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( PP==YES )//3
-            returnStr = [returnStr stringByAppendingString:@"PP,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( BP==YES )//4
-            returnStr = [returnStr stringByAppendingString:@"BP,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( BE==YES )//5
-            returnStr = [returnStr stringByAppendingString:@"BE,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( BO==YES )//6
-            returnStr = [returnStr stringByAppendingString:@"BO,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( Banker==YES )//7
-            returnStr = [returnStr stringByAppendingString:@"Banker,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
-        
-        if ( BIG==YES )//8
-            returnStr = [returnStr stringByAppendingString:@"BIG,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
         
         
-        if ( Tie==YES )//9
-            returnStr = [returnStr stringByAppendingString:@"Tie,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
+        FileFinder *fileFinder = [FileFinder fileFinder];
         
+        switch (indexResult & 7)
+        {
+            case 1://虎
+            {
+                NSMutableArray *anims= [[NSMutableArray alloc]init];
+                UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+                UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_T01s.png"]];
+                UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_B01@2x.png"]];
+                [anims addObject:img1];
+                if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                    [anims addObject:img2];
+                else
+                    [anims addObject:img3];
+                
+                
+                self.square11Result.hidden=NO;
+                self.square11Result.animationImages = anims;
+                self.square11Result.animationDuration=1.0f;
+                self.square11Result.animationRepeatCount=1;
+                [self.square11Result startAnimating];
+                
+                break;
+            }
+            case 2://龍
+            {
+                NSMutableArray *anims= [[NSMutableArray alloc]init];
+                UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+                UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_D01s.png"]];
+                UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_P01@2x.png"]];
+                [anims addObject:img1];
+                if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                    [anims addObject:img2];
+                else
+                    [anims addObject:img3];
+                
+                self.square8Result.hidden=NO;
+                self.square8Result.animationImages = anims;
+                self.square8Result.animationDuration=1.0f;
+                self.square8Result.animationRepeatCount=1;
+                [self.square8Result startAnimating];
+                
+                break;
+            }
+            case 4://和
+            {
+                NSMutableArray *anims= [[NSMutableArray alloc]init];
+                UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+                UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_Ties.png"]];
+                UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_T01@2x.png"]];
+                [anims addObject:img1];
+                if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                    [anims addObject:img2];
+                else
+                    [anims addObject:img3];
+                
+                self.square4Result.hidden=NO;
+                self.square4Result.animationImages = anims;
+                self.square4Result.animationDuration=1.0f;
+                self.square4Result.animationRepeatCount=1;
+                [self.square4Result startAnimating];
+                
+                break;
+            }
+            default:
+                break;
+        }
         
-        if ( Small==YES )//10
-            returnStr = [returnStr stringByAppendingString:@"Small,"];
-        else
-            returnStr = [returnStr stringByAppendingString:@"0,"];
+        if((indexResult & 24) == 8)//虎單
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_T05s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_B02@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square7Result.hidden=NO;
+            self.square7Result.animationImages = anims;
+            self.square7Result.animationDuration=1.0f;
+            self.square7Result.animationRepeatCount=1;
+            [self.square7Result startAnimating];
+        }
         
-        //NSLog(@"123abc",returnStr);
+        if((indexResult & 24) == 16)//虎雙
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_T04s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_T03@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square10Result.hidden=NO;
+            self.square10Result.animationImages = anims;
+            self.square10Result.animationDuration=1.0f;
+            self.square10Result.animationRepeatCount=1;
+            [self.square10Result startAnimating];
+        }
         
+        if((indexResult & 96) == 32)//龍單
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_D02s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_P02@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square1Result.hidden=NO;
+            self.square1Result.animationImages = anims;
+            self.square1Result.animationDuration=1.0f;
+            self.square1Result.animationRepeatCount=1;
+            [self.square1Result startAnimating];
+        }
+        
+        if ((indexResult & 96) == 64)//龍雙
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_D03s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_T02@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square9Result.hidden=NO;
+            self.square9Result.animationImages = anims;
+            self.square9Result.animationDuration=1.0f;
+            self.square9Result.animationRepeatCount=1;
+            [self.square9Result startAnimating];
+        }
+        
+        if((indexResult & 384) == 128)//虎黑
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_T02s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_B04@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square5Result.hidden=NO;
+            self.square5Result.animationImages = anims;
+            self.square5Result.animationDuration=1.0f;
+            self.square5Result.animationRepeatCount=1;
+            [self.square5Result startAnimating];
+        }
+        
+        if((indexResult & 384) == 256)//虎紅
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_T03s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_B03@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square6Result.hidden=NO;
+            self.square6Result.animationImages = anims;
+            self.square6Result.animationDuration=1.0f;
+            self.square6Result.animationRepeatCount=1;
+            [self.square6Result startAnimating];
+        }
+        
+        if((indexResult & 1536) == 512)//龍黑
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_D05s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_P04@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square3Result.hidden=NO;
+            self.square3Result.animationImages = anims;
+            self.square3Result.animationDuration=1.0f;
+            self.square3Result.animationRepeatCount=1;
+            [self.square3Result startAnimating];
+        }
+        
+        if((indexResult & 1536) == 1024)//龍紅
+        {
+            NSMutableArray *anims= [[NSMutableArray alloc]init];
+            UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
+            UIImage *img2= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"DTarea_D04s.png"]];
+            UIImage *img3= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"area_P03@2x.png"]];
+            [anims addObject:img1];
+            if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                [anims addObject:img2];
+            else
+                [anims addObject:img3];
+            
+            self.square2Result.hidden=NO;
+            self.square2Result.animationImages = anims;
+            self.square2Result.animationDuration=1.0f;
+            self.square2Result.animationRepeatCount=1;
+            [self.square2Result startAnimating];
+        }
     }
-    
-    //NSLog(@"result:%@", returnStr);
-    return returnStr;
 }
+
+
 
 -(void)disableBetSquareByRound:(NSUInteger)round currentRound:(NSUInteger)curRound
 {
@@ -162,9 +293,9 @@
         self.betSquare10.enabled = NO;
         self.betSquare11.enabled = NO;
         
-        if([self.theBetViewDelegate respondsToSelector:@selector(BetViewGreaterThanThirtyRound:)])
+        if([self.theBetViewDelegate respondsToSelector:@selector(BetViewGreaterThanCertainRound:round:)])
         {
-            [self.theBetViewDelegate BetViewGreaterThanThirtyRound:self];
+            [self.theBetViewDelegate BetViewGreaterThanCertainRound:self round:round];
         }
         
     }
@@ -179,9 +310,9 @@
         self.betSquare10.enabled = YES;
         self.betSquare11.enabled = YES;
         
-        if([self.theBetViewDelegate respondsToSelector:@selector(BetViewLessThanThirtyRound:)])
+        if([self.theBetViewDelegate respondsToSelector:@selector(BetViewLessThanCertainRound:round:)])
         {
-            [self.theBetViewDelegate BetViewLessThanThirtyRound:self];
+            [self.theBetViewDelegate BetViewLessThanCertainRound:self round:round];
         }
     }
 }

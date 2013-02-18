@@ -47,17 +47,15 @@
 -(void)createVideoSetting
 {
 
-    
-    VideoSettingViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"VideoSettingViewController"];
+    VideoSettingViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:self.videoSettingControllerID];
     controller.theDelegate = self;
     [self presentViewController:controller animated:YES completion:nil];
-
 
 }
 
 -(void)createGameBetLimit
 {
-    PhoneGameBetLimitViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"GameBetLimitViewController"];
+    PhoneGameBetLimitViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:self.gameBetLimitControllerID];
     controller.theDelegate = self;
     controller.gameBetDelegate = self;
  
@@ -67,7 +65,7 @@
 
 -(void)createGameRules
 {
-     PhoneGameRulesViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"GameRulesViewController"];
+     PhoneGameRulesViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:self.gameRuleControllerID];
     controller.theDelegate = self;
     controller.gameRuleDelegate = self;
     
@@ -78,18 +76,11 @@
 
 -(void)createHistory
 {
-    PhoneHistoryViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"HistoryViewController"];
+    PhoneHistoryViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:self.historyControllerID];
     controller.theDelegate = self;
     controller.historyDelegate = self;    
     [self presentViewController:controller animated:YES completion:nil ];
     
-   /* if(_historyControllerID == nil)
-        return;
-    
-    HistoryViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:_historyControllerID];
-    controller.theDelegate = self;
-    controller.historyDelegate = self;
-    [controller addToController:self inRect:_referenceView.frame];*/
 }
 
 

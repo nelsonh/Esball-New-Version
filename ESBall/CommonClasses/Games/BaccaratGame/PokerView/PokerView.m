@@ -52,6 +52,10 @@
 -(void)updateView
 {
     
+    //clean text
+    _bankerPointLabel.text = nil;
+    _playerPointLabel.text = nil;
+    
     if(!_cardImages)
         return;
     
@@ -102,6 +106,7 @@
     //update point label
     _bankerPointLabel.text = [NSString stringWithFormat:@"%i", _bankerPoint];
     _playerPointLabel.text = [NSString stringWithFormat:@"%i", _playerPoint];
+    
 }
 
 

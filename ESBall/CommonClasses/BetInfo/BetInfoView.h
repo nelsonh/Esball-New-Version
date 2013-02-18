@@ -16,8 +16,25 @@
 @property (nonatomic, weak) IBOutlet UILabel *currentBetLabel;
 @property (nonatomic, weak) IBOutlet UILabel *betResultLabel;
 
+/*
+ * A method to set max bet
+ *
+ * @param maxBet value to set 
+ */
 -(void)setMaxBet:(double)maxBet;
+
+/*
+ * A method to set current bet
+ *
+ * @param currentBet value to set 
+ */
 -(void)setCurrentBet:(double)currentBet;
+
+/*
+ * A method to set bet final result
+ *
+ * @param betFinalResult value to set
+ */
 -(void)setBetFinalResult:(double)betFinalResult;
 
 @end

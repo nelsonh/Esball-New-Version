@@ -37,7 +37,7 @@
     
     LoadingHUD *loadingHUD;
     
-    
+    double roadmapUpdateInterval;
     
     __weak ItemViewController *selectedItem;//track item we current selected
     NSTimer *pullCountDownDataTimer;
@@ -45,17 +45,58 @@
     NSURLConnection *countDownDataConnection;
 }
 
+/*
+ * A enter game button which is connected in Interface Builder
+ * Trigger enter game event
+ */
 -(IBAction)enterGameBtnTapped:(id)sender;
 
+/*
+ * A logout button which is connected in Interface Builder
+ * Trigger logout event
+ */
+-(IBAction)logout:(id)sender;
+
 //stop resume update related
+
+/*
+ * A method stop any update
+ */
 -(void)stopAnyUpdate;
+
+/*
+ * A method start update
+ */
 -(void)startUpdate;
 
-//time count down related 
+//time count down related
+
+/*
+ * A method start download data for count down
+ */
 -(void)startPullDataForCountDown;
+
+/*
+ * A method stop download data for count down
+ */
 -(void)stopPullDataForCounDown;
+
+/*
+ * A method download data for count down
+ */
 -(void)doPullDataForCountDown;
+
+/*
+ * A method to update count down 
+ */
 -(void)updateCountDownTime;
+
+/*
+ * A method to parse count down data to a organize array
+ *
+ * @param data data to be parse
+ * @return array organized data
+ */
 -(NSArray *)parseCountDownTimeDataWithData:(NSData *)data;
 
 @end

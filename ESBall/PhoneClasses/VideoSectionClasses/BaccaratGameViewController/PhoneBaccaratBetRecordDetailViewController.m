@@ -39,4 +39,21 @@
 {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+#pragma mark - override
+-(void)processData:(NSMutableDictionary *)dic
+{
+    //process common data not each row record data
+    self.roundNumberLabel.text = [detailRecord objectForKey:@"RoundSerial"];
+    
+    NSArray *splited = [[detailRecord objectForKey:@"WagersDate"] componentsSeparatedByString:@" "];
+    self.dateTimeLabel.text = [splited objectAtIndex:0];
+    
+    self.commentLabel.text = nil;
+    
+    NSString *tableName = [self gameCodeNameWithGameCode:[[detailRecord objectForKey:@"GameCode"] intValue]];
+    self.tableNumberLabel.text = tableName;
+    
+}
+
 @end

@@ -8,7 +8,12 @@
 
 #import "CommonDragonTigerGameViewController.h"
 #import "DragonTigerBetRecordViewController.h"
+#import "LoadingHUD.h"
 
-@interface PhoneDragonTigertGameViewController : CommonDragonTigerGameViewController
+@interface PhoneDragonTigertGameViewController : CommonDragonTigerGameViewController{
+    
+    LoadingHUD *loadingHUD;
+    bool firstLoading;
+}
 
 @end

@@ -40,6 +40,9 @@
 #pragma mark - override methods
 -(void)updateView
 {
+    //clean text
+    _tigerPointLabel.text = nil;
+    _dragonPointLabel.text = nil;
     
     if(!_cardImages)
         return;
@@ -77,8 +80,10 @@
     }
     
     //update point label
-    _tigerPointLabel.text = [NSString stringWithFormat:@"%i", _tigerPoint];
-    _dragonPointLabel.text = [NSString stringWithFormat:@"%i", _dragonPoint];
+    if(_tigerPoint != 0)
+        _tigerPointLabel.text = [NSString stringWithFormat:@"%i", _tigerPoint];
+    if(_dragonPoint != 0)
+        _dragonPointLabel.text = [NSString stringWithFormat:@"%i", _dragonPoint];
 }
 
 /*

@@ -13,6 +13,6 @@
 
 @interface DTBetView : BetView
 
-
+-(void)showResultWithResultCode:(NSUInteger)result;
 
 @end

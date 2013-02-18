@@ -65,6 +65,10 @@
     _sbBetView.chipSpaceWidth = [self chipSpaceWidth];
     _sbBetView.chipSpaceHeight = [self chipSpaceHeight];
     _sbBetView.chipSize = [self chipSize];
+    
+    //Video IP
+    int videoTableNumber = 1;
+    videoIPStr = [self videoIpAddressWithGameShortName:@"SB" withTableNumber:videoTableNumber];
 }
 
 -(void)showRoadmap
@@ -100,8 +104,9 @@
     int videoTableNumber = 1;
     
     NSString *videoQuality = [self sdOrhdForVideoImage];
-    NSString *ipStr = [self videoIpAddressWithGameShortName:@"SB" withTableNumber:videoTableNumber];
-    NSString *videoAddr = [NSString stringWithFormat:@"http://%@/sicbo%@%i/sd2.jpg", ipStr, videoQuality, videoTableNumber];
+    //NSString *ipStr = [self videoIpAddressWithGameShortName:@"SB" withTableNumber:videoTableNumber];
+    //NSString *videoAddr = [NSString stringWithFormat:@"http://%@/sicbo%@%i/sd2.jpg", ipStr, videoQuality, videoTableNumber];
+     NSString *videoAddr = [NSString stringWithFormat:@"http://%@/sicbo%@%i/sd2.jpg", videoIPStr, videoQuality, videoTableNumber];
     [theImagePull pullImageFrom:[NSURL URLWithString:[NSString stringWithFormat:@"%@", videoAddr]]];
     
     /*
@@ -297,7 +302,8 @@
     if([_sbBetView isKindOfClass:[SBBetView class]])
     {
         SBBetView *betView = (SBBetView *)_sbBetView;
-        [betView clearAllBetsWithHideInfo:YES];
+        //[betView clearAllBetsWithHideInfo:YES];
+        [betView clearBetsWithoutFinalSet];
     }
 }
 

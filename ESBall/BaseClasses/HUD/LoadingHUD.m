@@ -43,11 +43,11 @@
         loadingAnimView.animationImages = animImages;
         loadingAnimView.animationDuration = animImages.count/30;
         loadingAnimView.animationRepeatCount = 0;
-        CGFloat halfWidth = 60/2;
-        CGFloat halfHeight = 60/2;
+        CGFloat halfWidth = kIconSize/2;
+        CGFloat halfHeight = kIconSize/2;
         CGFloat xPos = (frame.size.width/2) - halfWidth;
         CGFloat yPos = (frame.size.height/2) - halfHeight;
-        loadingAnimView.frame = CGRectMake(xPos, yPos, 60, 60);
+        loadingAnimView.frame = CGRectMake(xPos, yPos, kIconSize, kIconSize);
         
         [self addSubview:loadingAnimView];
         

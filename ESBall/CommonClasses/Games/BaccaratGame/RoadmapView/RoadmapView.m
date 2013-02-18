@@ -137,6 +137,14 @@
 
 }
 
+-(void)stopAsking
+{
+    if(bankerAskEnabled)
+        [self bankerAsk:nil];
+    if(playerAskEnabled)
+        [self playerAsk:nil];
+}
+
 -(IBAction)playerAsk:(id)sender
 {
     FileFinder *fileFinder = [FileFinder fileFinder];
@@ -244,11 +252,13 @@
 #pragma mark - RoadmapDataView delegate
 -(void)RoadmapDataViewDidScroll:(RoadmapDataView *)roadmapView
 {
+    
     //update page control
     _pageControl.numberOfPages = roadmapView.sections;
     
     int page = roadmapView.bounds.origin.x/roadmapView.bounds.size.width;
     _pageControl.currentPage = page;
+
 }
 
 

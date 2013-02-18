@@ -132,6 +132,24 @@
         
         return;
     }
+    else if(_accountTextFiled.text.length < 4)
+    {
+        NSString *title = NSLocalizedString(@"", @"");
+        NSString *msg = NSLocalizedString(@"帐号必须在4~12字元", @"帐号必须在4~12字元");
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        [alertView show];
+        
+        return;
+    }
+    else if(_passwordTextField.text.length < 6)
+    {
+        NSString *title = NSLocalizedString(@"", @"");
+        NSString *msg = NSLocalizedString(@"密码必须在6~12字元", @"密码必须在6~12字元");
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        [alertView show];
+        
+        return;
+    }
     
     _accountTextFiled.enabled = NO;
     _passwordTextField.enabled = NO;
@@ -345,6 +363,17 @@
     
     //convenient way to login
     [self login:nil];
+    
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if(textField == _accountTextFiled)
+    {
+        NSUInteger newLength = [textField.text length] + [string length] - range.length;
+        return (newLength > 12) ? NO : YES;
+    }
     
     return YES;
 }

@@ -60,17 +60,139 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     isBetSquareDelegateSet = NO;
+    
     return [super initWithCoder:aDecoder];
 }
 
-#pragma mark - public interface
--(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo
+#pragma mark - public interface overridable
+-(NSUInteger)numberOfRoundToDisableBetSquare
 {
-    [self clearBetsWithHideInfo:yesOrNo];
+    //default 30 round
+    return 30;
+}
+
+#pragma mark - public interface
+-(void)clearBetsWithoutFinalSet
+{
+    [_betSquare1 resetCurrentBetWithBetInfo:NO];
+    [_betSquare2 resetCurrentBetWithBetInfo:NO];
+    [_betSquare3 resetCurrentBetWithBetInfo:NO];
+    [_betSquare4 resetCurrentBetWithBetInfo:NO];
+    [_betSquare5 resetCurrentBetWithBetInfo:NO];
+    [_betSquare6 resetCurrentBetWithBetInfo:NO];
+    [_betSquare7 resetCurrentBetWithBetInfo:NO];
+    [_betSquare8 resetCurrentBetWithBetInfo:NO];
+    [_betSquare9 resetCurrentBetWithBetInfo:NO];
+    [_betSquare10 resetCurrentBetWithBetInfo:NO];
+    [_betSquare11 resetCurrentBetWithBetInfo:NO];
+    
+    if(_betSquare1.betHistory == 0)
+    {
+        [_betSquare1 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare1.betInfoView setBetFinalResult:_betSquare1.betHistory];
+    }
+    
+    if(_betSquare2.betHistory == 0)
+    {
+        [_betSquare2 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare2.betInfoView setBetFinalResult:_betSquare2.betHistory];
+    }
+    
+    if(_betSquare3.betHistory == 0)
+    {
+        [_betSquare3 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare3.betInfoView setBetFinalResult:_betSquare3.betHistory];
+    }
+    
+    if(_betSquare4.betHistory == 0)
+    {
+        [_betSquare4 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare4.betInfoView setBetFinalResult:_betSquare4.betHistory];
+    }
+    
+    if(_betSquare5.betHistory == 0)
+    {
+        [_betSquare5 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare5.betInfoView setBetFinalResult:_betSquare5.betHistory];
+    }
+    
+    if(_betSquare6.betHistory == 0)
+    {
+        [_betSquare6 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare6.betInfoView setBetFinalResult:_betSquare6.betHistory];
+    }
+    
+    if(_betSquare7.betHistory == 0)
+    {
+        [_betSquare7 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare7.betInfoView setBetFinalResult:_betSquare7.betHistory];
+    }
+    
+    if(_betSquare8.betHistory == 0)
+    {
+        [_betSquare8 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare8.betInfoView setBetFinalResult:_betSquare8.betHistory];
+    }
+    
+    if(_betSquare9.betHistory == 0)
+    {
+        [_betSquare9 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare9.betInfoView setBetFinalResult:_betSquare9.betHistory];
+    }
+    
+    if(_betSquare10.betHistory == 0)
+    {
+        [_betSquare10 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare10.betInfoView setBetFinalResult:_betSquare10.betHistory];
+    }
+    
+    if(_betSquare11.betHistory == 0)
+    {
+        [_betSquare11 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare11.betInfoView setBetFinalResult:_betSquare11.betHistory];
+    }
+}
+
+-(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo
+{
+    [self clearBetsWithHideInfo:yesOrNo WithHistory:hisYesOrNo];
     
 }
 
--(void)clearBetsWithHideInfo:(BOOL)yesOrNo
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo
 {
     NSLog(@"clear all bet info");
     
@@ -100,6 +222,23 @@
         [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
         [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
         [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
+        
+        if(hisYesOrNo)
+        {
+            [_betSquare1 clearBetHistory];
+            [_betSquare2 clearBetHistory];
+            [_betSquare3 clearBetHistory];
+            [_betSquare4 clearBetHistory];
+            [_betSquare5 clearBetHistory];
+            [_betSquare6 clearBetHistory];
+            [_betSquare7 clearBetHistory];
+            [_betSquare8 clearBetHistory];
+            [_betSquare9 clearBetHistory];
+            [_betSquare10 clearBetHistory];
+            [_betSquare11 clearBetHistory];
+        }
+        
+        return;
     }
     
     
@@ -114,6 +253,55 @@
     [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
     [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
     [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
+    
+    if(hisYesOrNo)
+    {
+        [_betSquare1 clearBetHistory];
+        [_betSquare2 clearBetHistory];
+        [_betSquare3 clearBetHistory];
+        [_betSquare4 clearBetHistory];
+        [_betSquare5 clearBetHistory];
+        [_betSquare6 clearBetHistory];
+        [_betSquare7 clearBetHistory];
+        [_betSquare8 clearBetHistory];
+        [_betSquare9 clearBetHistory];
+        [_betSquare10 clearBetHistory];
+        [_betSquare11 clearBetHistory];
+    }
+}
+
+-(void)restoreBetToLastState
+{
+    [_betSquare1 restoreLastBetState];
+    [_betSquare2 restoreLastBetState];
+    [_betSquare3 restoreLastBetState];
+    [_betSquare4 restoreLastBetState];
+    [_betSquare5 restoreLastBetState];
+    [_betSquare6 restoreLastBetState];
+    [_betSquare7 restoreLastBetState];
+    [_betSquare8 restoreLastBetState];
+    [_betSquare9 restoreLastBetState];
+    [_betSquare10 restoreLastBetState];
+    [_betSquare11 restoreLastBetState];
+}
+
+-(NSArray *)collectAllBetSqaures
+{
+    NSMutableArray *squares = [[NSMutableArray alloc] init];
+    
+    [squares addObject:_betSquare1];
+    [squares addObject:_betSquare2];
+    [squares addObject:_betSquare3];
+    [squares addObject:_betSquare4];
+    [squares addObject:_betSquare5];
+    [squares addObject:_betSquare6];
+    [squares addObject:_betSquare7];
+    [squares addObject:_betSquare8];
+    [squares addObject:_betSquare9];
+    [squares addObject:_betSquare10];
+    [squares addObject:_betSquare11];
+    
+    return squares;
 }
 
 -(NSMutableArray *)collectBetInfo
@@ -135,6 +323,25 @@
     return infos;
 }
 
+-(NSMutableArray *)collectHistoryBetInfo
+{
+     NSMutableArray *infos = [[NSMutableArray alloc] init];
+    
+    [infos addObject:[NSNumber numberWithDouble:_betSquare1.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare2.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare3.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare4.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare5.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare6.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare7.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare8.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare9.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare10.betHistory]];
+    [infos addObject:[NSNumber numberWithDouble:_betSquare11.betHistory]];
+    
+    return infos;
+}
+
 -(void)displayPlayerBetResult
 {
     [_betSquare1 displayCurrentBetResult];
@@ -152,6 +359,23 @@
     isDisplayPlayerBetResult = YES;
 }
 
+-(void)displayPlayerHistoryBetResult
+{
+    [_betSquare1 displayHistoryBetResult];
+    [_betSquare2 displayHistoryBetResult];
+    [_betSquare3 displayHistoryBetResult];
+    [_betSquare4 displayHistoryBetResult];
+    [_betSquare5 displayHistoryBetResult];
+    [_betSquare6 displayHistoryBetResult];
+    [_betSquare7 displayHistoryBetResult];
+    [_betSquare8 displayHistoryBetResult];
+    [_betSquare9 displayHistoryBetResult];
+    [_betSquare10 displayHistoryBetResult];
+    [_betSquare11 displayHistoryBetResult];
+    
+    isDisplayPlayerBetResult = YES;
+}
+
 -(void)disableBetSquareByRound:(NSUInteger)round currentRound:(NSUInteger)curRound
 {
     if(curRound > round)
@@ -163,9 +387,9 @@
         _betSquare3.enabled = NO;
         _betSquare8.enabled = NO;
         
-        if([_theBetViewDelegate respondsToSelector:@selector(BetViewGreaterThanThirtyRound:)])
+        if([_theBetViewDelegate respondsToSelector:@selector(BetViewGreaterThanCertainRound:round:)])
         {
-            [_theBetViewDelegate BetViewGreaterThanThirtyRound:self];
+            [_theBetViewDelegate BetViewGreaterThanCertainRound:self round:round];
         }
 
     }
@@ -178,9 +402,9 @@
         _betSquare3.enabled = YES;
         _betSquare8.enabled = YES;
         
-        if([_theBetViewDelegate respondsToSelector:@selector(BetViewLessThanThirtyRound:)])
+        if([_theBetViewDelegate respondsToSelector:@selector(BetViewLessThanCertainRound:round:)])
         {
-            [_theBetViewDelegate BetViewLessThanThirtyRound:self];
+            [_theBetViewDelegate BetViewLessThanCertainRound:self round:round];
         }
     }
 }
@@ -223,6 +447,36 @@
     _square11Result.hidden = YES;
 }
 
+-(void)applyAllBets
+{
+    [_betSquare1 doBetApply];
+    [_betSquare2 doBetApply];
+    [_betSquare3 doBetApply];
+    [_betSquare4 doBetApply];
+    [_betSquare5 doBetApply];
+    [_betSquare6 doBetApply];
+    [_betSquare7 doBetApply];
+    [_betSquare8 doBetApply];
+    [_betSquare9 doBetApply];
+    [_betSquare10 doBetApply];
+    [_betSquare11 doBetApply];
+}
+
+-(void)clearAllBetTemp
+{
+    [_betSquare1 clearTempBet];
+    [_betSquare2 clearTempBet];
+    [_betSquare3 clearTempBet];
+    [_betSquare4 clearTempBet];
+    [_betSquare5 clearTempBet];
+    [_betSquare6 clearTempBet];
+    [_betSquare7 clearTempBet];
+    [_betSquare8 clearTempBet];
+    [_betSquare9 clearTempBet];
+    [_betSquare10 clearTempBet];
+    [_betSquare11 clearTempBet];
+}
+
 -(BOOL)isBetOverBalanceWithBetAmount:(double)amount
 {
     if(amount > self.updateInfo.credit)
@@ -247,6 +501,7 @@
 //iphone need to override and change image name
 -(void)showResultWithString:(NSString *)result
 {
+    
     NSString *resultdata = result;
     
     FileFinder *fileFinder = [FileFinder fileFinder];
@@ -346,6 +601,7 @@
         _square5Result.animationDuration=1.0f;
         _square5Result.animationRepeatCount=1;
         [_square5Result startAnimating];
+        
     }
     if ([resultdata rangeOfString:@"BE"].location !=NSNotFound)
     {
@@ -385,7 +641,7 @@
         [_square7Result startAnimating];
     }
     
-    if ([resultdata rangeOfString:@"BPlayer"].location !=NSNotFound)
+    if ([resultdata rangeOfString:@"Player"].location !=NSNotFound)
     {
         NSMutableArray *anims= [[NSMutableArray alloc]init];
         UIImage *img1= [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"colorless.png"]];
@@ -461,16 +717,20 @@
         _square11Result.animationRepeatCount=1;
         [_square11Result startAnimating];
     }
+     
+    
+
 }
 
 -(NSString *)getResultWithResultCode:(NSUInteger)result
 {
+    
     int indexResult = result;
     NSString *returnStr ;
     
     if (indexResult>0)
     {
-        bool BPlayer=NO ;//0
+        bool Player=NO ;//0
         bool PO=NO;//1
         bool PE=NO;//2
         bool PP=NO;//3
@@ -484,6 +744,777 @@
         
         if (indexResult<97)
         {
+            switch(indexResult)
+            {
+                case(1):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    break;
+                case(2):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    BP=YES;
+                    
+                    break;
+                case(3):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    
+                    break;
+                case(4):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    BP=YES;
+                    
+                    break;
+                case(5):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    Player = YES;//閒
+                    
+                    break;
+                case(6):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    BP=YES;
+                    Player = YES;//閒
+                    
+                    break;
+                case(7):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    
+                    break;
+                case(8):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    BP=YES;
+                    Player = YES;//閒
+                    
+                    break;
+                case(9):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    Tie = YES;//平
+                    break;
+                case(10):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    BP=YES;
+                    Tie = YES;//平
+                    
+                    break;
+                case(11):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    
+                    break;
+                case(12):
+                    BIG=YES;//大
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    
+                    break;
+                case(13):
+                    Banker=YES;//莊
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    Small= YES;//小
+                    
+                    break;
+                case(14):
+                    Banker=YES;//莊
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    BP=YES;
+                    Small= YES;//小
+                    
+                    break;
+                case(15):
+                    Banker=YES;//莊
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    Small= YES;//小
+                    
+                    break;
+                case(16):
+                    Banker=YES;//莊
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    BP=YES;
+                    Small= YES;//小
+                    
+                    break;
+                case(17):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    Player = YES;//閒
+                    Small= YES;//小
+                    
+                    break;
+                case(18):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    
+                    break;
+                case(19):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    Small= YES;//小
+                    
+                    break;
+                case(20):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    
+                    break;
+                case(21):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    Tie = YES;//平
+                    Small= YES;//小
+                    
+                    break;
+                case(22):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    
+                    break;
+                case(23):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    Small= YES;//小
+                    
+                    break;
+                case(24):
+                    PO = YES;//閒單
+                    BO=YES;//莊單
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    
+                    break;
+                case(25):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(26):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    BP=YES;
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    break;
+                case(27):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(28):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(29):
+                    BIG=YES;//大
+                    Player = YES;//閒
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(30):
+                    BIG=YES;//大
+                    BP=YES;
+                    Player = YES;//閒
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(31):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(32):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    Player = YES;//閒
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(33):
+                    BIG=YES;//大
+                    Tie = YES;//平
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(34):
+                    BIG=YES;//大
+                    BP=YES;
+                    Tie = YES;//平
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(35):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(36):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(37):
+                    Banker=YES;//莊
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(38):
+                    Banker=YES;//莊
+                    BP=YES;
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(39):
+                    Banker=YES;//莊
+                    PP = YES;//閒對
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    Small= YES;//小
+                    
+                    break;
+                case(40):
+                    Banker=YES;//莊
+                    PP = YES;//閒對
+                    BP=YES;
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(41):
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(42):
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(43):
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(44):
+                    PP = YES;//閒對
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(45):
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(46):
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(47):
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(48):
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BO=YES;//莊單
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(49):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(50):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    BP=YES;
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(51):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(52):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(53):
+                    BIG=YES;//大
+                    Player = YES;//閒
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(54):
+                    BIG=YES;//大
+                    BP=YES;
+                    Player = YES;//閒
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(55):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(56):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    Player = YES;//閒
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(57):
+                    BIG=YES;//大
+                    Tie = YES;//平
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(58):
+                    BIG=YES;//大
+                    BP=YES;
+                    Tie = YES;//平
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(59):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    BE = YES;
+                    PO = YES;
+                    
+                    break;
+                case(60):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    BE = YES;
+                    PO = YES;
+                    
+                    break;
+                case(61):
+                    Banker=YES;//莊
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(62):
+                    Banker=YES;//莊
+                    BP=YES;
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(63):
+                    Banker=YES;//莊
+                    PP = YES;//閒對
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(64):
+                    Banker=YES;//莊
+                    PP = YES;//閒對
+                    BP=YES;
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(65):
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(66):
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(67):
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(68):
+                    PP = YES;//閒對
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(69):
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(70):
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(71):
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(72):
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PO = YES;//閒單
+                    
+                    break;
+                case(73):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    
+                    break;
+                case(74):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    BP=YES;
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(75):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(76):
+                    Banker=YES;//莊
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(77):
+                    BIG=YES;//大
+                    Player = YES;//閒
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(78):
+                    BIG=YES;//大
+                    BP=YES;
+                    Player = YES;//閒
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(79):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                    
+                case(80):
+                    PP = YES;//閒對
+                    BP=YES;
+                    BIG=YES;//大
+                    Player = YES;//閒
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(81):
+                    BIG=YES;//大
+                    Tie = YES;//平
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(82):
+                    BIG=YES;//大
+                    BP=YES;
+                    Tie = YES;//平
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(83):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(84):
+                    BIG=YES;//大
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(85):
+                    Banker=YES;//莊
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(86):
+                    Banker=YES;//莊
+                    BP=YES;
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(87):
+                    Banker=YES;//莊
+                    PP = YES;//閒對
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(88):
+                    Banker=YES;//莊
+                    PP = YES;//閒對
+                    BP=YES;
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(89):
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(90):
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(91):
+                    PP = YES;//閒對
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(92):
+                    PP = YES;//閒對
+                    BP=YES;
+                    Player = YES;//閒
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(93):
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(94):
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(95):
+                    PP = YES;//閒對
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    
+                    break;
+                case(96):
+                    PP = YES;//閒對
+                    BP=YES;
+                    Tie = YES;//平
+                    Small= YES;//小
+                    BE=YES;
+                    PE = YES;//閒雙
+                    break;
+            }
+
+            /*
             switch(indexResult)
             {
                 case(1):
@@ -951,6 +1982,7 @@
                     PP = YES;//閒對
                     Tie = YES;//平
                     
+                    
                     break;
                 case(60):
                     BIG=YES;//大
@@ -1249,9 +2281,9 @@
                     PE = YES;//閒雙
                     break;
             }
+            */
             
-            
-        }else
+        }/*else
         {
             if ((indexResult & 7) ==1)
                 Banker=YES;
@@ -1286,10 +2318,11 @@
             if ((indexResult & 1536) ==1024)
                 Small=YES;
         }
+          */
         
         returnStr=@"";
-        if ( BPlayer==YES )//0
-            returnStr = [returnStr stringByAppendingString:@"BPlayer,"];
+        if ( Player==YES )//0
+            returnStr = [returnStr stringByAppendingString:@"Player,"];
         else
             returnStr = [returnStr stringByAppendingString:@"0,"];
         
@@ -1309,7 +2342,9 @@
             returnStr = [returnStr stringByAppendingString:@"0,"];
         
         if ( BP==YES )//4
+        {
             returnStr = [returnStr stringByAppendingString:@"BP,"];
+        }
         else
             returnStr = [returnStr stringByAppendingString:@"0,"];
         
@@ -1350,8 +2385,8 @@
     }
     
     //NSLog(@"result:%@", returnStr);
+    
     return returnStr;
-
 }
 
 #pragma mark - override methods
@@ -1380,7 +2415,7 @@
     /**if greater equal to 30 round**/
     NSArray *roundInfo = [self.updateInfo.roundNumber componentsSeparatedByString:@"-"];
     NSString *roundStr = [roundInfo objectAtIndex:1];//round number is at first e.g 3-12
-    [self disableBetSquareByRound:30 currentRound:[roundStr intValue]];
+    [self disableBetSquareByRound:[self numberOfRoundToDisableBetSquare] currentRound:[roundStr intValue]];
     
     if([self.updateInfo.status isEqualToString:GameStatusDealing])
     {
@@ -1397,16 +2432,17 @@
         {
             //player was confirm bet and first time enter betting status
             isDisplayPlayerBetResult = NO;
-            [self clearAllBetsWithHideInfo:YES];
+            [self clearAllBetsWithHideInfo:YES WithHistory:YES];
+            [self clearAllBetTemp];
         }
         else if (isDisplayPlayerBetResult == NO && lastGameStatus == GameStatusWaiting)
         {
             //player was not confirm bet and first enter betting status
-            [self clearAllBetsWithHideInfo:YES];
+            [self clearAllBetsWithHideInfo:YES WithHistory:YES];
+            [self clearAllBetTemp];
         }
         
         lastGameStatus = GameStatusBetting;
-        
         [self setupBetSquare];
     }
     else if([self.updateInfo.status isEqualToString:GameStatusWaiting])
@@ -1421,6 +2457,7 @@
         
         [self showResult];
     }
+    
 }
 
 #pragma mark - BetSquareView delegate
@@ -1455,7 +2492,8 @@
             
             return NO;
         }
-        else if(selectedChip.chipValue < self.userInfo.min)
+        /*
+        else if(betSquare.theCurrentBet<= 0 && selectedChip.chipValue < self.userInfo.min)
         {
             NSString *msg = NSLocalizedString(@"低于最小下注金额", @"低于最小下注金额");
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
@@ -1463,6 +2501,7 @@
             
             return NO;
         }
+         */
         
         return YES;
     }

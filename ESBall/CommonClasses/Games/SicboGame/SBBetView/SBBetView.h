@@ -131,6 +131,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *square51Result;
 @property (nonatomic, weak) IBOutlet UIImageView *square52Result;
 
+-(void)clearBetsWithoutFinalSet;
 -(void)clearBetsWithHideInfo:(BOOL)yesOrNo;
 -(void)showResult;
 -(BOOL)isBetOverBalanceWithBetAmount:(double)amount;

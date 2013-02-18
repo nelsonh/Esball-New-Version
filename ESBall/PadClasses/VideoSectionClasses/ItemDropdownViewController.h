@@ -10,8 +10,14 @@
 
 @class ItemDropdownViewController;
 
+/*
+ * A protocol of ItemDropdownViewController
+ */
 @protocol ItemDropdownViewControllerDelegate <NSObject>
 
+/*
+ * Fire when controller dismiss
+ */
 -(void)ItemDropdownViewControllerDidDismiss:(ItemDropdownViewController *)item;
 
 @end

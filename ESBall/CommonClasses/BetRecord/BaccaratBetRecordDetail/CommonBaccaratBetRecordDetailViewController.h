@@ -7,6 +7,7 @@
 //
 
 //need to subclass
+//subclass of BetRecordDetailViewController
 
 #import "BetRecordDetailViewController.h"
 #import "FileFinder.h"

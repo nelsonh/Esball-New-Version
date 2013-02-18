@@ -55,12 +55,17 @@ bool firstLoading=NO;
     }
 }
 
--(NSString *)backgroundImageNameForGameGreaterThanThirtyRound
+-(NSString *)sdOrhdForVideoImage
+{
+    return @"sd";
+}
+
+-(NSString *)backgroundImageNameForGameGreaterThanCertainRound:(NSUInteger)round
 {
     return @"Game_bg2s.png";
 }
 
--(NSString *)backgroundImageNameForGameLessThanThirtyRound
+-(NSString *)backgroundImageNameForGameLessThanCertainRound:(NSUInteger)round
 {
     return @"Game_bgs.png";
 }
@@ -81,6 +86,11 @@ bool firstLoading=NO;
 
 -(CGFloat)detailViewPositionY
 {
+    if([UIScreen mainScreen].bounds.size.height == 480)//3.5inch
+    {
+        return 43;
+    }
+    
     return 40;
 }
 //james_13_0103
@@ -121,6 +131,8 @@ bool firstLoading=NO;
   //      [self.theDelegate BaseGameViewControllerDidDismiss:self];
    // }
 }
+
+
 
 -(void)showRecord
 {

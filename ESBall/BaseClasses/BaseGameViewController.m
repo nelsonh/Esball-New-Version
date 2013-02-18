@@ -59,6 +59,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UserInfoReadyNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UpdateInfoReayNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:MarqueeInfoReadyNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:BetRespondInfoReayNotification object:nil];
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
@@ -76,6 +77,8 @@
     
     isNoneBet5RoundAlertShowed = NO;
     isNoneBet10RoundAlertShowed = NO;
+    
+    noneBetRoundCount = 0;
 
 }
 
@@ -105,6 +108,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleUserInfo:) name:UserInfoReadyNotification object:nil];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(handleUpdateInfo:) name:UpdateInfoReayNotification object:nil];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(handleMarqueeInfo:) name:MarqueeInfoReadyNotification object:nil];
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(handleBetRespondInfo:) name:BetRespondInfoReayNotification object:nil];
     
     
     ServerInterface *theInterface = [ServerInterface serverInterface];
@@ -161,17 +165,7 @@
 #pragma mark - public interface
 -(IBAction)back:(id)sender
 {
-    //unload sound resources
-    [self unloadSoundResource];
-    
-    [self.view removeFromSuperview];
-    [self willMoveToParentViewController:nil];
-    [self removeFromParentViewController];
-    
-    if([self.theDelegate respondsToSelector:@selector(BaseGameViewControllerDidDismiss:)])
-    {
-        [self.theDelegate BaseGameViewControllerDidDismiss:self];
-    }
+    [self dismissGameController];
 }
 
 -(IBAction)roadmap:(id)sender
@@ -219,6 +213,15 @@
     //resume bg music
     SoundManager *soundManager = [SoundManager soundManager];
     [soundManager resumeBackgroundMusic];
+}
+
+-(void)receiveFirstUpdateInfo
+{
+    //if betting cound as one round
+    if([updateInfo.status isEqualToString:GameStatusBetting])
+    {
+        noneBetRoundCount += 1;
+    }
 }
 
 -(NSString *)videoIpAddressWithGameShortName:(NSString *)shortName withTableNumber:(int)tableNumber
@@ -272,6 +275,48 @@
     //unload sound resources
     SoundManager *soundManager = [SoundManager soundManager];
     [soundManager unloadAllSoundResources];
+}
+
+-(void)hideNoneBetRoundAlertWithDismiss:(NSNumber*)yesOrNoNumber
+{
+    BOOL yesOrNo = [yesOrNoNumber boolValue];
+    
+    if(noneBetRoundAlert)
+        [noneBetRoundAlert dismissWithClickedButtonIndex:0 animated:YES];
+    
+    if(yesOrNo)
+    {
+        ServerInterface *theInterface = [ServerInterface serverInterface];
+        
+        if(theInterface.theDelegate == self)
+        {
+            //[theInterface logout];
+            [self dismissGameController];
+        }
+    }
+}
+
+-(void)dismissGameController
+{
+    //unload sound resources
+    [self unloadSoundResource];
+    
+    if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+    {
+        [self.view removeFromSuperview];
+        [self willMoveToParentViewController:nil];
+        [self removeFromParentViewController];
+    }
+    else
+    {
+        [self dismissModalViewControllerAnimated:YES];
+    }
+
+    
+    if([self.theDelegate respondsToSelector:@selector(BaseGameViewControllerDidDismiss:)])
+    {
+        [self.theDelegate BaseGameViewControllerDidDismiss:self];
+    }
 }
 
 #pragma mark - sound
@@ -337,7 +382,7 @@
 {
     UpdateInfo *info = notification.object;
     
-    if(isFirstTime)
+    if(isFirstTime && userInfo != nil)
     {
         //init background music
         [self initBackgroundMusic];
@@ -345,6 +390,9 @@
         [self initSoundEffects];
         //play background music
         [self playBackgroundMusic];
+        
+        //first update
+        [self receiveFirstUpdateInfo];
         
         if([_theDelegate respondsToSelector:@selector(BaseGameViewControllerIsReady:)])
         {
@@ -360,58 +408,86 @@
         noneBetRoundCount++;
     }
     
+    //NSLog(@"conbetcount:%i", noneBetRoundCount);
+    
     //store last game status
     lastGameStatus = [info.status copy];
     
     
-    //if idle too long
-    
-    if([self isIdleTooLong])
+    //if if person can be kicked and idle too long
+    if(userInfo.kick)
     {
-        ServerInterface *theInterface = [ServerInterface serverInterface];
+        [self checkIsIdleTooLong];
         
-        [theInterface logout];
+        /*
+        if([self isIdleTooLong])
+        {
+            //not running anymore
+            ServerInterface *theInterface = [ServerInterface serverInterface];
+            
+            [theInterface logout];
+        }
+         */
     }
-     
+    
 }
 
 -(void)handleMarqueeInfo:(NSNotification*)notification
 {
-
+    
 }
 
--(BOOL)isIdleTooLong
+-(void)handleBetRespondInfo:(NSNotification*)notification
+{
+    
+}
+
+-(void)checkIsIdleTooLong
 {
     //check if game need to dismiss and back to login view
     if(noneBetRoundCount == 6 && isNoneBet5RoundAlertShowed == NO)
     {
+        
         NSString *msg = NSLocalizedString(@"您已五局未下注将於十局返回登入画面", @"您已五局未下注将於十局返回登入画面");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        NSString *title = NSLocalizedString(@"-警告-", @"-警告-");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
         
         [alert show];
         
+        noneBetRoundAlert = alert;
+        
         isNoneBet5RoundAlertShowed = YES;
         
-        return NO;
+        //clear alert after 4 sec and not close game controller
+        [self performSelector:@selector(hideNoneBetRoundAlertWithDismiss:) withObject:[NSNumber numberWithBool:NO] afterDelay:4];
+        
     }
     else if (noneBetRoundCount == 11 && isNoneBet10RoundAlertShowed == NO)
     {
         NSString *msg = NSLocalizedString(@"您已十局未下注，即将回登入画面", @"您已十局未下注，即将回登入画面");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        NSString *title = NSLocalizedString(@"-警告-", @"-警告-");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
         
         [alert show];
         
+        noneBetRoundAlert = alert;
+        
         isNoneBet10RoundAlertShowed = YES;
         
-        return  NO;
+        //clear alert after 4 sec and close game controller
+        [self performSelector:@selector(hideNoneBetRoundAlertWithDismiss:) withObject:[NSNumber numberWithBool:YES] afterDelay:4];
+        
+
     }
+    /*
     else if (noneBetRoundCount == 12)
     {
 
         return YES;
     }
+     */
     
-    return NO;
+
 }
 
 #pragma mark - getter setter
@@ -466,12 +542,18 @@
         
         //NSLog(@"did get marquee");
     }
+    else if ([respondStr rangeOfString:@"onBet"].length>0)
+    {
+        betRespondInfo = [[BetRespondInfo alloc] init];
+        [betRespondInfo convertToDataFromXMLString:respondStr];
+    }
     else if([respondStr rangeOfString:@"onUpdate"].length>0 && loginGameTypeCommandSent)
     {
         //init update info and parser xml, assign UpdateInfo as well
         updateInfo = [[UpdateInfo alloc] init];
         [updateInfo convertToDataFromXMLString:respondStr];
     }
+
      
 }
 
@@ -494,7 +576,19 @@
     NSLog(@"request login with gameType:%i", _gameType);
      
 }
-
+/*
+#pragma mark - UIAlertView delegate
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    ServerInterface *theInterface = [ServerInterface serverInterface];
+    
+    //greater than 10 round logout
+    if(theInterface.theDelegate == self)
+    {
+        [theInterface logout];
+    }
+}
+*/
 
 
 @end

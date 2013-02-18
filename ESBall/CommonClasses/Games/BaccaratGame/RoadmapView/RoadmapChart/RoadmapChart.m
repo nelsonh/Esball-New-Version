@@ -268,8 +268,8 @@
      */
     UIImage *player = [UIImage imageNamed:[self playerImageName]];
     UIImage *banker = [UIImage imageNamed:[self bankerImageName]];
-    UIImage *tie1 = [UIImage imageNamed:[self tie1ImageName]];
-    UIImage *tie2 = [UIImage imageNamed:[self tie2ImageName]];
+    UIImage *tie1 = [UIImage imageNamed:[self tie2ImageName]];
+    UIImage *tie2 = [UIImage imageNamed:[self tie1ImageName]];
     UIImage *tie3 = [UIImage imageNamed:[self tie3ImageName]];
     UIImage *smallPlayer = [UIImage imageNamed:[self smallPlayerImageName]];
     UIImage *smallBanker = [UIImage imageNamed:[self smallBankerImageName]];
@@ -306,11 +306,14 @@
         else
             imageName = @"Route_bg2@2x.png";
          */
+        
+        //draw background
         imageName = [self roadmapBaseImageName];
         
         UIImage *image = [UIImage imageNamed:imageName];
         //[image drawInRect:CGRectMake(0, 0,kRoadmapWidth, kRoadmapHeight)];
         [image drawInRect:CGRectMake(0, 0,[self roadmapChartWidth], [self roadmapChartHeight])];
+        
         CGContextSaveGState(context);
         CGContextRestoreGState(context);
         

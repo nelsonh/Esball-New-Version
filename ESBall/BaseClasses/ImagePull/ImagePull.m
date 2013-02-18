@@ -66,6 +66,12 @@
 {
     if(inImageData)
     {
+        NSUInteger loc = inImageData.length-3;
+        NSUInteger len = 2;
+        
+        if(inImageData.length < (loc+len))
+            return NO;
+        
         NSData *data = [inImageData subdataWithRange:NSMakeRange(inImageData.length-2, 2)];
         NSString *hexByte = [self nsdataToHex:data];
         

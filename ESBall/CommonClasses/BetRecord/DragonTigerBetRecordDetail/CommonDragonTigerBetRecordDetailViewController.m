@@ -130,4 +130,60 @@
     
 }
 
+-(NSString *)betTypeWithTypeNumber:(NSUInteger)betType
+{
+    /*convert bet type to string*/
+    switch (betType) {
+        case 1:
+            return NSLocalizedString(@"虎", @"虎");
+            break;
+            
+        case 2:
+            return NSLocalizedString(@"龙", @"龙");
+            break;
+            
+        case 3:
+            return NSLocalizedString(@"和", @"和");
+            break;
+            
+        case 4:
+            return NSLocalizedString(@"虎单", @"虎单");
+            break;
+            
+        case 5:
+            return NSLocalizedString(@"虎双", @"虎双");
+            break;
+            
+        case 6:
+            return NSLocalizedString(@"龙单", @"龙单");
+            break;
+            
+        case 7:
+            return NSLocalizedString(@"龙双", @"龙双");
+            break;
+            
+        case 8:
+            return NSLocalizedString(@"虎黑", @"虎黑");
+            break;
+            
+        case 9:
+            return NSLocalizedString(@"虎红", @"虎红");
+            break;
+            
+        case 10:
+            return NSLocalizedString(@"龙黑", @"龙黑");
+            break;
+            
+        case 11:
+            return NSLocalizedString(@"龙红", @"龙红");
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+    
+    return @"";
+}
+
 @end

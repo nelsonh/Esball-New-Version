@@ -15,6 +15,12 @@
 @property (nonatomic, weak) IBOutlet UILabel *totalBetLabel;
 @property (nonatomic, weak) IBOutlet UILabel *totalPayoffLabel;
 
+/*
+ * A method to initialize cell
+ *
+ * @param identifier string of cell id
+ * @param return cell
+ */
 -(id)initWithReuseIdentifier:(NSString *)identifier;
 
 @end

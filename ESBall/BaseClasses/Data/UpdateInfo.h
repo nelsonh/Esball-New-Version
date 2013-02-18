@@ -13,10 +13,16 @@
 
 #import "BaseInfo.h"
 
-static NSString *UpdateInfoReayNotification = @"UpdateInfoIsReady";
+/*
+ * Pre-define string for notification name
+ */
+__unused static NSString *UpdateInfoReayNotification = @"UpdateInfoIsReady";
 
 @interface UpdateInfo : BaseInfo
 
+/*
+ * these properties hold information that extract from XML
+ */
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *let;
 @property (nonatomic, strong) NSString *sid;

@@ -65,4 +65,16 @@
     [self presentViewController:controller animated:YES completion:nil];
   
 }
+
+#pragma mark - override
+-(BOOL)presentEmptyModelAtBeginning
+{
+    return NO;
+}
+
+-(CGFloat)cellWitdh
+{
+    return 340;
+}
+
 @end

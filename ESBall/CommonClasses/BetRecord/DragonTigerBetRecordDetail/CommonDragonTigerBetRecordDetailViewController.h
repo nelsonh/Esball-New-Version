@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 nelson. All rights reserved.
 //
 
+//subclass of BetRecordDetailViewController
+
 #import "BetRecordDetailViewController.h"
 #import "FileFinder.h"
 

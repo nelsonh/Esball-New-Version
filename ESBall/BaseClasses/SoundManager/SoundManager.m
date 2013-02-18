@@ -148,6 +148,7 @@ static SoundManager *soundManagerInstance;
         
         //play sound effect
         [[OALSimpleAudio sharedInstance] playEffect:soundToPlay];
+        
     }
 
 }

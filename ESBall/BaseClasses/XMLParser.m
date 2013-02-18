@@ -60,7 +60,7 @@ static XMLParser *paserInstance;
         end = YES;
     }
     
-    
+    /*
     if(!(head&&end))
     {
         //NSLog(@"xml str not avaliable");
@@ -77,7 +77,7 @@ static XMLParser *paserInstance;
         
 #endif
     }
-     
+     */
     
     return (head&&end);
 }

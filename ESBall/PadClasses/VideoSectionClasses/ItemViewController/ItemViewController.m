@@ -73,6 +73,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - public interface overridable
+
+-(NSUInteger)page
+{
+    return 0;
+}
+
+
 #pragma mark - roadmap update
 -(void)startRoadmapUpdate
 {
@@ -102,7 +110,7 @@
 {
     if(roadmapData == nil)
     {
-        NSString *urlStr = [NSString stringWithFormat:@"http://183.182.66.167/%i/%@/0/0.htm", _gameType, _tableName];
+        NSString *urlStr = [NSString stringWithFormat:@"http://183.182.66.167/%i/%@/%i/0.htm", _gameType, _tableName, [self page]];
         NSURL *url = [NSURL URLWithString:urlStr];
         
         NSMutableURLRequest *roadmapDataRequest = [NSMutableURLRequest requestWithURL:url];
@@ -114,7 +122,7 @@
 -(void)displayRoadmap
 {
 
-    
+    //need to implement by subclass
 }
 
 
@@ -135,6 +143,7 @@
 }
 
 #pragma mark - public interface
+
 -(IBAction)dropdownItem:(id)sender
 {
     //inform delegate this item dropdown

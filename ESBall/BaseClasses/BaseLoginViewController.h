@@ -6,37 +6,68 @@
 //  Copyright (c) 2012年 nelson. All rights reserved.
 //
 
+/*
+ * Login class
+ */
+
 #import <UIKit/UIKit.h>
 #import "AsyncSocket.h"
 #import "AppDelegate.h"
 #import "ServerInterface.h"
 
-static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess";
+/*
+ * Pre-define string
+ */
+__unused static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess";
 
 @interface BaseLoginViewController : UIViewController<AsyncSocketDelegate, ServerInterfaceDelegate, UITextFieldDelegate>{
     
+    //used to adjust label
     CGFloat spaceLabelToTextfield;
+    
+    //indicate it is during the login or not
     BOOL isLogin;
-    BOOL reservingSpot;//indicate that it is reserving spot or not
+    
+    //indicate that it is reserving spot on host server or not
+    BOOL reservingSpot;
 }
 
-@property (nonatomic, weak) IBOutlet UITextField *accountTextFiled;
-@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet UITextField *accountTextFiled;//textfield for input account
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;//textfield for input password
 @property (nonatomic, weak) IBOutlet UILabel *accountLabel;
 @property (nonatomic, weak) IBOutlet UILabel *passwordLabel;
-@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicator;//spinning indicator
 @property (nonatomic, weak) IBOutlet UILabel *loggingMsgLabel;
 
 //base method override if needed
 //-(void)LogMe;
 
+/*
+ * A back button which is connected in Interface Builder
+ * Trigger login event
+ */
 -(IBAction)login:(id)sender;
-//to reserve a spot
+
+/*
+ * A method to reserve a spot on host server
+ */
 -(void)reserveSpot;
-//implement to receive reserving spot notification
+
+/*
+ * A method get call when reserve spot on server success
+ *
+ * @param notification not use
+ */
 -(void)reserveSpotSuccess:(NSNotification *)notification;
 
+/*
+ * A method to show up login spin indicator and message
+ */
 -(void)showLoginIndicator;
+
+/*
+ * A method to hide login spin indicator and message
+ */
 -(void)hideLoginIndicator;
 
 @end

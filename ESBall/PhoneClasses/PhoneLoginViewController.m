@@ -39,11 +39,12 @@
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     _backgroundImageView.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:@"Login_bgs.png"]];
+    /*
 #ifdef DEBUG
     self.accountTextFiled.text=@"james1";
     self.passwordTextField.text=@"pweptd11";
 #endif
-    
+    */
     
 }
 
@@ -56,7 +57,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     //except upside down
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    //return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 //override method from super class

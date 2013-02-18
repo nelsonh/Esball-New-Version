@@ -48,8 +48,8 @@
     
     player = [UIImage imageNamed:@"rou_R_big.png"];
     banker = [UIImage imageNamed:@"rou_B_big.png"];
-    tie1 = [UIImage imageNamed:@"rou_Tie_01.png"];
-    tie2 = [UIImage imageNamed:@"rou_Tie_02.png"];
+    tie1 = [UIImage imageNamed:@"rou_Tie_02.png"];
+    tie2 = [UIImage imageNamed:@"rou_Tie_01.png"];
     tie3 = [UIImage imageNamed:@"rou_Tie_03.png"];
     
     /*
@@ -136,12 +136,20 @@
         col=0,row=0;
         //w=20.2,h=19;
         //   int count_bank_temp=0,count_play_temp=0,count_tie_temp=0;
-        
+        /*
         if (lines<=16)
             start=0;
         else
         {   start=lines-17;
             lines=17;
+        }
+         */
+        
+        if (lines<=13)
+            start=0;
+        else
+        {   start=lines-14;
+            lines=14;
         }
         
         for(col=0;col<lines-1;col++)

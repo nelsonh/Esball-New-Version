@@ -7,7 +7,8 @@
 //
 
 #import "PhoneVideoSectionChangeControllerViewController.h"
-#import "BaseGameViewController.h"
+#import "ServerInterface.h"
+
 @interface PhoneVideoSectionChangeControllerViewController ()
 
 @end
@@ -167,47 +168,48 @@ NSTimer *allCountTimer;   //選桌倒數使用
         
         switch (index) {
             case 1:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bgs.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bgs.png"]]];
                 changeTitle.text=@"百家乐 A";
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"a"] ;
                 [btnchang1 setImage:[UIImage imageNamed: @"bacA_btn_down.png"] forState:UIControlStateNormal];
                 break;
             case 2:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bgs.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bgs.png"]]];
                 changeTitle.text=@"百家乐 B";
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"b"] ;
                 [btnchang2 setImage:[UIImage imageNamed: @"bacB_btn_down.png"] forState:UIControlStateNormal];
                 break;
             case 3:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bgs.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bgs.png"]]];
                 changeTitle.text=@"百家乐 C";
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"c"] ;
                 [btnchang3 setImage:[UIImage imageNamed: @"bacC_btn_down.png"] forState:UIControlStateNormal];
                 break;
             case 4:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bg.png", index]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bg.png"]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_top_bgs.png", index]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_down_bgs.png"]]];
                 changeTitle.text=@"百家乐 D";
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"d"] ;
                 [btnchang4 setImage:[UIImage imageNamed: @"bacD_btn_down.png"] forState:UIControlStateNormal];
                 break;
                 
             case 5:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bg.png"]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_down_bg.png", index%4]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bgs.png"]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_down_bgs.png", index%4]]];
+                [self.view bringSubviewToFront:changeUnder];
                 changeTitle.text=@"百家乐 E";
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"e"] ;
                 [btnchang5 setImage:[UIImage imageNamed: @"bacE_btn_down.png"] forState:UIControlStateNormal];
                 break;
                 
             case 6:
-                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bg.png"]]];
-                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_down_bg.png", index%4]]];
+                [changeTop setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route00_top_bgs.png"]]];
+                [changeUnder setImage:[UIImage imageNamed:  [NSString stringWithFormat: @"route0%i_down_bgs.png", index%4]]];
                 changeTitle.text=@"龙虎斗 A";
-                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3003/%@/0/0.htm" ,@"a"] ;
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3003/%@/4/0.htm" ,@"a"] ;
                 [btnchang6 setImage:[UIImage imageNamed: @"DT_btn_down.png"] forState:UIControlStateNormal];
                 break;
                 
@@ -220,25 +222,24 @@ NSTimer *allCountTimer;   //選桌倒數使用
         }
         //http://183.182.66.167/3001/c/0/0.htm;
         //桌号 路子种类 问路。
+             
         NSString *roadmapData;
         NSUInteger i;
         
+        if (index<=5)
+        {
         UIImage *player = [UIImage imageNamed:@"rou_R_big.png"];
         UIImage *banker = [UIImage imageNamed:@"rou_B_big.png"];
         UIImage *tie1 = [UIImage imageNamed:@"rou_Tie_01.png"];
         UIImage *tie2 = [UIImage imageNamed:@"rou_Tie_02.png"];
         UIImage *tie3 = [UIImage imageNamed:@"rou_Tie_03.png"];      
         
-        if (index==6)
-        {
-            player = [UIImage imageNamed:@"DTrou_Y_big.png"];
-            banker = [UIImage imageNamed:@"rou_R_big.png"];
-
-        }
+    
+            
         
         UIGraphicsBeginImageContext(CGSizeMake(298,112));
         CGContextRef context= UIGraphicsGetCurrentContext();
-        NSString *imageName = [NSString stringWithFormat:@"route_bg_bac.png"];
+        NSString *imageName = [NSString stringWithFormat:@"route_bg_bacs.png"];
         UIImage *image = [UIImage imageNamed:imageName];
         [image drawInRect:CGRectMake(0, 0,298, 112)];
         CGContextSaveGState(context);
@@ -257,7 +258,8 @@ NSTimer *allCountTimer;   //選桌倒數使用
         if (lines>0)
         {
             col=0,row=0;
-            w=18.6,h=17.8;
+            //w=18.6,h=17.8;
+            w=18.6,h=18.5;
             //   int count_bank_temp=0,count_play_temp=0,count_tie_temp=0;
             
             if (lines<=16)
@@ -312,7 +314,89 @@ NSTimer *allCountTimer;   //選桌倒數使用
         imageView.frame = rect;
         imageView.tag = i;	// tag our images for later use when we place them in serial fashion
         [changeFront addSubview:imageView];
+        }
         
+        if (index==6)
+        {
+            UIImage *player = [UIImage imageNamed:@"DTrou_R_Dragon.png"];
+            UIImage *banker = [UIImage imageNamed:@"DTrou_Y_Tiger.png"];
+            UIImage *tie = [UIImage imageNamed:@"DTrou_G_Tie.png"];           
+            
+            
+            UIGraphicsBeginImageContext(CGSizeMake(298,112));
+            CGContextRef context= UIGraphicsGetCurrentContext();
+            NSString *imageName = [NSString stringWithFormat:@"route_bg_bacs.png"];
+            UIImage *image = [UIImage imageNamed:imageName];
+            [image drawInRect:CGRectMake(0, 0,298, 112)];
+            CGContextSaveGState(context);
+            CGContextRestoreGState(context);
+            
+            NSURL *url = [NSURL URLWithString:strUrl];
+            roadmapData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+            NSLog(@"jamestest4%@",roadmapData);
+            
+            int col=0,row=0;
+            double w=20,h=21;
+            int start;
+            NSArray *allLines =[roadmapData componentsSeparatedByString: @"\n"];
+            int lines= [ allLines count]-2;
+            
+            if (lines>0)
+            {
+                col=0,row=0;
+                w=18.6,h=18.4;
+                //   int count_bank_temp=0,count_play_temp=0,count_tie_temp=0;
+                
+                if (lines<=16)
+                    start=0;
+                else
+                {   start=lines-17;
+                    lines=17;
+                }
+                
+                for(col=0;col<lines-1;col++)
+                {
+                    NSArray *allrows =[[allLines objectAtIndex:col+1+start] componentsSeparatedByString: @":"];
+                    NSLog(@"james");
+                    NSLog([allrows objectAtIndex:1],nil);
+                    NSLog(@"james");                   
+                    int count= ([[allrows objectAtIndex:1] length]-5)/4;
+                     allrows=[[allrows objectAtIndex:1] componentsSeparatedByString: @";"];
+                    for(row=0;row<count;row++)                        
+                    {
+                        NSArray *data =[[allrows objectAtIndex:row] componentsSeparatedByString: @","];
+                        
+                        
+                        if ([[data objectAtIndex:0] intValue]==2)
+                        {  [player drawInRect: CGRectMake(1+col*w+(row/6)*w, 0+(row%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                            // count_play_temp+=1;
+                        }
+                        else if ([[data objectAtIndex:0] intValue]==1)
+                        {    [banker drawInRect: CGRectMake(1+col*w+(row/6)*w, 0+(row%6)*h,18, 18)  blendMode:kCGBlendModeNormal alpha:1.0f];
+                            //   count_bank_temp+=1;
+                        }
+                        else if ([[data objectAtIndex:0] intValue]==0)
+                        {    [tie drawInRect:  CGRectMake(1+col*w+(row/6)*w, 0+(row%6)*h,18, 18)  blendMode:kCGBlendModeNormal alpha:1.0f];
+                            //   count_bank_temp+=1;
+                        }
+                       
+                    }
+                }
+                              
+            }
+            image=UIGraphicsGetImageFromCurrentImageContext()   ;
+            
+            
+            UIImageView *imageView  = [[UIImageView alloc] initWithImage:image];
+            
+            CGRect rect = imageView.frame;
+            rect.size.height = 118;
+            rect.size.width = 298;
+            imageView.frame = rect;
+            imageView.tag = i;	// tag our images for later use when we place them in serial fashion
+            [changeFront addSubview:imageView];
+        }
+
         
     }
     else
@@ -446,13 +530,26 @@ NSTimer *allCountTimer;   //選桌倒數使用
 -(IBAction)down_changetable
 {
     
+    if(tableIndex <= 0)
+    {
+        NSString *msg = NSLocalizedString(@"请选择想要进入的游戏", @"请选择想要进入的游戏");
+        
+        UIAlertView *noneSelectAlert = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        
+        [noneSelectAlert show];
+        
+        return;
+    }
+    
     if (tableIndex<=5)
     {
         BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"BaccaratGameViewController"];
     
         controller.tableNumber = tableIndex-1;
-        controller.gameType = 3001;    
-        [self presentViewController:controller animated:YES completion:nil];       
+        controller.gameType = 3001;
+        [self presentViewController:controller animated:YES completion:nil];
+
+        
     }else if(tableIndex==6)
     {
         BaseGameViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"DragonTigerGameViewController"];
@@ -460,9 +557,20 @@ NSTimer *allCountTimer;   //選桌倒數使用
         controller.tableNumber = tableIndex-1;
         controller.gameType = 3003;
         [self presentViewController:controller animated:YES completion:nil];
+
     }
  
 }
 
+-(void)dismiss
+{
+    [self.presentedViewController dismissModalViewControllerAnimated:NO];
+}
+
+-(IBAction)logout:(id)sender
+{
+    ServerInterface *theInterface = [ServerInterface serverInterface];
+    [theInterface logout];
+}
 
 @end

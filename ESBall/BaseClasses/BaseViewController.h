@@ -11,6 +11,11 @@
 
 @interface BaseViewController : UIViewController
 
+/*
+ * A method get call when ServerInterface lost socket connection and post notification
+ *
+ * @param notification did not contain any information
+ */
 -(void)connectionLost:(NSNotification *)notification;
 
 @end

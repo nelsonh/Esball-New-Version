@@ -60,6 +60,8 @@
     //isChangingTable = NO;
     tableNumberToChange = -1;
     
+    roadmapUpdateInterval = 0.1;
+    
     [self loadItemData];
 }
 
@@ -87,6 +89,8 @@
      */
     
     [self startUpdate];
+    
+    roadmapUpdateInterval = 3;
 }
 
 - (void)didReceiveMemoryWarning
@@ -128,7 +132,7 @@
 {
     [self stopPullDataForCounDown];
     
-    pullCountDownDataTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(doPullDataForCountDown) userInfo:nil repeats:YES];
+    pullCountDownDataTimer = [NSTimer scheduledTimerWithTimeInterval:roadmapUpdateInterval target:self selector:@selector(doPullDataForCountDown) userInfo:nil repeats:YES];
     
 }
 
@@ -274,6 +278,13 @@
         
         [noneSelectAlert show];
     }
+}
+
+-(IBAction)logout:(id)sender
+{
+    ServerInterface *theInterface = [ServerInterface serverInterface];
+    
+    [theInterface logout];
 }
 
 #pragma mark - Internal
@@ -574,6 +585,9 @@
     //loading view
     [self displayLoadingView];
      */
+    
+    if(item == selectedItem)
+        return;
 
     //deselect current selected item if needed
     if(selectedItem)
