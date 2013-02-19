@@ -6,18 +6,20 @@
 //  Copyright (c) 2013 nelson. All rights reserved.
 //
 
-/**
- contain bet confirm information that had been interpreted from server
- post notification when interpret data complete
- **/
+
 
 #import "BaseInfo.h"
 
-/**
+/*
  * Pre-define string for notification name
  */
 __unused static NSString *BetRespondInfoReayNotification = @"BetRespondInfoReady";
 
+/**
+ * BetRespondInfo subclass of BaseInfo
+ * contain bet confirm information that had been interpreted from server
+ * post notification when interpret data complete
+ */
 @interface BetRespondInfo : BaseInfo
 
 /**

@@ -6,9 +6,7 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 
-/**
- this is responsible for bet but ChipView
- **/
+
 
 //can be subclass
 
@@ -37,6 +35,10 @@
 
 @end
 
+/**
+ * BetView subclass of BetAreaView
+ * this is responsible for bet but ChipView
+ */
 @interface BetView : BetAreaView<BetSquareViewDelegate>{
     
     //player hit bet confirm this will be yes otherwise no
@@ -80,11 +82,15 @@
 /**
  * A method clear bet but the final set
  * if betinfoview display final result it will not be cleared
+ *
+ * 清除所有的下注資訊, 除了以確定的
  */
 -(void)clearBetsWithoutFinalSet;
 
 /**
- * A method clear single bet
+ * A method clear bets
+ *
+ * 清除所有的下注資訊
  * 
  * @param yesOrNo hide info view or not
  * @param hisYesOrNo clear bet history
@@ -93,12 +99,16 @@
 
 /**
  * A method to show result
- * which square should be flash 
+ * which square should be flash
+ *
+ * 顯示結果
  */
 -(void)showResult;
 
 /**
  * A method to check if all bet amount over player's credit
+ *
+ * 檢查下注是否超過玩家金額
  *
  * @param amount amount of bet squares
  * @return yes it is over no it is not
@@ -107,6 +117,8 @@
 
 /**
  * A mehtod to restore every bet square to last state
+ *
+ * 回復上一次的狀態
  */
 -(void)restoreBetToLastState;
 
@@ -120,6 +132,8 @@
  * A method to collect all bet squares' bet
  * return each signle bet in double as an array
  *
+ * 搜集所有的下注資訊
+ *
  * @return array that contain NSNumber for each bet sqaures' bet
  */
 -(NSMutableArray *)collectBetInfo;
@@ -128,12 +142,16 @@
  * A method to collect all bet squares' history bet
  * return history bet in double as an array
  *
+ * 搜集所有的歷史下注資訊
+ *
  * @return array that contain NSNumber for each bet sqaures' history bet
  */
 -(NSMutableArray *)collectHistoryBetInfo;
 
 /**
  * A method to collect all bet squares
+ *
+ * 搜集所有的下注按鈕
  *
  * @return array contain UIButton for each bet square
  */
@@ -142,12 +160,16 @@
 /**
  * A method to display bet result
  * every current bet
+ *
+ * 顯示玩家的下注結果
  */
 -(void)displayPlayerBetResult;
 
 /**
  * A method to display bet history
  * every bet accumulation for history
+ *
+ * 顯示玩家的歷史下注結果
  */
 -(void)displayPlayerHistoryBetResult;
 
@@ -155,6 +177,8 @@
 
 /**
  * A method generate string contain info about which square should flash for result
+ *
+ * 產生字串包含哪個區塊要閃爍的資料
  *
  * @param result integer from server
  * @return string a specific format
@@ -172,6 +196,8 @@
 /**
  * A method to disable square by round
  *
+ * 關閉特定的區塊在指定的局數
+ *
  * @param round target round
  * @param curRound current round
  */
@@ -179,6 +205,8 @@
 
 /**
  * A method to setup bet square
+ * 
+ * 設定區塊
  */
 -(void)setupBetSquare;
 
@@ -198,6 +226,8 @@
  * A method called when game ask how many round
  * certain bet square should be disabled
  * number of round to disable bet square or enable
+ *
+ * 回傳多少局要關閉特定的區域
  */
 -(NSUInteger)numberOfRoundToDisableBetSquare;
 

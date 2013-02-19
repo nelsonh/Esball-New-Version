@@ -34,6 +34,11 @@
 
 @end
 
+/**
+ * XMLParser subclass of NSObject
+ * A simple wrapper for NSXMLParser
+ * Parse XML data
+ */
 @interface XMLParser : NSObject<NSXMLParserDelegate>{
     
     NSXMLParser *parser;
@@ -51,11 +56,15 @@
 
 /**
  * A method to create XMLParser instance
+ *
+ * 建立一個 XMLParser 實體
  */
 -(id)initXMLParser;
 
 /**
  * A method start to parse xml
+ *
+ * 傳入 XML 並做 Parser 的動作
  *
  * @param xmlStr string of XML
  */

@@ -63,6 +63,8 @@
 /**
  * A method ask cell identifier
  *
+ * 回傳 cell 的 id
+ *
  * @return cell id string
  */
 -(NSString *)cellIdentifier;
@@ -70,22 +72,30 @@
 /**
  * A method ask total bet cell identifier
  *
+ * 回傳 total bet cell 的 id
+ *
  * @retun total bet cell id string
  */
 -(NSString *)cellIdentifierForTotalBet;
 
 /**
  * A method to present poker record
+ *
+ * 顯示開牌的紀錄
  */
 -(void)showPokerRecord;
 
 /**
- * A method to download specific detail record data 
+ * A method to download specific detail record data
+ *
+ * 下載某一筆記錄的資料
  */
 -(void)pullDetailRecordData;
 
 /**
  * A method to convert json data to a dictionary
+ *
+ * 將 jason 資料轉換
  *
  * @param jsonData a jason format data
  * @return dictionary that contain record data
@@ -96,12 +106,16 @@
  * A method to process common data
  * not each row record data
  *
+ * 處理基本共同的資料
+ *
  * @param dic dictionary that contain record data which converted from jason data
  */
 -(void)processData:(NSMutableDictionary *)dic;
 
 /**
  * A method to check if given string is digital exclusively
+ *
+ * 檢查字串裡是否都是數字
  *
  * @param str string that is going to be checked
  * @return boolean yes string contain only digital otherwise no
@@ -111,6 +125,8 @@
 /**
  * A method to find game code name by game code number
  *
+ * 尋找 game code 名字
+ *
  * @param gameCode integer game code number
  * @return string game code name
  */
@@ -118,6 +134,8 @@
 
 /**
  * A method to configure cell
+ *
+ * 設定 cell
  *
  * @param cell the cell is going to be configured
  * @param indexPath index of cell and data
@@ -128,12 +146,16 @@
 /**
  * A method to configure total bet cell
  *
+ * 設定 total bet cell
+ *
  * @param cell the cell is going to be configured
  */
 -(BetRecordDetailTotalRowCell *)configureCellForBetTotal:(BetRecordDetailTotalRowCell *)cell;
 
 /**
  * A method to find bet type by bet type number
+ *
+ * 尋找下注的種類
  *
  * @param betType number of bet type
  * @return string of bet type

@@ -24,11 +24,15 @@
 
 /**
  * A method to update roadmap data
+ *
+ * 更新 roadmap 資料
  */
 -(void)updateRoadmapData;
 
 /**
  * A method to draw roadmap chart
+ *
+ * 畫 roadmap
  */
 -(void)DrawRoadmapChart;
 
@@ -40,6 +44,8 @@
 /**
  * A method that return roadmap chart width
  *
+ * 回傳 roadmap 的寬
+ *
  * @return CGFloat width of chart
  */
 -(CGFloat)roadmapChartWidth;
@@ -47,12 +53,16 @@
 /**
  * A method that return roadmap chart height
  *
+ * 回傳 roadmap 的高
+ *
  * @return CGFloat height of chart
  */
 -(CGFloat)roadmapChartHeight;
 
 /**
  * A method that return roadmap chart background image name
+ *
+ * 回傳 roadmap 的背景圖檔名
  *
  * @return string of image name
  */

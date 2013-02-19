@@ -6,9 +6,7 @@
 //  Copyright (c) 2012年 nelson. All rights reserved.
 //
 
-/*
- * Login class
- */
+
 
 #import <UIKit/UIKit.h>
 #import "AsyncSocket.h"
@@ -20,6 +18,11 @@
  */
 __unused static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess";
 
+/**
+ * BaseLoginViewController subclass of UIViewController
+ * Login controller class
+ * handle login
+ */
 @interface BaseLoginViewController : UIViewController<AsyncSocketDelegate, ServerInterfaceDelegate, UITextFieldDelegate>{
     
     //used to adjust label
@@ -45,16 +48,22 @@ __unused static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess"
 /**
  * A back button which is connected in Interface Builder
  * Trigger login event
+ *
+ * 登入事件
  */
 -(IBAction)login:(id)sender;
 
 /**
  * A method to reserve a spot on host server
+ *
+ * 在 Server 預留位子
  */
 -(void)reserveSpot;
 
 /**
  * A method get call when reserve spot on server success
+ *
+ * 預留位子成功
  *
  * @param notification not use
  */
@@ -62,11 +71,15 @@ __unused static NSString *ReserveSpotSuccessNotification = @"ReserveSpotSuccess"
 
 /**
  * A method to show up login spin indicator and message
+ *
+ * 顯示旋轉的指示器
  */
 -(void)showLoginIndicator;
 
 /**
  * A method to hide login spin indicator and message
+ *
+ * 隱藏旋轉的指示器
  */
 -(void)hideLoginIndicator;
 

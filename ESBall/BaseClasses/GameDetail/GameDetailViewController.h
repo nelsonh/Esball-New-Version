@@ -91,6 +91,10 @@
 
 @end
 
+/**
+ * GameDetailViewController subclass of UIViewController
+ * used to present detail 
+ */
 @interface GameDetailViewController : UIViewController
 
 @property (nonatomic, weak) id<GameDetailViewControllerDelegate> theDelegate;//delegate
@@ -100,6 +104,8 @@
 
 /**
  * A method to add this controller to another controller
+ *
+ * 將 controller 加到指定的 controller
  *
  * @param parentController this controller will added to
  * @param pos the position in parent controller's view

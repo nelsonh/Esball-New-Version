@@ -46,12 +46,16 @@
 /**
  * A player ask button which is connected in Interface Builder
  * Trigger asking roadmap event
+ *
+ * 詢問 Player roadmap
  */
 -(IBAction)playerAsk:(id)sender;
 
 /**
  * A bank ask button which is connected in Interface Builder
  * Trigger asking roadmap event
+ *
+ * 詢問 Banker roadmap
  */
 -(IBAction)bankerAsk:(id)sender;
 
@@ -63,6 +67,8 @@
 /**
  * A method to stop update
  * must call to stop update and timer
+ * 
+ * 停止更新
  */
 -(void)stopUpdate;
 
@@ -74,6 +80,8 @@
 
 /**
  * A method to stop asking roadmap
+ *
+ * 停止詢問 roadmap
  */
 -(void)stopAsking;
 

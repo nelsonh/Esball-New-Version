@@ -12,6 +12,8 @@
 
 /**
  * A method to initialze header for table view
+ *
+ * 初始化 table view group 的標頭 view
  * 
  * @param frame rect
  * @param title title string

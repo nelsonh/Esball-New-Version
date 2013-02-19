@@ -30,12 +30,18 @@
 
 @end
 
+/**
+ * SubDetailViewController subclass of UIViewController
+ * detail of each different page
+ */
 @interface SubDetailViewController : UIViewController
 
 @property (nonatomic, weak) id<SubDetailViewControllerDelegate> theDelegate;//delegate
 
 /**
  * A method to add this controller to another controller
+ *
+ * 將 controller 加到指定的 controller
  *
  * @param parentController this controller will added to
  * @param newRect the rect in parent controller's view

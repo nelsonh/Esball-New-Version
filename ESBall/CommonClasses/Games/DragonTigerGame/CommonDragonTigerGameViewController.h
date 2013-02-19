@@ -37,6 +37,8 @@
 /**
  * A method to calculate card point for dragon
  *
+ * 計算 dragon 分數
+ *
  * @param cards dragon's cards
  * @return point for dragon
  */
@@ -45,6 +47,8 @@
 /**
  * A method to calculate card point for tiger
  *
+ * 計算 tiger 分數
+ *
  * @param cards tiger's cards
  * @return point for tiger
  */
@@ -52,11 +56,15 @@
 
 /**
  * A method to play sound for dragon point
+ *
+ * 播放 dragon 分數聲音
  */
 -(void)playSoundOfFinalPointForDragon;
 
 /**
  * A method to play sound for tiger point
+ *
+ * 播放 tiger 分數聲音
  */
 -(void)playSoundOfFinalPointForTiger;
 

@@ -6,12 +6,7 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 
-/**
- ChipView
- responsible for chips' display, enable, disable
- hold number of chip object
- 
-**/
+
 
 #import <UIKit/UIKit.h>
 #import "Chip.h"
@@ -31,6 +26,12 @@
 -(void)ChipView:(ChipView *)chipView aChipTapped:(Chip *)chip;
 
 @end
+
+/**
+ * ChipView subclass of UIScrollView
+ * responsible for chips' display, enable, disable
+ * hold number of chip object
+ */
 @interface ChipView : UIScrollView<ChipDelegate>{
     
     //hold chips objects
@@ -57,6 +58,8 @@
 /**
  * A method to display chips
  *
+ * 顯示籌碼
+ *
  * @return Yes display success
  * @return No display fail
  */
@@ -64,16 +67,22 @@
 
 /**
  * A method to disable all chips
+ *
+ * 關閉所有籌碼
  */
 -(void)disableCips;
 
 /**
  * A method to enable all chips
+ *
+ * 打開所有籌碼
  */
 -(void)enableChips;
 
 /**
  * A method to enable all chips and selected chip will be selected
+ *
+ * 打開所有籌碼並且選擇指定的籌碼
  *
  * @param selectedChip chip that was selected 
  */

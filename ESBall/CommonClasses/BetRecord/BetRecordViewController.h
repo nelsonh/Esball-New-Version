@@ -55,12 +55,16 @@
  * A method ask should present a empty model when controller show up
  * ipod iphone no, ipad yes
  *
+ * 是否需要顯示一個空的 model
+ *
  * @return yes to present a empty model, no don't present
  */
 -(BOOL)presentEmptyModelAtBeginning;
 
 /**
  * A method ask how many data should download at a time
+ *
+ * 一次要下載多少筆資料
  *
  * @return integer number of data to download
  */
@@ -76,12 +80,16 @@
 /**
  * A method ask image name for cell background
  *
+ * 回傳 cell 背景圖的檔名
+ *
  * @return string image name
  */
 -(NSString *)cellBackgroundImageName;
 
 /**
  * A method ask image name for cell background when selected
+ *
+ * 回傳 cell 選擇時的背景圖檔名
  *
  * @return string image name
  */
@@ -90,12 +98,16 @@
 /**
  * A method ask section header height in table view
  *
+ * Table view 標頭的高
+ *
  * @return CGFloat height for header
  */
 -(CGFloat)tableViewHeaderHeight;
 
 /**
  * A method ask image name for table header's background
+ *
+ * Table view 標頭的背景圖檔名
  *
  * @return string image name
  */
@@ -104,12 +116,16 @@
 /**
  * A method ask title string position on x
  *
+ * Table view 標頭文字 x 的位置
+ *
  * @retun CGFloat value for x position
  */
 -(CGFloat)tableViewTitleXPosition;
 
 /**
  * A method ask color for title string
+ *
+ * Table view 標頭文字的顏色
  *
  * @return UIColor for title string
  */
@@ -118,12 +134,16 @@
 /**
  * A method ask cell identifier
  *
+ * 回傳 cell 的 id
+ *
  * @return string cell identififer
  */
 -(NSString *)cellIdentifier;
 
 /**
  * A method to show detail record controller
+ *
+ * 顯示 detail record controller
  *
  * @param cid string of cid
  * @param gameType string of gametype
@@ -133,12 +153,16 @@
 /**
  * A method ask for cell's x position
  *
+ * 回傳 cell 的 x 位置
+ *
  * @return CGFloat value of x position
  */
 -(CGFloat)cellX;
 
 /**
  * A method ask for cell's width
+ *
+ * 回傳 cell 的寬
  * 
  * @return CGFloat value of width for cell
  */
@@ -146,11 +170,15 @@
 
 /**
  * A method to download record data
+ *
+ * 下載記錄資料
  */
 -(void)pullRecordData;
 
 /**
  * A method to convert data from string
+ *
+ * 轉換字串資料
  * 
  * @param dataStr data as string
  * @return dictionary that contain data that had been converted
@@ -160,6 +188,8 @@
 /**
  * A method to configure cell
  *
+ * 設定 cell
+ *
  * @param cell is about to be configured
  * @param indexPath index of cell and data
  * @return configured cell
@@ -168,6 +198,8 @@
 
 /**
  * A method to sort data decending
+ *
+ * 排序資料
  *
  * @param unsortedArray array that has not yet sorted 
  */

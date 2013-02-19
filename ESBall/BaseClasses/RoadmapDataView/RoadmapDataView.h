@@ -27,6 +27,10 @@
 
 @end
 
+/**
+ * RoadmapDataView subclass of UIScrollView
+ * display roadmap chart
+ */
 @interface RoadmapDataView : UIScrollView<UIScrollViewDelegate>{
     
     //Number of section to draw
@@ -40,16 +44,22 @@
 
 /**
  * A method to initialize roadmap 
+ *
+ * 初始化
  */
 -(void)initilize;
 
 /**
  * A method to initialze roadmap with delegate
+ *
+ * 初始化並且指定 delegate
  */
 -(void)initilizeWithDelegate:(id<RoadmapDataViewDelegate>)delegate;
 
 /**
  * A method should be call before drawing roadmap
+ *
+ * 準備畫 Roadmap
  */
 -(void)prepareToDraw;
 

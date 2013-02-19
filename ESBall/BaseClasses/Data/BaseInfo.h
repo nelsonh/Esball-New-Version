@@ -6,13 +6,15 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 
-/**
- provide a xml interpreter associated with data which was pulled from server
- **/
+
 
 #import <Foundation/Foundation.h>
 #import "XMLParser.h"
 
+/**
+ * BaseInfo subclass of NSObject
+ * provide a xml interpreter associated with data which was sent from server
+ */
 @interface BaseInfo : NSObject<XMLParserDelegate>{
     
     //XMLParser instance
@@ -22,12 +24,16 @@
 /**
  * A method to convert XML to usable data(a NSObject)
  *
+ * 轉換 XML 資料
+ *
  * @param xmlStr xml string
  */
 -(void)convertToDataFromXMLString:(NSString *)xmlStr;
 
 /**
  * A method to post a notification
+ *
+ * 發佈 notification, 當資料轉換完成
  *
  * @param notifiStr notification's name
  * @param object the object that follow notification

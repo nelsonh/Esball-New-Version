@@ -65,7 +65,9 @@
 @property (nonatomic, readonly) int itemCount;
 
 /**
- * A method to initialize 
+ * A method to initialize
+ *
+ * 初始化
  *
  * @param delegate the delegate 
  */
@@ -73,11 +75,15 @@
 
 /**
  * A method to reload data
+ *
+ * 重載資料
  */
 -(void)reloadData;
 
 /**
  * A method return item by given index
+ *
+ * 回傳特定的 item
  *
  * @param index index of item
  * @return item

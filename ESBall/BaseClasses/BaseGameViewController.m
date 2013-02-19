@@ -368,7 +368,7 @@
     
 }
 
--(void)handleUserInfo:(NSNotification*)notificationb
+-(void)handleUserInfo:(NSNotification*)notification
 {
     ServerInterface *theInterface = [ServerInterface serverInterface];
     NSString *tablelistMsg = @"tableList\n";

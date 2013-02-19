@@ -18,6 +18,8 @@
 /**
  * A method to initialize cell
  *
+ * 初始化 cell
+ *
  * @param identifier string of cell id
  * @param return cell
  */

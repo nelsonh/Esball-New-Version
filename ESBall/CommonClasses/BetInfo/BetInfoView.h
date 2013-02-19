@@ -19,6 +19,8 @@
 /**
  * A method to set max bet
  *
+ * 設定最大下注
+ *
  * @param maxBet value to set 
  */
 -(void)setMaxBet:(double)maxBet;
@@ -26,12 +28,16 @@
 /**
  * A method to set current bet
  *
+ * 設定目前下注
+ *
  * @param currentBet value to set 
  */
 -(void)setCurrentBet:(double)currentBet;
 
 /**
  * A method to set bet final result
+ *
+ * 設定確認的下注
  *
  * @param betFinalResult value to set
  */

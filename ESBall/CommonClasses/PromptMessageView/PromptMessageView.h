@@ -15,6 +15,8 @@
 
 /**
  * A method to update prompt message
+ *
+ * 更新訊息
  * 
  * @param msg the message to be displayed
  */

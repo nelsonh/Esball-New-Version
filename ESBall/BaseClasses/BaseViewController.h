@@ -9,10 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "ServerInterface.h"
 
+/**
+ * BaseViewController subclass of UIViewController
+ * a main view and very first controller after app has finish launched
+ */
 @interface BaseViewController : UIViewController
 
 /**
  * A method get call when ServerInterface lost socket connection and post notification
+ *
+ * 當 ServerInterface 失去連線會呼叫此方法
  *
  * @param notification did not contain any information
  */

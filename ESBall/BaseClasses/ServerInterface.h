@@ -57,6 +57,10 @@ __unused static NSString *InternetNotAvalible = @"InternetNotAvalible";
 
 @end
 
+/**
+ * ServerInterface subclass of NSObject
+ * ServerInterface is used to connect to server as interface for anyone
+ */
 @interface ServerInterface : NSObject<NSStreamDelegate>{
     
     //input stream
@@ -105,21 +109,31 @@ __unused static NSString *InternetNotAvalible = @"InternetNotAvalible";
 /**
  * A method return ServerInterface instance which can be only one in app
  * ServerInterface is a singleton, there is no second one
+ *
+ * 回傳一個 ServerInterface 實體, ServerInterface 實體只有一份並且重複使用
  */
 +(id)serverInterface;
 
 /**
  * A method return host server IP
+ *
+ * 回傳主要 Server 的 IP
  */
 -(NSString *)serverIP;
 
 /**
  * A method to check if can reach host server
+ *
+ * 檢查是否可連上主機
+ *
+ * @return yes host is reachable otherwise no
  */
 -(BOOL)canReachHost;
 
 /**
  * A method to logout from server
+ * 
+ * 登出
  */
 -(void)logout;
 
@@ -127,16 +141,22 @@ __unused static NSString *InternetNotAvalible = @"InternetNotAvalible";
 
 /**
  * A method to disconnect from host server
+ *
+ * 跟 Server 斷線
  */
 -(void)disconnectToHost;
 
 /**
  * A method that get call when timeout
+ *
+ * 連線逾時
  */
 -(void)timeout;
 
 /**
  * A method used to login server
+ *
+ * 登入
  *
  * @param username login user name
  * @param passowrd login password
@@ -145,6 +165,8 @@ __unused static NSString *InternetNotAvalible = @"InternetNotAvalible";
 
 /**
  * A method used to send data to host server
+ *
+ * 將資料傳到 Server 端
  *
  * @param dataToSend NSData that will be send to host server
  */

@@ -6,18 +6,20 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 
-/**
- contain update's information that had been interpreted from server
- post notification when interpret data complete
- **/
+
 
 #import "BaseInfo.h"
 
-/**
+/*
  * Pre-define string for notification name
  */
 __unused static NSString *UpdateInfoReayNotification = @"UpdateInfoIsReady";
 
+/**
+ * UpdateInfo subclass of BaseInfo
+ * contain update's information that had been interpreted from server
+ * post notification when interpret data complete
+ */
 @interface UpdateInfo : BaseInfo
 
 /**

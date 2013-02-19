@@ -66,39 +66,53 @@
 
 /**
  * A method to restore last bet state
+ *
+ * 回復前一次的狀態
  */
 -(void)restoreLastBetState;
 
 /**
  * A method to clear bet history info
+ *
+ * 清除歷史紀錄
  */
 -(void)clearBetHistory;
 
 /**
  * A method to hide info view
+ *
+ * 隱藏下注資訊
  */
 -(void)hideBetInfoView;
 
 /**
  * A method to show info view
+ *
+ * 顯示下注資訊
  */
 -(void)showBetInfoView;
 
 /**
  * A method to reset current bet
+ * 
+ * 重設目前下注
  *
- * @param yesOrNo should hide bet info view or not
+ * @param yesOrNo should bet info view reset or not
  */
 -(void)resetCurrentBetWithBetInfo:(BOOL)yesOrNo;
 
 /**
  * A method to display confirm bet result
+ *
+ * 顯示目前下注結果
  */
 -(void)displayCurrentBetResult;
 
 /**
  * A method to display history bet result
  * display only if bet history is greater than 0
+ *
+ * 顯示歷史下注結果
  */
 -(void)displayHistoryBetResult;
 

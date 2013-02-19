@@ -6,19 +6,21 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 
-/**
- contain user's information that had been interpreted from server
- post notification when interpret data complete
- **/
+
 
 #import <Foundation/Foundation.h>
 #import "BaseInfo.h"
 
-/**
+/*
  * Pre-define string for notification name
  */
 __unused static NSString *UserInfoReadyNotification = @"UserInfoIsReady";
 
+/**
+ * UserInfo subclass of BaseInfo
+ * contain user's information that had been interpreted from server
+ * post notification when interpret data complete
+ */
 @interface UserInfo : BaseInfo
 
 /**

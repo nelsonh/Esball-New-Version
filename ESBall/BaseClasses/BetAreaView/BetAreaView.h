@@ -6,14 +6,7 @@
 //  Copyright (c) 2012 nelson. All rights reserved.
 //
 
-/**
- BetAreaView
- respond to ChipView's delegate
- responsible for chip view setup, disable, enable
- responsible for selected chip
- Hold UpdateInfo, UserInfo
- 
- **/
+
 
 #import <UIKit/UIKit.h>
 #import "ChipView.h"
@@ -21,7 +14,13 @@
 #import "UserInfo.h"
 #import "Constant.h"
 
-
+/**
+ * BetAreaView subclass of UIView
+ * respond to ChipView's delegate
+ * responsible for chip view setup, disable, enable
+ * responsible for selected chip
+ * Hold UpdateInfo, UserInfo
+ */
 @interface BetAreaView : UIView<ChipViewDelegate>{
     
     //selected chip

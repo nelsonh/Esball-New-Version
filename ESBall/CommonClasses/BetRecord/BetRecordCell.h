@@ -24,6 +24,8 @@
 /**
  * A method to initialize cell
  *
+ * cell 重複使用的 id
+ *
  * @param identifier id for cell
  * @return cell
  */

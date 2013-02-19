@@ -8,11 +8,15 @@
 
 #import "BaseInfo.h"
 
-/**
+/*
  * Pre-define string for notification name
  */
 __unused static NSString *MarqueeInfoReadyNotification = @"MarqueeInfoIsReady";
 
+/**
+ * MarqueeInfo subclass of BaseInfo
+ * store Marquee information
+ */
 @interface MarqueeInfo : BaseInfo
 
 /**

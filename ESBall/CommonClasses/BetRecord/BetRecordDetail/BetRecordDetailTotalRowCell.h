@@ -16,6 +16,8 @@
 /**
  * A method to initialize total bet cell
  *
+ * 初始化 total bet cell
+ *
  * @param identifier string of cell id
  * @return total bet cell
  */

@@ -53,6 +53,8 @@
 /**
  * A method ask which page of roadmap should download data from
  *
+ * 重哪一頁下載 roadmap 資料
+ *
  * @return integer page
  */
 -(NSUInteger)page;
@@ -60,11 +62,15 @@
 /**
  * A method to deselect this item
  * tell this item to not select
+ *
+ * 反選擇 item
  */
 -(void)deselectItem;
 
 /**
  * A method to update count down time
+ *
+ * 更新計時器
  *
  * @param time count down time
  */
@@ -72,21 +78,29 @@
 
 /**
  * A method to start roadmap update
+ *
+ * 開始更新 roadmap 資料
  */
 -(void)startRoadmapUpdate;
 
 /**
  * A method to stop roadmap update
+ *
+ * 停止更新 roadmap 資料
  */
 -(void)stopRoadmapUpdate;
 
 /**
  * A method to download roadmap data
+ *
+ * 下載 roadmap 資料
  */
 -(void)doPullRoadmapData;
 
 /**
  * A method to display roadmap
+ *
+ * 顯示 roadmap
  */
 -(void)displayRoadmap;
 

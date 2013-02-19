@@ -10,6 +10,10 @@
 
 #define kIconSize 120//Icon size
 
+/**
+ * LoadingHUD subclass of UIView
+ * a head up display while loading game
+ */
 @interface LoadingHUD : UIView{
     
     //loading animation 
@@ -18,6 +22,8 @@
 
 /**
  * A method to create loading HUD
+ *
+ * 建立一個 Loading HUD 畫面
  *
  * @param frame the frame for loading HUD 
  * @param animImages a set of animation images

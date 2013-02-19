@@ -2342,9 +2342,7 @@
             returnStr = [returnStr stringByAppendingString:@"0,"];
         
         if ( BP==YES )//4
-        {
             returnStr = [returnStr stringByAppendingString:@"BP,"];
-        }
         else
             returnStr = [returnStr stringByAppendingString:@"0,"];
         

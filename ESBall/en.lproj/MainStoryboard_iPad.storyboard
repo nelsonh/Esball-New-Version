@@ -8262,9 +8262,6 @@
         </class>
         <class className="DTRoadmapView" superclassName="RoadmapView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DTRoadmapView.h"/>
-            <relationships>
-                <relationship kind="action" name="playerAsk:"/>
-            </relationships>
         </class>
         <class className="DepositViewController" superclassName="MoreSectionBaseViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DepositViewController.h"/>
@@ -8396,7 +8393,6 @@
         <class className="PadLoginViewController" superclassName="BaseLoginViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PadLoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="login:"/>
                 <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
             </relationships>
