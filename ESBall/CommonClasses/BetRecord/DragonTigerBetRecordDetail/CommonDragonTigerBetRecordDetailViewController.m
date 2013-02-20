@@ -130,6 +130,27 @@
     
 }
 
+-(NSString *)gameCodeNameWithGameCode:(NSUInteger)gameCode
+{
+    /**convert game code to table name**/
+    NSString *tableName;
+    
+    switch (gameCode) {
+        case 1:
+            tableName = @"A";
+            break;
+        case 3:
+            tableName = @"B";
+            break;
+        default:
+            tableName = @"";
+            break;
+            
+    }
+    
+    return tableName;
+}
+
 -(NSString *)betTypeWithTypeNumber:(NSUInteger)betType
 {
     /*convert bet type to string*/

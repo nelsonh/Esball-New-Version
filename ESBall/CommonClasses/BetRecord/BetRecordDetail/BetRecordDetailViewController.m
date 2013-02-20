@@ -124,6 +124,7 @@ NSInteger SortRecordData(id num1, id num2, void *context)
 -(NSString *)gameCodeNameWithGameCode:(NSUInteger)gameCode
 {
     /**convert game code to table name**/
+    /*
     NSString *tableName;
     
     switch (gameCode) {
@@ -150,6 +151,8 @@ NSInteger SortRecordData(id num1, id num2, void *context)
     }
     
     return tableName;
+     */
+    return @"";
 }
 
 -(NSMutableDictionary *)convertDataWithJasonData:(NSData *)jsonData

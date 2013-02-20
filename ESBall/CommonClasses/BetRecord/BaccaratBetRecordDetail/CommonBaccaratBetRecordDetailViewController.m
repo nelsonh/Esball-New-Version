@@ -183,4 +183,51 @@
 
 }
 
+-(NSString *)gameCodeNameWithGameCode:(NSUInteger)gameCode
+{
+    NSString *tableName;
+    
+    switch (gameCode) {
+        case 1:
+            tableName = @"A";
+            break;
+        case 2:
+            tableName = @"B";
+            break;
+        case 3:
+            tableName = @"C";
+            break;
+        case 6:
+            tableName = @"D";
+            break;
+        case 7:
+            tableName = @"E";
+            break;
+        case 11:
+            tableName = @"F1";
+            break;
+        case 12:
+            tableName = @"G1";
+            break;
+        case 13:
+            tableName = @"H1";
+            break;
+        case 14:
+            tableName = @"F2";
+            break;
+        case 15:
+            tableName = @"G2";
+            break;
+        case 16:
+            tableName = @"H2";
+            break;
+            
+        default:
+            tableName = @"";
+            break;
+    }
+    
+    return tableName;
+}
+
 @end
