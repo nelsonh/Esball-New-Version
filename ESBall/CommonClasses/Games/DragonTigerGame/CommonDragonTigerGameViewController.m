@@ -671,7 +671,7 @@
         BetView *betView = (BetView *)_dtBetView;
         [betView clearBetsWithoutFinalSet];
         //[betView restoreBetToLastState];
-        //[betView clearAllBetTemp];
+        [betView clearAllBetTemp];
         
         return;
     }
