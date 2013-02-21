@@ -197,11 +197,13 @@
 
 -(IBAction)back:(id)sender
 {
-    [super back:sender];
-    
     //sound effect
     SoundManager *soundManager = [SoundManager soundManager];
     [soundManager playSoundEffectWithKey:@"SE_ButtonTap"];
+    
+    [super back:sender];
+    
+
 }
 
 -(IBAction)roadmap:(id)sender

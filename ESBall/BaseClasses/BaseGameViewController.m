@@ -165,6 +165,7 @@
 #pragma mark - public interface
 -(IBAction)back:(id)sender
 {
+    
     [self dismissGameController];
 }
 
@@ -298,6 +299,8 @@
 
 -(void)dismissGameController
 {
+    
+    
     //unload sound resources
     [self unloadSoundResource];
     
@@ -309,6 +312,11 @@
     }
     else
     {
+        //ipod
+        
+        [self.presentedViewController.presentedViewController dismissModalViewControllerAnimated:NO];
+        [self.presentedViewController dismissModalViewControllerAnimated:NO];
+        
         [self dismissModalViewControllerAnimated:YES];
     }
 
@@ -448,7 +456,7 @@
     if(noneBetRoundCount == 6 && isNoneBet5RoundAlertShowed == NO)
     {
         
-        NSString *msg = NSLocalizedString(@"您已五局未下注将於十局返回登入画面", @"您已五局未下注将於十局返回登入画面");
+        NSString *msg = NSLocalizedString(@"您已五局未下注将於十局返回游戏大厅", @"您已五局未下注将於十局返回游戏大厅");
         NSString *title = NSLocalizedString(@"-警告-", @"-警告-");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
         
@@ -464,7 +472,7 @@
     }
     else if (noneBetRoundCount == 11 && isNoneBet10RoundAlertShowed == NO)
     {
-        NSString *msg = NSLocalizedString(@"您已十局未下注，即将回登入画面", @"您已十局未下注，即将回登入画面");
+        NSString *msg = NSLocalizedString(@"您已十局未下注，即将返回游戏大厅", @"您已十局未下注，即将返回游戏大厅");
         NSString *title = NSLocalizedString(@"-警告-", @"-警告-");
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles: nil];
         

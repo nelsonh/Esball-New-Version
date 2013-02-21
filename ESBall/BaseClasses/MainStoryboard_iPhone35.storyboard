@@ -3523,7 +3523,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FRM-sP-glw">
                                         <rect key="frame" x="249" y="15" width="51" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" red="0.79265030569999995" green="0.65856512820000002" blue="0.1034196651" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="0.83834641164852997" blue="0.13838454148784718" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IK0-hz-Vkw">

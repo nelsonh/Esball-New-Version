@@ -34,6 +34,8 @@
 {
     id button = [super buttonWithType:buttonType];
     [button addTarget:button action:@selector(chipTapped) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:button action:@selector(chipTapped) forControlEvents:UIControlEventTouchUpOutside];
+
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     

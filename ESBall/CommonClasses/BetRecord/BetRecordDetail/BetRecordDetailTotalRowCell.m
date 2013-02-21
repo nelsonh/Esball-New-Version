@@ -25,9 +25,10 @@
 -(id)initWithReuseIdentifier:(NSString *)identifier
 {
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    
     if(self)
     {
-        
+         // Initialization code
     }
     
     return self;

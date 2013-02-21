@@ -5332,7 +5332,7 @@
                                         <rect key="frame" x="34" y="205" width="99" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" red="0.79265030570652173" green="0.65856512817889901" blue="0.10341966513070441" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="0.83834641164852997" blue="0.13838454148784718" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="PBW-24-lAM">

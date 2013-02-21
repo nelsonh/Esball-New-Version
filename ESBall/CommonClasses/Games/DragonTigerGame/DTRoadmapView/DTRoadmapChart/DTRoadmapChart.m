@@ -347,11 +347,19 @@
                         col=0,row=0;
                         w=20,h=21;
                         
+                        /*
                         if (lines<=33)
                             start=0;
                         else
                         {    start=lines-34;
                             lines=34;
+                        }
+                         */
+                        if (lines<=13)
+                            start=0;
+                        else
+                        {    start=lines-14;
+                            lines=14;
                         }
                         for(col=0;col<lines-1;col++)
                         {

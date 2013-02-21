@@ -88,7 +88,9 @@
 
 -(IBAction)back:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [super back:sender];
+    
+    //[self dismissModalViewControllerAnimated:YES];
     /*
      PhoneVideoSectionChangeControllerViewController  *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"phoneVideoSectionChangeViewController"];
      

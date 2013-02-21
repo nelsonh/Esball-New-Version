@@ -33,9 +33,10 @@
 -(id)initWithReuseIdentifier:(NSString *)identifier
 {
     self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
+    
     if(self)
     {
-        
+         // Initialization code
     }
     
     return self;

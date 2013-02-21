@@ -80,6 +80,7 @@ NSTimer *allCountTimer;   //選桌倒數使用
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
+        /**放開按鈕設定基本底圖**/
         [btnchang1 setImage:[UIImage imageNamed: @"bacA_btn_up.png"] forState:UIControlStateNormal];
         [btnchang2 setImage:[UIImage imageNamed: @"bacB_btn_up.png"] forState:UIControlStateNormal];
         [btnchang3 setImage:[UIImage imageNamed: @"bacC_btn_up.png"] forState:UIControlStateNormal];
@@ -93,6 +94,7 @@ NSTimer *allCountTimer;   //選桌倒數使用
         
         if (index<9 && index>0)
         {
+            /**牌路箭頭設定**/
             [changeTop setCenter:CGPointMake(160,95)] ;
             [changeBG setCenter:CGPointMake(160,103)] ;
             [changeTitle setCenter:CGPointMake(160,105)] ;
@@ -109,7 +111,7 @@ NSTimer *allCountTimer;   //選桌倒數使用
             temp= changeUnder.frame;
             [changeUnder setFrame:CGRectMake(temp.origin.x ,246.0+adjustHight, temp.size.width , temp.size.height)];
             
-            
+            /**換button位置**/
             temp=btnchang5.frame;
             [btnchang5 setFrame:CGRectMake(temp.origin.x ,260.0+adjustHight, temp.size.width , temp.size.height)];
             temp=btnchang6.frame;
@@ -125,13 +127,14 @@ NSTimer *allCountTimer;   //選桌倒數使用
         }
         if (index<=0)
         {
+            /**牌路箭頭設定**/
             [changeTop setCenter:CGPointMake(-160,95)] ;
             [changeBG setCenter:CGPointMake(-160,103)] ;
             [changeTitle setCenter:CGPointMake(-160,105)] ;
             [changeFront setCenter:CGPointMake(-160,127)] ;
             [changeUnder setCenter:CGPointMake(-160,246)] ;
             
-            
+            /**換button位置**/
             temp=btnchang1.frame;
             [btnchang1 setFrame:CGRectMake(temp.origin.x ,14+adjustHight, temp.size.width , temp.size.height)];
             temp=btnchang2.frame;
@@ -401,6 +404,7 @@ NSTimer *allCountTimer;   //選桌倒數使用
     }
     else
     {
+        /**圖片設製**/
         [btnchang1 setImage:[UIImage imageNamed: @"BaccaratA@2x.png"] forState:UIControlStateNormal];
         [btnchang2 setImage:[UIImage imageNamed: @"BaccaratB@2x.png"] forState:UIControlStateNormal];
         [btnchang3 setImage:[UIImage imageNamed: @"BaccaratC@2x.png"] forState:UIControlStateNormal];
@@ -413,7 +417,7 @@ NSTimer *allCountTimer;   //選桌倒數使用
         // [btnchang10 setImage:[UIImage imageNamed: @"bacA_btn_up.png"] forState:UIControlStateNormal];
         
         
-        
+        /**牌路底圖設定**/
         switch (index) {
             case 1:
                 strUrl = [NSString stringWithFormat:@"http://183.182.66.167/3001/%@/0/0.htm" ,@"a"] ;
