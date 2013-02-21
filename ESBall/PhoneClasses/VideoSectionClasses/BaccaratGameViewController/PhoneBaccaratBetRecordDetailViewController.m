@@ -47,7 +47,7 @@
     self.roundNumberLabel.text = [detailRecord objectForKey:@"RoundSerial"];
     
     NSArray *splited = [[detailRecord objectForKey:@"WagersDate"] componentsSeparatedByString:@" "];
-    self.dateTimeLabel.text = [splited objectAtIndex:0];
+    self.dateTimeLabel.text = [splited objectAtIndex:1];
     
     self.commentLabel.text = nil;
     
