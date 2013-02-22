@@ -231,4 +231,19 @@
  */
 -(NSUInteger)numberOfRoundToDisableBetSquare;
 
+/**
+ * A method to disable all bet sqaures
+ *
+ * 關閉所有的下注按鈕
+ */
+-(void)disableAllBetSquares;
+
+/**
+ * A method to enable all bet sqaures
+ *
+ * 開啟所有的下注按鈕
+ */
+-(void)enableAllBetSquares;
+
+
 @end

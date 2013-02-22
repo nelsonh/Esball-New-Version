@@ -50,6 +50,10 @@
     //video ip where to get video image from
     NSString *videoIPStr;
     
+    //determind if there is a bet confrim by player
+    //must set yes if player do confirm bet
+    BOOL isBetConfirm;
+    
 }
 
 @property (nonatomic, weak) IBOutlet UILabel *userAccountLabel;

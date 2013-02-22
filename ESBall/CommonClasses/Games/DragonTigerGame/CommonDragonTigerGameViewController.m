@@ -318,6 +318,11 @@
         //clear bet
         [betView clearAllBetsWithHideInfo:NO WithHistory:NO];
         
+        isBetConfirm = YES;
+        self.betConfirmButton.enabled = NO;
+        
+        [betView disableAllBetSquares];
+        
         /*
         //display total bet this round
         double totalBet = [self totalBetWithInfos:betInfos];
@@ -499,6 +504,18 @@
         [soundManager playSoundEffectWithKey:@"SE_CountDown"];
     }
     
+    //new round
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
+    {
+        [_dtBetView enableAllBetSquares];
+        
+        if(self.detailButton.highlighted == NO && self.recordButton.highlighted == NO)
+        {
+            self.clearBetButton.enabled = YES;
+            self.betConfirmButton.enabled = YES;
+        }
+    }
+    
     if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])
     {
         [_dtBetView clearBetsWithoutFinalSet];
@@ -589,11 +606,16 @@
         
         //_changeTableButton.enabled = YES;
         //_detailButton.enabled = YES;
-        if(self.detailButton.highlighted == NO && self.recordButton.highlighted == NO)
+        
+        if(isBetConfirm == NO)
         {
-            self.clearBetButton.enabled = YES;
-            self.betConfirmButton.enabled = YES;
+            if(self.detailButton.highlighted == NO && self.recordButton.highlighted == NO)
+            {
+                self.clearBetButton.enabled = YES;
+                self.betConfirmButton.enabled = YES;
+            }
         }
+
         
     }
     
@@ -662,21 +684,26 @@
 {
     BetRespondInfo *info = notification.object;
     
-    if([info.error isEqualToString:@"BET_FAILED"] || [info.error isEqualToString:@"UNDER_MIN"])
+    BetView *betView = (BetView *)_dtBetView;
+    [betView enableAllBetSquares];
+    
+    if(info.error!=nil)
     {
         NSString *msg = NSLocalizedString(@"下注失败", @"下注失败");
         UIAlertView *betFailAlertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
         [betFailAlertView show];
         
-        BetView *betView = (BetView *)_dtBetView;
+        //BetView *betView = (BetView *)_dtBetView;
         [betView clearBetsWithoutFinalSet];
         //[betView restoreBetToLastState];
         [betView clearAllBetTemp];
         
+        isBetConfirm = NO;
+        
         return;
     }
     
-    BetView *betView = (BetView *)_dtBetView;
+    
     
     [betView applyAllBets];
     
@@ -700,6 +727,8 @@
     
     //reset none bet round count
     noneBetRoundCount = 0;
+    
+    isBetConfirm = NO;
     
 }
 

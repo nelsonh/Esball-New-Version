@@ -485,6 +485,36 @@
         return NO;
 }
 
+-(void)disableAllBetSquares
+{
+    _betSquare1.enabled = NO;
+    _betSquare2.enabled = NO;
+    _betSquare3.enabled = NO;
+    _betSquare4.enabled = NO;
+    _betSquare5.enabled = NO;
+    _betSquare6.enabled = NO;
+    _betSquare7.enabled = NO;
+    _betSquare8.enabled = NO;
+    _betSquare9.enabled = NO;
+    _betSquare10.enabled = NO;
+    _betSquare11.enabled = NO;
+}
+
+-(void)enableAllBetSquares
+{
+    _betSquare1.enabled = YES;
+    _betSquare2.enabled = YES;
+    _betSquare3.enabled = YES;
+    _betSquare4.enabled = YES;
+    _betSquare5.enabled = YES;
+    _betSquare6.enabled = YES;
+    _betSquare7.enabled = YES;
+    _betSquare8.enabled = YES;
+    _betSquare9.enabled = YES;
+    _betSquare10.enabled = YES;
+    _betSquare11.enabled = YES;
+}
+
 #pragma mark - Square result
 -(void)showResult
 {

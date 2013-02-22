@@ -588,6 +588,16 @@
         //clear bet
         [betView clearAllBetsWithHideInfo:NO WithHistory:NO];
         
+        //set yes, player do tapped bet confirm
+        isBetConfirm = YES;
+        
+        //also disable bet confirm button
+        _betConfirmButton.enabled = NO;
+        
+        //disable all bet squares in bet view
+        [betView disableAllBetSquares];
+        
+        
         /*
         //display total bet this round
         double totalBet = [self totalBetWithInfos:betInfos];
@@ -861,6 +871,22 @@
         [soundManager playSoundEffectWithKey:@"SE_CountDown"];
     }
     
+    //new round
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
+    {
+        //enable all bet squares
+        [_betAreaView enableAllBetSquares];
+        
+        if(_detailButton.highlighted == NO && _recordButton.highlighted == NO)
+        {
+            //enable clear bet button
+            _clearBetButton.enabled = YES;
+            
+            //enable bet confirm button
+            _betConfirmButton.enabled = YES;
+        }
+    }
+    
     //clear bet
     if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])
     {
@@ -954,12 +980,16 @@
         //_changeTableButton.enabled = YES;
         //_detailButton.enabled = YES;
         
-        if(_detailButton.highlighted == NO && _recordButton.highlighted == NO)
+        //if isBetConfirm is NO then check if we need to enable buttons
+        if(isBetConfirm == NO)
         {
-            _clearBetButton.enabled = YES;
-            _betConfirmButton.enabled = YES;
+            if(_detailButton.highlighted == NO && _recordButton.highlighted == NO)
+            {
+                _clearBetButton.enabled = YES;
+                _betConfirmButton.enabled = YES;
+            }
         }
-        
+
     }
     
     //new round
@@ -1026,22 +1056,31 @@
 {
     BetRespondInfo *info = notification.object;
     
+    BetView *betView = (BetView *)_betAreaView;
+    //enable all bet squares
+    [betView enableAllBetSquares];
+    
     //if bet respond fail
-    if([info.error isEqualToString:@"BET_FAILED"] || [info.error isEqualToString:@"UNDER_MIN"])
+    if(info.error!=nil)
     {
         NSString *msg = NSLocalizedString(@"下注失败", @"下注失败");
         UIAlertView *betFailAlertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
         [betFailAlertView show];
         
-        BetView *betView = (BetView *)_betAreaView;
+        //BetView *betView = (BetView *)_betAreaView;
         [betView clearBetsWithoutFinalSet];
         //[betView restoreBetToLastState];
         [betView clearAllBetTemp];
         
+        //bet respond back now it is safe to set bet confirm to no
+        //we don't need to enable bet confirm button because UpdateInfo method
+        //will handle it
+        isBetConfirm = NO;
+        
         return;
     }
     
-    BetView *betView = (BetView *)_betAreaView;
+    
     
     //apply pending bets
     [betView applyAllBets];
@@ -1067,7 +1106,10 @@
     //reset none bet round count
     noneBetRoundCount = 0;
     
-    
+    //bet respond back now it is safe to set bet confirm to no
+    //we don't need to enable bet confirm button because UpdateInfo method
+    //will handle it
+    isBetConfirm = NO;
     
 }
 
