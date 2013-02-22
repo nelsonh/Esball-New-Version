@@ -100,6 +100,9 @@
 
 -(void)PostBeginSetup
 {
+    //Video IP
+    int videoTableNumber = 1;
+    videoIPStr = [self videoIpAddressWithGameShortName:@"DT" withTableNumber:videoTableNumber];
     
     [self loadVideoImage];
     
@@ -124,9 +127,7 @@
     _dtBetView.chipSize = kChipSize;
      */
     
-    //Video IP
-    int videoTableNumber = 1;
-    videoIPStr = [self videoIpAddressWithGameShortName:@"DT" withTableNumber:videoTableNumber];
+
 }
 
 //phone need to override

@@ -265,6 +265,11 @@
 //phone need to override
 -(void)PostBeginSetup
 {
+    
+    //Video IP
+    int videoTableNumber = self.tableNumber+1;
+    videoIPStr = [self videoIpAddressWithGameShortName:@"BC" withTableNumber:videoTableNumber];
+    
     //start to get video image
     [self loadVideoImage];
     
@@ -290,9 +295,7 @@
     _betAreaView.chipSize = kChipSize;
      */
     
-    //Video IP
-    int videoTableNumber = self.tableNumber+1;
-    videoIPStr = [self videoIpAddressWithGameShortName:@"BC" withTableNumber:videoTableNumber];
+
     
 }
 
