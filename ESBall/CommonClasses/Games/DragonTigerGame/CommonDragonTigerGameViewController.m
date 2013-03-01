@@ -457,6 +457,17 @@
         }
     }
     
+    if(filtedChipList.count > 5)
+    {
+        self.leftArrow.hidden = NO;
+        self.rightArrow.hidden = NO;
+    }
+    else
+    {
+        self.leftArrow.hidden = YES;
+        self.rightArrow.hidden = YES;
+    }
+    
     _dtBetView.chips = filtedChipList;
     _dtBetView.userInfo = info;
 
@@ -508,12 +519,26 @@
     //new round
     if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
     {
+        //clean total bet
+        self.totalBetLabel.text = @"0.00";
+        
+        //tell roadmap stop asking
+        [_dtRoadmap stopAsking];
+        
         [_dtBetView enableAllBetSquares];
         
         if(self.detailButton.highlighted == NO && self.recordButton.highlighted == NO)
         {
             self.clearBetButton.enabled = YES;
             self.betConfirmButton.enabled = YES;
+        }
+        
+        //update roadmapView smooth
+        if(!_dtRoadmap.hidden)
+        {
+            _dtRoadmap.gameType = updateInfo.gameType;
+            _dtRoadmap.gameCodeName = updateInfo.gameCodeName;
+            [_dtRoadmap updateView];
         }
     }
     
@@ -574,6 +599,7 @@
         [self performSelector:@selector(playSoundOfFinalPointForDragon) withObject:nil afterDelay:0.0f];
         [self performSelector:@selector(playSoundOfFinalPointForTiger) withObject:nil afterDelay:3.0f];
         [self performSelector:@selector(playSoundOfWinLoseOrTie) withObject:nil afterDelay:6.0f];
+        
     }
     
     //_dtPokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
@@ -595,7 +621,7 @@
     {
         _dtPokerView.visibility = NO;
         
-        
+        /*
         //update roadmapView smooth
         if(!_dtRoadmap.hidden)
         {
@@ -603,7 +629,7 @@
             _dtRoadmap.gameCodeName = updateInfo.gameCodeName;
             [_dtRoadmap updateView];
         }
-        
+        */
         
         //_changeTableButton.enabled = YES;
         //_detailButton.enabled = YES;
@@ -618,16 +644,6 @@
         }
 
         
-    }
-    
-    //new round
-    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
-    {
-        //clean total bet
-        self.totalBetLabel.text = @"0.00";
-        
-        //tell roadmap stop asking
-        [_dtRoadmap stopAsking];
     }
     
     if([info.status isEqualToString:GameStatusBetting])

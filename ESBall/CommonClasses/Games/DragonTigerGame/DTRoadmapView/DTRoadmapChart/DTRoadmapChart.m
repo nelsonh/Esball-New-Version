@@ -147,6 +147,16 @@
         NSArray *allLines =[roadmapData[i] componentsSeparatedByString: @"\n"];
         int lines= [ allLines count]-2;
         
+        //Dragon tiger only have 5 data row but we need to draw 6 content
+        //before it drawing 6 content we make lines to positive value so it can pass condition
+        if([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+        {
+            if(i == 6)
+            {
+                lines = 1;
+            }
+        }
+        
         if (lines>0)
             switch (i) {
                     
@@ -575,10 +585,74 @@
                             
                             [tmpimg drawInRect: CGRectMake(1+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
                             
-                        }}
-                    else {
+                        }
+                    }
+                    else
+                    {
+                        allLines =[roadmapData[i-1] componentsSeparatedByString: @"\n"];
+                        int lines= [ allLines count]-2;
                         
-                        allLines =[roadmapData[i] componentsSeparatedByString: @"\n"];
+                        col=0,row=0;
+                        w=23.8,h=21.2;
+                        
+                        if (lines<=13)
+                            start=0;
+                        else
+                        {    start=lines-14;
+                            lines=14;
+                        }
+                        for(col=0;col<lines-1;col++)
+                        {
+                            NSArray *allrows =[[allLines objectAtIndex:col+1+start] componentsSeparatedByString: @":"];
+                            //NSLog([allrows objectAtIndex:1],nil);
+                            allrows=[[allrows objectAtIndex:1] componentsSeparatedByString: @";"];
+                            
+                            for(row=0;row<6;row++)
+                            {   NSArray *data =[[allrows objectAtIndex:row] componentsSeparatedByString: @","];
+                                if ([[data objectAtIndex:0] intValue]==1)
+                                    [zingPlayer drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                else if ([[data objectAtIndex:0] intValue]==2)
+                                    [zingBanker drawInRect: CGRectMake(2+col*w, 2+row*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                                
+                            }
+                        }
+                    }
+                    
+                    break;
+                    
+                case 6:
+                    
+                    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+                    {
+                        col=0,row=0;
+                        w=20,h=21;
+                        if (lines<0)
+                        { break;}
+                        allLines =[[allLines objectAtIndex:1] componentsSeparatedByString: @":"];
+                        if (allLines.count<2)
+                            break;
+                        
+                        allLines=[[allLines objectAtIndex:1] componentsSeparatedByString: @";"];
+                        
+                        for(col=0;col<[allLines count]-1;col++)
+                        {   NSArray *data =[[allLines objectAtIndex:col] componentsSeparatedByString: @","];
+                            UIImage *tmpimg ;
+                            if ([[data objectAtIndex:0] intValue]==1)
+                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"DTrou_Y_Tiger.png"] ];
+                            if ([[data objectAtIndex:0] intValue]==2)
+                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"DTrou_R_Dragon.png"] ];
+                            if([[data objectAtIndex:0] intValue]==0)
+                                tmpimg= [UIImage imageNamed:[NSString stringWithFormat:@"DTrou_G_Tie.png"] ];
+                            
+                            [tmpimg drawInRect: CGRectMake(1+(int)col/6*w, 2+((int)col%6)*h,18, 18) blendMode:kCGBlendModeNormal alpha:1.0f];
+                            
+                        }
+                    }
+                    else
+                    {
+                        //we minus 1 to get data for content 6
+                        //Dragon tiger data has only 5 row
+                        allLines =[roadmapData[i-1] componentsSeparatedByString: @"\n"];
                         col=0,row=0;
                         w=23.8,h=21.2;
                         
@@ -652,6 +726,7 @@
                          }
                          */
                     }
+                    
                     break;
                     
                 default:

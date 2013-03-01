@@ -35,6 +35,13 @@
 @synthesize playerAskButton = _playerAskButton;
 @synthesize backgroundImageView = _backgroundImageView;
 
+@synthesize playerFirstAskingImage = _playerFirstAskingImage;
+@synthesize playerSecondAskingImage = _playerSecondAskingImage;
+@synthesize playerThirdAskingImage = _playerThirdAskingImage;
+@synthesize bankerFirstAskingImage = _bankerFirstAskingImage;
+@synthesize bankerSecondAskingImage = _bankerSecondAskingImage;
+@synthesize bankerThirdAskingImage = _bankerThirdAskingImage;
+
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -69,9 +76,42 @@
 }
 
 #pragma mark - public interface
+-(NSString *)playerFirstAskingImageName
+{
+    return @"";
+}
+
+-(NSString *)playerSecondAskingImageName
+{
+    return @"";
+}
+
+-(NSString *)playerThirdAskingImageName
+{
+    return @"";
+}
+
+-(NSString *)bankerFirstAskingImageName
+{
+    return @"";
+}
+
+-(NSString *)bankerSecondAskingImageName
+{
+    return @"";
+}
+
+-(NSString *)bankerThirdAskingImageName
+{
+    return @"";
+}
+
 -(void)updateView
 {
     [self updateScore];
+    
+    //update predicate roadmap
+    [self updatePredicateRoadmap];
     
     //if ask enabled let ask to update view
     if(playerAskEnabled || bankerAskEnabled)
@@ -92,8 +132,6 @@
         updateCount++;
     }
     
-
-
 }
 
 -(void)stopUpdate
@@ -110,7 +148,6 @@
     updateCount = 0;
 }
 
-#pragma mark - internal
 -(void)updateScore
 {
     NSError *error;
@@ -135,6 +172,7 @@
     _playerScoreLabel.text = [NSString stringWithFormat:@"%i", [[scores objectAtIndex:1] intValue]];
     _tieScoreLabel.text = [NSString stringWithFormat:@"%i", [[scores objectAtIndex:2] intValue]];
 
+    //NSLog(@"update score");
 }
 
 -(void)stopAsking
@@ -233,13 +271,13 @@
         return;
     
     if(currentMethod!=methodForAsk)
-        currentMethod = methodForAsk;
+        currentMethod = methodForAsk;//draw asking one
     else
-        currentMethod = 0;
+        currentMethod = 0;//draw normal one
     
     //_roadmapChart.method = [NSString stringWithFormat:@"%i", methodForAsk];
     //[self updateView];
-    [self updateScore];
+    //[self updateScore];
     
     [_roadmapChart initilizeWithDelegate:self];
     _roadmapChart.table = _gameCodeName;
@@ -247,6 +285,311 @@
     _roadmapChart.redrawRoadmap = YES;
     [_roadmapChart updateView];
     
+}
+
+-(void)updatePredicateRoadmap
+{
+    [self updatePredicateBankerRoadmap];
+    [self updatePredicatePlayerRoadmap];
+}
+
+-(void)updatePredicateBankerRoadmap
+{
+    FileFinder *filefinder = [FileFinder fileFinder];
+    
+    NSError *error;
+    NSString *strUrl;
+    NSString *roadmapData[7];
+    
+    //clear old image
+    _bankerFirstAskingImage.image = nil;
+    _bankerSecondAskingImage.image = nil;
+    _bankerThirdAskingImage.image = nil;
+    
+    //get roadmap data
+    for(int j=0;j<3;j++)
+    {
+        for (int i = 1; i <= 6; i++)
+        {
+            
+            if (i==5||i==6)
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/%i/%@/%i/0.htm" , _gameType, _gameCodeName, i-1];
+            else
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/%i/%@/%i/%i.htm" , _gameType, _gameCodeName, i-1, j];
+            
+            //  NSLog(strUrl);
+            NSURL *url = [NSURL URLWithString:strUrl];
+            allRoadmapData[i+j*6]= [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];
+        }
+    }
+    
+    //extract predicate roadmap
+    for (int i = 1; i <= 6; i++)
+	{
+        if (i==5||i==6)
+            roadmapData[i] = allRoadmapData[i+1*6];//1 method for banker
+        else
+            roadmapData[i] = allRoadmapData[i+1*6];//1 method for banker
+    }
+    
+    //first predication
+    int mark = 0;
+    //the data we inerested is at index 2
+    NSArray *splited = [roadmapData[2] componentsSeparatedByString:@"\n"];
+    mark = [self numberForPredicateRoadmapWithDataArray:splited];
+    
+    switch (mark)
+    {
+        case 0:
+            
+            _bankerFirstAskingImage.image = nil;
+            
+            break;
+            
+        case 1:
+            
+            _bankerFirstAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self bankerFirstAskingImageName]]];
+            
+            break;
+            
+        case 2:
+            
+            _bankerFirstAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self playerFirstAskingImageName]]];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
+    
+    //second predication
+    mark = 0;
+    //the data we inerested is at index 3
+    splited = [roadmapData[3] componentsSeparatedByString:@"\n"];
+    mark = [self numberForPredicateRoadmapWithDataArray:splited];
+    
+    switch (mark)
+    {
+        case 0:
+            
+            _bankerSecondAskingImage.image = nil;
+            
+            break;
+            
+        case 1:
+            
+            _bankerSecondAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self bankerSecondAskingImageName]]];
+            
+            break;
+            
+        case 2:
+            
+            _bankerSecondAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self playerSecondAskingImageName]]];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    //third predication
+    mark = 0;
+    //the data we inerested is at index 4
+    splited = [roadmapData[4] componentsSeparatedByString:@"\n"];
+    mark = [self numberForPredicateRoadmapWithDataArray:splited];
+    
+    switch (mark)
+    {
+        case 0:
+            
+            _bankerThirdAskingImage.image = nil;
+            
+            break;
+            
+        case 1:
+            
+            _bankerThirdAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self bankerThirdAskingImageName]]];
+            
+            break;
+            
+        case 2:
+            
+            _bankerThirdAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self playerThirdAskingImageName]]];
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)updatePredicatePlayerRoadmap
+{
+    FileFinder *filefinder = [FileFinder fileFinder];
+    
+    NSError *error;
+    NSString *strUrl;
+    NSString *roadmapData[7];
+    
+    _playerFirstAskingImage.image = nil;
+    _playerSecondAskingImage.image = nil;
+    _playerThirdAskingImage.image = nil;
+    
+    for(int j=0;j<3;j++)
+    {
+        for (int i = 1; i <= 6; i++)
+        {
+            
+            if (i==5||i==6)
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/%i/%@/%i/0.htm" , _gameType, _gameCodeName, i-1];
+            else
+                strUrl = [NSString stringWithFormat:@"http://183.182.66.167/%i/%@/%i/%i.htm" , _gameType, _gameCodeName, i-1, j];
+            
+            //  NSLog(strUrl);
+            NSURL *url = [NSURL URLWithString:strUrl];
+            allRoadmapData[i+j*6]= [NSString stringWithContentsOfURL:url encoding:NSASCIIStringEncoding error:&error];
+        }
+    }
+    
+    for (int i = 1; i <= 6; i++)
+	{
+        if (i==5||i==6)
+            roadmapData[i] = allRoadmapData[i+2*6];//2 method for player
+        else
+            roadmapData[i] = allRoadmapData[i+2*6];//2 method for player
+    }
+    
+    //first
+    int mark = 0;
+    NSArray *splited = [roadmapData[2] componentsSeparatedByString:@"\n"];
+    mark = [self numberForPredicateRoadmapWithDataArray:splited];
+    
+    switch (mark)
+    {
+        case 0:
+            
+            _playerFirstAskingImage.image = nil;
+            
+            break;
+            
+        case 1:
+            
+            _playerFirstAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self bankerFirstAskingImageName]]];
+            
+            break;
+            
+        case 2:
+            
+            _playerFirstAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self playerFirstAskingImageName]]];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    
+    
+    //second
+    mark = 0;
+    splited = [roadmapData[3] componentsSeparatedByString:@"\n"];
+    mark = [self numberForPredicateRoadmapWithDataArray:splited];
+    
+    switch (mark)
+    {
+        case 0:
+            
+            _playerSecondAskingImage.image = nil;
+            
+            break;
+            
+        case 1:
+            
+            _playerSecondAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self bankerSecondAskingImageName]]];
+            
+            break;
+            
+        case 2:
+            
+            _playerSecondAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self playerSecondAskingImageName]]];
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+    //third
+    mark = 0;
+    splited = [roadmapData[4] componentsSeparatedByString:@"\n"];
+    mark = [self numberForPredicateRoadmapWithDataArray:splited];
+    
+    switch (mark)
+    {
+        case 0:
+            
+            _playerThirdAskingImage.image = nil;
+            
+            break;
+            
+        case 1:
+            
+            _playerThirdAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self bankerThirdAskingImageName]]];
+            
+            break;
+            
+        case 2:
+            
+            _playerThirdAskingImage.image = [UIImage imageWithContentsOfFile:[filefinder findPathForFileWithFileName:[self playerThirdAskingImageName]]];
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(int)numberForPredicateRoadmapWithDataArray:(NSArray *)splited
+{
+    int mark = 0;
+    
+    //if there is no data
+    if(splited.count != 3)
+    {
+        //get last one data index there are 3 extra info we don't need
+        int dataIndex = splited.count-3;
+        
+        //get last roadmap data and split it into array
+        NSArray *splitedRowData = [[splited objectAtIndex:dataIndex] componentsSeparatedByString:@":"];
+        splitedRowData = [[splitedRowData objectAtIndex:1] componentsSeparatedByString:@";"];
+        
+        //go through array to find out predicate one
+        //-1 there is one info at end and we don't need
+        for(int i = splitedRowData.count-1; i >= 0; i--)
+        {
+            NSString *data = [splitedRowData objectAtIndex:i];
+            
+            NSArray *splited = [data componentsSeparatedByString:@","];
+            
+            //we only interested in first element
+            int intMark = [[splited objectAtIndex:0] intValue];
+            
+            //if it is not 0 then we found
+            if(intMark != 0)
+            {
+                mark = intMark;
+                
+                return mark;
+            }
+        }
+    }
+    
+    return mark;
+
 }
 
 #pragma mark - RoadmapDataView delegate

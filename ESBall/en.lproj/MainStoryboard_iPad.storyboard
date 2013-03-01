@@ -4487,7 +4487,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UjR-tN-DcP">
-                                        <rect key="frame" x="885" y="113" width="57" height="33"/>
+                                        <rect key="frame" x="885" y="117" width="57" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="askD_btn_up.png">
@@ -4502,7 +4502,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tTS-G8-ZRZ">
-                                        <rect key="frame" x="952" y="113" width="57" height="33"/>
+                                        <rect key="frame" x="952" y="117" width="57" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="askT_btn_up.png">
@@ -4516,15 +4516,45 @@
                                             <action selector="bankerAsk:" destination="tQf-mS-Qa4" eventType="touchUpInside" id="Rrx-0H-J64"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="HaB-36-YQB">
+                                        <rect key="frame" x="903" y="48" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="6LV-bc-EY1">
+                                        <rect key="frame" x="903" y="72" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="WlR-Eb-scs">
+                                        <rect key="frame" x="903" y="96" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="32O-IU-npw">
+                                        <rect key="frame" x="967" y="48" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="yUJ-ha-bNC">
+                                        <rect key="frame" x="967" y="72" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="FEw-QO-dO6">
+                                        <rect key="frame" x="967" y="96" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="BCo-RJ-zr7" id="UC9-OP-wJB"/>
                                     <outlet property="bankerAskButton" destination="tTS-G8-ZRZ" id="8Oi-sh-Mn3"/>
+                                    <outlet property="bankerFirstAskingImage" destination="32O-IU-npw" id="4o1-cj-rBA"/>
                                     <outlet property="bankerScoreLabel" destination="1d0-KM-ntx" id="PWY-gg-H2j"/>
+                                    <outlet property="bankerSecondAskingImage" destination="yUJ-ha-bNC" id="Bvi-LQ-5Xe"/>
+                                    <outlet property="bankerThirdAskingImage" destination="FEw-QO-dO6" id="VaJ-1J-QPC"/>
                                     <outlet property="pageControl" destination="fTw-Tc-u24" id="77Z-qr-0IX"/>
                                     <outlet property="playerAskButton" destination="UjR-tN-DcP" id="PWf-NY-TeR"/>
+                                    <outlet property="playerFirstAskingImage" destination="HaB-36-YQB" id="nvk-Y6-wHg"/>
                                     <outlet property="playerScoreLabel" destination="dlC-PG-t6X" id="eRM-eA-yTh"/>
+                                    <outlet property="playerSecondAskingImage" destination="6LV-bc-EY1" id="bC2-oo-ZEp"/>
+                                    <outlet property="playerThirdAskingImage" destination="WlR-Eb-scs" id="BzU-EW-kZi"/>
                                     <outlet property="roadmapChart" destination="pqy-T1-Ysa" id="VJL-SU-bTI"/>
                                     <outlet property="tieScoreLabel" destination="a7w-Z1-Ewd" id="ABi-tl-Dft"/>
                                 </connections>
@@ -4661,6 +4691,46 @@
                                     <action selector="clearBet:" destination="aa9-v6-k6a" eventType="touchUpInside" id="2e0-JL-b3d"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" id="FSZ-GM-Rgp" customClass="PadDragonTigerPokerView">
+                                <rect key="frame" x="688" y="61" width="295" height="356"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="DTdeal_bg@2x.png" id="Sqq-EO-qlE">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="356"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2vj-1B-Ioz">
+                                        <rect key="frame" x="34" y="36" width="99" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ui3-kk-EiS">
+                                        <rect key="frame" x="34" y="205" width="99" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <color key="textColor" red="1" green="0.83834641164852997" blue="0.13838454148784718" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="PBW-24-lAM">
+                                        <rect key="frame" x="150" y="20" width="125" height="144"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="dsO-Eg-CWo">
+                                        <rect key="frame" x="150" y="192" width="125" height="144"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="backgroundImageView" destination="Sqq-EO-qlE" id="PEx-V8-hBZ"/>
+                                    <outlet property="dragonCard" destination="PBW-24-lAM" id="waP-CM-uqf"/>
+                                    <outlet property="dragonPointLabel" destination="2vj-1B-Ioz" id="LdZ-du-F8k"/>
+                                    <outlet property="tigerCard" destination="dsO-Eg-CWo" id="vE3-O2-nw3"/>
+                                    <outlet property="tigerPointLabel" destination="ui3-kk-EiS" id="n7i-8E-e7q"/>
+                                </connections>
+                            </view>
                             <view contentMode="scaleToFill" id="sRy-nN-ubV" customClass="DTBetView">
                                 <rect key="frame" x="20" y="425" width="984" height="194"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -5313,46 +5383,6 @@
                                 <rect key="frame" x="279" y="619" width="456" height="78"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
-                            <view hidden="YES" contentMode="scaleToFill" id="FSZ-GM-Rgp" customClass="PadDragonTigerPokerView">
-                                <rect key="frame" x="688" y="61" width="295" height="356"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="DTdeal_bg@2x.png" id="Sqq-EO-qlE">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="356"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2vj-1B-Ioz">
-                                        <rect key="frame" x="34" y="36" width="99" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ui3-kk-EiS">
-                                        <rect key="frame" x="34" y="205" width="99" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <color key="textColor" red="1" green="0.83834641164852997" blue="0.13838454148784718" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="PBW-24-lAM">
-                                        <rect key="frame" x="150" y="20" width="125" height="144"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="dsO-Eg-CWo">
-                                        <rect key="frame" x="150" y="192" width="125" height="144"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="backgroundImageView" destination="Sqq-EO-qlE" id="PEx-V8-hBZ"/>
-                                    <outlet property="dragonCard" destination="PBW-24-lAM" id="waP-CM-uqf"/>
-                                    <outlet property="dragonPointLabel" destination="2vj-1B-Ioz" id="LdZ-du-F8k"/>
-                                    <outlet property="tigerCard" destination="dsO-Eg-CWo" id="vE3-O2-nw3"/>
-                                    <outlet property="tigerPointLabel" destination="ui3-kk-EiS" id="n7i-8E-e7q"/>
-                                </connections>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o3K-mv-bRc">
                                 <rect key="frame" x="101" y="716" width="73" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -5438,6 +5468,14 @@
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow_left.png" id="TbR-Ta-0gP">
+                                <rect key="frame" x="193" y="619" width="78" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow_right.png" id="SM7-Hr-0bQ">
+                                <rect key="frame" x="743" y="619" width="78" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -5458,8 +5496,10 @@
                         <outlet property="dtRoadmap" destination="tQf-mS-Qa4" id="oT5-sX-Kc3"/>
                         <outlet property="gameCodeNameLabel" destination="vkg-Iy-Khl" id="bBx-db-x3h"/>
                         <outlet property="gameNumberLabel" destination="SpO-HC-Bgb" id="jVw-Dl-vhc"/>
+                        <outlet property="leftArrow" destination="TbR-Ta-0gP" id="PxW-3S-Vxf"/>
                         <outlet property="promptMsgView" destination="NTf-Pp-nxk" id="G77-Wu-Cf0"/>
                         <outlet property="recordButton" destination="o3K-mv-bRc" id="nmu-z6-jmy"/>
+                        <outlet property="rightArrow" destination="SM7-Hr-0bQ" id="tle-0d-0qk"/>
                         <outlet property="roadmapButton" destination="mqs-cA-OjY" id="l9y-nf-b2v"/>
                         <outlet property="totalBetLabel" destination="CmX-ux-hgM" id="Rac-Mn-PB5"/>
                         <outlet property="userAccountLabel" destination="FDI-is-nOw" id="2yI-10-rJP"/>
@@ -5498,7 +5538,7 @@
                                 <rect key="frame" x="0.0" y="60" width="1024" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="ZQK-5K-HH0">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Route_bg@2x.png" id="ZQK-5K-HH0">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="172"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
@@ -5532,7 +5572,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9cn-1v-t08">
-                                        <rect key="frame" x="885" y="113" width="57" height="33"/>
+                                        <rect key="frame" x="885" y="117" width="57" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="askP_btn_up.png">
@@ -5547,7 +5587,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hyG-Yl-goD">
-                                        <rect key="frame" x="952" y="113" width="57" height="33"/>
+                                        <rect key="frame" x="952" y="117" width="57" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="askB_btn_up.png">
@@ -5561,15 +5601,45 @@
                                             <action selector="bankerAsk:" destination="Cfl-KB-QdP" eventType="touchUpInside" id="97q-hy-17R"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="igm-LI-vfT">
+                                        <rect key="frame" x="904" y="51" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="egE-l3-ZWb">
+                                        <rect key="frame" x="904" y="74" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="3ED-qX-7Ld">
+                                        <rect key="frame" x="904" y="96" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="NYR-hV-sE1">
+                                        <rect key="frame" x="967" y="51" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="7f5-lp-O5T">
+                                        <rect key="frame" x="967" y="74" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="0Sg-cq-FkL">
+                                        <rect key="frame" x="967" y="96" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="ZQK-5K-HH0" id="ZhT-y7-mBH"/>
                                     <outlet property="bankerAskButton" destination="hyG-Yl-goD" id="heU-Vt-DXk"/>
+                                    <outlet property="bankerFirstAskingImage" destination="NYR-hV-sE1" id="GRp-ex-qif"/>
                                     <outlet property="bankerScoreLabel" destination="3MM-K9-h4b" id="3ED-DN-Cmd"/>
+                                    <outlet property="bankerSecondAskingImage" destination="7f5-lp-O5T" id="yBD-w3-lih"/>
+                                    <outlet property="bankerThirdAskingImage" destination="0Sg-cq-FkL" id="cVk-iY-lHd"/>
                                     <outlet property="pageControl" destination="SFg-QT-8p5" id="8RA-BO-jBS"/>
                                     <outlet property="playerAskButton" destination="9cn-1v-t08" id="Rqc-Nc-6kq"/>
+                                    <outlet property="playerFirstAskingImage" destination="igm-LI-vfT" id="Por-m1-uZ1"/>
                                     <outlet property="playerScoreLabel" destination="n1j-RC-ji3" id="KP9-wN-OnB"/>
+                                    <outlet property="playerSecondAskingImage" destination="egE-l3-ZWb" id="BuI-cI-oBO"/>
+                                    <outlet property="playerThirdAskingImage" destination="3ED-qX-7Ld" id="pcF-eW-Aii"/>
                                     <outlet property="roadmapChart" destination="sEt-kI-zuE" id="zOR-74-Tox"/>
                                     <outlet property="tieScoreLabel" destination="kgl-dZ-hAo" id="eca-Ng-A3J"/>
                                 </connections>
@@ -6503,6 +6573,14 @@
                                 <color key="textColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow_left.png" id="jCc-oH-nsc">
+                                <rect key="frame" x="193" y="621" width="78" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="arrow_right.png" id="C4Q-Ns-BNm">
+                                <rect key="frame" x="746" y="621" width="78" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -6521,9 +6599,11 @@
                         <outlet property="detailButton" destination="cM2-w0-iWX" id="nH1-PW-zMK"/>
                         <outlet property="gameCodeNameLabel" destination="SHc-KG-IMi" id="3js-pN-kGp"/>
                         <outlet property="gameNumberLabel" destination="GfG-LF-2OB" id="7G9-v4-6HZ"/>
+                        <outlet property="leftArrow" destination="jCc-oH-nsc" id="qFV-Kr-rtC"/>
                         <outlet property="pokerView" destination="hKc-Pk-kGc" id="6GH-w5-awy"/>
                         <outlet property="promptMsgView" destination="yzy-EC-fCL" id="ytI-lh-uDO"/>
                         <outlet property="recordButton" destination="LX8-Xp-DaH" id="xIQ-mz-ocW"/>
+                        <outlet property="rightArrow" destination="C4Q-Ns-BNm" id="99a-8r-HF1"/>
                         <outlet property="roadmapButton" destination="A7D-So-eWr" id="2lq-2d-n5I"/>
                         <outlet property="roadmapView" destination="Cfl-KB-QdP" id="ZIo-QH-zNg"/>
                         <outlet property="totalBetLabel" destination="Vr8-pm-1yX" id="Vdm-tZ-AT4"/>
@@ -7926,7 +8006,7 @@
     <resources>
         <image name="BaccaratA@2x.png" width="395" height="573"/>
         <image name="DTGame_bg@2x.png" width="2048" height="1536"/>
-        <image name="DTRoute_bg@2x.png" width="2048" height="359"/>
+        <image name="DTRoute_bg@2x.png" width="2048" height="358"/>
         <image name="DTdeal_bg@2x.png" width="556" height="655"/>
         <image name="Game_bg@2x.png" width="2048" height="1536"/>
         <image name="L_row_top.png" width="640" height="79"/>
@@ -7936,6 +8016,7 @@
         <image name="R_row_top.png" width="1408" height="440"/>
         <image name="Record_bg.png" width="640" height="1288"/>
         <image name="Record_bg2.png" width="1408" height="1288"/>
+        <image name="Route_bg@2x.png" width="2048" height="360"/>
         <image name="TitleTx_DT.png" width="211" height="99"/>
         <image name="TitleTx_baccarat.png" width="211" height="99"/>
         <image name="area_B01@2x.png" width="271" height="357"/>
@@ -7949,6 +8030,8 @@
         <image name="area_T01@2x.png" width="245" height="357"/>
         <image name="area_T02@2x.png" width="250" height="158"/>
         <image name="area_T03@2x.png" width="249" height="158"/>
+        <image name="arrow_left.png" width="38" height="70"/>
+        <image name="arrow_right.png" width="38" height="70"/>
         <image name="askB_btn_up.png" width="128" height="82"/>
         <image name="askD_btn_up.png" width="128" height="82"/>
         <image name="askP_btn_up.png" width="128" height="82"/>

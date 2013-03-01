@@ -43,6 +43,15 @@
 @property (nonatomic, weak) IBOutlet UIButton *playerAskButton;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
 
+//on ipad it is top down as first, second, third
+@property (nonatomic, weak) IBOutlet UIImageView *playerFirstAskingImage;
+@property (nonatomic, weak) IBOutlet UIImageView *playerSecondAskingImage;
+@property (nonatomic, weak) IBOutlet UIImageView *playerThirdAskingImage;
+@property (nonatomic, weak) IBOutlet UIImageView *bankerFirstAskingImage;
+@property (nonatomic, weak) IBOutlet UIImageView *bankerSecondAskingImage;
+@property (nonatomic, weak) IBOutlet UIImageView *bankerThirdAskingImage;
+
+
 /**
  * A player ask button which is connected in Interface Builder
  * Trigger asking roadmap event
@@ -84,5 +93,87 @@
  * 停止詢問 roadmap
  */
 -(void)stopAsking;
+
+/**
+ * A method to update asking roadmap
+ */
+-(void)changeAsk:(NSTimer *)askTimer;
+
+/**
+ * A method to update score
+ *
+ * 更新分數
+ */
+-(void)updateScore;
+
+/**
+ * A method to update banker predicate roadmap
+ *
+ * 更新預測Banker路紙
+ */
+-(void)updatePredicateBankerRoadmap;
+
+/**
+ * A method to update player predicate roadmap
+ *
+ * 更新預測Player路紙
+ */
+-(void)updatePredicatePlayerRoadmap;
+
+/**
+ * A method to update predicate roadmap
+ *
+ * 更新預測路紙
+ */
+-(void)updatePredicateRoadmap;
+
+/**
+ * A method to get the number for predicate roadmap
+ *
+ * @splited the roadmap that has been splited
+ */
+-(int)numberForPredicateRoadmapWithDataArray:(NSArray *)splited;
+
+/**
+ * A method return image name for image that is on the right side of roadmap
+ * first one from top to bottom for player 
+ *
+ */
+-(NSString *)playerFirstAskingImageName;
+
+/**
+ * A method return image name for image that is on the right side of roadmap
+ * second one from top to bottom for player
+ *
+ */
+-(NSString *)playerSecondAskingImageName;
+
+/**
+ * A method return image name for image that is on the right side of roadmap
+ * third one from top to bottom for player
+ *
+ */
+-(NSString *)playerThirdAskingImageName;
+
+/**
+ * A method return image name for image that is on the right side of roadmap
+ * first one from top to bottom for banker
+ *
+ */
+-(NSString *)bankerFirstAskingImageName;
+
+/**
+ * A method return image name for image that is on the right side of roadmap
+ * second one from top to bottom for banker
+ *
+ */
+-(NSString *)bankerSecondAskingImageName;
+
+/**
+ * A method return image name for image that is on the right side of roadmap
+ * third one from top to bottom for banker
+ *
+ */
+-(NSString *)bankerThirdAskingImageName;
 
 @end

@@ -19,6 +19,42 @@
     return self;
 }
 
+-(NSUInteger)RoadmapChartNumberOfContent:(RoadmapChart *)roadmap
+{
+    //override super one since ipod only have 5 content
+    return 5;
+}
+
+-(NSString *)playerFirstAskingImageName
+{
+    return @"route_b.png";
+}
+
+-(NSString *)playerSecondAskingImageName
+{
+    return @"route_b2.png";
+}
+
+-(NSString *)playerThirdAskingImageName
+{
+    return @"route_b3.png";
+}
+
+-(NSString *)bankerFirstAskingImageName
+{
+    return @"route_r.png";
+}
+
+-(NSString *)bankerSecondAskingImageName
+{
+    return @"route_r2.png";
+}
+
+-(NSString *)bankerThirdAskingImageName
+{
+    return @"route_r3.png";
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

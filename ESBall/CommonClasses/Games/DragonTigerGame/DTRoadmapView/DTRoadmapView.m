@@ -8,7 +8,7 @@
 
 #import "DTRoadmapView.h"
 
-#define kNumberOfConetntForRoadmap 5
+#define kNumberOfConetntForRoadmap 6
 
 @implementation DTRoadmapView
 
@@ -108,10 +108,11 @@
     }
 }
 
+
 #pragma mark - RoadmapChart delegate
 -(NSUInteger)RoadmapChartNumberOfContent:(RoadmapChart *)roadmap
 {
-    //override super one since we only have 4 content
+    //override super one since we only have 6 content
     return kNumberOfConetntForRoadmap;
 }
 

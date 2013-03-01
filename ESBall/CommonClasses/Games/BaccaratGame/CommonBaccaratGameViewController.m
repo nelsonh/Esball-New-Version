@@ -39,6 +39,8 @@
 @synthesize betAreaView = _betAreaView;
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize promptMsgView = _promptMsgView;
+@synthesize leftArrow = _leftArrow;
+@synthesize rightArrow = _rightArrow;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -823,6 +825,17 @@
             break;
         }
     }
+    
+    if(filtedChipList.count > 5)
+    {
+        _leftArrow.hidden = NO;
+        _rightArrow.hidden = NO;
+    }
+    else
+    {
+        _leftArrow.hidden = YES;
+        _rightArrow.hidden = YES;
+    }
 
     //give bet view chips
     _betAreaView.chips = filtedChipList;
@@ -877,6 +890,12 @@
     //new round
     if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
     {
+        //clean total bet
+        self.totalBetLabel.text = @"0.00";
+        
+        //tell roadmap to stop asking
+        [_roadmapView stopAsking];
+        
         //enable all bet squares
         [_betAreaView enableAllBetSquares];
         
@@ -887,6 +906,14 @@
             
             //enable bet confirm button
             _betConfirmButton.enabled = YES;
+        }
+        
+        //update roadmapView smooth
+        if(!_roadmapView.hidden)
+        {
+            _roadmapView.gameType = updateInfo.gameType;
+            _roadmapView.gameCodeName = updateInfo.gameCodeName;
+            [_roadmapView updateView];
         }
     }
     
@@ -949,6 +976,7 @@
         [self performSelector:@selector(playSoundOfFinalPointForPlayer) withObject:nil afterDelay:0.0f];
         [self performSelector:@selector(playSoundOfFinalPointForBanker) withObject:nil afterDelay:3.0f];
         [self performSelector:@selector(playSoundOfWinLoseOrTie) withObject:nil afterDelay:6.0f];
+        
     }
     
     //_pokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
@@ -970,7 +998,7 @@
         
         _pokerView.visibility = NO;
         
-        
+        /*
         //update roadmapView smooth
         if(!_roadmapView.hidden)
         {
@@ -978,7 +1006,7 @@
             _roadmapView.gameCodeName = updateInfo.gameCodeName;
             [_roadmapView updateView];
         }
-        
+        */
         
         //_changeTableButton.enabled = YES;
         //_detailButton.enabled = YES;
@@ -993,16 +1021,6 @@
             }
         }
 
-    }
-    
-    //new round
-    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
-    {
-        //clean total bet
-        self.totalBetLabel.text = @"0.00";
-        
-        //tell roadmap to stop asking
-        [_roadmapView stopAsking];
     }
     
     if([info.status isEqualToString:GameStatusBetting])

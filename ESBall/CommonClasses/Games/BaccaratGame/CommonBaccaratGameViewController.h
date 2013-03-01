@@ -71,6 +71,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *backButton;
 @property (nonatomic, weak) IBOutlet UIImageView *videoView;
 @property (nonatomic, weak) IBOutlet UIImageView *backgroundImageView;
+@property (nonatomic, weak) IBOutlet UIImageView *leftArrow;
+@property (nonatomic, weak) IBOutlet UIImageView *rightArrow;
 @property (nonatomic, weak) IBOutlet PokerView *pokerView;//poker view
 @property (nonatomic, weak) IBOutlet BetView *betAreaView;//bet view
 @property (nonatomic, weak) IBOutlet RoadmapView *roadmapView;//roadmap view

@@ -1325,15 +1325,45 @@
                                             <action selector="bankerAsk:" destination="tYH-UF-gVT" eventType="touchUpInside" id="vmW-a3-mpD"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="cxA-Rg-tne">
+                                        <rect key="frame" x="135" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Mgc-gl-jpF">
+                                        <rect key="frame" x="150" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="R3x-mu-oYv">
+                                        <rect key="frame" x="165" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="dJs-NE-tig">
+                                        <rect key="frame" x="217" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="H75-rG-lVW">
+                                        <rect key="frame" x="232" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Rmu-Ex-43d">
+                                        <rect key="frame" x="247" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="JOp-4E-oBJ" id="jaD-bi-U1w"/>
                                     <outlet property="bankerAskButton" destination="afr-32-bOb" id="vcm-AI-LoV"/>
+                                    <outlet property="bankerFirstAskingImage" destination="dJs-NE-tig" id="luO-9Q-NSo"/>
                                     <outlet property="bankerScoreLabel" destination="547-Nx-15R" id="WEf-H1-B2J"/>
+                                    <outlet property="bankerSecondAskingImage" destination="H75-rG-lVW" id="bFe-5O-ZHW"/>
+                                    <outlet property="bankerThirdAskingImage" destination="Rmu-Ex-43d" id="nxG-ZD-Oqz"/>
                                     <outlet property="pageControl" destination="vs5-WK-C6K" id="oR4-xT-ctG"/>
                                     <outlet property="playerAskButton" destination="u7f-os-C1Y" id="QqZ-Jj-zrs"/>
+                                    <outlet property="playerFirstAskingImage" destination="cxA-Rg-tne" id="7up-O5-qn3"/>
                                     <outlet property="playerScoreLabel" destination="475-c2-hrl" id="nGa-X6-RIL"/>
+                                    <outlet property="playerSecondAskingImage" destination="Mgc-gl-jpF" id="jYJ-Mj-lbv"/>
+                                    <outlet property="playerThirdAskingImage" destination="R3x-mu-oYv" id="4k2-Ol-TaQ"/>
                                     <outlet property="roadmapChart" destination="X0G-Of-IBN" id="jr5-5T-qLl"/>
                                     <outlet property="tieScoreLabel" destination="r73-xm-baB" id="fXb-vx-FG0"/>
                                 </connections>
@@ -3633,15 +3663,45 @@
                                             <action selector="bankerAsk:" destination="rdW-0x-o1y" eventType="touchUpInside" id="P2A-pP-QKi"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="VB4-PF-dyC">
+                                        <rect key="frame" x="135" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="ZzX-K5-pEQ">
+                                        <rect key="frame" x="150" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="sV6-j5-HhQ">
+                                        <rect key="frame" x="165" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="aZp-hb-14C">
+                                        <rect key="frame" x="218" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="BeD-BC-dFk">
+                                        <rect key="frame" x="234" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="YTe-VL-s5a">
+                                        <rect key="frame" x="250" y="133" width="12" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="kJb-Gu-beP" id="YFk-OG-77g"/>
                                     <outlet property="bankerAskButton" destination="AfO-Wb-Zkb" id="ebP-w5-hbO"/>
+                                    <outlet property="bankerFirstAskingImage" destination="aZp-hb-14C" id="6Ik-fl-8M8"/>
                                     <outlet property="bankerScoreLabel" destination="Y5e-Vz-gNM" id="vjV-KY-Y5n"/>
+                                    <outlet property="bankerSecondAskingImage" destination="BeD-BC-dFk" id="GCp-L4-yBU"/>
+                                    <outlet property="bankerThirdAskingImage" destination="YTe-VL-s5a" id="xMH-M7-h9E"/>
                                     <outlet property="pageControl" destination="ufx-Zp-tiv" id="tGs-4z-OG7"/>
                                     <outlet property="playerAskButton" destination="5I9-88-rdq" id="Bw6-wa-wB1"/>
+                                    <outlet property="playerFirstAskingImage" destination="VB4-PF-dyC" id="vcZ-cR-Fyj"/>
                                     <outlet property="playerScoreLabel" destination="gx0-Hf-H24" id="Fw8-3e-pzG"/>
+                                    <outlet property="playerSecondAskingImage" destination="ZzX-K5-pEQ" id="EDP-1P-gmC"/>
+                                    <outlet property="playerThirdAskingImage" destination="sV6-j5-HhQ" id="Hxj-Ib-UBs"/>
                                     <outlet property="roadmapChart" destination="pAD-3F-nwf" id="cRk-Wf-cAf"/>
                                     <outlet property="tieScoreLabel" destination="yNq-AU-S7a" id="Tro-aB-2uv"/>
                                 </connections>
@@ -4295,7 +4355,7 @@
         <image name="Record_bg.png" width="640" height="1288"/>
         <image name="Record_bg2.png" width="1408" height="1288"/>
         <image name="Rou_btn_ups.png" width="265" height="348"/>
-        <image name="Route_bgs.png" width="640" height="323"/>
+        <image name="Route_bgs.png" width="1280" height="646"/>
         <image name="SN_bg.png" width="550" height="56"/>
         <image name="Sic_btn_ups.png" width="265" height="348"/>
         <image name="UserId_bg.png" width="550" height="56"/>
@@ -4517,9 +4577,11 @@
                 <relationship kind="outlet" name="detailButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="gameCodeNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="gameNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftArrow" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pokerView" candidateClass="PokerView"/>
                 <relationship kind="outlet" name="promptMsgView" candidateClass="PromptMessageView"/>
                 <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rightArrow" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="roadmapButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="roadmapView" candidateClass="RoadmapView"/>
                 <relationship kind="outlet" name="totalBetLabel" candidateClass="UILabel"/>
@@ -4830,10 +4892,16 @@
                 <relationship kind="action" name="playerAsk:"/>
                 <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="bankerAskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bankerFirstAskingImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="bankerScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bankerSecondAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerThirdAskingImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="playerAskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playerFirstAskingImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="playerScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerSecondAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerThirdAskingImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="roadmapChart" candidateClass="RoadmapChart"/>
                 <relationship kind="outlet" name="tieScoreLabel" candidateClass="UILabel"/>
             </relationships>
