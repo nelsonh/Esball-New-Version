@@ -828,13 +828,21 @@
     
     if(filtedChipList.count > 5)
     {
-        _leftArrow.hidden = NO;
-        _rightArrow.hidden = NO;
+        if(_leftArrow && _rightArrow)
+        {
+            _leftArrow.hidden = NO;
+            _rightArrow.hidden = NO;
+        }
+
     }
     else
     {
-        _leftArrow.hidden = YES;
-        _rightArrow.hidden = YES;
+        if(_leftArrow && _rightArrow)
+        {
+            _leftArrow.hidden = YES;
+            _rightArrow.hidden = YES;
+        }
+
     }
 
     //give bet view chips

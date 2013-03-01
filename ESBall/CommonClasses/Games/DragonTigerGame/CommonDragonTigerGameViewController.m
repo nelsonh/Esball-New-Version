@@ -459,13 +459,21 @@
     
     if(filtedChipList.count > 5)
     {
-        self.leftArrow.hidden = NO;
-        self.rightArrow.hidden = NO;
+        if(self.leftArrow && self.rightArrow)
+        {
+            self.leftArrow.hidden = NO;
+            self.rightArrow.hidden = NO;
+        }
+
     }
     else
     {
-        self.leftArrow.hidden = YES;
-        self.rightArrow.hidden = YES;
+        if(self.leftArrow && self.rightArrow)
+        {
+            self.leftArrow.hidden = YES;
+            self.rightArrow.hidden = YES;
+        }
+
     }
     
     _dtBetView.chips = filtedChipList;
