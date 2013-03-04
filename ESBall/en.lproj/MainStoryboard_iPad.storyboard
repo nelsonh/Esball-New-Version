@@ -4482,7 +4482,7 @@
                                         <rect key="frame" x="96" y="10" width="781" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </scrollView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="fTw-Tc-u24">
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="fTw-Tc-u24">
                                         <rect key="frame" x="429" y="133" width="102" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </pageControl>
@@ -5567,7 +5567,7 @@
                                         <rect key="frame" x="96" y="10" width="781" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </scrollView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="SFg-QT-8p5">
+                                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" id="SFg-QT-8p5">
                                         <rect key="frame" x="420" y="134" width="95" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </pageControl>
@@ -8124,6 +8124,589 @@
         <image name="titletx_sic.png" width="210" height="100"/>
         <image name="top_bg2.png" width="2048" height="138"/>
     </resources>
+    <classes>
+        <class className="BaccaratBetRecordDetailViewController" superclassName="CommonBaccaratBetRecordDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaccaratBetRecordDetailViewController.h"/>
+        </class>
+        <class className="BaccaratBetRecordViewController" superclassName="BetRecordViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaccaratBetRecordViewController.h"/>
+        </class>
+        <class className="BaccaratItemViewController" superclassName="ItemViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaccaratItemViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="roadmapRefView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="BaseGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="action" name="betConfirm:"/>
+                <relationship kind="action" name="clearBet:"/>
+                <relationship kind="action" name="detail:"/>
+                <relationship kind="action" name="record:"/>
+                <relationship kind="action" name="roadmap:"/>
+            </relationships>
+        </class>
+        <class className="BaseLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="login:"/>
+                <relationship kind="outlet" name="accountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="accountTextFiled" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="loggingMsgLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="passwordLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="passwordTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseViewController.h"/>
+        </class>
+        <class className="BetAreaView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetAreaView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="chipListView" candidateClass="ChipView"/>
+            </relationships>
+        </class>
+        <class className="BetInfoView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetInfoView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="betResultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="currentBetLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="maxBetLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BetRecordCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetRecordCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bankerPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="roundSerialLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalBetLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalPayoffLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BetRecordDetailRowCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetRecordDetailRowCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="characterTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="proportionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalBetLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalPayoffLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BetRecordDetailTotalRowCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetRecordDetailTotalRowCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="totalPayoffLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalbetLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BetRecordDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetRecordDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="commentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateTimeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="roundNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="BetRecordViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetRecordViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="referenceView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="BetSquareView" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetSquareView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="betInfoView" candidateClass="BetInfoView"/>
+            </relationships>
+        </class>
+        <class className="BetView" superclassName="BetAreaView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BetView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="betSquare1" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare10" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare11" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare2" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare3" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare4" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare5" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare6" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare7" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare8" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="betSquare9" candidateClass="BetSquareView"/>
+                <relationship kind="outlet" name="square10Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square11Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square1Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square2Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square3Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square4Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square5Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square6Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square7Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square8Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square9Result" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ChipView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChipView.h"/>
+        </class>
+        <class className="CommonBaccaratBetRecordDetailViewController" superclassName="BetRecordDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonBaccaratBetRecordDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bankerLeftCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerMiddleCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bankerRightCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerLeftCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerMiddleCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerRightCard" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="CommonBaccaratGameViewController" superclassName="BaseGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonBaccaratGameViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="betAreaView" candidateClass="BetView"/>
+                <relationship kind="outlet" name="betConfirmButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="clearBetButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="countDownLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="creditLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dealerNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="detailButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="gameCodeNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="gameNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftArrow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pokerView" candidateClass="PokerView"/>
+                <relationship kind="outlet" name="promptMsgView" candidateClass="PromptMessageView"/>
+                <relationship kind="outlet" name="recordButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rightArrow" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="roadmapButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="roadmapView" candidateClass="RoadmapView"/>
+                <relationship kind="outlet" name="totalBetLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userAccountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="CommonDragonTigerBetRecordDetailViewController" superclassName="BetRecordDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonDragonTigerBetRecordDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bankerCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerPointLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CommonDragonTigerGameViewController" superclassName="CommonBaccaratGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonDragonTigerGameViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dtBetView" candidateClass="DTBetView"/>
+                <relationship kind="outlet" name="dtPokerView" candidateClass="DTPokerView"/>
+                <relationship kind="outlet" name="dtRoadmap" candidateClass="RoadmapView"/>
+            </relationships>
+        </class>
+        <class className="CommonSicboGameViewController" superclassName="CommonBaccaratGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonSicboGameViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="sbBetView" candidateClass="SBBetView"/>
+                <relationship kind="outlet" name="sbRoadmap" candidateClass="SBRoadmapView"/>
+            </relationships>
+        </class>
+        <class className="DTBetView" superclassName="BetView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTBetView.h"/>
+        </class>
+        <class className="DTGameBetLimitViewController" superclassName="GameBetLimitViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTGameBetLimitViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tieBetLimitLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DTItemViewController" superclassName="ItemViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTItemViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="roadmapRefView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="DTPokerView" superclassName="MiniInfoView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTPokerView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="dragonCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="dragonPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tigerCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tigerPointLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DTRoadmapChart" superclassName="RoadmapChart">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTRoadmapChart.h"/>
+        </class>
+        <class className="DTRoadmapView" superclassName="RoadmapView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DTRoadmapView.h"/>
+        </class>
+        <class className="DepositViewController" superclassName="MoreSectionBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DepositViewController.h"/>
+        </class>
+        <class className="DetailViewController" superclassName="GameDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="gameBetLimit:"/>
+                <relationship kind="action" name="gameRule:"/>
+                <relationship kind="action" name="history:"/>
+                <relationship kind="action" name="videoSetting:"/>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="gameBetLimitBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="gameRuleBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="historyBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="referenceView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="videoSettingBtn" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="DragonTigerBetRecordDetailViewController" superclassName="CommonDragonTigerBetRecordDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DragonTigerBetRecordDetailViewController.h"/>
+        </class>
+        <class className="DragonTigerBetRecordViewController" superclassName="BetRecordViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DragonTigerBetRecordViewController.h"/>
+        </class>
+        <class className="FSVerticalTabBarController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FSVerticalTabBarController.h"/>
+        </class>
+        <class className="GameBetLimitViewController" superclassName="SubDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameBetLimitViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="ouBetLimitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pairBetLimitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="singleBetLimitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smallBetLimitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="theBigSmallBetLimitLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GameDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bankerNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="currencyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableNameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GameResultViewController" superclassName="MoreSectionBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameResultViewController.h"/>
+        </class>
+        <class className="GameRuleViewController" superclassName="MoreSectionBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameRuleViewController.h"/>
+        </class>
+        <class className="GameRulesViewController" superclassName="SubDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GameRulesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="GodOfGamblingViewController" superclassName="MoreSectionBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GodOfGamblingViewController.h"/>
+        </class>
+        <class className="HistoryViewController" superclassName="SubDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="ItemDropdownViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDropdownViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismiss:"/>
+                <relationship kind="outlet" name="mainImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ItemViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dropdownItem:"/>
+                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ListScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListScrollView.h"/>
+        </class>
+        <class className="LotterySectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LotterySectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gameView" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="loadingIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="MiniInfoView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MiniInfoView.h"/>
+        </class>
+        <class className="MoreSectionBaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreSectionBaseViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="infoView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="OnlineServiceViewController" superclassName="MoreSectionBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OnlineServiceViewController.h"/>
+        </class>
+        <class className="PadBaccaratGameViewController" superclassName="CommonBaccaratGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadBaccaratGameViewController.h"/>
+        </class>
+        <class className="PadBaccaratPokerView" superclassName="PokerView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadBaccaratPokerView.h"/>
+        </class>
+        <class className="PadBaccaratRoadmapChart" superclassName="RoadmapChart">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadBaccaratRoadmapChart.h"/>
+        </class>
+        <class className="PadBaccaratRoadmapView" superclassName="RoadmapView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadBaccaratRoadmapView.h"/>
+        </class>
+        <class className="PadDragonTigerGameViewController" superclassName="CommonDragonTigerGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadDragonTigerGameViewController.h"/>
+        </class>
+        <class className="PadDragonTigerPokerView" superclassName="DTPokerView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadDragonTigerPokerView.h"/>
+        </class>
+        <class className="PadDragonTigerRoadmapChart" superclassName="DTRoadmapChart">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadDragonTigerRoadmapChart.h"/>
+        </class>
+        <class className="PadDragonTigerRoadmapView" superclassName="DTRoadmapView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadDragonTigerRoadmapView.h"/>
+        </class>
+        <class className="PadLoginViewController" superclassName="BaseLoginViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadLoginViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loginButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="PadMainViewController" superclassName="FSVerticalTabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadMainViewController.h"/>
+        </class>
+        <class className="PadViewController" superclassName="BaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PadViewController.h"/>
+        </class>
+        <class className="PokerView" superclassName="MiniInfoView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PokerView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buttomLeftCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="buttomMiddleCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="buttomRightCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerPointLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="topLeftCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="topMiddleCard" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="topRightCard" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PromptMessageView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PromptMessageView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="promptMsgBackgroundView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="promptMsgLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="RoadmapChart" superclassName="RoadmapDataView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoadmapChart.h"/>
+        </class>
+        <class className="RoadmapDataView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoadmapDataView.h"/>
+        </class>
+        <class className="RoadmapView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RoadmapView.h"/>
+            <relationships>
+                <relationship kind="action" name="bankerAsk:"/>
+                <relationship kind="action" name="playerAsk:"/>
+                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerAskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="bankerFirstAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bankerSecondAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bankerThirdAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="playerAskButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playerFirstAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playerSecondAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="playerThirdAskingImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="roadmapChart" candidateClass="RoadmapChart"/>
+                <relationship kind="outlet" name="tieScoreLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SBBetSquareView" superclassName="BetSquareView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SBBetSquareView.h"/>
+        </class>
+        <class className="SBBetView" superclassName="BetAreaView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SBBetView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="betSquare1" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare10" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare11" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare12" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare13" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare14" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare15" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare16" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare17" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare18" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare19" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare2" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare20" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare21" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare22" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare23" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare24" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare25" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare26" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare27" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare28" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare29" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare3" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare30" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare31" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare32" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare33" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare34" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare35" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare36" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare37" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare38" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare39" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare4" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare40" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare41" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare42" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare43" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare44" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare45" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare46" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare47" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare48" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare49" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare5" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare50" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare51" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare52" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare6" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare7" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare8" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="betSquare9" candidateClass="SBBetSquareView"/>
+                <relationship kind="outlet" name="square10Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square11Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square12Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square13Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square14Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square15Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square16Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square17Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square18Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square19Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square1Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square20Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square21Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square22Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square23Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square24Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square25Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square26Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square27Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square28Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square29Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square2Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square30Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square31Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square32Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square33Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square34Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square35Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square36Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square37Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square38Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square39Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square3Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square40Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square41Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square42Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square43Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square44Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square45Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square46Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square47Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square48Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square49Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square4Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square50Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square51Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square52Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square5Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square6Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square7Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square8Result" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="square9Result" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SBGameBetLimitViewController" superclassName="GameBetLimitViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SBGameBetLimitViewController.h"/>
+        </class>
+        <class className="SBRoadmapCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SBRoadmapCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bigOrSmallLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="diceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sumLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SBRoadmapView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SBRoadmapView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SicboGameViewController" superclassName="CommonSicboGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SicboGameViewController.h"/>
+        </class>
+        <class className="SlotItemViewController" superclassName="ItemViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlotItemViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="slotImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="SlotSectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SlotSectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="ListScrollView"/>
+            </relationships>
+        </class>
+        <class className="SportSectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SportSectionViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="browser" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="loadingIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="SubDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubDetailViewController.h"/>
+        </class>
+        <class className="VideoSectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoSectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="enterGameBtnTapped:"/>
+                <relationship kind="action" name="logout:"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="ListScrollView"/>
+            </relationships>
+        </class>
+        <class className="VideoSettingViewController" superclassName="SubDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VideoSettingViewController.h"/>
+        </class>
+        <class className="WithdrawalViewController" superclassName="MoreSectionBaseViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WithdrawalViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
