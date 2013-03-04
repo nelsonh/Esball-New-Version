@@ -136,12 +136,12 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
     NSArray *splited = [serverIPs componentsSeparatedByString:@","];
     
     int min = 1;
-    int max = splited.count - 1;
+    int max = splited.count;
     int randNumber  = rand() % (max - min) + min;
     
-    NSString *ip = [splited objectAtIndex:randNumber];
+    NSString *ipStr = [splited objectAtIndex:randNumber];
     
-    return ip;
+    return [[NSString alloc] initWithString:ipStr];
 }
 
 -(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password
@@ -185,13 +185,14 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
         return;
     }
     
-    NSString *serverIP = [self serverIP];
+    NSString *serverIPAddrStr = [self serverIP];
+
     
     int code = 0;
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     //CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)hostToCnnect, 10243, &readStream, &writeStream);
-    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)serverIP, 10243, &readStream, &writeStream);
+    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)serverIPAddrStr, 10243, &readStream, &writeStream);
 
     
     inputStream = (__bridge NSInputStream*)readStream;

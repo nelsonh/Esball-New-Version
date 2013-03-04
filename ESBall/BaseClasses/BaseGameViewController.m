@@ -247,7 +247,7 @@
     
     NSString *contentStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    NSArray *contentList = [contentStr componentsSeparatedByString:@"\n"];
+    NSArray *contentList = [contentStr componentsSeparatedByString:@"\r\n"];
     
     for(NSString *rowStr in contentList)
     {
@@ -258,11 +258,13 @@
         if([key isEqualToString:mark])
         {
             int min = 1;
-            int max = splited.count-1;
+            int max = splited.count;
             
             int randNumber = rand() % (max - min) + min;
             
+            NSLog(@"index:%i", randNumber);
             NSString *ipAddr = [NSString stringWithString:[splited objectAtIndex:randNumber]];
+            NSLog(@"ip:%@", ipAddr);
             
             return ipAddr;
         }
