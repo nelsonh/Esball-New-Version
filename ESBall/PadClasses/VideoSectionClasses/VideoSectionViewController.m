@@ -256,6 +256,7 @@
     }
 }
 
+/*
 #pragma mark - public interface
 -(IBAction)enterGameBtnTapped:(id)sender
 {
@@ -286,6 +287,7 @@
     
     [theInterface logout];
 }
+ */
 
 #pragma mark - Internal
 -(void)loadItemData
@@ -579,13 +581,14 @@
     gameTypeNumberToChange = gameTypeNo;
     storyboardControllerID = controllerID;
     
-    /*
+    
     [self enterGame];
     
     //loading view
     [self displayLoadingView];
-     */
+     
     
+    /*
     if(item == selectedItem)
         return;
 
@@ -595,6 +598,7 @@
         [selectedItem deselectItem];
     }
     selectedItem = item;//track item
+     */
 }
 
 -(void)ListScrollView:(ListScrollView *)scrollView didDropdownItemWithItem:(ItemViewController *)item

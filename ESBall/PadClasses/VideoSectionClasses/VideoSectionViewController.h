@@ -39,7 +39,7 @@
     
     double roadmapUpdateInterval;
     
-    __weak ItemViewController *selectedItem;//track item we current selected
+    //__weak ItemViewController *selectedItem;//track item we current selected
     NSTimer *pullCountDownDataTimer;
     NSMutableData *countDownData;
     NSURLConnection *countDownDataConnection;
@@ -51,7 +51,7 @@
  *
  * 進入遊戲事件
  */
--(IBAction)enterGameBtnTapped:(id)sender;
+//-(IBAction)enterGameBtnTapped:(id)sender;
 
 /**
  * A logout button which is connected in Interface Builder
@@ -59,7 +59,7 @@
  *
  * 登出事件
  */
--(IBAction)logout:(id)sender;
+//-(IBAction)logout:(id)sender;
 
 //stop resume update related
 

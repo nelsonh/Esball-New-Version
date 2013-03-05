@@ -10,6 +10,7 @@
 		<string>BaccaratD</string>
 		<string>BaccaratE</string>
 		<string>DragonTiger</string>
+		<string>Sicbo</string>
 	</array>
 	<key>Items</key>
 	<dict>
@@ -126,6 +127,25 @@
 			<string>PadDragonTigerGameViewController</string>
 			<key>ItemControllerID</key>
 			<string>DTItemViewController</string>
+		</dict>
+		<key>Sicbo</key>
+		<dict>
+			<key>TableNumber</key>
+			<integer>8</integer>
+			<key>InfoTableNumber</key>
+			<integer>1</integer>
+			<key>ImageNormal</key>
+			<string>Sicbo@2x.png</string>
+			<key>ImageDown</key>
+			<string>Sicbo_down@2x.png</string>
+			<key>GameType</key>
+			<integer>3008</integer>
+			<key>TableName</key>
+			<string>A</string>
+			<key>StoryboardControllerID</key>
+			<string>SicboGameViewController</string>
+			<key>ItemControllerID</key>
+			<string>SicboItemViewController</string>
 		</dict>
 	</dict>
 </dict>

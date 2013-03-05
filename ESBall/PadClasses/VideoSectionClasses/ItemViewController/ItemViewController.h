@@ -28,7 +28,7 @@
     UIImage *imageNormal;
     UIImage *imageDown;
     
-    BOOL isSelected;//indicate this item is selected or not
+    //BOOL isSelected;//indicate this item is selected or not
     
     NSTimer *roadmapDataTimer;
     NSMutableData *roadmapData;
@@ -65,7 +65,7 @@
  *
  * 反選擇 item
  */
--(void)deselectItem;
+//-(void)deselectItem;
 
 /**
  * A method to update count down time

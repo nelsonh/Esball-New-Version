@@ -8,8 +8,8 @@
 
 #import "ListScrollView.h"
 
-#define kSpaceWidth 100
-//#define kSpaceWidth 90 //changable
+//#define kSpaceWidth 100
+#define kSpaceWidth 90 //changable
 #define kSpaceHeight 9 //changable
 #define kItemForRow 3 //changable
 #define kNumberOfRow 2 //don't change

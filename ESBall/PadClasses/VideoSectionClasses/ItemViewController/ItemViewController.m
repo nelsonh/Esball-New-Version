@@ -47,7 +47,7 @@
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
-    isSelected = NO;
+    //isSelected = NO;
     
     return [super initWithCoder:aDecoder];
 }
@@ -129,10 +129,10 @@
 #pragma mark - internal
 -(void)didTap
 {
-    isSelected = YES;
+    //isSelected = YES;
     
     //change image
-    _gameImageView.image = imageDown;
+    //_gameImageView.image = imageDown;
     
     //inform delegate this item selected
     if([_theDelegate respondsToSelector:@selector(ItemViewControllerDidSelected:)])
@@ -153,13 +153,15 @@
     }
 }
 
+/*
 -(void)deselectItem
 {
-    isSelected = NO;
+    //isSelected = NO;
     
     //change image
     _gameImageView.image = imageNormal;
 }
+ */
 
 -(void)updateTimeWithTime:(NSUInteger)time
 {
@@ -169,7 +171,19 @@
 #pragma mark - touch event
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    _gameImageView.image = imageDown;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
     [self didTap];
+    
+    _gameImageView.image = imageNormal;
+}
+
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    _gameImageView.image = imageNormal;
 }
 
 #pragma mark - read write images

@@ -861,6 +861,7 @@
 		52F0EF7B166CA840002A9ACB /* BetAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF7A166CA840002A9ACB /* BetAreaView.m */; };
 		52F0EF82166CA8EC002A9ACB /* ChipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF81166CA8EC002A9ACB /* ChipView.m */; };
 		52F3D8761671EA9B005ECC58 /* ImagePull.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D8751671EA9B005ECC58 /* ImagePull.m */; };
+		52F5E8AC16E595A300D7A1ED /* SicboItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F5E8AB16E595A300D7A1ED /* SicboItemViewController.m */; };
 		52F7D36716C35D9D00DC1863 /* Default-portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F7D36516C35D9D00DC1863 /* Default-portrait@2x~iphone.png */; };
 		52F7D36816C35D9D00DC1863 /* Default-portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F7D36616C35D9D00DC1863 /* Default-portrait~iphone.png */; };
 		52F9650516DB192E0054AC8B /* route_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F964FC16DB192E0054AC8B /* route_b.png */; };
@@ -1931,6 +1932,8 @@
 		52F0EF81166CA8EC002A9ACB /* ChipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChipView.m; sourceTree = "<group>"; };
 		52F3D8741671EA9B005ECC58 /* ImagePull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePull.h; path = ImagePull/ImagePull.h; sourceTree = "<group>"; };
 		52F3D8751671EA9B005ECC58 /* ImagePull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePull.m; path = ImagePull/ImagePull.m; sourceTree = "<group>"; };
+		52F5E8AA16E595A300D7A1ED /* SicboItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SicboItemViewController.h; path = SicboItemViewController/SicboItemViewController.h; sourceTree = "<group>"; };
+		52F5E8AB16E595A300D7A1ED /* SicboItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SicboItemViewController.m; path = SicboItemViewController/SicboItemViewController.m; sourceTree = "<group>"; };
 		52F7D36516C35D9D00DC1863 /* Default-portrait@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-portrait@2x~iphone.png"; sourceTree = "<group>"; };
 		52F7D36616C35D9D00DC1863 /* Default-portrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-portrait~iphone.png"; sourceTree = "<group>"; };
 		52F964FC16DB192E0054AC8B /* route_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_b.png; sourceTree = "<group>"; };
@@ -4043,6 +4046,7 @@
 		529AC62716B6158200FD67E1 /* ItemViewController */ = {
 			isa = PBXGroup;
 			children = (
+				52F5E8A916E5954A00D7A1ED /* SicboItemViewController */,
 				529AC62F16B6178400FD67E1 /* DragonTigerItemViewController */,
 				529AC62B16B615BA00FD67E1 /* BaccaratItemViewController */,
 				529AC62816B6158200FD67E1 /* ItemViewController.h */,
@@ -4408,6 +4412,15 @@
 				52F3D8751671EA9B005ECC58 /* ImagePull.m */,
 			);
 			name = ImagePull;
+			sourceTree = "<group>";
+		};
+		52F5E8A916E5954A00D7A1ED /* SicboItemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52F5E8AA16E595A300D7A1ED /* SicboItemViewController.h */,
+				52F5E8AB16E595A300D7A1ED /* SicboItemViewController.m */,
+			);
+			name = SicboItemViewController;
 			sourceTree = "<group>";
 		};
 		52F964FB16DB192E0054AC8B /* RoadmapPredicateImages */ = {
@@ -5378,6 +5391,7 @@
 				529AC68B16B6A98000FD67E1 /* PhoneDragonTigerBetRecordDetailViewController.m in Sources */,
 				529AC68F16B6B14E00FD67E1 /* PhoneDTGameBetLimitViewController.m in Sources */,
 				5297AF7516B8B8F600108BA7 /* BetRespondInfo.m in Sources */,
+				52F5E8AC16E595A300D7A1ED /* SicboItemViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
