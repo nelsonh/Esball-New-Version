@@ -47,6 +47,12 @@
     //check if not over max
     if((currentBet+newBet)<=self.maxBet)
     {
+        //assign to track
+        lastBet = newBet;
+        
+        //add temp bet
+        tempBet += newBet;
+        
         currentBet += newBet;
         maxBet = self.maxBet - newBet;//subtract newbet
         

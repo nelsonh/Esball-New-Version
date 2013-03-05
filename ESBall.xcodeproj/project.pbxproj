@@ -862,6 +862,7 @@
 		52F0EF82166CA8EC002A9ACB /* ChipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF81166CA8EC002A9ACB /* ChipView.m */; };
 		52F3D8761671EA9B005ECC58 /* ImagePull.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D8751671EA9B005ECC58 /* ImagePull.m */; };
 		52F5E8AC16E595A300D7A1ED /* SicboItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F5E8AB16E595A300D7A1ED /* SicboItemViewController.m */; };
+		52F5E8B016E5F9DD00D7A1ED /* SBPokerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F5E8AF16E5F9DD00D7A1ED /* SBPokerView.m */; };
 		52F7D36716C35D9D00DC1863 /* Default-portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F7D36516C35D9D00DC1863 /* Default-portrait@2x~iphone.png */; };
 		52F7D36816C35D9D00DC1863 /* Default-portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F7D36616C35D9D00DC1863 /* Default-portrait~iphone.png */; };
 		52F9650516DB192E0054AC8B /* route_b.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F964FC16DB192E0054AC8B /* route_b.png */; };
@@ -1934,6 +1935,8 @@
 		52F3D8751671EA9B005ECC58 /* ImagePull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePull.m; path = ImagePull/ImagePull.m; sourceTree = "<group>"; };
 		52F5E8AA16E595A300D7A1ED /* SicboItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SicboItemViewController.h; path = SicboItemViewController/SicboItemViewController.h; sourceTree = "<group>"; };
 		52F5E8AB16E595A300D7A1ED /* SicboItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SicboItemViewController.m; path = SicboItemViewController/SicboItemViewController.m; sourceTree = "<group>"; };
+		52F5E8AE16E5F9DD00D7A1ED /* SBPokerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBPokerView.h; path = SicboGame/SBPokerView/SBPokerView.h; sourceTree = "<group>"; };
+		52F5E8AF16E5F9DD00D7A1ED /* SBPokerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBPokerView.m; path = SicboGame/SBPokerView/SBPokerView.m; sourceTree = "<group>"; };
 		52F7D36516C35D9D00DC1863 /* Default-portrait@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-portrait@2x~iphone.png"; sourceTree = "<group>"; };
 		52F7D36616C35D9D00DC1863 /* Default-portrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-portrait~iphone.png"; sourceTree = "<group>"; };
 		52F964FC16DB192E0054AC8B /* route_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = route_b.png; sourceTree = "<group>"; };
@@ -2279,6 +2282,7 @@
 		527831301693C417009D8028 /* SicboGame */ = {
 			isa = PBXGroup;
 			children = (
+				52F5E8AD16E5F9A800D7A1ED /* SBPokerView */,
 				529D0FAD16AD3893008ACE31 /* SBBetSquareView */,
 				529ABADB16A8DF420098129E /* SBRoadmapView */,
 				529759B8169AA26F00EAF41B /* SBBetView */,
@@ -4423,6 +4427,15 @@
 			name = SicboItemViewController;
 			sourceTree = "<group>";
 		};
+		52F5E8AD16E5F9A800D7A1ED /* SBPokerView */ = {
+			isa = PBXGroup;
+			children = (
+				52F5E8AE16E5F9DD00D7A1ED /* SBPokerView.h */,
+				52F5E8AF16E5F9DD00D7A1ED /* SBPokerView.m */,
+			);
+			name = SBPokerView;
+			sourceTree = "<group>";
+		};
 		52F964FB16DB192E0054AC8B /* RoadmapPredicateImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -5392,6 +5405,7 @@
 				529AC68F16B6B14E00FD67E1 /* PhoneDTGameBetLimitViewController.m in Sources */,
 				5297AF7516B8B8F600108BA7 /* BetRespondInfo.m in Sources */,
 				52F5E8AC16E595A300D7A1ED /* SicboItemViewController.m in Sources */,
+				52F5E8B016E5F9DD00D7A1ED /* SBPokerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

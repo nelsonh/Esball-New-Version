@@ -12,6 +12,7 @@
 @interface SBRoadmapView : UIView<UITableViewDataSource, UITableViewDelegate>{
     
     NSMutableArray *roadmapDatas;
+    
 }
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;

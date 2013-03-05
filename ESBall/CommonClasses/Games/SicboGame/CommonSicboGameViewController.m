@@ -47,7 +47,11 @@
 
 -(void)PostBeginSetup
 {
+    //Video IP
+    int videoTableNumber = 1;
+    videoIPStr = [self videoIpAddressWithGameShortName:@"SB" withTableNumber:videoTableNumber];
     
+    //start to get video image
     [self loadVideoImage];
     
     /*
@@ -66,9 +70,6 @@
     _sbBetView.chipSpaceHeight = [self chipSpaceHeight];
     _sbBetView.chipSize = [self chipSize];
     
-    //Video IP
-    int videoTableNumber = 1;
-    videoIPStr = [self videoIpAddressWithGameShortName:@"SB" withTableNumber:videoTableNumber];
 }
 
 -(void)showRoadmap
@@ -181,6 +182,8 @@
 
 -(void)processUpdateInfo:(NSNotification *)notification
 {
+    SoundManager *soundManager = [SoundManager soundManager];
+    
     //self.backButton.enabled = YES;
     
     UpdateInfo *info = notification.object;
@@ -207,50 +210,96 @@
     int countDown = info.countDown;
     
     if(countDown >= 0)
+    {
         self.countDownLabel.text = [NSString stringWithFormat:@"%i", info.countDown];
+    }
     else
+    {
         self.countDownLabel.text = @"0";
+        countDown = 0;
+    }
     
+    if(countDown <= 5)
+    {
+         self.countDownLabel.textColor = [UIColor redColor];
+    }
+    else
+    {
+        self.countDownLabel.textColor = [UIColor blackColor];
+    }
     
+    if(info.countDown == 5)
+    {
+        [soundManager playSoundEffectWithKey:@"SE_CountDown"];
+    }
     
-    if([info.status isEqualToString:GameStatusDealing])
+    //new round
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
+    {
+        //clean total bet
+        self.totalBetLabel.text = @"0.00";
+        
+        //enable all bet squares
+        [_sbBetView enableAllBetSquares];
+        
+        if(self.detailButton.highlighted == NO && self.recordButton.highlighted == NO)
+        {
+            //enable clear bet button
+            self.clearBetButton.enabled = YES;
+            
+            //enable bet confirm button
+            self.betConfirmButton.enabled = YES;
+        }
+        
+        if(!_sbRoadmap.hidden)
+        {
+            if(updateInfo.roadmap != nil)
+            {
+                _sbRoadmap.roadmapInfo = [NSArray arrayWithArray:updateInfo.roadmap];
+                [_sbRoadmap updateView];
+            }
+            
+        }
+    }
+    
+    //clear bet
+    if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])
+    {
+        //clear bet but confirm one
+        [_sbBetView clearBetsWithoutFinalSet];
+    }
+    
+    //update poker
+    if([info.status isEqualToString:GameStatusDealing] || [info.status isEqualToString:GameStatusWaiting])
     {
         //_pokerView.visibility = YES;
         
         [self updatePokerWithUpdateInfo:info];
     }
-    else if([info.status isEqualToString:GameStatusWaiting])
+    
+    //win, lose or tie
+    if([lastGameStatus isEqualToString:GameStatusDealing] && [info.status isEqualToString:GameStatusWaiting])
     {
-        /*
-        if(_pokerView.visibility)
-        {
-            //last chance to update poker view
-            [self updatePokerWithUpdateInfo:info];
-            
-            //hide poker view
-            //[self performSelector:@selector(hidePokerView) withObject:nil afterDelay:kPokerViewHideDelay];
-        }
-        */
+        
     }
+    
+    
     
     //_pokerView.visibility = [info.status isEqualToString:@"dealing"]? YES:NO;
     
+    //reset roadmap update count
     if([info.status isEqualToString:GameStatusWaiting] || [info.status isEqualToString:GameStatusDealing])
     {
         
-        //[_roadmapView resetUpdateCount];
-        
-        //clean total bet
-        self.totalBetLabel.text = @"0.00";
-        
         //_changeTableButton.enabled = NO;
         //_detailButton.enabled = NO;
+        
         self.clearBetButton.enabled = NO;
         self.betConfirmButton.enabled = NO;
     }
     else if([info.status isEqualToString:GameStatusBetting])
     {
-        //_pokerView.visibility = NO;
+        //self.pokerView.visibility = NO;
         
         /*
         //update roadmapView
@@ -264,22 +313,37 @@
         
         //_changeTableButton.enabled = YES;
         //_detailButton.enabled = YES;
-        self.clearBetButton.enabled = YES;
-        self.betConfirmButton.enabled = YES;
+        //self.clearBetButton.enabled = YES;
+        //self.betConfirmButton.enabled = YES;
+        
+        //if isBetConfirm is NO then check if we need to enable buttons
+        if(isBetConfirm == NO)
+        {
+            if(self.detailButton.highlighted == NO && self.recordButton.highlighted == NO)
+            {
+                self.clearBetButton.enabled = YES;
+                self.betConfirmButton.enabled = YES;
+            }
+        }
         
     }
     
+    //start betting indicator
+    if([lastGameStatus isEqualToString:GameStatusWaiting] && [info.status isEqualToString:GameStatusBetting])
+    {
+        [self promptStartBettingIndicator];
+        
+        //play sound effect
+        [soundManager playSoundEffectWithKey:@"SE_StartBet"];
+    }
     
-     if(!_sbRoadmap.hidden)
-     {
-         if(updateInfo.roadmap != nil)
-         {
-             _sbRoadmap.roadmapInfo = [NSArray arrayWithArray:updateInfo.roadmap];
-             [_sbRoadmap updateView];
-         }
-         
-     }
-     
+    if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])
+    {
+        //play sound effect
+        [soundManager playSoundEffectWithKey:@"SE_StopBet"];
+    }
+
+    
     /*
     if(!self.detailButton.enabled)
         self.detailButton.enabled = YES;
@@ -304,7 +368,15 @@
         SBBetView *betView = (SBBetView *)_sbBetView;
         //[betView clearAllBetsWithHideInfo:YES];
         [betView clearBetsWithoutFinalSet];
+        [betView clearAllBetTemp];
+        //reset max bet
+        [betView setupCurrentMaxBet];
     }
+}
+
+-(void)doBetConfirm
+{
+    
 }
 
 -(void)showDetail

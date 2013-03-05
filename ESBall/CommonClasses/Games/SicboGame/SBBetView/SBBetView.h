@@ -152,4 +152,24 @@
 -(void)setupCurrentMaxBet;
 -(void)changeAllBetSquaresMaxBetWithValue:(double)newMaxBet;
 
+/**
+ * A mehtod to clear all pending bet info
+ * must call when clear bet or between round
+ */
+-(void)clearAllBetTemp;
+
+/**
+ * A method to disable all bet sqaures
+ *
+ * 關閉所有的下注按鈕
+ */
+-(void)disableAllBetSquares;
+
+/**
+ * A method to enable all bet sqaures
+ *
+ * 開啟所有的下注按鈕
+ */
+-(void)enableAllBetSquares;
+
 @end

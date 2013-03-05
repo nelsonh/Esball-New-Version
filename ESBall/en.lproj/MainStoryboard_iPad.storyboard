@@ -3211,7 +3211,7 @@
                                             <outlet property="maxBetLabel" destination="DIJ-8A-9d2" id="gdb-9S-8LL"/>
                                         </connections>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nqM-mg-35v" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nqM-mg-35v" customClass="SBBetSquareView">
                                         <rect key="frame" x="27" y="13" width="190" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3226,7 +3226,7 @@
                                             <outlet property="betInfoView" destination="9be-yS-vhg" id="whn-yY-dGx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1qW-9X-FGL" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1qW-9X-FGL" customClass="SBBetSquareView">
                                         <rect key="frame" x="214" y="13" width="168" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3241,7 +3241,7 @@
                                             <outlet property="betInfoView" destination="WWr-Ua-vzy" id="bBN-5t-zjJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xFR-Gs-9TV" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xFR-Gs-9TV" customClass="SBBetSquareView">
                                         <rect key="frame" x="617" y="13" width="169" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3256,7 +3256,7 @@
                                             <outlet property="betInfoView" destination="04b-b8-RE8" id="8Ot-tp-Fat"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kIF-kn-Mfr" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kIF-kn-Mfr" customClass="SBBetSquareView">
                                         <rect key="frame" x="783" y="13" width="189" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3271,7 +3271,7 @@
                                             <outlet property="betInfoView" destination="bOQ-1B-VPS" id="cQE-pN-dtd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g6W-rQ-bas" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="g6W-rQ-bas" customClass="SBBetSquareView">
                                         <rect key="frame" x="20" y="68" width="69" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3286,7 +3286,7 @@
                                             <outlet property="betInfoView" destination="JrP-ui-aWz" id="v5t-dT-TXb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Syq-cx-rKH" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Syq-cx-rKH" customClass="SBBetSquareView">
                                         <rect key="frame" x="84" y="68" width="69" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3301,7 +3301,7 @@
                                             <outlet property="betInfoView" destination="GRV-rz-ocP" id="jzB-aB-qnj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pnm-ll-feA" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pnm-ll-feA" customClass="SBBetSquareView">
                                         <rect key="frame" x="148" y="68" width="64" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3316,7 +3316,7 @@
                                             <outlet property="betInfoView" destination="SJo-Vh-CfI" id="LrK-kj-heE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1NE-ff-mXW" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1NE-ff-mXW" customClass="SBBetSquareView">
                                         <rect key="frame" x="209" y="68" width="66" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3331,7 +3331,7 @@
                                             <outlet property="betInfoView" destination="2sW-aB-Yv6" id="hAa-A1-Z3Z"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GU7-uz-sLJ" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GU7-uz-sLJ" customClass="SBBetSquareView">
                                         <rect key="frame" x="273" y="68" width="63" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3346,7 +3346,7 @@
                                             <outlet property="betInfoView" destination="ieq-7s-gSA" id="Amj-zl-I5v"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B03-WK-i1J" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="B03-WK-i1J" customClass="SBBetSquareView">
                                         <rect key="frame" x="336" y="68" width="62" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3361,7 +3361,7 @@
                                             <outlet property="betInfoView" destination="xE5-gB-eLS" id="uEj-kg-Wer"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kkj-lu-3tv" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Kkj-lu-3tv" customClass="SBBetSquareView">
                                         <rect key="frame" x="399" y="69" width="203" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3376,7 +3376,7 @@
                                             <outlet property="betInfoView" destination="5qL-iu-mOx" id="ONO-5h-7Ze"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V4y-1D-BWM" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="112" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V4y-1D-BWM" customClass="SBBetSquareView">
                                         <rect key="frame" x="602" y="68" width="62" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3391,7 +3391,7 @@
                                             <outlet property="betInfoView" destination="Zpo-6Q-pXN" id="89c-bg-YKa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WIQ-za-vOm" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="113" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WIQ-za-vOm" customClass="SBBetSquareView">
                                         <rect key="frame" x="663" y="68" width="64" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3406,7 +3406,7 @@
                                             <outlet property="betInfoView" destination="3Te-uZ-Cu5" id="Vuv-AR-b8I"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n4r-gk-8zz" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="n4r-gk-8zz" customClass="SBBetSquareView">
                                         <rect key="frame" x="725" y="68" width="66" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3421,7 +3421,7 @@
                                             <outlet property="betInfoView" destination="jVL-xE-ubH" id="qhj-K0-jps"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wQU-jk-NVK" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="115" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wQU-jk-NVK" customClass="SBBetSquareView">
                                         <rect key="frame" x="788" y="68" width="65" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3436,7 +3436,7 @@
                                             <outlet property="betInfoView" destination="Qmz-yx-xCb" id="Jcs-ev-zMs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SyJ-QY-csB" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="116" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SyJ-QY-csB" customClass="SBBetSquareView">
                                         <rect key="frame" x="850" y="68" width="66" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3451,7 +3451,7 @@
                                             <outlet property="betInfoView" destination="x7d-OL-E5I" id="N8j-n1-jZh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WXS-0D-QHz" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="117" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WXS-0D-QHz" customClass="SBBetSquareView">
                                         <rect key="frame" x="912" y="68" width="67" height="59"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3466,7 +3466,7 @@
                                             <outlet property="betInfoView" destination="Pwr-dY-P82" id="QNV-vC-yVF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y88-vV-kdE" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="118" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y88-vV-kdE" customClass="SBBetSquareView">
                                         <rect key="frame" x="15" y="140" width="74" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3481,7 +3481,7 @@
                                             <outlet property="betInfoView" destination="IVC-Rq-GJ5" id="FWL-0d-SCb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2RJ-HC-Dho" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="119" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2RJ-HC-Dho" customClass="SBBetSquareView">
                                         <rect key="frame" x="84" y="140" width="72" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3496,7 +3496,7 @@
                                             <outlet property="betInfoView" destination="YlP-Qo-caq" id="te6-f9-SOa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ESP-2W-o9Q" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="120" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ESP-2W-o9Q" customClass="SBBetSquareView">
                                         <rect key="frame" x="154" y="140" width="71" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3511,7 +3511,7 @@
                                             <outlet property="betInfoView" destination="udE-Xs-KYk" id="Fj2-0y-Q7o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uun-IA-OmS" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="121" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uun-IA-OmS" customClass="SBBetSquareView">
                                         <rect key="frame" x="223" y="140" width="71" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3526,7 +3526,7 @@
                                             <outlet property="betInfoView" destination="8fX-nM-BSy" id="w1W-YP-tGz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W52-hc-67F" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="122" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W52-hc-67F" customClass="SBBetSquareView">
                                         <rect key="frame" x="293" y="140" width="69" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3541,7 +3541,7 @@
                                             <outlet property="betInfoView" destination="6in-VG-eSa" id="TlT-MW-BZe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Jn-L7-McW" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="123" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2Jn-L7-McW" customClass="SBBetSquareView">
                                         <rect key="frame" x="362" y="140" width="68" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3556,7 +3556,7 @@
                                             <outlet property="betInfoView" destination="QZy-7f-UyQ" id="saY-Oi-Q1u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OrZ-Gp-goF" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="124" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OrZ-Gp-goF" customClass="SBBetSquareView">
                                         <rect key="frame" x="432" y="140" width="67" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3571,7 +3571,7 @@
                                             <outlet property="betInfoView" destination="PQh-ja-5cI" id="1Qh-mE-zrx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dk6-cg-HSv" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="125" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Dk6-cg-HSv" customClass="SBBetSquareView">
                                         <rect key="frame" x="501" y="140" width="67" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3586,7 +3586,7 @@
                                             <outlet property="betInfoView" destination="z0G-42-TMM" id="ctG-bB-Yr0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h9V-az-afd" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="126" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h9V-az-afd" customClass="SBBetSquareView">
                                         <rect key="frame" x="570" y="140" width="68" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3601,7 +3601,7 @@
                                             <outlet property="betInfoView" destination="syk-AH-in5" id="6P7-yu-bDh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GBp-Jn-rlR" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="127" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GBp-Jn-rlR" customClass="SBBetSquareView">
                                         <rect key="frame" x="638" y="140" width="69" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3616,7 +3616,7 @@
                                             <outlet property="betInfoView" destination="xGk-2T-kqj" id="q02-cv-02f"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xps-Hf-qan" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="128" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xps-Hf-qan" customClass="SBBetSquareView">
                                         <rect key="frame" x="707" y="140" width="70" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3631,7 +3631,7 @@
                                             <outlet property="betInfoView" destination="p6O-7r-uDb" id="42a-Ea-WWZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AM6-J1-j1s" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="129" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="AM6-J1-j1s" customClass="SBBetSquareView">
                                         <rect key="frame" x="776" y="140" width="70" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3646,7 +3646,7 @@
                                             <outlet property="betInfoView" destination="lGC-Dw-2Br" id="hdk-fE-2RG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xb5-ci-mCw" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="130" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xb5-ci-mCw" customClass="SBBetSquareView">
                                         <rect key="frame" x="845" y="140" width="71" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3661,7 +3661,7 @@
                                             <outlet property="betInfoView" destination="rR0-oq-7F5" id="mB9-1b-rua"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="A2x-Lj-FUB" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="131" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="A2x-Lj-FUB" customClass="SBBetSquareView">
                                         <rect key="frame" x="913" y="140" width="74" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3676,7 +3676,7 @@
                                             <outlet property="betInfoView" destination="URh-UG-d1k" id="Xqi-3l-p9u"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cj7-5s-CRk" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="132" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cj7-5s-CRk" customClass="SBBetSquareView">
                                         <rect key="frame" x="10" y="195" width="67" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3691,7 +3691,7 @@
                                             <outlet property="betInfoView" destination="gKU-Nm-mNR" id="uto-ue-jqD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uzN-yr-bEI" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="133" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uzN-yr-bEI" customClass="SBBetSquareView">
                                         <rect key="frame" x="74" y="195" width="68" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3706,7 +3706,7 @@
                                             <outlet property="betInfoView" destination="vz8-eu-4QS" id="rTt-K1-VMW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dYK-Tz-uQa" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="134" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dYK-Tz-uQa" customClass="SBBetSquareView">
                                         <rect key="frame" x="141" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3721,7 +3721,7 @@
                                             <outlet property="betInfoView" destination="s1Z-mo-0Ke" id="H1H-9U-fXM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DuU-dF-fCa" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="135" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DuU-dF-fCa" customClass="SBBetSquareView">
                                         <rect key="frame" x="207" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3736,7 +3736,7 @@
                                             <outlet property="betInfoView" destination="a8I-8v-1NX" id="Ums-xE-JRV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O9E-fm-Tt9" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="136" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="O9E-fm-Tt9" customClass="SBBetSquareView">
                                         <rect key="frame" x="272" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3751,7 +3751,7 @@
                                             <outlet property="betInfoView" destination="EsO-1A-Rcb" id="97k-BE-Xin"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="22S-Bq-RJG" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="137" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="22S-Bq-RJG" customClass="SBBetSquareView">
                                         <rect key="frame" x="338" y="195" width="62" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3766,7 +3766,7 @@
                                             <outlet property="betInfoView" destination="zpM-NF-Te8" id="dXf-bG-uK3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MXL-q0-EKw" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="138" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MXL-q0-EKw" customClass="SBBetSquareView">
                                         <rect key="frame" x="404" y="195" width="62" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3781,7 +3781,7 @@
                                             <outlet property="betInfoView" destination="nOH-A5-4T7" id="f7U-17-OwK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DtR-wP-tWU" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="139" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DtR-wP-tWU" customClass="SBBetSquareView">
                                         <rect key="frame" x="469" y="195" width="62" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3796,7 +3796,7 @@
                                             <outlet property="betInfoView" destination="MST-G7-zYD" id="Wy7-he-OrB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pAD-C9-Ti1" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="140" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pAD-C9-Ti1" customClass="SBBetSquareView">
                                         <rect key="frame" x="534" y="195" width="63" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3811,7 +3811,7 @@
                                             <outlet property="betInfoView" destination="3T2-59-UZb" id="c08-zy-1ia"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ltv-QC-WlT" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="141" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ltv-QC-WlT" customClass="SBBetSquareView">
                                         <rect key="frame" x="600" y="195" width="62" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3826,7 +3826,7 @@
                                             <outlet property="betInfoView" destination="7r6-qw-itc" id="Z9k-GV-899"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3kR-Fs-Khl" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="142" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3kR-Fs-Khl" customClass="SBBetSquareView">
                                         <rect key="frame" x="663" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3841,7 +3841,7 @@
                                             <outlet property="betInfoView" destination="y2p-Vw-5Hf" id="eEw-Vx-TVR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OzZ-PC-wen" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="143" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OzZ-PC-wen" customClass="SBBetSquareView">
                                         <rect key="frame" x="729" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3856,7 +3856,7 @@
                                             <outlet property="betInfoView" destination="wdq-LO-NgI" id="lTn-Ml-jDH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qro-tJ-0Eg" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="144" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Qro-tJ-0Eg" customClass="SBBetSquareView">
                                         <rect key="frame" x="793" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3871,7 +3871,7 @@
                                             <outlet property="betInfoView" destination="2QJ-8a-YAL" id="Vul-1O-FPU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kj4-G5-YcM" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="145" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kj4-G5-YcM" customClass="SBBetSquareView">
                                         <rect key="frame" x="859" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3886,7 +3886,7 @@
                                             <outlet property="betInfoView" destination="kV6-sy-gdu" id="vEE-O4-dqu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8SV-3z-iCg" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="146" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8SV-3z-iCg" customClass="SBBetSquareView">
                                         <rect key="frame" x="924" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3901,7 +3901,7 @@
                                             <outlet property="betInfoView" destination="aOY-JH-h6c" id="63g-UE-Hhe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b1C-jJ-Pt8" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="147" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b1C-jJ-Pt8" customClass="SBBetSquareView">
                                         <rect key="frame" x="3" y="252" width="166" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3916,7 +3916,7 @@
                                             <outlet property="betInfoView" destination="Z4q-9T-30l" id="8Y1-MQ-E0j"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BUP-mD-gTi" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="148" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BUP-mD-gTi" customClass="SBBetSquareView">
                                         <rect key="frame" x="170" y="252" width="166" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3931,7 +3931,7 @@
                                             <outlet property="betInfoView" destination="r8O-bG-iCd" id="p6z-Q5-3gS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eDf-jj-hfc" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="149" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eDf-jj-hfc" customClass="SBBetSquareView">
                                         <rect key="frame" x="336" y="252" width="163" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3946,7 +3946,7 @@
                                             <outlet property="betInfoView" destination="PW4-7b-vLM" id="doJ-wG-WXZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="icW-Hv-WFr" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="150" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="icW-Hv-WFr" customClass="SBBetSquareView">
                                         <rect key="frame" x="502" y="252" width="162" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3961,7 +3961,7 @@
                                             <outlet property="betInfoView" destination="7tK-Wi-7SX" id="GaS-X3-kZN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8vu-ym-6IT" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="151" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8vu-ym-6IT" customClass="SBBetSquareView">
                                         <rect key="frame" x="666" y="252" width="164" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3976,7 +3976,7 @@
                                             <outlet property="betInfoView" destination="uGf-lA-8h0" id="mNG-CX-OK6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="q8E-wB-lzE" customClass="SBBetSquareView">
+                                    <button opaque="NO" tag="152" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="q8E-wB-lzE" customClass="SBBetSquareView">
                                         <rect key="frame" x="830" y="252" width="169" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3991,211 +3991,211 @@
                                             <outlet property="betInfoView" destination="7JR-x1-2pf" id="3vv-Xg-jnS"/>
                                         </connections>
                                     </button>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_01.png" id="rTi-0B-Ijr">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="21" contentMode="scaleToFill" image="sicarea_1_01.png" id="rTi-0B-Ijr">
                                         <rect key="frame" x="27" y="15" width="190" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_02.png" id="Qzb-ak-kAT">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="22" contentMode="scaleToFill" image="sicarea_1_02.png" id="Qzb-ak-kAT">
                                         <rect key="frame" x="214" y="15" width="168" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_03.png" id="35I-el-GyC">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="23" contentMode="scaleToFill" image="sicarea_1_03.png" id="35I-el-GyC">
                                         <rect key="frame" x="618" y="13" width="168" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_1_04.png" id="QXQ-8U-SRh">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="24" contentMode="scaleToFill" image="sicarea_1_04.png" id="QXQ-8U-SRh">
                                         <rect key="frame" x="783" y="13" width="189" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_01.png" id="6Fn-ot-lpb">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="25" contentMode="scaleToFill" image="sicarea_2_01.png" id="6Fn-ot-lpb">
                                         <rect key="frame" x="20" y="68" width="69" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_02.png" id="Yes-9u-o0n">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="26" contentMode="scaleToFill" image="sicarea_2_02.png" id="Yes-9u-o0n">
                                         <rect key="frame" x="84" y="68" width="69" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_03.png" id="yAj-GV-GXc">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="27" contentMode="scaleToFill" image="sicarea_2_03.png" id="yAj-GV-GXc">
                                         <rect key="frame" x="148" y="68" width="64" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_04.png" id="rei-jL-yz6">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="28" contentMode="scaleToFill" image="sicarea_2_04.png" id="rei-jL-yz6">
                                         <rect key="frame" x="210" y="68" width="65" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_05.png" id="wAs-Ix-Vgj">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="29" contentMode="scaleToFill" image="sicarea_2_05.png" id="wAs-Ix-Vgj">
                                         <rect key="frame" x="273" y="68" width="63" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_06.png" id="FWb-W2-kSd">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="210" contentMode="scaleToFill" image="sicarea_2_06.png" id="FWb-W2-kSd">
                                         <rect key="frame" x="336" y="68" width="62" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_07.png" id="7Wv-ph-5fE">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="211" contentMode="scaleToFill" image="sicarea_2_07.png" id="7Wv-ph-5fE">
                                         <rect key="frame" x="399" y="69" width="203" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_08.png" id="6qn-7x-ldc">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="212" contentMode="scaleToFill" image="sicarea_2_08.png" id="6qn-7x-ldc">
                                         <rect key="frame" x="602" y="68" width="62" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_09.png" id="azc-5R-aTX">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="213" contentMode="scaleToFill" image="sicarea_2_09.png" id="azc-5R-aTX">
                                         <rect key="frame" x="664" y="68" width="63" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_10.png" id="96U-q9-6oT">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="214" contentMode="scaleToFill" image="sicarea_2_10.png" id="96U-q9-6oT">
                                         <rect key="frame" x="725" y="68" width="66" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_11.png" id="End-CV-FM4">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="215" contentMode="scaleToFill" image="sicarea_2_11.png" id="End-CV-FM4">
                                         <rect key="frame" x="788" y="68" width="66" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_12.png" id="dWs-aU-9TX">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="216" contentMode="scaleToFill" image="sicarea_2_12.png" id="dWs-aU-9TX">
                                         <rect key="frame" x="850" y="68" width="66" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_2_13.png" id="1ga-2y-YD9">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="217" contentMode="scaleToFill" image="sicarea_2_13.png" id="1ga-2y-YD9">
                                         <rect key="frame" x="912" y="68" width="67" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_01.png" id="tYy-6A-oUP">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="218" contentMode="scaleToFill" image="sicarea_3_01.png" id="tYy-6A-oUP">
                                         <rect key="frame" x="15" y="140" width="72" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_02.png" id="hGP-ua-X1p">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="219" contentMode="scaleToFill" image="sicarea_3_02.png" id="hGP-ua-X1p">
                                         <rect key="frame" x="84" y="140" width="72" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_03.png" id="OSO-RW-lKP">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="220" contentMode="scaleToFill" image="sicarea_3_03.png" id="OSO-RW-lKP">
                                         <rect key="frame" x="154" y="140" width="71" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_04.png" id="bH9-OK-Gui">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="221" contentMode="scaleToFill" image="sicarea_3_04.png" id="bH9-OK-Gui">
                                         <rect key="frame" x="223" y="140" width="71" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_05.png" id="PPq-rb-d18">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="222" contentMode="scaleToFill" image="sicarea_3_05.png" id="PPq-rb-d18">
                                         <rect key="frame" x="293" y="140" width="69" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_06.png" id="wYm-LO-lpz">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="223" contentMode="scaleToFill" image="sicarea_3_06.png" id="wYm-LO-lpz">
                                         <rect key="frame" x="362" y="140" width="68" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_07.png" id="mMc-9n-2P1">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="224" contentMode="scaleToFill" image="sicarea_3_07.png" id="mMc-9n-2P1">
                                         <rect key="frame" x="431" y="140" width="68" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_08.png" id="FbF-Jk-06I">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="225" contentMode="scaleToFill" image="sicarea_3_08.png" id="FbF-Jk-06I">
                                         <rect key="frame" x="501" y="140" width="67" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_09.png" id="dGl-0f-CbG">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="226" contentMode="scaleToFill" image="sicarea_3_09.png" id="dGl-0f-CbG">
                                         <rect key="frame" x="570" y="140" width="68" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_10.png" id="HDX-0c-UUm">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="227" contentMode="scaleToFill" image="sicarea_3_10.png" id="HDX-0c-UUm">
                                         <rect key="frame" x="638" y="140" width="69" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_11.png" id="BlY-1v-GXg">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="228" contentMode="scaleToFill" image="sicarea_3_11.png" id="BlY-1v-GXg">
                                         <rect key="frame" x="707" y="140" width="70" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_12.png" id="U6N-tC-ElF">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="229" contentMode="scaleToFill" image="sicarea_3_12.png" id="U6N-tC-ElF">
                                         <rect key="frame" x="776" y="140" width="70" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_14.png" id="1O6-x1-MbZ">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="230" contentMode="scaleToFill" image="sicarea_3_14.png" id="1O6-x1-MbZ">
                                         <rect key="frame" x="913" y="140" width="73" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_3_13.png" id="ofm-5e-S3h">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="231" contentMode="scaleToFill" image="sicarea_3_13.png" id="ofm-5e-S3h">
                                         <rect key="frame" x="845" y="140" width="71" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_01.png" id="s8N-bk-Z7u">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="232" contentMode="scaleToFill" image="sicarea_4_01.png" id="s8N-bk-Z7u">
                                         <rect key="frame" x="10" y="195" width="67" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_02.png" id="BcX-8f-1GB">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="233" contentMode="scaleToFill" image="sicarea_4_02.png" id="BcX-8f-1GB">
                                         <rect key="frame" x="75" y="195" width="67" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_03.png" id="Glr-mH-3ev">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="234" contentMode="scaleToFill" image="sicarea_4_03.png" id="Glr-mH-3ev">
                                         <rect key="frame" x="141" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_04.png" id="d55-1y-6FD">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="235" contentMode="scaleToFill" image="sicarea_4_04.png" id="d55-1y-6FD">
                                         <rect key="frame" x="206" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_05.png" id="MMD-DD-kaj">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="236" contentMode="scaleToFill" image="sicarea_4_05.png" id="MMD-DD-kaj">
                                         <rect key="frame" x="272" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_06.png" id="3vH-kS-5UQ">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="237" contentMode="scaleToFill" image="sicarea_4_06.png" id="3vH-kS-5UQ">
                                         <rect key="frame" x="337" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_07.png" id="Rfu-Bb-C88">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="238" contentMode="scaleToFill" image="sicarea_4_07.png" id="Rfu-Bb-C88">
                                         <rect key="frame" x="403" y="195" width="63" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_08.png" id="GLm-fO-xlh">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="239" contentMode="scaleToFill" image="sicarea_4_08.png" id="GLm-fO-xlh">
                                         <rect key="frame" x="468" y="195" width="63" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_09.png" id="hMe-ly-8jd">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="240" contentMode="scaleToFill" image="sicarea_4_09.png" id="hMe-ly-8jd">
                                         <rect key="frame" x="534" y="195" width="63" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_10.png" id="yOQ-Vm-HFy">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="241" contentMode="scaleToFill" image="sicarea_4_10.png" id="yOQ-Vm-HFy">
                                         <rect key="frame" x="599" y="195" width="63" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_11.png" id="OkZ-zc-Ji9">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="242" contentMode="scaleToFill" image="sicarea_4_11.png" id="OkZ-zc-Ji9">
                                         <rect key="frame" x="664" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_12.png" id="aAg-ZC-dlV">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="243" contentMode="scaleToFill" image="sicarea_4_12.png" id="aAg-ZC-dlV">
                                         <rect key="frame" x="729" y="195" width="64" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_13.png" id="0ro-ew-SDq">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="244" contentMode="scaleToFill" image="sicarea_4_13.png" id="0ro-ew-SDq">
                                         <rect key="frame" x="793" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_14.png" id="cbR-9Z-cVz">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="245" contentMode="scaleToFill" image="sicarea_4_14.png" id="cbR-9Z-cVz">
                                         <rect key="frame" x="859" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_4_15.png" id="iDr-Ad-FZ5">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="246" contentMode="scaleToFill" image="sicarea_4_15.png" id="iDr-Ad-FZ5">
                                         <rect key="frame" x="924" y="195" width="66" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_01.png" id="47B-mV-RS9">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="247" contentMode="scaleToFill" image="sicarea_5_01.png" id="47B-mV-RS9">
                                         <rect key="frame" x="2" y="252" width="168" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_02.png" id="RQY-4q-bbo">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="248" contentMode="scaleToFill" image="sicarea_5_02.png" id="RQY-4q-bbo">
                                         <rect key="frame" x="168" y="252" width="168" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_03.png" id="kvG-QY-UQ0">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="249" contentMode="scaleToFill" image="sicarea_5_03.png" id="kvG-QY-UQ0">
                                         <rect key="frame" x="336" y="252" width="163" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_04.png" id="IBd-vI-IQd">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="250" contentMode="scaleToFill" image="sicarea_5_04.png" id="IBd-vI-IQd">
                                         <rect key="frame" x="502" y="252" width="162" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_05.png" id="kmz-xX-k53">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="251" contentMode="scaleToFill" image="sicarea_5_05.png" id="kmz-xX-k53">
                                         <rect key="frame" x="666" y="252" width="164" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="sicarea_5_06.png" id="9wj-i6-siM">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" tag="252" contentMode="scaleToFill" image="sicarea_5_06.png" id="9wj-i6-siM">
                                         <rect key="frame" x="830" y="252" width="169" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -4313,6 +4313,28 @@
                                 <rect key="frame" x="237" y="633" width="549" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" id="u0F-wX-1tf" customClass="PromptMessageView">
+                                <rect key="frame" x="358" y="363" width="307" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="MsgTxt_bg.png" id="uDo-aE-K2q">
+                                        <rect key="frame" x="0.0" y="0.0" width="307" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OtI-7j-qtq">
+                                        <rect key="frame" x="20" y="11" width="267" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="promptMsgBackgroundView" destination="uDo-aE-K2q" id="ATW-sK-eVg"/>
+                                    <outlet property="promptMsgLabel" destination="OtI-7j-qtq" id="Ft9-94-XTi"/>
+                                </connections>
+                            </view>
                             <view contentMode="scaleToFill" id="8Ua-kl-FaU">
                                 <rect key="frame" x="663" y="62" width="361" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -4427,6 +4449,7 @@
                         <outlet property="detailButton" destination="23i-Nm-hgN" id="9KK-ow-c1x"/>
                         <outlet property="gameCodeNameLabel" destination="knP-NU-4ox" id="9tT-R8-igq"/>
                         <outlet property="gameNumberLabel" destination="Xw8-ca-mcb" id="zWo-Qh-smu"/>
+                        <outlet property="promptMsgView" destination="u0F-wX-1tf" id="nPe-yf-ffA"/>
                         <outlet property="recordButton" destination="vNk-75-CnZ" id="FAs-sT-JAM"/>
                         <outlet property="roadmapButton" destination="IZV-pj-KZB" id="fqd-Lm-S9r"/>
                         <outlet property="sbBetView" destination="abp-AG-GBD" id="tc6-AD-zYG"/>
@@ -8328,6 +8351,12 @@
         <class className="CommonBaccaratGameViewController" superclassName="BaseGameViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonBaccaratGameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="action" name="betConfirm:"/>
+                <relationship kind="action" name="clearBet:"/>
+                <relationship kind="action" name="detail:"/>
+                <relationship kind="action" name="record:"/>
+                <relationship kind="action" name="roadmap:"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="betAreaView" candidateClass="BetView"/>

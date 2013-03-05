@@ -9,9 +9,9 @@
 #import "SBBetView.h"
 #import "FileFinder.h"
 
+#define kNumberOfButton 52
+
 @interface SBBetView ()
-
-
 
 @end
 
@@ -147,6 +147,7 @@
 #pragma mark - internal
 -(void)setupDelegate
 {
+    /*
     _betSquare1.theDelegate = self;
     _betSquare2.theDelegate = self;
     _betSquare3.theDelegate = self;
@@ -199,12 +200,152 @@
     _betSquare50.theDelegate = self;
     _betSquare51.theDelegate = self;
     _betSquare52.theDelegate = self;
+     */
+    
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        squareView.theDelegate = self;
+        
+        tagStr = nil;
+    }
 }
 
 #pragma mark - public interface
 -(void)clearBetsWithoutFinalSet
 {
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [squareView resetCurrentBetWithBetInfo:NO];
+        
+        if(squareView.betHistory == 0)
+        {
+            [squareView hideBetInfoView];
+        }
+        else
+        {
+            [squareView.betInfoView setBetFinalResult:squareView.betHistory];
+        }
+        
+        tagStr = nil;
+    }
+    /*
+    [_betSquare1 resetCurrentBetWithBetInfo:NO];
+    [_betSquare2 resetCurrentBetWithBetInfo:NO];
+    [_betSquare3 resetCurrentBetWithBetInfo:NO];
+    [_betSquare4 resetCurrentBetWithBetInfo:NO];
+    [_betSquare5 resetCurrentBetWithBetInfo:NO];
+    [_betSquare6 resetCurrentBetWithBetInfo:NO];
+    [_betSquare7 resetCurrentBetWithBetInfo:NO];
+    [_betSquare8 resetCurrentBetWithBetInfo:NO];
+    [_betSquare9 resetCurrentBetWithBetInfo:NO];
+    [_betSquare10 resetCurrentBetWithBetInfo:NO];
+    [_betSquare11 resetCurrentBetWithBetInfo:NO];
     
+    if(_betSquare1.betHistory == 0)
+    {
+        [_betSquare1 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare1.betInfoView setBetFinalResult:_betSquare1.betHistory];
+    }
+    
+    if(_betSquare2.betHistory == 0)
+    {
+        [_betSquare2 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare2.betInfoView setBetFinalResult:_betSquare2.betHistory];
+    }
+    
+    if(_betSquare3.betHistory == 0)
+    {
+        [_betSquare3 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare3.betInfoView setBetFinalResult:_betSquare3.betHistory];
+    }
+    
+    if(_betSquare4.betHistory == 0)
+    {
+        [_betSquare4 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare4.betInfoView setBetFinalResult:_betSquare4.betHistory];
+    }
+    
+    if(_betSquare5.betHistory == 0)
+    {
+        [_betSquare5 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare5.betInfoView setBetFinalResult:_betSquare5.betHistory];
+    }
+    
+    if(_betSquare6.betHistory == 0)
+    {
+        [_betSquare6 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare6.betInfoView setBetFinalResult:_betSquare6.betHistory];
+    }
+    
+    if(_betSquare7.betHistory == 0)
+    {
+        [_betSquare7 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare7.betInfoView setBetFinalResult:_betSquare7.betHistory];
+    }
+    
+    if(_betSquare8.betHistory == 0)
+    {
+        [_betSquare8 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare8.betInfoView setBetFinalResult:_betSquare8.betHistory];
+    }
+    
+    if(_betSquare9.betHistory == 0)
+    {
+        [_betSquare9 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare9.betInfoView setBetFinalResult:_betSquare9.betHistory];
+    }
+    
+    if(_betSquare10.betHistory == 0)
+    {
+        [_betSquare10 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare10.betInfoView setBetFinalResult:_betSquare10.betHistory];
+    }
+    
+    if(_betSquare11.betHistory == 0)
+    {
+        [_betSquare11 hideBetInfoView];
+    }
+    else
+    {
+        [_betSquare11.betInfoView setBetFinalResult:_betSquare11.betHistory];
+    }
+     */
 }
 
 -(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo
@@ -223,6 +364,7 @@
     if(yesOrNo)
     {
         /**clear all bets info and info view**/
+        /*
         [_betSquare1 hideBetInfoView];
         [_betSquare2 hideBetInfoView];
         [_betSquare3 hideBetInfoView];
@@ -328,6 +470,18 @@
         [_betSquare50 resetCurrentBetWithBetInfo:yesOrNo];
         [_betSquare51 resetCurrentBetWithBetInfo:yesOrNo];
         [_betSquare52 resetCurrentBetWithBetInfo:yesOrNo];
+         */
+        
+        for(int i = 1; i <= kNumberOfButton; i++)
+        {
+            NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+            SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+            
+            [squareView hideBetInfoView];
+            [squareView resetCurrentBetWithBetInfo:yesOrNo];
+            
+            tagStr = nil;
+        }
     }
 }
 
@@ -335,6 +489,17 @@
 {
     NSMutableArray *infos = [[NSMutableArray alloc] init];
     
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [infos addObject:[NSNumber numberWithDouble:squareView.theCurrentBet]];
+        
+        tagStr = nil;
+    }
+    
+    /*
     [infos addObject:[NSNumber numberWithDouble:_betSquare1.theCurrentBet]];
     [infos addObject:[NSNumber numberWithDouble:_betSquare2.theCurrentBet]];
     [infos addObject:[NSNumber numberWithDouble:_betSquare3.theCurrentBet]];
@@ -387,6 +552,7 @@
     [infos addObject:[NSNumber numberWithDouble:_betSquare50.theCurrentBet]];
     [infos addObject:[NSNumber numberWithDouble:_betSquare51.theCurrentBet]];
     [infos addObject:[NSNumber numberWithDouble:_betSquare52.theCurrentBet]];
+     */
     
     return infos;
 }
@@ -394,6 +560,16 @@
 -(void)displayPlayerBetResult
 {
     //custom
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [squareView displayCurrentBetResult];
+        
+        tagStr = nil;
+    }
+    /*
     [_betSquare1 displayCurrentBetResult];
     [_betSquare2 displayCurrentBetResult];
     [_betSquare3 displayCurrentBetResult];
@@ -446,6 +622,7 @@
     [_betSquare50 displayCurrentBetResult];
     [_betSquare51 displayCurrentBetResult];
     [_betSquare52 displayCurrentBetResult];
+     */
     
     isDisplayPlayerBetResult = YES;
 }
@@ -456,6 +633,16 @@
 {
     
     //make sure they do not appear
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"2%i", i];
+        UIImageView *squareResult = (UIImageView *)[self viewWithTag:[tagStr intValue]];
+        
+        squareResult.hidden = YES;
+        
+        tagStr = nil;
+    }
+    /*
     _square1Result.hidden = YES;
     _square2Result.hidden = YES;
     _square3Result.hidden = YES;
@@ -508,11 +695,21 @@
     _square50Result.hidden = YES;
     _square51Result.hidden = YES;
     _square52Result.hidden = YES;
+     */
 }
 
 -(void)setupCurrentMaxBet
 {
-    currentMaxBet = self .userInfo.max;
+    currentMaxBet = self.userInfo.max;
+    
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        squareView.maxBet = currentMaxBet;
+    }
+    
     /*
     double maxBet = self.userInfo.max;
     
@@ -2218,16 +2415,29 @@
         */
         
         [self showResult];
-         
     }
-    
 }
 
 #pragma mark - BetSquareView delegate
 -(BOOL)BetSquareViewIsTotalBetOverBalance:(BetSquareView *)betSquare withCurrentBet:(double)currentBet
 {
     //calculate amount
+    double amount = 0;
+    
+    for(int i = 1; i <= kNumberOfButton ; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        amount += squareView.theCurrentBet;
+        
+        tagStr = nil;
+    }
+    amount += currentBet;
+    
+    /*
     double amount = _betSquare1.theCurrentBet + _betSquare2.theCurrentBet + _betSquare3.theCurrentBet + _betSquare4.theCurrentBet + _betSquare5.theCurrentBet + _betSquare6.theCurrentBet + _betSquare7.theCurrentBet + _betSquare8.theCurrentBet + _betSquare9.theCurrentBet + _betSquare10.theCurrentBet + _betSquare11.theCurrentBet + _betSquare12.theCurrentBet + _betSquare13.theCurrentBet + _betSquare14.theCurrentBet + _betSquare15.theCurrentBet + _betSquare16.theCurrentBet + _betSquare17.theCurrentBet + _betSquare18.theCurrentBet + _betSquare19.theCurrentBet + _betSquare20.theCurrentBet + _betSquare21.theCurrentBet + _betSquare22.theCurrentBet + _betSquare23.theCurrentBet +_betSquare24.theCurrentBet + _betSquare25.theCurrentBet + _betSquare26.theCurrentBet + _betSquare27.theCurrentBet + _betSquare28.theCurrentBet + _betSquare29.theCurrentBet + _betSquare30.theCurrentBet + _betSquare31.theCurrentBet + _betSquare32.theCurrentBet + _betSquare33.theCurrentBet + _betSquare34.theCurrentBet + _betSquare35.theCurrentBet + _betSquare36.theCurrentBet + _betSquare37.theCurrentBet + _betSquare38.theCurrentBet + _betSquare39.theCurrentBet + _betSquare40.theCurrentBet + _betSquare41.theCurrentBet + _betSquare42.theCurrentBet + _betSquare43.theCurrentBet + _betSquare44.theCurrentBet + _betSquare45.theCurrentBet + _betSquare46.theCurrentBet + _betSquare47.theCurrentBet + _betSquare48.theCurrentBet + _betSquare49.theCurrentBet + _betSquare50.theCurrentBet + _betSquare51.theCurrentBet + _betSquare52.theCurrentBet + currentBet;
+     */
     
     if([self isBetOverBalanceWithBetAmount:amount])
     {
@@ -2305,6 +2515,99 @@
     
     //need to update tracked bet square's maxbet
     [self changeAllBetSquaresMaxBetWithValue:betSquare.maxBet];
+}
+
+-(void)clearAllBetTemp
+{
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [squareView clearTempBet];
+        
+        tagStr = nil;
+    }
+    /*
+    [_betSquare1 clearTempBet];
+    [_betSquare2 clearTempBet];
+    [_betSquare3 clearTempBet];
+    [_betSquare4 clearTempBet];
+    [_betSquare5 clearTempBet];
+    [_betSquare6 clearTempBet];
+    [_betSquare7 clearTempBet];
+    [_betSquare8 clearTempBet];
+    [_betSquare9 clearTempBet];
+    [_betSquare10 clearTempBet];
+    [_betSquare11 clearTempBet];
+    [_betSquare12 clearTempBet];
+    [_betSquare13 clearTempBet];
+    [_betSquare14 clearTempBet];
+    [_betSquare15 clearTempBet];
+    [_betSquare16 clearTempBet];
+    [_betSquare17 clearTempBet];
+    [_betSquare18 clearTempBet];
+    [_betSquare19 clearTempBet];
+    [_betSquare20 clearTempBet];
+    [_betSquare21 clearTempBet];
+    [_betSquare22 clearTempBet];
+    [_betSquare23 clearTempBet];
+    [_betSquare24 clearTempBet];
+    [_betSquare25 clearTempBet];
+    [_betSquare26 clearTempBet];
+    [_betSquare27 clearTempBet];
+    [_betSquare28 clearTempBet];
+    [_betSquare29 clearTempBet];
+    [_betSquare30 clearTempBet];
+    [_betSquare31 clearTempBet];
+    [_betSquare32 clearTempBet];
+    [_betSquare33 clearTempBet];
+    [_betSquare34 clearTempBet];
+    [_betSquare35 clearTempBet];
+    [_betSquare36 clearTempBet];
+    [_betSquare37 clearTempBet];
+    [_betSquare38 clearTempBet];
+    [_betSquare39 clearTempBet];
+    [_betSquare40 clearTempBet];
+    [_betSquare41 clearTempBet];
+    [_betSquare42 clearTempBet];
+    [_betSquare43 clearTempBet];
+    [_betSquare44 clearTempBet];
+    [_betSquare45 clearTempBet];
+    [_betSquare46 clearTempBet];
+    [_betSquare47 clearTempBet];
+    [_betSquare48 clearTempBet];
+    [_betSquare49 clearTempBet];
+    [_betSquare50 clearTempBet];
+    [_betSquare51 clearTempBet];
+    [_betSquare52 clearTempBet];
+     */
+}
+
+-(void)disableAllBetSquares
+{
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        squareView.enabled = NO;
+        
+        tagStr = nil;
+    }
+}
+
+-(void)enableAllBetSquares
+{
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        squareView.enabled = YES;
+        
+        tagStr = nil;
+    }
 }
 
 /*
