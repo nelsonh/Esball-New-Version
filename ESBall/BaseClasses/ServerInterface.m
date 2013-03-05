@@ -129,19 +129,28 @@ static NSString *hostToCnnect = @"183.182.66.80";//167, 80, 239
 
 -(NSString *)serverIP
 {
-    NSString *serverIPs = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://183.182.66.167/rtmppyeouupdooaoIP.png"] encoding:NSUTF8StringEncoding error:nil];
+    NSData *serverIPData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://183.182.66.167/rtmppyeouupdooaoIP.png"]];
     
+    NSString *serverIPs = [[NSString alloc] initWithData:serverIPData encoding:NSUTF8StringEncoding];
+    
+
     NSLog(@"%@", serverIPs);
     
     NSArray *splited = [serverIPs componentsSeparatedByString:@","];
     
-    int min = 1;
-    int max = splited.count;
+    NSMutableArray *newArr = [NSMutableArray arrayWithArray:splited];
+    [newArr removeObjectAtIndex:0];
+    
+    splited = nil;
+    
+    int min = 0;
+    int max = newArr.count;
     int randNumber  = rand() % (max - min) + min;
     
-    NSString *ipStr = [splited objectAtIndex:randNumber];
+    NSString *ipStr = [newArr objectAtIndex:randNumber];
     
     return [[NSString alloc] initWithString:ipStr];
+     
 }
 
 -(void)connectToHostWithUserName:(NSString *)username andPassword:(NSString *)password
