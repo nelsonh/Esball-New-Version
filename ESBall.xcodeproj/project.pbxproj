@@ -861,6 +861,8 @@
 		52F0EF7B166CA840002A9ACB /* BetAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF7A166CA840002A9ACB /* BetAreaView.m */; };
 		52F0EF82166CA8EC002A9ACB /* ChipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF81166CA8EC002A9ACB /* ChipView.m */; };
 		52F3D8761671EA9B005ECC58 /* ImagePull.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D8751671EA9B005ECC58 /* ImagePull.m */; };
+		52F4CAAA16E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F4CAA916E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m */; };
+		52F4CAAD16E72DE1009BB2AC /* SicboBetRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F4CAAC16E72DE0009BB2AC /* SicboBetRecordCell.m */; };
 		52F5E8AC16E595A300D7A1ED /* SicboItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F5E8AB16E595A300D7A1ED /* SicboItemViewController.m */; };
 		52F5E8B016E5F9DD00D7A1ED /* SBPokerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F5E8AF16E5F9DD00D7A1ED /* SBPokerView.m */; };
 		52F7D36716C35D9D00DC1863 /* Default-portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F7D36516C35D9D00DC1863 /* Default-portrait@2x~iphone.png */; };
@@ -1933,6 +1935,10 @@
 		52F0EF81166CA8EC002A9ACB /* ChipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChipView.m; sourceTree = "<group>"; };
 		52F3D8741671EA9B005ECC58 /* ImagePull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePull.h; path = ImagePull/ImagePull.h; sourceTree = "<group>"; };
 		52F3D8751671EA9B005ECC58 /* ImagePull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePull.m; path = ImagePull/ImagePull.m; sourceTree = "<group>"; };
+		52F4CAA816E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSicboBetRecordDetailViewController.h; path = SicboBetRecordDetail/CommonSicboBetRecordDetailViewController.h; sourceTree = "<group>"; };
+		52F4CAA916E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonSicboBetRecordDetailViewController.m; path = SicboBetRecordDetail/CommonSicboBetRecordDetailViewController.m; sourceTree = "<group>"; };
+		52F4CAAB16E72DE0009BB2AC /* SicboBetRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SicboBetRecordCell.h; path = ESBall/PadClasses/VideoSectionClasses/SicboGameViewController/SicboBetRecord/SicboBetRecordCell.h; sourceTree = SOURCE_ROOT; };
+		52F4CAAC16E72DE0009BB2AC /* SicboBetRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SicboBetRecordCell.m; path = ESBall/PadClasses/VideoSectionClasses/SicboGameViewController/SicboBetRecord/SicboBetRecordCell.m; sourceTree = SOURCE_ROOT; };
 		52F5E8AA16E595A300D7A1ED /* SicboItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SicboItemViewController.h; path = SicboItemViewController/SicboItemViewController.h; sourceTree = "<group>"; };
 		52F5E8AB16E595A300D7A1ED /* SicboItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SicboItemViewController.m; path = SicboItemViewController/SicboItemViewController.m; sourceTree = "<group>"; };
 		52F5E8AE16E5F9DD00D7A1ED /* SBPokerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBPokerView.h; path = SicboGame/SBPokerView/SBPokerView.h; sourceTree = "<group>"; };
@@ -3522,6 +3528,8 @@
 				5295112616B10A9900ACC473 /* SicboBetRecordDetail */,
 				5295112316B10A3E00ACC473 /* SicboBetRecordViewController.h */,
 				5295112416B10A3E00ACC473 /* SicboBetRecordViewController.m */,
+				52F4CAAB16E72DE0009BB2AC /* SicboBetRecordCell.h */,
+				52F4CAAC16E72DE0009BB2AC /* SicboBetRecordCell.m */,
 			);
 			name = SicboBetRecord;
 			sourceTree = "<group>";
@@ -3844,6 +3852,7 @@
 		5298C7B9169E4DE100A8C6DB /* BetRecord */ = {
 			isa = PBXGroup;
 			children = (
+				52F4CAA716E71176009BB2AC /* SicboBetRecordDetail */,
 				5298C7E4169EC60E00A8C6DB /* DragonTigerBetRecordDetail */,
 				5298C7DB169EA30100A8C6DB /* BaccaratBetRecordDetail */,
 				5298C7BC169E4DE100A8C6DB /* BetRecordDetail */,
@@ -4416,6 +4425,15 @@
 				52F3D8751671EA9B005ECC58 /* ImagePull.m */,
 			);
 			name = ImagePull;
+			sourceTree = "<group>";
+		};
+		52F4CAA716E71176009BB2AC /* SicboBetRecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				52F4CAA816E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.h */,
+				52F4CAA916E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m */,
+			);
+			name = SicboBetRecordDetail;
 			sourceTree = "<group>";
 		};
 		52F5E8A916E5954A00D7A1ED /* SicboItemViewController */ = {
@@ -5406,6 +5424,8 @@
 				5297AF7516B8B8F600108BA7 /* BetRespondInfo.m in Sources */,
 				52F5E8AC16E595A300D7A1ED /* SicboItemViewController.m in Sources */,
 				52F5E8B016E5F9DD00D7A1ED /* SBPokerView.m in Sources */,
+				52F4CAAA16E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m in Sources */,
+				52F4CAAD16E72DE1009BB2AC /* SicboBetRecordCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

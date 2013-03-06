@@ -702,6 +702,24 @@
 {
     currentMaxBet = self.userInfo.max;
     
+    double amount = 0;
+    
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        amount += squareView.betHistory;
+    }
+    
+    //substract amount of bet had been apply
+    currentMaxBet -= amount;
+    
+    if(currentMaxBet < 0)
+    {
+        currentMaxBet = 0;
+    }
+    
     for(int i = 1; i <= kNumberOfButton; i++)
     {
         NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
@@ -766,6 +784,19 @@
     _betSquare51.maxBet = maxBet;
     _betSquare52.maxBet = maxBet;
      */
+}
+
+-(void)resetCurrentMaxBet
+{
+    currentMaxBet = self.userInfo.max;
+    
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        squareView.maxBet = currentMaxBet;
+    }
 }
 
 -(void)changeAllBetSquaresMaxBetWithValue:(double)newMaxBet
@@ -838,6 +869,90 @@
         return YES;
     else
         return NO;
+}
+
+-(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo
+{
+    [self clearBetsWithHideInfo:yesOrNo WithHistory:hisYesOrNo];
+    
+}
+
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo
+{
+    NSLog(@"clear all bet info");
+    
+    if(yesOrNo)
+    {
+        /**clear all bets info and info view**/
+        for(int i = 1; i <= kNumberOfButton; i++)
+        {
+            NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+            SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+            
+            [squareView hideBetInfoView];
+            [squareView resetCurrentBetWithBetInfo:yesOrNo];
+            
+            if(hisYesOrNo)
+            {
+                [squareView clearBetHistory];
+            }
+        }
+        
+        return;
+    }
+    
+    
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [squareView resetCurrentBetWithBetInfo:yesOrNo];
+        
+        if(hisYesOrNo)
+        {
+            [squareView clearBetHistory];
+        }
+    }
+}
+
+-(void)applyAllBets
+{
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [squareView doBetApply];
+    }
+}
+
+-(NSMutableArray *)collectHistoryBetInfo
+{
+    NSMutableArray *infos = [[NSMutableArray alloc] init];
+    
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [infos addObject:[NSNumber numberWithDouble:squareView.betHistory]];
+    }
+    
+    return infos;
+}
+
+-(void)displayPlayerHistoryBetResult
+{
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [squareView displayHistoryBetResult];
+    }
+    
+    isDisplayPlayerBetResult = YES;
 }
 
 #pragma mark - Square result
@@ -2394,13 +2509,15 @@
             //player was confirm bet and first time enter betting status
             isDisplayPlayerBetResult = NO;
             [self clearAllBetsWithHideInfo:YES];
-            [self setupCurrentMaxBet];
+            //[self setupCurrentMaxBet];
+            [self resetCurrentMaxBet];
         }
         else if (isDisplayPlayerBetResult == NO && lastGameStatus == GameStatusWaiting)
         {
             //player was not confirm bet and first enter betting status
             [self clearAllBetsWithHideInfo:YES];
-            [self setupCurrentMaxBet];
+            //[self setupCurrentMaxBet];
+            [self resetCurrentMaxBet];
         }
         
         [self setupBetSquare];

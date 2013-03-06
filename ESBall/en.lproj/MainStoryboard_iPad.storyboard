@@ -1106,6 +1106,9 @@
                                         <state key="highlighted" image="history_btn_down.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="record:" destination="RfO-xA-do5" eventType="touchUpInside" id="IO6-ye-v1B"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="可用余额" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5iC-7w-1JU">
                                         <rect key="frame" x="288" y="19" width="69" height="21"/>
@@ -1163,6 +1166,9 @@
                                         <state key="highlighted" image="bet_btn_down.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="betConfirm:" destination="RfO-xA-do5" eventType="touchUpInside" id="16b-ww-P89"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -7720,10 +7726,10 @@
             </objects>
             <point key="canvasLocation" x="2630" y="-4032"/>
         </scene>
-        <!--Dragon Tiger Bet Record Detail View Controller-->
+        <!--Sicbo Bet Record Detail View Controller-->
         <scene sceneID="ARr-nd-ntF">
             <objects>
-                <viewController storyboardIdentifier="template reference" autoresizesArchivedViewToFullSize="NO" id="a1o-BY-BBx" customClass="DragonTigerBetRecordDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SicboBetRecordDetailViewController" autoresizesArchivedViewToFullSize="NO" id="a1o-BY-BBx" customClass="SicboBetRecordDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kzm-8f-adU">
                         <rect key="frame" x="0.0" y="0.0" width="660" height="645"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -7843,8 +7849,8 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="660" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJU-oC-oRg">
-                                                    <rect key="frame" x="27" y="8" width="42" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SJU-oC-oRg">
+                                                    <rect key="frame" x="11" y="8" width="81" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -7927,38 +7933,37 @@
                                     <outlet property="delegate" destination="a1o-BY-BBx" id="yHH-Bt-6jY"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="庄" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VEg-s9-ACX">
-                                <rect key="frame" x="367" y="79" width="17" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="閑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gGc-Nb-fX4">
-                                <rect key="frame" x="525" y="79" width="17" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="r4x-nm-vK7">
-                                <rect key="frame" x="351" y="120" width="49" height="75"/>
+                                <rect key="frame" x="377" y="129" width="67" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="m7S-wb-22i">
-                                <rect key="frame" x="509" y="120" width="49" height="75"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="FTE-hG-puW">
+                                <rect key="frame" x="447" y="129" width="67" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3zu-tF-3Ei">
-                                <rect key="frame" x="389" y="79" width="32" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="QIP-nD-tNS">
+                                <rect key="frame" x="517" y="129" width="67" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点数:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h6Z-6f-CTH">
+                                <rect key="frame" x="412" y="88" width="39" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g7o-3k-rrH">
-                                <rect key="frame" x="551" y="79" width="32" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uxS-cv-7I0">
+                                <rect key="frame" x="462" y="88" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GZj-su-Rm7">
+                                <rect key="frame" x="512" y="88" width="17" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -7969,12 +7974,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="bankerCard" destination="r4x-nm-vK7" id="mjA-XS-hEK"/>
-                        <outlet property="bankerPointLabel" destination="3zu-tF-3Ei" id="Q18-jg-9lr"/>
                         <outlet property="commentLabel" destination="2mI-yi-6jS" id="hpp-Kj-tMs"/>
                         <outlet property="dateTimeLabel" destination="PAv-SS-Qac" id="5CT-K0-pol"/>
-                        <outlet property="playerCard" destination="m7S-wb-22i" id="7JG-be-lEo"/>
-                        <outlet property="playerPointLabel" destination="g7o-3k-rrH" id="Oxv-h1-OZp"/>
+                        <outlet property="diceLeft" destination="r4x-nm-vK7" id="IqD-Kr-tAL"/>
+                        <outlet property="diceMiddle" destination="FTE-hG-puW" id="loa-lc-Q4I"/>
+                        <outlet property="dicePoint" destination="uxS-cv-7I0" id="AWv-fE-5Lf"/>
+                        <outlet property="diceRight" destination="QIP-nD-tNS" id="7vz-Da-VZB"/>
                         <outlet property="roundNumberLabel" destination="vH9-Nz-H3u" id="xAW-Xg-GyI"/>
                         <outlet property="tableNumberLabel" destination="W9p-uf-SwP" id="MK4-TS-iks"/>
                         <outlet property="tableView" destination="NCI-Uz-dcm" id="Fce-w7-EBR"/>
@@ -7982,7 +7987,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFo-Pb-MYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="-3890"/>
+            <point key="canvasLocation" x="484" y="-4006"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="pzv-c3-csD">
@@ -8083,6 +8088,129 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsi-sl-OcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="479" y="-1125"/>
+        </scene>
+        <!--Sicbo Bet Record View Controller-->
+        <scene sceneID="hh5-OU-2Bd">
+            <objects>
+                <viewController storyboardIdentifier="SicboBetRecordViewController" autoresizesArchivedViewToFullSize="NO" id="P0E-RH-i5C" customClass="SicboBetRecordViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LNI-5C-0BI">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="645"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Record_bg.png" id="8mv-aW-g6g">
+                                <rect key="frame" x="0.0" y="47" width="282" height="598"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="L_row_top.png" id="ba0-GT-NGR">
+                                <rect key="frame" x="0.0" y="0.0" width="282" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="59" sectionHeaderHeight="10" sectionFooterHeight="10" id="FwQ-Eg-M8a">
+                                <rect key="frame" x="0.0" y="47" width="282" height="598"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BetRecordCell" rowHeight="59" id="X6u-IT-d6e" customClass="SicboBetRecordCell">
+                                        <rect key="frame" x="0.0" y="34" width="282" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="262" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vb4-Rw-oHH">
+                                                    <rect key="frame" x="47" y="5" width="77" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="总投注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PUy-jX-AOS">
+                                                    <rect key="frame" x="10" y="32" width="46" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="局号:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ts0-r9-Hft">
+                                                    <rect key="frame" x="10" y="5" width="38" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1oF-Gf-lUR">
+                                                    <rect key="frame" x="64" y="32" width="43" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="总派彩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GRD-Jr-Qvz">
+                                                    <rect key="frame" x="115" y="32" width="48" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D6H-s2-w5Z">
+                                                    <rect key="frame" x="171" y="32" width="43" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LbT-yN-01k">
+                                                    <rect key="frame" x="171" y="5" width="34" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hFR-qw-7BM">
+                                                    <rect key="frame" x="213" y="5" width="16" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="点数:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zAM-4c-TlA">
+                                                    <rect key="frame" x="135" y="4" width="35" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="bankerPointLabel" destination="LbT-yN-01k" id="Giu-8S-gmV"/>
+                                            <outlet property="dicePoint" destination="LbT-yN-01k" id="AgH-lv-ASQ"/>
+                                            <outlet property="roundSerialLabel" destination="Vb4-Rw-oHH" id="efZ-x1-oSQ"/>
+                                            <outlet property="totalBetLabel" destination="1oF-Gf-lUR" id="V0U-xm-mk3"/>
+                                            <outlet property="totalPayoffLabel" destination="D6H-s2-w5Z" id="NFD-x2-lPc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="P0E-RH-i5C" id="boa-Pv-Ln0"/>
+                                    <outlet property="delegate" destination="P0E-RH-i5C" id="FlM-Yd-MvX"/>
+                                </connections>
+                            </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" id="ewX-9p-tAF">
+                                <rect key="frame" x="282" y="0.0" width="642" height="645"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="referenceView" destination="ewX-9p-tAF" id="8kL-Ha-zR6"/>
+                        <outlet property="tableView" destination="FwQ-Eg-M8a" id="lQQ-u1-vI4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhS-cu-bFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662" y="-4006"/>
         </scene>
     </scenes>
     <resources>
@@ -8351,12 +8479,6 @@
         <class className="CommonBaccaratGameViewController" superclassName="BaseGameViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonBaccaratGameViewController.h"/>
             <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="betConfirm:"/>
-                <relationship kind="action" name="clearBet:"/>
-                <relationship kind="action" name="detail:"/>
-                <relationship kind="action" name="record:"/>
-                <relationship kind="action" name="roadmap:"/>
                 <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="betAreaView" candidateClass="BetView"/>
@@ -8395,6 +8517,15 @@
                 <relationship kind="outlet" name="dtBetView" candidateClass="DTBetView"/>
                 <relationship kind="outlet" name="dtPokerView" candidateClass="DTPokerView"/>
                 <relationship kind="outlet" name="dtRoadmap" candidateClass="RoadmapView"/>
+            </relationships>
+        </class>
+        <class className="CommonSicboBetRecordDetailViewController" superclassName="BetRecordDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommonSicboBetRecordDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="diceLeft" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="diceMiddle" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="dicePoint" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="diceRight" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="CommonSicboGameViewController" superclassName="CommonBaccaratGameViewController">
@@ -8751,6 +8882,18 @@
             <relationships>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="SicboBetRecordCell" superclassName="BetRecordCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SicboBetRecordCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dicePoint" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SicboBetRecordDetailViewController" superclassName="CommonSicboBetRecordDetailViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SicboBetRecordDetailViewController.h"/>
+        </class>
+        <class className="SicboBetRecordViewController" superclassName="BetRecordViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SicboBetRecordViewController.h"/>
         </class>
         <class className="SicboGameViewController" superclassName="CommonSicboGameViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SicboGameViewController.h"/>

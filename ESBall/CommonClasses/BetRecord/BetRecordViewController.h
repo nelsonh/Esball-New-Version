@@ -32,6 +32,22 @@
 
 @end
 
+/**
+ * Record data class
+ */
+@interface RecordData : NSObject
+
+@property (nonatomic, strong) NSString *cid;
+@property (nonatomic, strong) NSString *roundSerial;
+@property (nonatomic, strong) NSString *date;
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *banker;
+@property (nonatomic, strong) NSString *player;
+@property (nonatomic, strong) NSString *totalBet;
+@property (nonatomic, strong) NSString *totalPayoff;
+
+@end
+
 @interface BetRecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate>{
     
     NSMutableDictionary *recordDatas;//info of all records

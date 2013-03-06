@@ -8,6 +8,12 @@
 
 #import "BetRecordViewController.h"
 
+@interface SBRecordData : RecordData
+
+@property (nonatomic, strong) NSString *totalDicePoint;
+
+@end
+
 @interface SicboBetRecordViewController : BetRecordViewController
 
 @end

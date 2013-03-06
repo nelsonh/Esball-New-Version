@@ -45,7 +45,8 @@
     double maxBet = 0;
     
     //check if not over max
-    if((currentBet+newBet)<=self.maxBet)
+    //if((currentBet+newBet)<=self.maxBet)
+    if(self.maxBet>0)
     {
         //assign to track
         lastBet = newBet;
@@ -73,6 +74,12 @@
         {
             [self.theDelegate BetSquareDoBet:self];
         }
+    }
+    else
+    {
+        NSString *msg = NSLocalizedString(@"超過限額", @"超過限額");
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:msg delegate:nil cancelButtonTitle:NSLocalizedString(@"确定", @"确定") otherButtonTitles: nil];
+        [alertView show];
     }
 }
 

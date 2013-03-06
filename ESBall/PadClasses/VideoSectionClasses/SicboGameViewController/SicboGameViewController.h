@@ -7,7 +7,8 @@
 //
 
 #import "CommonSicboGameViewController.h"
+#import "SicboBetRecordViewController.h"
 
-@interface SicboGameViewController : CommonSicboGameViewController
+@interface SicboGameViewController : CommonSicboGameViewController<BetRecordViewControllerDelegate>
 
 @end

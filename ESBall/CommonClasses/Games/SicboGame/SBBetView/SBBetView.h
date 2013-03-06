@@ -149,7 +149,8 @@
 //-(void)showResultWithString:(NSString *)result;
 -(void)setupBetSquare;
 -(void)setupDelegate;
--(void)setupCurrentMaxBet;
+-(void)setupCurrentMaxBet;//setup max bet
+-(void)resetCurrentMaxBet;//reset current max bet to default
 -(void)changeAllBetSquaresMaxBetWithValue:(double)newMaxBet;
 
 /**
@@ -171,5 +172,45 @@
  * 開啟所有的下注按鈕
  */
 -(void)enableAllBetSquares;
+
+/**
+ * A method clear bets
+ *
+ * 清除所有的下注資訊
+ *
+ * @param yesOrNo hide info view or not
+ * @param hisYesOrNo clear bet history
+ */
+-(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
+
+/**
+ * A method to clear all bet
+ * directly call -(void)clearBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
+ */
+-(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo WithHistory:(BOOL)hisYesOrNo;
+
+/**
+ * A method to apply all pending bet squares
+ * pending bet info
+ */
+-(void)applyAllBets;
+
+/**
+ * A method to collect all bet squares' history bet
+ * return history bet in double as an array
+ *
+ * 搜集所有的歷史下注資訊
+ *
+ * @return array that contain NSNumber for each bet sqaures' history bet
+ */
+-(NSMutableArray *)collectHistoryBetInfo;
+
+/**
+ * A method to display bet history
+ * every bet accumulation for history
+ *
+ * 顯示玩家的歷史下注結果
+ */
+-(void)displayPlayerHistoryBetResult;
 
 @end

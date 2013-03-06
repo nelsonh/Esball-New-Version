@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 nelson. All rights reserved.
 //
 
-#import "BetRecordDetailViewController.h"
+#import "CommonSicboBetRecordDetailViewController.h"
 
-@interface SicboBetRecordDetailViewController : BetRecordDetailViewController
+@interface SicboBetRecordDetailViewController : CommonSicboBetRecordDetailViewController
 
 @end
