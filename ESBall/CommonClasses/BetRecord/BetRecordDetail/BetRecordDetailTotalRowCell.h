@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * BetRecordDetailTotalRowCell subclass of UITableViewCell
+ * This cell represent sum of bet data
+ */
 @interface BetRecordDetailTotalRowCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *totalbetLabel;

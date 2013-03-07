@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * BetRecordDetailRowCell subclass of UITableViewCell.
+ * This cell represent each detail of bet data.
+ */
 @interface BetRecordDetailRowCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *characterTypeLabel;

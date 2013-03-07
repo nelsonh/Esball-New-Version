@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * HeaderView subclass of UIView.
+ * A custom header for table
+ */
 @interface HeaderView : UIView
 
 /**

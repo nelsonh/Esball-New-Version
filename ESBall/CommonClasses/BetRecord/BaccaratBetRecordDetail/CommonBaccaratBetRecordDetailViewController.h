@@ -12,6 +12,12 @@
 #import "BetRecordDetailViewController.h"
 #import "FileFinder.h"
 
+/**
+ * CommonBaccaratBetRecordDetailViewController subclass of BetRecordDetailViewController.
+ * This class implement the display of cards and total point for player and banker.
+ * This class define new UIs.
+ * This class also override some method from parent.
+ */
 @interface CommonBaccaratBetRecordDetailViewController : BetRecordDetailViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *bankerPointLabel;

@@ -11,6 +11,12 @@
 #import "BetRecordDetailViewController.h"
 #import "FileFinder.h"
 
+/**
+ * CommonDragonTigerBetRecordDetailViewController subclass of BetRecordDetailViewController.
+ * This class implement the display of cards and total point for player and banker.
+ * This class define new UIs.
+ * This class also override some method from parent.
+ */
 @interface CommonDragonTigerBetRecordDetailViewController : BetRecordDetailViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *bankerPointLabel;

@@ -108,9 +108,14 @@
     NSString *bankerPointStr = [bankerSplited objectAtIndex:0];
     NSString *playerPointStr = [playerSplited objectAtIndex:0];
     
-    if(bankerPointStr || playerPointStr)
+    
+    if(bankerPointStr != nil)
     {
         _bankerPointLabel.text = [NSString stringWithFormat:@"(%@)", bankerPointStr];
+    }
+    
+    if(playerPointStr != nil)
+    {
         _playerPointLabel.text = [NSString stringWithFormat:@"(%@)", playerPointStr];
     }
     
@@ -204,7 +209,6 @@
             break;
     }
     
-    return @"";
 }
 
 @end

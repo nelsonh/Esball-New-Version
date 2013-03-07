@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-
+/**
+ * BetRecordCell subclass of UITableViewCell
+ * a cell to represent record data in table.
+ * To subclass to extend your own.
+ *
+ * Once you subclass and extend, BetRecordViewController must subclass and 
+ * modify code in tableview delegate method.
+ */
 @interface BetRecordCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *roundSerialLabel;

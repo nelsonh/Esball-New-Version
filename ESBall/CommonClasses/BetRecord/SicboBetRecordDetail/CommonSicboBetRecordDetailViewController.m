@@ -44,19 +44,22 @@
 #pragma mark -public interface
 -(void)showDices
 {
-    NSLog(@"%@", [detailRecord objectForKey:@"Point"]);
+    /**display dice**/
     
     FileFinder *fileFinder = [FileFinder fileFinder];
     
+    //make sure there is data available
     if([[detailRecord objectForKey:@"Point"] isEqualToString:@""])
         return;
     
     NSArray *dicePoints = [[detailRecord objectForKey:@"Point"] componentsSeparatedByString:@","];
     
+    //dice images
     UIImage *leftDiceImage = nil;
     UIImage *middleDiceImage = nil;
     UIImage *rightDiceImage = nil;
     
+    //load different images base on device
     if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         leftDiceImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[NSString stringWithFormat:@"dice_0%i.png", [[dicePoints objectAtIndex:0] intValue]]]];
@@ -74,15 +77,30 @@
         rightDiceImage = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[NSString stringWithFormat:@"dice_s_0%i.png", [[dicePoints objectAtIndex:2] intValue]]]];
     }
     
+    //assign images
     _diceLeft.image = leftDiceImage;
     _diceMiddle.image = middleDiceImage;
     _diceRight.image = rightDiceImage;
 
+}
+
+-(void)showDicePoint
+{
+    /**display point**/
+    
+    //make sure there is data available
+    if([[detailRecord objectForKey:@"Point"] isEqualToString:@""])
+        return;
+    
+    NSArray *dicePoints = [[detailRecord objectForKey:@"Point"] componentsSeparatedByString:@","];
+    
+    //extract each point and add them up
     int dicePoint1 = [[dicePoints objectAtIndex:0] intValue];
     int dicePoint2 = [[dicePoints objectAtIndex:1] intValue];
     int dicePoint3 = [[dicePoints objectAtIndex:2] intValue];
     int totalDicePoint = dicePoint1+dicePoint2+dicePoint3;
-
+    
+    //assign point as text
     _dicePoint.text = [NSString stringWithFormat:@"%i", totalDicePoint];
 }
 
@@ -94,6 +112,7 @@
     if(detailRecord)
     {
         [self showDices];
+        [self showDicePoint];
     }
     
 }
@@ -336,7 +355,6 @@
             break;
     }
     
-    return @"";
 }
 
 @end

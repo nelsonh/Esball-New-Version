@@ -162,9 +162,14 @@
     NSString *bankerPointStr = [bankerSplited objectAtIndex:0];
     NSString *playerPointStr = [playerSplited objectAtIndex:0];
     
-    if(bankerPointStr || playerPointStr)
+    
+    if(bankerPointStr != nil)
     {
         _bankerPointLabel.text = [NSString stringWithFormat:@"(%@)", bankerPointStr];
+    }
+    
+    if(playerPointStr)
+    {
         _playerPointLabel.text = [NSString stringWithFormat:@"(%@)", playerPointStr];
     }
 
@@ -228,6 +233,61 @@
     }
     
     return tableName;
+}
+
+-(NSString *)betTypeWithTypeNumber:(NSUInteger)betType
+{
+    /*convert bet type to string*/
+    switch (betType) {
+        case 1:
+            return NSLocalizedString(@"庄", @"庄");
+            break;
+            
+        case 2:
+            return NSLocalizedString(@"闲", @"闲");
+            break;
+            
+        case 3:
+            return NSLocalizedString(@"和", @"和");
+            break;
+            
+        case 4:
+            return NSLocalizedString(@"庄对", @"庄对");
+            break;
+            
+        case 5:
+            return NSLocalizedString(@"闲对", @"闲对");
+            break;
+            
+        case 6:
+            return NSLocalizedString(@"大", @"大");
+            break;
+            
+        case 7:
+            return NSLocalizedString(@"小", @"小");
+            break;
+            
+        case 8:
+            return NSLocalizedString(@"庄单", @"庄单");
+            break;
+            
+        case 9:
+            return NSLocalizedString(@"庄双", @"庄双");
+            break;
+            
+        case 10:
+            return NSLocalizedString(@"闲单", @"闲单");
+            break;
+            
+        case 11:
+            return NSLocalizedString(@"闲双", @"闲双");
+            break;
+            
+        default:
+            return @"";
+            break;
+    }
+    
 }
 
 @end

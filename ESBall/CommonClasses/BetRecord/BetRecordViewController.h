@@ -33,7 +33,9 @@
 @end
 
 /**
- * Record data class
+ * Record data class subclass of NSObject
+ * This class is used to contain information for each
+ * bet record, subclass to extend your own.
  */
 @interface RecordData : NSObject
 
@@ -48,6 +50,13 @@
 
 @end
 
+/**
+ * BetRecordViewController subclass of UIViewController.
+ * This class is a foundation and need to be extend
+ * The class manage to present a table view for each record data.
+ * The class also manage to download record data and organize record data.
+ * The class responsible to tell which record data's detail will be present.
+ */
 @interface BetRecordViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate>{
     
     NSMutableDictionary *recordDatas;//info of all records

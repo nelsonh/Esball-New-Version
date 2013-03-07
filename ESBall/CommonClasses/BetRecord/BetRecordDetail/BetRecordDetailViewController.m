@@ -123,35 +123,11 @@ NSInteger SortRecordData(id num1, id num2, void *context)
 
 -(NSString *)gameCodeNameWithGameCode:(NSUInteger)gameCode
 {
-    /**convert game code to table name**/
-    /*
-    NSString *tableName;
+    /**
+     convert game code to table name
+     subclass must implement their own
+     **/
     
-    switch (gameCode) {
-        case 1:
-            tableName = @"A";
-            break;
-        case 2:
-            tableName = @"B";
-            break;
-        case 3:
-            tableName = @"C";
-            break;
-        case 6:
-            tableName = @"D";
-            break;
-        case 7:
-            tableName = @"E";
-            break;
-            
-        default:
-            tableName = @"";
-            break;
-            
-    }
-    
-    return tableName;
-     */
     return @"";
 }
 
@@ -214,56 +190,11 @@ NSInteger SortRecordData(id num1, id num2, void *context)
 
 -(NSString *)betTypeWithTypeNumber:(NSUInteger)betType
 {
-    /*convert bet type to string*/
-    switch (betType) {
-        case 1:
-            return NSLocalizedString(@"庄", @"庄");
-            break;
-            
-        case 2:
-            return NSLocalizedString(@"闲", @"闲");
-            break;
-            
-        case 3:
-            return NSLocalizedString(@"和", @"和");
-            break;
-            
-        case 4:
-            return NSLocalizedString(@"庄对", @"庄对");
-            break;
-            
-        case 5:
-            return NSLocalizedString(@"闲对", @"闲对");
-            break;
-            
-        case 6:
-            return NSLocalizedString(@"大", @"大");
-            break;
-            
-        case 7:
-            return NSLocalizedString(@"小", @"小");
-            break;
-            
-        case 8:
-            return NSLocalizedString(@"庄单", @"庄单");
-            break;
-            
-        case 9:
-            return NSLocalizedString(@"庄双", @"庄双");
-            break;
-            
-        case 10:
-            return NSLocalizedString(@"闲单", @"闲单");
-            break;
-            
-        case 11:
-            return NSLocalizedString(@"闲双", @"闲双");
-            break;
-            
-        default:
-            return @"";
-            break;
-    }
+    /**
+     convert bet type to string
+     subclass must implement their own
+     **/
+
     
     return @"";
 }

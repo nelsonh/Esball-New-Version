@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * PromptMessageView subclass of UIView
+ * This class responsible to display message
+ */
 @interface PromptMessageView : UIView
 
 @property (nonatomic, weak) IBOutlet UIImageView *promptMsgBackgroundView;

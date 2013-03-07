@@ -39,6 +39,12 @@
 #import "BetRecordDetailRowCell.h"
 #import "BetRecordDetailTotalRowCell.h"
 
+/**
+ * BetRecordDetailViewController subclass of UIViewController.
+ * This class is a foundation and need to be extend
+ * This class manage to present each bet data and sum.
+ * This class also manage to download detail data.
+ */
 @interface BetRecordDetailViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate>{
     
     NSMutableDictionary *detailRecord;// info for a record format look top example
