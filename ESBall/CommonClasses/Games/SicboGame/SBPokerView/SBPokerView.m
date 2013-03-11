@@ -16,6 +16,7 @@
 @synthesize diceRight = _diceRight;
 @synthesize backgroundView = _backgroundView;
 @synthesize dicePoints = _dicePoints;
+@synthesize diceTotalPoint = _diceTotalPoint;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -53,6 +54,8 @@
         _diceMiddle.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[NSString stringWithFormat:@"dice_s_0%i.png", diceMiddleInt]]];
         _diceRight.image = [UIImage imageWithContentsOfFile:[fileFinder findPathForFileWithFileName:[NSString stringWithFormat:@"dice_s_0%i.png", diceRightInt]]];
     }
+    
+    _diceTotalPoint.text = [NSString stringWithFormat:@"%i", (diceLeftInt+diceMiddleInt+diceRightInt)];
 
 }
 
