@@ -8,6 +8,10 @@
 
 #import "BetSquareView.h"
 
+/**
+ * SBBetSquareView subclass of BetSqaureView.
+ * 
+ */
 @interface SBBetSquareView : BetSquareView
 
 -(void)changeMaxBetAndBetInfoWithNewMaxBet:(double)newMaxBet;

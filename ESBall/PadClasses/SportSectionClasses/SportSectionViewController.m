@@ -82,6 +82,7 @@
 {
     [_loadingIndicator stopAnimating];
     _loadingIndicator.hidden = YES;
+    
 }
 
 @end

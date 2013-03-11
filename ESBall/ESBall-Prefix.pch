@@ -25,7 +25,7 @@
  **/
 #define SendRealBetInfo
 //uncomment to debug data that server interface sent to server
-#define ServerClientSentDataDebug
+//#define ServerClientSentDataDebug
 //uncomment to output respond string from server to console
 #define OutputServerRespond
 //uncomment to use GCD parser xml

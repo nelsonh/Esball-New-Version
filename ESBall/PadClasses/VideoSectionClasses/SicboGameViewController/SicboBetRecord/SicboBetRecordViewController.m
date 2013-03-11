@@ -170,11 +170,15 @@
         
         newRecordData.totalDicePoint = [NSString stringWithFormat:@"%i", (dicePoint1+dicePoint2+dicePoint3)];
         
+        //data at element 6 might disappear
+        //if it disappear assign a none string
         if(splitedComponents.count>6)
             newRecordData.totalBet = [[splitedSubComponents objectAtIndex:6] copy];
         else
             newRecordData.totalBet = @"";
         
+        // data at element 7 might disappear
+        //if it disappear assign a none string
         if(splitedSubComponents.count>7)
             newRecordData.totalPayoff = [[splitedSubComponents objectAtIndex:7] copy];
         else

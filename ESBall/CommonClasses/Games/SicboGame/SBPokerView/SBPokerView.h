@@ -10,4 +10,11 @@
 
 @interface SBPokerView : MiniInfoView
 
+@property (nonatomic, weak) IBOutlet UIImageView *diceLeft;
+@property (nonatomic, weak) IBOutlet UIImageView *diceMiddle;
+@property (nonatomic, weak) IBOutlet UIImageView *diceRight;
+@property (nonatomic, weak) IBOutlet UIImageView * backgroundView;
+
+@property (nonatomic, copy) NSArray *dicePoints;
+
 @end

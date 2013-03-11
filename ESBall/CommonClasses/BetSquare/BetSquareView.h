@@ -50,6 +50,11 @@
 
 @end
 
+/**
+ * BetSquareView subclass of UIButton.
+ * This class handle bet event.
+ * Subclass to extend.
+ */
 @interface BetSquareView : UIButton{
     
     double currentBet;//current bet

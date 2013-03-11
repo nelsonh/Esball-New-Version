@@ -9,10 +9,12 @@
 #import "CommonBaccaratGameViewController.h"
 #import "SBBetView.h"
 #import "SBRoadmapView.h"
+#import "SBPokerView.h"
 
 @interface CommonSicboGameViewController : CommonBaccaratGameViewController
 
 @property (nonatomic, weak) IBOutlet SBBetView *sbBetView;
 @property (nonatomic, weak) IBOutlet SBRoadmapView *sbRoadmap;
+@property (nonatomic, weak) IBOutlet SBPokerView *sbPokerView;
 
 @end

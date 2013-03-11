@@ -58,10 +58,6 @@
         [_gameView loadRequest:request];
     });
     
-
-    
-
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,6 +78,8 @@
 {
     [_loadingIndicator stopAnimating];
     _loadingIndicator.hidden = YES;
+    
+    
 }
 
 @end

@@ -10,6 +10,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * BetInfoView subclass of UIView.
+ * This class used to display bet information
+ */
 @interface BetInfoView : UIView
 
 @property (nonatomic, weak) IBOutlet UILabel *maxBetLabel;

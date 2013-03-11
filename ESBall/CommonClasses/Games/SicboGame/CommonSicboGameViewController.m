@@ -17,6 +17,7 @@
 
 @synthesize sbBetView = _sbBetView;
 @synthesize sbRoadmap = _sbRoadmap;
+@synthesize sbPokerView = _sbPokerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -123,7 +124,9 @@
 
 -(void)updatePokerWithUpdateInfo:(UpdateInfo *)info
 {
+    _sbPokerView.dicePoints = info.poker;
     
+    [_sbPokerView updateView];
 }
 
 -(void)processUserInfo:(NSNotification *)notification
@@ -168,6 +171,25 @@
         {
             break;
         }
+    }
+    
+    if(filtedChipList.count > 5)
+    {
+        if(self.leftArrow && self.rightArrow)
+        {
+            self.leftArrow.hidden = NO;
+            self.rightArrow.hidden = NO;
+        }
+        
+    }
+    else
+    {
+        if(self.leftArrow && self.rightArrow)
+        {
+            self.leftArrow.hidden = YES;
+            self.rightArrow.hidden = YES;
+        }
+        
     }
     
     _sbBetView.chips = filtedChipList;
@@ -333,9 +355,9 @@
     }
     
     //update poker
-    if([info.status isEqualToString:GameStatusDealing] || [info.status isEqualToString:GameStatusWaiting])
+    if([info.status isEqualToString:GameStatusWaiting])
     {
-        //_pokerView.visibility = YES;
+        _sbPokerView.visibility = YES;
         
         [self updatePokerWithUpdateInfo:info];
     }
@@ -362,7 +384,7 @@
     }
     else if([info.status isEqualToString:GameStatusBetting])
     {
-        //self.pokerView.visibility = NO;
+        _sbPokerView.visibility = NO;
         
         /*
         //update roadmapView
