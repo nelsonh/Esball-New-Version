@@ -121,8 +121,7 @@
                            imageRect,
                            self.iconImage.CGImage);
     }
-
-  
+    
 }
 
 
@@ -136,8 +135,7 @@
                                        self.textLabel.font.lineHeight);
     textLabelFrame.origin.y = self.bounds.size.height-textLabelFrame.size.height - 15;
     self.textLabel.frame = textLabelFrame;
-    
-    
+        
 }
 
 

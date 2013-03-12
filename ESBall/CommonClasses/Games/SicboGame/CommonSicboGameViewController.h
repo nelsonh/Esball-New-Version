@@ -17,4 +17,9 @@
 @property (nonatomic, weak) IBOutlet SBRoadmapView *sbRoadmap;
 @property (nonatomic, weak) IBOutlet SBPokerView *sbPokerView;
 
+/**
+ * A method to reload and update SBBetRecordView
+ */
+-(void)reloadBetRecordView;
+
 @end

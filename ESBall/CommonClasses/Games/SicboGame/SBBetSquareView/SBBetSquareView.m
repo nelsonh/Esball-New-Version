@@ -10,6 +10,8 @@
 
 @implementation SBBetSquareView
 
+@synthesize dataName = _dataName;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

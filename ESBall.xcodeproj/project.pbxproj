@@ -385,18 +385,6 @@
 		52783ADA1694221E009D8028 /* DTGame_bg2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838C91694221E009D8028 /* DTGame_bg2@2x.png */; };
 		52783ADB1694221E009D8028 /* DTGame_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838CA1694221E009D8028 /* DTGame_bg@2x.png */; };
 		52783ADC1694221E009D8028 /* DTRoute_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838CB1694221E009D8028 /* DTRoute_bg@2x.png */; };
-		52783ADE1694221E009D8028 /* dice_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D01694221E009D8028 /* dice_01.png */; };
-		52783ADF1694221E009D8028 /* dice_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D11694221E009D8028 /* dice_02.png */; };
-		52783AE01694221E009D8028 /* dice_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D21694221E009D8028 /* dice_03.png */; };
-		52783AE11694221E009D8028 /* dice_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D31694221E009D8028 /* dice_04.png */; };
-		52783AE21694221E009D8028 /* dice_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D41694221E009D8028 /* dice_05.png */; };
-		52783AE31694221E009D8028 /* dice_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D51694221E009D8028 /* dice_06.png */; };
-		52783AE41694221E009D8028 /* dice_s_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D61694221E009D8028 /* dice_s_01.png */; };
-		52783AE51694221E009D8028 /* dice_s_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D71694221E009D8028 /* dice_s_02.png */; };
-		52783AE61694221E009D8028 /* dice_s_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D81694221E009D8028 /* dice_s_03.png */; };
-		52783AE71694221E009D8028 /* dice_s_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838D91694221E009D8028 /* dice_s_04.png */; };
-		52783AE81694221E009D8028 /* dice_s_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838DA1694221E009D8028 /* dice_s_05.png */; };
-		52783AE91694221E009D8028 /* dice_s_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838DB1694221E009D8028 /* dice_s_06.png */; };
 		52783AEA1694221E009D8028 /* finger.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838DD1694221E009D8028 /* finger.png */; };
 		52783AEB1694221E009D8028 /* lights_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838DE1694221E009D8028 /* lights_off.png */; };
 		52783AEC1694221E009D8028 /* lights_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 527838DF1694221E009D8028 /* lights_on.png */; };
@@ -860,6 +848,48 @@
 		52F0EF73166CA6F0002A9ACB /* Chip.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF72166CA6F0002A9ACB /* Chip.m */; };
 		52F0EF7B166CA840002A9ACB /* BetAreaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF7A166CA840002A9ACB /* BetAreaView.m */; };
 		52F0EF82166CA8EC002A9ACB /* ChipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F0EF81166CA8EC002A9ACB /* ChipView.m */; };
+		52F10BFD16EF02EC005FEB9C /* dice_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BD616EF02EC005FEB9C /* dice_01.png */; };
+		52F10BFE16EF02EC005FEB9C /* dice_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BD716EF02EC005FEB9C /* dice_02.png */; };
+		52F10BFF16EF02EC005FEB9C /* dice_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BD816EF02EC005FEB9C /* dice_03.png */; };
+		52F10C0016EF02EC005FEB9C /* dice_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BD916EF02EC005FEB9C /* dice_04.png */; };
+		52F10C0116EF02EC005FEB9C /* dice_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BDA16EF02EC005FEB9C /* dice_05.png */; };
+		52F10C0216EF02EC005FEB9C /* dice_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BDB16EF02EC005FEB9C /* dice_06.png */; };
+		52F10C0316EF02EC005FEB9C /* dice_merger_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BDC16EF02EC005FEB9C /* dice_merger_11.png */; };
+		52F10C0416EF02EC005FEB9C /* dice_merger_21.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BDD16EF02EC005FEB9C /* dice_merger_21.png */; };
+		52F10C0516EF02EC005FEB9C /* dice_merger_22.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BDE16EF02EC005FEB9C /* dice_merger_22.png */; };
+		52F10C0616EF02EC005FEB9C /* dice_merger_31.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BDF16EF02EC005FEB9C /* dice_merger_31.png */; };
+		52F10C0716EF02EC005FEB9C /* dice_merger_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE016EF02EC005FEB9C /* dice_merger_32.png */; };
+		52F10C0816EF02EC005FEB9C /* dice_merger_33.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE116EF02EC005FEB9C /* dice_merger_33.png */; };
+		52F10C0916EF02EC005FEB9C /* dice_merger_41.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE216EF02EC005FEB9C /* dice_merger_41.png */; };
+		52F10C0A16EF02EC005FEB9C /* dice_merger_42.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE316EF02EC005FEB9C /* dice_merger_42.png */; };
+		52F10C0B16EF02EC005FEB9C /* dice_merger_43.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE416EF02EC005FEB9C /* dice_merger_43.png */; };
+		52F10C0C16EF02EC005FEB9C /* dice_merger_44.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE516EF02EC005FEB9C /* dice_merger_44.png */; };
+		52F10C0D16EF02EC005FEB9C /* dice_merger_51.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE616EF02EC005FEB9C /* dice_merger_51.png */; };
+		52F10C0E16EF02EC005FEB9C /* dice_merger_52.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE716EF02EC005FEB9C /* dice_merger_52.png */; };
+		52F10C0F16EF02EC005FEB9C /* dice_merger_53.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE816EF02EC005FEB9C /* dice_merger_53.png */; };
+		52F10C1016EF02EC005FEB9C /* dice_merger_54.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BE916EF02EC005FEB9C /* dice_merger_54.png */; };
+		52F10C1116EF02EC005FEB9C /* dice_merger_55.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BEA16EF02EC005FEB9C /* dice_merger_55.png */; };
+		52F10C1216EF02EC005FEB9C /* dice_merger_61.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BEB16EF02EC005FEB9C /* dice_merger_61.png */; };
+		52F10C1316EF02EC005FEB9C /* dice_merger_62.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BEC16EF02EC005FEB9C /* dice_merger_62.png */; };
+		52F10C1416EF02EC005FEB9C /* dice_merger_63.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BED16EF02EC005FEB9C /* dice_merger_63.png */; };
+		52F10C1516EF02EC005FEB9C /* dice_merger_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BEE16EF02EC005FEB9C /* dice_merger_64.png */; };
+		52F10C1616EF02EC005FEB9C /* dice_merger_65.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BEF16EF02EC005FEB9C /* dice_merger_65.png */; };
+		52F10C1716EF02EC005FEB9C /* dice_merger_66.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF016EF02EC005FEB9C /* dice_merger_66.png */; };
+		52F10C1816EF02EC005FEB9C /* dice_merger_111.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF116EF02EC005FEB9C /* dice_merger_111.png */; };
+		52F10C1916EF02EC005FEB9C /* dice_merger_222.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF216EF02EC005FEB9C /* dice_merger_222.png */; };
+		52F10C1A16EF02EC005FEB9C /* dice_merger_333.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF316EF02EC005FEB9C /* dice_merger_333.png */; };
+		52F10C1B16EF02EC005FEB9C /* dice_merger_444.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF416EF02EC005FEB9C /* dice_merger_444.png */; };
+		52F10C1C16EF02EC005FEB9C /* dice_merger_555.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF516EF02EC005FEB9C /* dice_merger_555.png */; };
+		52F10C1D16EF02EC005FEB9C /* dice_merger_666.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF616EF02EC005FEB9C /* dice_merger_666.png */; };
+		52F10C1E16EF02EC005FEB9C /* dice_s_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF716EF02EC005FEB9C /* dice_s_01.png */; };
+		52F10C1F16EF02EC005FEB9C /* dice_s_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF816EF02EC005FEB9C /* dice_s_02.png */; };
+		52F10C2016EF02EC005FEB9C /* dice_s_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BF916EF02EC005FEB9C /* dice_s_03.png */; };
+		52F10C2116EF02EC005FEB9C /* dice_s_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BFA16EF02EC005FEB9C /* dice_s_04.png */; };
+		52F10C2216EF02EC005FEB9C /* dice_s_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BFB16EF02EC005FEB9C /* dice_s_05.png */; };
+		52F10C2316EF02EC005FEB9C /* dice_s_06.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F10BFC16EF02EC005FEB9C /* dice_s_06.png */; };
+		52F10C2716EF0E2F005FEB9C /* SBBetRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F10C2616EF0E2F005FEB9C /* SBBetRecordView.m */; };
+		52F10C2B16EF0F50005FEB9C /* SBBetRecordInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F10C2A16EF0F50005FEB9C /* SBBetRecordInfo.m */; };
+		52F10C2E16EF2EFB005FEB9C /* SBBetRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F10C2D16EF2EFB005FEB9C /* SBBetRecordCell.m */; };
 		52F3D8761671EA9B005ECC58 /* ImagePull.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F3D8751671EA9B005ECC58 /* ImagePull.m */; };
 		52F4CAAA16E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F4CAA916E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m */; };
 		52F4CAAD16E72DE1009BB2AC /* SicboBetRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F4CAAC16E72DE0009BB2AC /* SicboBetRecordCell.m */; };
@@ -1326,18 +1356,6 @@
 		527838CA1694221E009D8028 /* DTGame_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DTGame_bg@2x.png"; sourceTree = "<group>"; };
 		527838CB1694221E009D8028 /* DTRoute_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DTRoute_bg@2x.png"; sourceTree = "<group>"; };
 		527838CC1694221E009D8028 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
-		527838D01694221E009D8028 /* dice_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_01.png; sourceTree = "<group>"; };
-		527838D11694221E009D8028 /* dice_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_02.png; sourceTree = "<group>"; };
-		527838D21694221E009D8028 /* dice_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_03.png; sourceTree = "<group>"; };
-		527838D31694221E009D8028 /* dice_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_04.png; sourceTree = "<group>"; };
-		527838D41694221E009D8028 /* dice_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_05.png; sourceTree = "<group>"; };
-		527838D51694221E009D8028 /* dice_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_06.png; sourceTree = "<group>"; };
-		527838D61694221E009D8028 /* dice_s_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_01.png; sourceTree = "<group>"; };
-		527838D71694221E009D8028 /* dice_s_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_02.png; sourceTree = "<group>"; };
-		527838D81694221E009D8028 /* dice_s_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_03.png; sourceTree = "<group>"; };
-		527838D91694221E009D8028 /* dice_s_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_04.png; sourceTree = "<group>"; };
-		527838DA1694221E009D8028 /* dice_s_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_05.png; sourceTree = "<group>"; };
-		527838DB1694221E009D8028 /* dice_s_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_06.png; sourceTree = "<group>"; };
 		527838DD1694221E009D8028 /* finger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finger.png; sourceTree = "<group>"; };
 		527838DE1694221E009D8028 /* lights_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lights_off.png; sourceTree = "<group>"; };
 		527838DF1694221E009D8028 /* lights_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lights_on.png; sourceTree = "<group>"; };
@@ -1933,6 +1951,51 @@
 		52F0EF7A166CA840002A9ACB /* BetAreaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BetAreaView.m; path = BetAreaView/BetAreaView.m; sourceTree = "<group>"; };
 		52F0EF80166CA8EC002A9ACB /* ChipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChipView.h; sourceTree = "<group>"; };
 		52F0EF81166CA8EC002A9ACB /* ChipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChipView.m; sourceTree = "<group>"; };
+		52F10BD616EF02EC005FEB9C /* dice_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_01.png; sourceTree = "<group>"; };
+		52F10BD716EF02EC005FEB9C /* dice_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_02.png; sourceTree = "<group>"; };
+		52F10BD816EF02EC005FEB9C /* dice_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_03.png; sourceTree = "<group>"; };
+		52F10BD916EF02EC005FEB9C /* dice_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_04.png; sourceTree = "<group>"; };
+		52F10BDA16EF02EC005FEB9C /* dice_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_05.png; sourceTree = "<group>"; };
+		52F10BDB16EF02EC005FEB9C /* dice_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_06.png; sourceTree = "<group>"; };
+		52F10BDC16EF02EC005FEB9C /* dice_merger_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_11.png; sourceTree = "<group>"; };
+		52F10BDD16EF02EC005FEB9C /* dice_merger_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_21.png; sourceTree = "<group>"; };
+		52F10BDE16EF02EC005FEB9C /* dice_merger_22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_22.png; sourceTree = "<group>"; };
+		52F10BDF16EF02EC005FEB9C /* dice_merger_31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_31.png; sourceTree = "<group>"; };
+		52F10BE016EF02EC005FEB9C /* dice_merger_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_32.png; sourceTree = "<group>"; };
+		52F10BE116EF02EC005FEB9C /* dice_merger_33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_33.png; sourceTree = "<group>"; };
+		52F10BE216EF02EC005FEB9C /* dice_merger_41.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_41.png; sourceTree = "<group>"; };
+		52F10BE316EF02EC005FEB9C /* dice_merger_42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_42.png; sourceTree = "<group>"; };
+		52F10BE416EF02EC005FEB9C /* dice_merger_43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_43.png; sourceTree = "<group>"; };
+		52F10BE516EF02EC005FEB9C /* dice_merger_44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_44.png; sourceTree = "<group>"; };
+		52F10BE616EF02EC005FEB9C /* dice_merger_51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_51.png; sourceTree = "<group>"; };
+		52F10BE716EF02EC005FEB9C /* dice_merger_52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_52.png; sourceTree = "<group>"; };
+		52F10BE816EF02EC005FEB9C /* dice_merger_53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_53.png; sourceTree = "<group>"; };
+		52F10BE916EF02EC005FEB9C /* dice_merger_54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_54.png; sourceTree = "<group>"; };
+		52F10BEA16EF02EC005FEB9C /* dice_merger_55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_55.png; sourceTree = "<group>"; };
+		52F10BEB16EF02EC005FEB9C /* dice_merger_61.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_61.png; sourceTree = "<group>"; };
+		52F10BEC16EF02EC005FEB9C /* dice_merger_62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_62.png; sourceTree = "<group>"; };
+		52F10BED16EF02EC005FEB9C /* dice_merger_63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_63.png; sourceTree = "<group>"; };
+		52F10BEE16EF02EC005FEB9C /* dice_merger_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_64.png; sourceTree = "<group>"; };
+		52F10BEF16EF02EC005FEB9C /* dice_merger_65.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_65.png; sourceTree = "<group>"; };
+		52F10BF016EF02EC005FEB9C /* dice_merger_66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_66.png; sourceTree = "<group>"; };
+		52F10BF116EF02EC005FEB9C /* dice_merger_111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_111.png; sourceTree = "<group>"; };
+		52F10BF216EF02EC005FEB9C /* dice_merger_222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_222.png; sourceTree = "<group>"; };
+		52F10BF316EF02EC005FEB9C /* dice_merger_333.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_333.png; sourceTree = "<group>"; };
+		52F10BF416EF02EC005FEB9C /* dice_merger_444.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_444.png; sourceTree = "<group>"; };
+		52F10BF516EF02EC005FEB9C /* dice_merger_555.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_555.png; sourceTree = "<group>"; };
+		52F10BF616EF02EC005FEB9C /* dice_merger_666.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_merger_666.png; sourceTree = "<group>"; };
+		52F10BF716EF02EC005FEB9C /* dice_s_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_01.png; sourceTree = "<group>"; };
+		52F10BF816EF02EC005FEB9C /* dice_s_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_02.png; sourceTree = "<group>"; };
+		52F10BF916EF02EC005FEB9C /* dice_s_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_03.png; sourceTree = "<group>"; };
+		52F10BFA16EF02EC005FEB9C /* dice_s_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_04.png; sourceTree = "<group>"; };
+		52F10BFB16EF02EC005FEB9C /* dice_s_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_05.png; sourceTree = "<group>"; };
+		52F10BFC16EF02EC005FEB9C /* dice_s_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice_s_06.png; sourceTree = "<group>"; };
+		52F10C2516EF0E2F005FEB9C /* SBBetRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBBetRecordView.h; path = SicboGame/SBBetRecordView/SBBetRecordView.h; sourceTree = "<group>"; };
+		52F10C2616EF0E2F005FEB9C /* SBBetRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBBetRecordView.m; path = SicboGame/SBBetRecordView/SBBetRecordView.m; sourceTree = "<group>"; };
+		52F10C2916EF0F50005FEB9C /* SBBetRecordInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBBetRecordInfo.h; path = SicboGame/SBBetRecordInfo/SBBetRecordInfo.h; sourceTree = "<group>"; };
+		52F10C2A16EF0F50005FEB9C /* SBBetRecordInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBBetRecordInfo.m; path = SicboGame/SBBetRecordInfo/SBBetRecordInfo.m; sourceTree = "<group>"; };
+		52F10C2C16EF2EFB005FEB9C /* SBBetRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBBetRecordCell.h; path = SicboGame/SBBetRecordView/SBBetRecordCell.h; sourceTree = "<group>"; };
+		52F10C2D16EF2EFB005FEB9C /* SBBetRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBBetRecordCell.m; path = SicboGame/SBBetRecordView/SBBetRecordCell.m; sourceTree = "<group>"; };
 		52F3D8741671EA9B005ECC58 /* ImagePull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePull.h; path = ImagePull/ImagePull.h; sourceTree = "<group>"; };
 		52F3D8751671EA9B005ECC58 /* ImagePull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagePull.m; path = ImagePull/ImagePull.m; sourceTree = "<group>"; };
 		52F4CAA816E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonSicboBetRecordDetailViewController.h; path = SicboBetRecordDetail/CommonSicboBetRecordDetailViewController.h; sourceTree = "<group>"; };
@@ -2288,6 +2351,8 @@
 		527831301693C417009D8028 /* SicboGame */ = {
 			isa = PBXGroup;
 			children = (
+				52F10C2816EF0F20005FEB9C /* SBBetRecordInfo */,
+				52F10C2416EF0DED005FEB9C /* SBBetRecordView */,
 				52F5E8AD16E5F9A800D7A1ED /* SBPokerView */,
 				529D0FAD16AD3893008ACE31 /* SBBetSquareView */,
 				529ABADB16A8DF420098129E /* SBRoadmapView */,
@@ -2947,18 +3012,45 @@
 		527838CF1694221E009D8028 /* Dice */ = {
 			isa = PBXGroup;
 			children = (
-				527838D01694221E009D8028 /* dice_01.png */,
-				527838D11694221E009D8028 /* dice_02.png */,
-				527838D21694221E009D8028 /* dice_03.png */,
-				527838D31694221E009D8028 /* dice_04.png */,
-				527838D41694221E009D8028 /* dice_05.png */,
-				527838D51694221E009D8028 /* dice_06.png */,
-				527838D61694221E009D8028 /* dice_s_01.png */,
-				527838D71694221E009D8028 /* dice_s_02.png */,
-				527838D81694221E009D8028 /* dice_s_03.png */,
-				527838D91694221E009D8028 /* dice_s_04.png */,
-				527838DA1694221E009D8028 /* dice_s_05.png */,
-				527838DB1694221E009D8028 /* dice_s_06.png */,
+				52F10BD616EF02EC005FEB9C /* dice_01.png */,
+				52F10BD716EF02EC005FEB9C /* dice_02.png */,
+				52F10BD816EF02EC005FEB9C /* dice_03.png */,
+				52F10BD916EF02EC005FEB9C /* dice_04.png */,
+				52F10BDA16EF02EC005FEB9C /* dice_05.png */,
+				52F10BDB16EF02EC005FEB9C /* dice_06.png */,
+				52F10BDC16EF02EC005FEB9C /* dice_merger_11.png */,
+				52F10BDD16EF02EC005FEB9C /* dice_merger_21.png */,
+				52F10BDE16EF02EC005FEB9C /* dice_merger_22.png */,
+				52F10BDF16EF02EC005FEB9C /* dice_merger_31.png */,
+				52F10BE016EF02EC005FEB9C /* dice_merger_32.png */,
+				52F10BE116EF02EC005FEB9C /* dice_merger_33.png */,
+				52F10BE216EF02EC005FEB9C /* dice_merger_41.png */,
+				52F10BE316EF02EC005FEB9C /* dice_merger_42.png */,
+				52F10BE416EF02EC005FEB9C /* dice_merger_43.png */,
+				52F10BE516EF02EC005FEB9C /* dice_merger_44.png */,
+				52F10BE616EF02EC005FEB9C /* dice_merger_51.png */,
+				52F10BE716EF02EC005FEB9C /* dice_merger_52.png */,
+				52F10BE816EF02EC005FEB9C /* dice_merger_53.png */,
+				52F10BE916EF02EC005FEB9C /* dice_merger_54.png */,
+				52F10BEA16EF02EC005FEB9C /* dice_merger_55.png */,
+				52F10BEB16EF02EC005FEB9C /* dice_merger_61.png */,
+				52F10BEC16EF02EC005FEB9C /* dice_merger_62.png */,
+				52F10BED16EF02EC005FEB9C /* dice_merger_63.png */,
+				52F10BEE16EF02EC005FEB9C /* dice_merger_64.png */,
+				52F10BEF16EF02EC005FEB9C /* dice_merger_65.png */,
+				52F10BF016EF02EC005FEB9C /* dice_merger_66.png */,
+				52F10BF116EF02EC005FEB9C /* dice_merger_111.png */,
+				52F10BF216EF02EC005FEB9C /* dice_merger_222.png */,
+				52F10BF316EF02EC005FEB9C /* dice_merger_333.png */,
+				52F10BF416EF02EC005FEB9C /* dice_merger_444.png */,
+				52F10BF516EF02EC005FEB9C /* dice_merger_555.png */,
+				52F10BF616EF02EC005FEB9C /* dice_merger_666.png */,
+				52F10BF716EF02EC005FEB9C /* dice_s_01.png */,
+				52F10BF816EF02EC005FEB9C /* dice_s_02.png */,
+				52F10BF916EF02EC005FEB9C /* dice_s_03.png */,
+				52F10BFA16EF02EC005FEB9C /* dice_s_04.png */,
+				52F10BFB16EF02EC005FEB9C /* dice_s_05.png */,
+				52F10BFC16EF02EC005FEB9C /* dice_s_06.png */,
 			);
 			path = Dice;
 			sourceTree = "<group>";
@@ -4418,6 +4510,26 @@
 			path = ChipView;
 			sourceTree = "<group>";
 		};
+		52F10C2416EF0DED005FEB9C /* SBBetRecordView */ = {
+			isa = PBXGroup;
+			children = (
+				52F10C2516EF0E2F005FEB9C /* SBBetRecordView.h */,
+				52F10C2616EF0E2F005FEB9C /* SBBetRecordView.m */,
+				52F10C2C16EF2EFB005FEB9C /* SBBetRecordCell.h */,
+				52F10C2D16EF2EFB005FEB9C /* SBBetRecordCell.m */,
+			);
+			name = SBBetRecordView;
+			sourceTree = "<group>";
+		};
+		52F10C2816EF0F20005FEB9C /* SBBetRecordInfo */ = {
+			isa = PBXGroup;
+			children = (
+				52F10C2916EF0F50005FEB9C /* SBBetRecordInfo.h */,
+				52F10C2A16EF0F50005FEB9C /* SBBetRecordInfo.m */,
+			);
+			name = SBBetRecordInfo;
+			sourceTree = "<group>";
+		};
 		52F3D8731671EA55005ECC58 /* ImagePull */ = {
 			isa = PBXGroup;
 			children = (
@@ -4881,18 +4993,6 @@
 				52783ADA1694221E009D8028 /* DTGame_bg2@2x.png in Resources */,
 				52783ADB1694221E009D8028 /* DTGame_bg@2x.png in Resources */,
 				52783ADC1694221E009D8028 /* DTRoute_bg@2x.png in Resources */,
-				52783ADE1694221E009D8028 /* dice_01.png in Resources */,
-				52783ADF1694221E009D8028 /* dice_02.png in Resources */,
-				52783AE01694221E009D8028 /* dice_03.png in Resources */,
-				52783AE11694221E009D8028 /* dice_04.png in Resources */,
-				52783AE21694221E009D8028 /* dice_05.png in Resources */,
-				52783AE31694221E009D8028 /* dice_06.png in Resources */,
-				52783AE41694221E009D8028 /* dice_s_01.png in Resources */,
-				52783AE51694221E009D8028 /* dice_s_02.png in Resources */,
-				52783AE61694221E009D8028 /* dice_s_03.png in Resources */,
-				52783AE71694221E009D8028 /* dice_s_04.png in Resources */,
-				52783AE81694221E009D8028 /* dice_s_05.png in Resources */,
-				52783AE91694221E009D8028 /* dice_s_06.png in Resources */,
 				52783AEA1694221E009D8028 /* finger.png in Resources */,
 				52783AEB1694221E009D8028 /* lights_off.png in Resources */,
 				52783AEC1694221E009D8028 /* lights_on.png in Resources */,
@@ -5266,6 +5366,45 @@
 				52F9652D16DB20480054AC8B /* route_y@2x.png in Resources */,
 				52F9F75016DC6D48007FA2AC /* arrow_left.png in Resources */,
 				52F9F75116DC6D48007FA2AC /* arrow_right.png in Resources */,
+				52F10BFD16EF02EC005FEB9C /* dice_01.png in Resources */,
+				52F10BFE16EF02EC005FEB9C /* dice_02.png in Resources */,
+				52F10BFF16EF02EC005FEB9C /* dice_03.png in Resources */,
+				52F10C0016EF02EC005FEB9C /* dice_04.png in Resources */,
+				52F10C0116EF02EC005FEB9C /* dice_05.png in Resources */,
+				52F10C0216EF02EC005FEB9C /* dice_06.png in Resources */,
+				52F10C0316EF02EC005FEB9C /* dice_merger_11.png in Resources */,
+				52F10C0416EF02EC005FEB9C /* dice_merger_21.png in Resources */,
+				52F10C0516EF02EC005FEB9C /* dice_merger_22.png in Resources */,
+				52F10C0616EF02EC005FEB9C /* dice_merger_31.png in Resources */,
+				52F10C0716EF02EC005FEB9C /* dice_merger_32.png in Resources */,
+				52F10C0816EF02EC005FEB9C /* dice_merger_33.png in Resources */,
+				52F10C0916EF02EC005FEB9C /* dice_merger_41.png in Resources */,
+				52F10C0A16EF02EC005FEB9C /* dice_merger_42.png in Resources */,
+				52F10C0B16EF02EC005FEB9C /* dice_merger_43.png in Resources */,
+				52F10C0C16EF02EC005FEB9C /* dice_merger_44.png in Resources */,
+				52F10C0D16EF02EC005FEB9C /* dice_merger_51.png in Resources */,
+				52F10C0E16EF02EC005FEB9C /* dice_merger_52.png in Resources */,
+				52F10C0F16EF02EC005FEB9C /* dice_merger_53.png in Resources */,
+				52F10C1016EF02EC005FEB9C /* dice_merger_54.png in Resources */,
+				52F10C1116EF02EC005FEB9C /* dice_merger_55.png in Resources */,
+				52F10C1216EF02EC005FEB9C /* dice_merger_61.png in Resources */,
+				52F10C1316EF02EC005FEB9C /* dice_merger_62.png in Resources */,
+				52F10C1416EF02EC005FEB9C /* dice_merger_63.png in Resources */,
+				52F10C1516EF02EC005FEB9C /* dice_merger_64.png in Resources */,
+				52F10C1616EF02EC005FEB9C /* dice_merger_65.png in Resources */,
+				52F10C1716EF02EC005FEB9C /* dice_merger_66.png in Resources */,
+				52F10C1816EF02EC005FEB9C /* dice_merger_111.png in Resources */,
+				52F10C1916EF02EC005FEB9C /* dice_merger_222.png in Resources */,
+				52F10C1A16EF02EC005FEB9C /* dice_merger_333.png in Resources */,
+				52F10C1B16EF02EC005FEB9C /* dice_merger_444.png in Resources */,
+				52F10C1C16EF02EC005FEB9C /* dice_merger_555.png in Resources */,
+				52F10C1D16EF02EC005FEB9C /* dice_merger_666.png in Resources */,
+				52F10C1E16EF02EC005FEB9C /* dice_s_01.png in Resources */,
+				52F10C1F16EF02EC005FEB9C /* dice_s_02.png in Resources */,
+				52F10C2016EF02EC005FEB9C /* dice_s_03.png in Resources */,
+				52F10C2116EF02EC005FEB9C /* dice_s_04.png in Resources */,
+				52F10C2216EF02EC005FEB9C /* dice_s_05.png in Resources */,
+				52F10C2316EF02EC005FEB9C /* dice_s_06.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5426,6 +5565,9 @@
 				52F5E8B016E5F9DD00D7A1ED /* SBPokerView.m in Sources */,
 				52F4CAAA16E711D4009BB2AC /* CommonSicboBetRecordDetailViewController.m in Sources */,
 				52F4CAAD16E72DE1009BB2AC /* SicboBetRecordCell.m in Sources */,
+				52F10C2716EF0E2F005FEB9C /* SBBetRecordView.m in Sources */,
+				52F10C2B16EF0F50005FEB9C /* SBBetRecordInfo.m in Sources */,
+				52F10C2E16EF2EFB005FEB9C /* SBBetRecordCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

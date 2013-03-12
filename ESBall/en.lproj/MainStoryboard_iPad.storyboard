@@ -4319,30 +4319,30 @@
                                 <rect key="frame" x="237" y="633" width="549" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" id="Ow1-NH-WRq" customClass="SBPokerView">
-                                <rect key="frame" x="392" y="319" width="273" height="95"/>
+                            <view hidden="YES" contentMode="scaleToFill" id="Ow1-NH-WRq" customClass="SBPokerView">
+                                <rect key="frame" x="375" y="312" width="273" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="open_dice_sic.png" id="WWC-lB-EPN">
-                                        <rect key="frame" x="0.0" y="-4" width="235" height="99"/>
+                                        <rect key="frame" x="0.0" y="-4" width="273" height="99"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="sb3-TH-Xef">
-                                        <rect key="frame" x="18" y="15" width="60" height="60"/>
+                                        <rect key="frame" x="15" y="16" width="55" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Wm3-dQ-jed">
-                                        <rect key="frame" x="86" y="15" width="60" height="60"/>
+                                        <rect key="frame" x="80" y="16" width="55" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="amq-zo-w9M">
-                                        <rect key="frame" x="155" y="15" width="60" height="60"/>
+                                        <rect key="frame" x="145" y="16" width="55" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fSL-Cu-jI2">
-                                        <rect key="frame" x="230" y="33" width="42" height="21"/>
+                                        <rect key="frame" x="215" y="52" width="42" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -4456,7 +4456,7 @@
                                             <outlet property="tableView" destination="w2Y-xX-6rq" id="hul-d9-I6B"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" id="Krq-Qf-40h">
+                                    <view contentMode="scaleToFill" id="Krq-Qf-40h" customClass="SBBetRecordView">
                                         <rect key="frame" x="8" y="-4" width="184" height="268"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -4471,8 +4471,56 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ecf-gp-H3B">
+                                                <rect key="frame" x="8" y="34" width="168" height="226"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <prototypes>
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="50" id="JRY-BO-mtI" customClass="SBBetRecordCell">
+                                                        <rect key="frame" x="0.0" y="22" width="168" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="168" height="49"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bet_record_field_sic.png" id="OGg-Ss-nHz">
+                                                                    <rect key="frame" x="0.0" y="3" width="168" height="43"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gwW-ar-dY3">
+                                                                    <rect key="frame" x="99" y="14" width="59" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="NmZ-aF-2ui">
+                                                                    <rect key="frame" x="7" y="12" width="79" height="25"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YEQ-QA-Fcb">
+                                                                    <rect key="frame" x="7" y="12" width="79" height="25"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <connections>
+                                                            <outlet property="amountOfBetLabel" destination="gwW-ar-dY3" id="Akx-XR-ZUR"/>
+                                                            <outlet property="diceImageView" destination="NmZ-aF-2ui" id="Wr6-Rt-E0h"/>
+                                                            <outlet property="diceStringLabel" destination="YEQ-QA-Fcb" id="0ch-uK-dy6"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="tableView" destination="Ecf-gp-H3B" id="I5z-6k-sex"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -8310,6 +8358,7 @@
         <image name="bet_btn_down.png" width="301" height="125"/>
         <image name="bet_btn_up.png" width="301" height="125"/>
         <image name="bet_dice_record_sic.png" width="374" height="510"/>
+        <image name="bet_record_field_sic.png" width="314" height="64"/>
         <image name="clear_btn_down.png" width="178" height="125"/>
         <image name="clear_btn_up.png" width="178" height="125"/>
         <image name="dice_record_field_sic.png" width="314" height="64"/>
@@ -8319,7 +8368,7 @@
         <image name="limit_bg.png" width="250" height="55"/>
         <image name="login_btn_down.png" width="258" height="258"/>
         <image name="login_btn_up.png" width="258" height="258"/>
-        <image name="open_dice_sic.png" width="410" height="163"/>
+        <image name="open_dice_sic.png" width="500" height="158"/>
         <image name="other_btn_down.png" width="178" height="125"/>
         <image name="other_btn_up.png" width="178" height="125"/>
         <image name="route_btn_down.png" width="178" height="125"/>

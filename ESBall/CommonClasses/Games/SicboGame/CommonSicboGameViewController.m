@@ -7,6 +7,8 @@
 //
 
 #import "CommonSicboGameViewController.h"
+#import "SBBetRecordInfo.h"
+#import "SBBetSquareView.h"
 
 
 @interface CommonSicboGameViewController ()
@@ -38,6 +40,34 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - public interface
+-(void)reloadBetRecordView
+{
+    SBBetView *betView = (SBBetView *)_sbBetView;
+    
+    NSMutableArray *allbetRecrods = [[NSMutableArray alloc] init];
+    NSArray *allBetSqaures = [betView collectAllBetSquares];
+    
+    for(SBBetSquareView *betSqaure in allBetSqaures)
+    {
+        if(betSqaure.betHistory > 0)
+        {
+            SBBetRecordInfo *info = [[SBBetRecordInfo alloc] init];
+            
+            info.dataFileName = betSqaure.dataName;
+            info.amountOfBet = betSqaure.betHistory;
+            
+            [allbetRecrods addObject:info];
+        }
+        else
+        {
+            continue;
+        }
+    }
+    
+    //tell bet record view to refresh
 }
 
 #pragma mark - override

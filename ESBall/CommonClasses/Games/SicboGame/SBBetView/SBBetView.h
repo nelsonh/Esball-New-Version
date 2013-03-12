@@ -18,6 +18,8 @@
     
     BOOL isBetSquareMaxBetSet;
     
+    BOOL isBetSquareDataSet;
+    
     NSString *lastGameStatus;
     
     double currentMaxBet;//tracking current max bet for all bet square
@@ -212,5 +214,17 @@
  * 顯示玩家的歷史下注結果
  */
 -(void)displayPlayerHistoryBetResult;
+
+/**
+ * A method to collect all bet squares
+ *
+ * @return array that contain each bet sqaures
+ */
+-(NSArray *)collectAllBetSquares;
+
+/**
+ * A method to setup bet square data
+ */
+-(void)setupBetSquareData;
 
 @end

@@ -142,6 +142,7 @@
         UIImage *defaultSelectionIndicatorImage = [UIImage imageNamed:@"selectionIndicatorImage"];
         defaultSelectionIndicatorImage = [defaultSelectionIndicatorImage resizableImageWithCapInsets:UIEdgeInsetsMake(2, 6, 2, 6)];
         _selectionIndicatorImage = defaultSelectionIndicatorImage;
+         
     }
     return self;
 }

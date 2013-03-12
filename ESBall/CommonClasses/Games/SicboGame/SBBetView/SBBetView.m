@@ -141,66 +141,14 @@
 {
     isBetSquareDelegateSet = NO;
     isBetSquareMaxBetSet = NO;
+    isBetSquareDataSet = NO;
     return [super initWithCoder:aDecoder];
 }
 
 #pragma mark - internal
 -(void)setupDelegate
 {
-    /*
-    _betSquare1.theDelegate = self;
-    _betSquare2.theDelegate = self;
-    _betSquare3.theDelegate = self;
-    _betSquare4.theDelegate = self;
-    _betSquare5.theDelegate = self;
-    _betSquare6.theDelegate = self;
-    _betSquare7.theDelegate = self;
-    _betSquare8.theDelegate = self;
-    _betSquare9.theDelegate = self;
-    _betSquare10.theDelegate = self;
-    _betSquare11.theDelegate = self;
-    _betSquare12.theDelegate = self;
-    _betSquare13.theDelegate = self;
-    _betSquare14.theDelegate = self;
-    _betSquare15.theDelegate = self;
-    _betSquare16.theDelegate = self;
-    _betSquare17.theDelegate = self;
-    _betSquare18.theDelegate = self;
-    _betSquare19.theDelegate = self;
-    _betSquare20.theDelegate = self;
-    _betSquare21.theDelegate = self;
-    _betSquare22.theDelegate = self;
-    _betSquare23.theDelegate = self;
-    _betSquare24.theDelegate = self;
-    _betSquare25.theDelegate = self;
-    _betSquare26.theDelegate = self;
-    _betSquare27.theDelegate = self;
-    _betSquare28.theDelegate = self;
-    _betSquare29.theDelegate = self;
-    _betSquare30.theDelegate = self;
-    _betSquare31.theDelegate = self;
-    _betSquare32.theDelegate = self;
-    _betSquare33.theDelegate = self;
-    _betSquare34.theDelegate = self;
-    _betSquare35.theDelegate = self;
-    _betSquare36.theDelegate = self;
-    _betSquare37.theDelegate = self;
-    _betSquare38.theDelegate = self;
-    _betSquare39.theDelegate = self;
-    _betSquare40.theDelegate = self;
-    _betSquare41.theDelegate = self;
-    _betSquare42.theDelegate = self;
-    _betSquare43.theDelegate = self;
-    _betSquare44.theDelegate = self;
-    _betSquare45.theDelegate = self;
-    _betSquare46.theDelegate = self;
-    _betSquare47.theDelegate = self;
-    _betSquare48.theDelegate = self;
-    _betSquare49.theDelegate = self;
-    _betSquare50.theDelegate = self;
-    _betSquare51.theDelegate = self;
-    _betSquare52.theDelegate = self;
-     */
+
     
     for(int i = 1; i <= kNumberOfButton; i++)
     {
@@ -211,6 +159,62 @@
         
         tagStr = nil;
     }
+}
+
+-(void)setupBetSquareData
+{
+    _betSquare1.dataName = NSLocalizedString(@"大", @"大");
+    _betSquare2.dataName = NSLocalizedString(@"单", @"单");
+    _betSquare3.dataName = NSLocalizedString(@"双", @"双");
+    _betSquare4.dataName = NSLocalizedString(@"小", @"小");
+    _betSquare5.dataName = @"dice_merger_66.png";
+    _betSquare6.dataName = @"dice_merger_55.png";
+    _betSquare7.dataName = @"dice_merger_44.png";
+    _betSquare8.dataName = @"dice_merger_33.png";
+    _betSquare9.dataName = @"dice_merger_22.png";
+    _betSquare10.dataName = @"dice_merger_11.png";
+    _betSquare11.dataName = NSLocalizedString(@"全围", @"全围");
+    _betSquare12.dataName = @"dice_merger_666.png";
+    _betSquare13.dataName = @"dice_merger_555.png";
+    _betSquare14.dataName = @"dice_merger_444.png";
+    _betSquare15.dataName = @"dice_merger_333.png";
+    _betSquare16.dataName = @"dice_merger_222.png";
+    _betSquare17.dataName = @"dice_merger_111.png";
+    _betSquare18.dataName = NSLocalizedString(@"17点", @"17点");
+    _betSquare19.dataName = NSLocalizedString(@"16点", @"16点");
+    _betSquare20.dataName = NSLocalizedString(@"15点", @"15点");
+    _betSquare21.dataName = NSLocalizedString(@"14点", @"14点");
+    _betSquare22.dataName = NSLocalizedString(@"13点", @"13点");
+    _betSquare23.dataName = NSLocalizedString(@"12点", @"12点");
+    _betSquare24.dataName = NSLocalizedString(@"11点", @"11点");
+    _betSquare25.dataName = NSLocalizedString(@"10点", @"10点");
+    _betSquare26.dataName = NSLocalizedString(@"9点", @"9点");
+    _betSquare27.dataName = NSLocalizedString(@"8点", @"8点");
+    _betSquare28.dataName = NSLocalizedString(@"7点", @"7点");
+    _betSquare29.dataName = NSLocalizedString(@"6点", @"6点");
+    _betSquare30.dataName = NSLocalizedString(@"5点", @"5点");
+    _betSquare31.dataName = NSLocalizedString(@"4点", @"4点");
+    _betSquare32.dataName = @"dice_merger_65.png";
+    _betSquare33.dataName = @"dice_merger_64.png";
+    _betSquare34.dataName = @"dice_merger_54.png";
+    _betSquare35.dataName = @"dice_merger_63.png";
+    _betSquare36.dataName = @"dice_merger_53.png";
+    _betSquare37.dataName = @"dice_merger_43.png";
+    _betSquare38.dataName = @"dice_merger_62.png";
+    _betSquare39.dataName = @"dice_merger_52.png";
+    _betSquare40.dataName = @"dice_merger_42.png";
+    _betSquare41.dataName = @"dice_merger_32.png";
+    _betSquare42.dataName = @"dice_merger_61.png";
+    _betSquare43.dataName = @"dice_merger_51.png";
+    _betSquare44.dataName = @"dice_merger_41.png";
+    _betSquare45.dataName = @"dice_merger_31.png";
+    _betSquare46.dataName = @"dice_merger_21.png";
+    _betSquare47.dataName = @"dice_06.png";
+    _betSquare48.dataName = @"dice_05.png";
+    _betSquare49.dataName = @"dice_04.png";
+    _betSquare50.dataName = @"dice_03.png";
+    _betSquare51.dataName = @"dice_02.png";
+    _betSquare52.dataName = @"dice_01.png";
 }
 
 #pragma mark - public interface
@@ -234,118 +238,7 @@
         
         tagStr = nil;
     }
-    /*
-    [_betSquare1 resetCurrentBetWithBetInfo:NO];
-    [_betSquare2 resetCurrentBetWithBetInfo:NO];
-    [_betSquare3 resetCurrentBetWithBetInfo:NO];
-    [_betSquare4 resetCurrentBetWithBetInfo:NO];
-    [_betSquare5 resetCurrentBetWithBetInfo:NO];
-    [_betSquare6 resetCurrentBetWithBetInfo:NO];
-    [_betSquare7 resetCurrentBetWithBetInfo:NO];
-    [_betSquare8 resetCurrentBetWithBetInfo:NO];
-    [_betSquare9 resetCurrentBetWithBetInfo:NO];
-    [_betSquare10 resetCurrentBetWithBetInfo:NO];
-    [_betSquare11 resetCurrentBetWithBetInfo:NO];
-    
-    if(_betSquare1.betHistory == 0)
-    {
-        [_betSquare1 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare1.betInfoView setBetFinalResult:_betSquare1.betHistory];
-    }
-    
-    if(_betSquare2.betHistory == 0)
-    {
-        [_betSquare2 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare2.betInfoView setBetFinalResult:_betSquare2.betHistory];
-    }
-    
-    if(_betSquare3.betHistory == 0)
-    {
-        [_betSquare3 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare3.betInfoView setBetFinalResult:_betSquare3.betHistory];
-    }
-    
-    if(_betSquare4.betHistory == 0)
-    {
-        [_betSquare4 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare4.betInfoView setBetFinalResult:_betSquare4.betHistory];
-    }
-    
-    if(_betSquare5.betHistory == 0)
-    {
-        [_betSquare5 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare5.betInfoView setBetFinalResult:_betSquare5.betHistory];
-    }
-    
-    if(_betSquare6.betHistory == 0)
-    {
-        [_betSquare6 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare6.betInfoView setBetFinalResult:_betSquare6.betHistory];
-    }
-    
-    if(_betSquare7.betHistory == 0)
-    {
-        [_betSquare7 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare7.betInfoView setBetFinalResult:_betSquare7.betHistory];
-    }
-    
-    if(_betSquare8.betHistory == 0)
-    {
-        [_betSquare8 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare8.betInfoView setBetFinalResult:_betSquare8.betHistory];
-    }
-    
-    if(_betSquare9.betHistory == 0)
-    {
-        [_betSquare9 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare9.betInfoView setBetFinalResult:_betSquare9.betHistory];
-    }
-    
-    if(_betSquare10.betHistory == 0)
-    {
-        [_betSquare10 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare10.betInfoView setBetFinalResult:_betSquare10.betHistory];
-    }
-    
-    if(_betSquare11.betHistory == 0)
-    {
-        [_betSquare11 hideBetInfoView];
-    }
-    else
-    {
-        [_betSquare11.betInfoView setBetFinalResult:_betSquare11.betHistory];
-    }
-     */
+
 }
 
 -(void)clearAllBetsWithHideInfo:(BOOL)yesOrNo
@@ -364,113 +257,6 @@
     if(yesOrNo)
     {
         /**clear all bets info and info view**/
-        /*
-        [_betSquare1 hideBetInfoView];
-        [_betSquare2 hideBetInfoView];
-        [_betSquare3 hideBetInfoView];
-        [_betSquare4 hideBetInfoView];
-        [_betSquare5 hideBetInfoView];
-        [_betSquare6 hideBetInfoView];
-        [_betSquare7 hideBetInfoView];
-        [_betSquare8 hideBetInfoView];
-        [_betSquare9 hideBetInfoView];
-        [_betSquare10 hideBetInfoView];
-        [_betSquare11 hideBetInfoView];
-        [_betSquare12 hideBetInfoView];
-        [_betSquare13 hideBetInfoView];
-        [_betSquare14 hideBetInfoView];
-        [_betSquare15 hideBetInfoView];
-        [_betSquare16 hideBetInfoView];
-        [_betSquare17 hideBetInfoView];
-        [_betSquare18 hideBetInfoView];
-        [_betSquare19 hideBetInfoView];
-        [_betSquare20 hideBetInfoView];
-        [_betSquare21 hideBetInfoView];
-        [_betSquare22 hideBetInfoView];
-        [_betSquare23 hideBetInfoView];
-        [_betSquare24 hideBetInfoView];
-        [_betSquare25 hideBetInfoView];
-        [_betSquare26 hideBetInfoView];
-        [_betSquare27 hideBetInfoView];
-        [_betSquare28 hideBetInfoView];
-        [_betSquare29 hideBetInfoView];
-        [_betSquare30 hideBetInfoView];
-        [_betSquare31 hideBetInfoView];
-        [_betSquare32 hideBetInfoView];
-        [_betSquare33 hideBetInfoView];
-        [_betSquare34 hideBetInfoView];
-        [_betSquare35 hideBetInfoView];
-        [_betSquare36 hideBetInfoView];
-        [_betSquare37 hideBetInfoView];
-        [_betSquare38 hideBetInfoView];
-        [_betSquare39 hideBetInfoView];
-        [_betSquare40 hideBetInfoView];
-        [_betSquare41 hideBetInfoView];
-        [_betSquare42 hideBetInfoView];
-        [_betSquare43 hideBetInfoView];
-        [_betSquare44 hideBetInfoView];
-        [_betSquare45 hideBetInfoView];
-        [_betSquare46 hideBetInfoView];
-        [_betSquare47 hideBetInfoView];
-        [_betSquare48 hideBetInfoView];
-        [_betSquare49 hideBetInfoView];
-        [_betSquare50 hideBetInfoView];
-        [_betSquare51 hideBetInfoView];
-        [_betSquare52 hideBetInfoView];
-        
-        [_betSquare1 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare2 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare3 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare4 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare5 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare6 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare7 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare8 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare9 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare10 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare11 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare12 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare13 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare14 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare15 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare16 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare17 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare18 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare19 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare20 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare21 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare22 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare23 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare24 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare25 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare26 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare27 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare28 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare29 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare30 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare31 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare32 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare33 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare34 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare35 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare36 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare37 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare38 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare39 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare40 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare41 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare42 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare43 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare44 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare45 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare46 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare47 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare48 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare49 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare50 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare51 resetCurrentBetWithBetInfo:yesOrNo];
-        [_betSquare52 resetCurrentBetWithBetInfo:yesOrNo];
-         */
         
         for(int i = 1; i <= kNumberOfButton; i++)
         {
@@ -499,60 +285,7 @@
         tagStr = nil;
     }
     
-    /*
-    [infos addObject:[NSNumber numberWithDouble:_betSquare1.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare2.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare3.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare4.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare5.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare6.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare7.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare8.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare9.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare10.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare11.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare12.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare13.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare14.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare15.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare16.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare17.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare18.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare19.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare20.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare21.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare22.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare23.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare24.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare25.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare26.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare27.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare28.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare29.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare30.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare31.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare32.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare33.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare34.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare35.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare36.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare37.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare38.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare39.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare40.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare41.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare42.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare43.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare44.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare45.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare46.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare47.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare48.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare49.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare50.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare51.theCurrentBet]];
-    [infos addObject:[NSNumber numberWithDouble:_betSquare52.theCurrentBet]];
-     */
+
     
     return infos;
 }
@@ -569,60 +302,7 @@
         
         tagStr = nil;
     }
-    /*
-    [_betSquare1 displayCurrentBetResult];
-    [_betSquare2 displayCurrentBetResult];
-    [_betSquare3 displayCurrentBetResult];
-    [_betSquare4 displayCurrentBetResult];
-    [_betSquare5 displayCurrentBetResult];
-    [_betSquare6 displayCurrentBetResult];
-    [_betSquare7 displayCurrentBetResult];
-    [_betSquare8 displayCurrentBetResult];
-    [_betSquare9 displayCurrentBetResult];
-    [_betSquare10 displayCurrentBetResult];
-    [_betSquare11 displayCurrentBetResult];
-    [_betSquare12 displayCurrentBetResult];
-    [_betSquare13 displayCurrentBetResult];
-    [_betSquare14 displayCurrentBetResult];
-    [_betSquare15 displayCurrentBetResult];
-    [_betSquare16 displayCurrentBetResult];
-    [_betSquare17 displayCurrentBetResult];
-    [_betSquare18 displayCurrentBetResult];
-    [_betSquare19 displayCurrentBetResult];
-    [_betSquare20 displayCurrentBetResult];
-    [_betSquare21 displayCurrentBetResult];
-    [_betSquare22 displayCurrentBetResult];
-    [_betSquare23 displayCurrentBetResult];
-    [_betSquare24 displayCurrentBetResult];
-    [_betSquare25 displayCurrentBetResult];
-    [_betSquare26 displayCurrentBetResult];
-    [_betSquare27 displayCurrentBetResult];
-    [_betSquare28 displayCurrentBetResult];
-    [_betSquare29 displayCurrentBetResult];
-    [_betSquare30 displayCurrentBetResult];
-    [_betSquare31 displayCurrentBetResult];
-    [_betSquare32 displayCurrentBetResult];
-    [_betSquare33 displayCurrentBetResult];
-    [_betSquare34 displayCurrentBetResult];
-    [_betSquare35 displayCurrentBetResult];
-    [_betSquare36 displayCurrentBetResult];
-    [_betSquare37 displayCurrentBetResult];
-    [_betSquare38 displayCurrentBetResult];
-    [_betSquare39 displayCurrentBetResult];
-    [_betSquare40 displayCurrentBetResult];
-    [_betSquare41 displayCurrentBetResult];
-    [_betSquare42 displayCurrentBetResult];
-    [_betSquare43 displayCurrentBetResult];
-    [_betSquare44 displayCurrentBetResult];
-    [_betSquare45 displayCurrentBetResult];
-    [_betSquare46 displayCurrentBetResult];
-    [_betSquare47 displayCurrentBetResult];
-    [_betSquare48 displayCurrentBetResult];
-    [_betSquare49 displayCurrentBetResult];
-    [_betSquare50 displayCurrentBetResult];
-    [_betSquare51 displayCurrentBetResult];
-    [_betSquare52 displayCurrentBetResult];
-     */
+
     
     isDisplayPlayerBetResult = YES;
 }
@@ -642,60 +322,7 @@
         
         tagStr = nil;
     }
-    /*
-    _square1Result.hidden = YES;
-    _square2Result.hidden = YES;
-    _square3Result.hidden = YES;
-    _square4Result.hidden = YES;
-    _square5Result.hidden = YES;
-    _square6Result.hidden = YES;
-    _square7Result.hidden = YES;
-    _square8Result.hidden = YES;
-    _square9Result.hidden = YES;
-    _square10Result.hidden = YES;
-    _square11Result.hidden = YES;
-    _square12Result.hidden = YES;
-    _square13Result.hidden = YES;
-    _square14Result.hidden = YES;
-    _square15Result.hidden = YES;
-    _square16Result.hidden = YES;
-    _square17Result.hidden = YES;
-    _square18Result.hidden = YES;
-    _square19Result.hidden = YES;
-    _square20Result.hidden = YES;
-    _square21Result.hidden = YES;
-    _square22Result.hidden = YES;
-    _square23Result.hidden = YES;
-    _square24Result.hidden = YES;
-    _square25Result.hidden = YES;
-    _square26Result.hidden = YES;
-    _square27Result.hidden = YES;
-    _square28Result.hidden = YES;
-    _square29Result.hidden = YES;
-    _square30Result.hidden = YES;
-    _square31Result.hidden = YES;
-    _square32Result.hidden = YES;
-    _square33Result.hidden = YES;
-    _square34Result.hidden = YES;
-    _square35Result.hidden = YES;
-    _square36Result.hidden = YES;
-    _square37Result.hidden = YES;
-    _square38Result.hidden = YES;
-    _square39Result.hidden = YES;
-    _square40Result.hidden = YES;
-    _square41Result.hidden = YES;
-    _square42Result.hidden = YES;
-    _square43Result.hidden = YES;
-    _square44Result.hidden = YES;
-    _square45Result.hidden = YES;
-    _square46Result.hidden = YES;
-    _square47Result.hidden = YES;
-    _square48Result.hidden = YES;
-    _square49Result.hidden = YES;
-    _square50Result.hidden = YES;
-    _square51Result.hidden = YES;
-    _square52Result.hidden = YES;
-     */
+    
 }
 
 -(void)setupCurrentMaxBet
@@ -728,62 +355,7 @@
         squareView.maxBet = currentMaxBet;
     }
     
-    /*
-    double maxBet = self.userInfo.max;
-    
-    _betSquare1.maxBet = maxBet;
-    _betSquare2.maxBet = maxBet;
-    _betSquare3.maxBet = maxBet;
-    _betSquare4.maxBet = maxBet;
-    _betSquare5.maxBet = maxBet;
-    _betSquare6.maxBet = maxBet;
-    _betSquare7.maxBet = maxBet;
-    _betSquare8.maxBet = maxBet;
-    _betSquare9.maxBet = maxBet;
-    _betSquare10.maxBet = maxBet;
-    _betSquare11.maxBet = maxBet;
-    _betSquare12.maxBet = maxBet;
-    _betSquare13.maxBet = maxBet;
-    _betSquare14.maxBet = maxBet;
-    _betSquare15.maxBet = maxBet;
-    _betSquare16.maxBet = maxBet;
-    _betSquare17.maxBet = maxBet;
-    _betSquare18.maxBet = maxBet;
-    _betSquare19.maxBet = maxBet;
-    _betSquare20.maxBet = maxBet;
-    _betSquare21.maxBet = maxBet;
-    _betSquare22.maxBet = maxBet;
-    _betSquare23.maxBet = maxBet;
-    _betSquare24.maxBet = maxBet;
-    _betSquare25.maxBet = maxBet;
-    _betSquare26.maxBet = maxBet;
-    _betSquare27.maxBet = maxBet;
-    _betSquare28.maxBet = maxBet;
-    _betSquare29.maxBet = maxBet;
-    _betSquare30.maxBet = maxBet;
-    _betSquare31.maxBet = maxBet;
-    _betSquare32.maxBet = maxBet;
-    _betSquare33.maxBet = maxBet;
-    _betSquare34.maxBet = maxBet;
-    _betSquare35.maxBet = maxBet;
-    _betSquare36.maxBet = maxBet;
-    _betSquare37.maxBet = maxBet;
-    _betSquare38.maxBet = maxBet;
-    _betSquare39.maxBet = maxBet;
-    _betSquare40.maxBet = maxBet;
-    _betSquare41.maxBet = maxBet;
-    _betSquare42.maxBet = maxBet;
-    _betSquare43.maxBet = maxBet;
-    _betSquare44.maxBet = maxBet;
-    _betSquare45.maxBet = maxBet;
-    _betSquare46.maxBet = maxBet;
-    _betSquare47.maxBet = maxBet;
-    _betSquare48.maxBet = maxBet;
-    _betSquare49.maxBet = maxBet;
-    _betSquare50.maxBet = maxBet;
-    _betSquare51.maxBet = maxBet;
-    _betSquare52.maxBet = maxBet;
-     */
+ 
 }
 
 -(void)resetCurrentMaxBet
@@ -806,60 +378,7 @@
         [betSquare changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
     }
     
-    /*
-    [_betSquare1 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare2 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare3 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare4 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare5 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare6 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare7 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare8 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare9 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare10 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare11 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare12 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare13 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare14 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare15 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare16 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare17 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare18 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare19 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare20 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare21 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare22 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare23 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare24 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare25 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare26 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare27 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare28 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare29 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare30 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare31 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare32 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare33 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare34 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare35 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare36 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare37 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare38 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare39 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare40 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare41 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare42 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare43 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare44 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare45 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare46 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare47 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare48 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare49 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare50 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare51 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-    [_betSquare52 changeMaxBetAndBetInfoWithNewMaxBet:newMaxBet];
-     */
+
 
 }
 
@@ -953,6 +472,21 @@
     }
     
     isDisplayPlayerBetResult = YES;
+}
+
+-(NSArray *)collectAllBetSquares
+{
+    NSMutableArray *squares = [[NSMutableArray alloc] init];
+    
+    for(int i = 1; i <= kNumberOfButton; i++)
+    {
+        NSString *tagStr = [NSString stringWithFormat:@"1%i", i];
+        SBBetSquareView *squareView = (SBBetSquareView *)[self viewWithTag:[tagStr intValue]];
+        
+        [squares addObject:squareView];
+    }
+    
+    return (NSArray *)squares;
 }
 
 #pragma mark - Square result
@@ -2485,6 +2019,13 @@
         isBetSquareMaxBetSet = YES;
     }
     
+    if(!isBetSquareDataSet)
+    {
+        [self setupBetSquareData];
+        
+        isBetSquareDataSet = YES;
+    }
+    
 
     
     /*
@@ -2645,60 +2186,7 @@
         
         tagStr = nil;
     }
-    /*
-    [_betSquare1 clearTempBet];
-    [_betSquare2 clearTempBet];
-    [_betSquare3 clearTempBet];
-    [_betSquare4 clearTempBet];
-    [_betSquare5 clearTempBet];
-    [_betSquare6 clearTempBet];
-    [_betSquare7 clearTempBet];
-    [_betSquare8 clearTempBet];
-    [_betSquare9 clearTempBet];
-    [_betSquare10 clearTempBet];
-    [_betSquare11 clearTempBet];
-    [_betSquare12 clearTempBet];
-    [_betSquare13 clearTempBet];
-    [_betSquare14 clearTempBet];
-    [_betSquare15 clearTempBet];
-    [_betSquare16 clearTempBet];
-    [_betSquare17 clearTempBet];
-    [_betSquare18 clearTempBet];
-    [_betSquare19 clearTempBet];
-    [_betSquare20 clearTempBet];
-    [_betSquare21 clearTempBet];
-    [_betSquare22 clearTempBet];
-    [_betSquare23 clearTempBet];
-    [_betSquare24 clearTempBet];
-    [_betSquare25 clearTempBet];
-    [_betSquare26 clearTempBet];
-    [_betSquare27 clearTempBet];
-    [_betSquare28 clearTempBet];
-    [_betSquare29 clearTempBet];
-    [_betSquare30 clearTempBet];
-    [_betSquare31 clearTempBet];
-    [_betSquare32 clearTempBet];
-    [_betSquare33 clearTempBet];
-    [_betSquare34 clearTempBet];
-    [_betSquare35 clearTempBet];
-    [_betSquare36 clearTempBet];
-    [_betSquare37 clearTempBet];
-    [_betSquare38 clearTempBet];
-    [_betSquare39 clearTempBet];
-    [_betSquare40 clearTempBet];
-    [_betSquare41 clearTempBet];
-    [_betSquare42 clearTempBet];
-    [_betSquare43 clearTempBet];
-    [_betSquare44 clearTempBet];
-    [_betSquare45 clearTempBet];
-    [_betSquare46 clearTempBet];
-    [_betSquare47 clearTempBet];
-    [_betSquare48 clearTempBet];
-    [_betSquare49 clearTempBet];
-    [_betSquare50 clearTempBet];
-    [_betSquare51 clearTempBet];
-    [_betSquare52 clearTempBet];
-     */
+
 }
 
 -(void)disableAllBetSquares

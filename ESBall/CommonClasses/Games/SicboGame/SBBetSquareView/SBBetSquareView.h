@@ -14,6 +14,8 @@
  */
 @interface SBBetSquareView : BetSquareView
 
+@property (nonatomic, copy) NSString *dataName;
+
 -(void)changeMaxBetAndBetInfoWithNewMaxBet:(double)newMaxBet;
 
 @end
