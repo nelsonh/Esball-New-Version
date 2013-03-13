@@ -917,6 +917,7 @@
 		52F9652D16DB20480054AC8B /* route_y@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F9652416DB20480054AC8B /* route_y@2x.png */; };
 		52F9F75016DC6D48007FA2AC /* arrow_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F9F74E16DC6D48007FA2AC /* arrow_left.png */; };
 		52F9F75116DC6D48007FA2AC /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F9F74F16DC6D48007FA2AC /* arrow_right.png */; };
+		52FB1D9F16F02ABE00E1A0DD /* HelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FB1D9E16F02ABE00E1A0DD /* HelperMethods.m */; };
 		7594E5F416943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7594E5F216943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -2028,6 +2029,8 @@
 		52F9652416DB20480054AC8B /* route_y@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "route_y@2x.png"; sourceTree = "<group>"; };
 		52F9F74E16DC6D48007FA2AC /* arrow_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_left.png; sourceTree = "<group>"; };
 		52F9F74F16DC6D48007FA2AC /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
+		52FB1D9D16F02ABE00E1A0DD /* HelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelperMethods.h; path = Helper/HelperMethods.h; sourceTree = "<group>"; };
+		52FB1D9E16F02ABE00E1A0DD /* HelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelperMethods.m; path = Helper/HelperMethods.m; sourceTree = "<group>"; };
 		7594E5F216943B4E0001B3DE /* MainStoryboard_iPhone40.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard_iPhone40.storyboard; path = BaseClasses/MainStoryboard_iPhone40.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2076,6 +2079,7 @@
 		448287001663696100CCA5ED /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				52FB1D9C16F02A3C00E1A0DD /* Helper */,
 				52EF139716AE7F0B0044FAB2 /* SoundManager */,
 				5219C764167878A900AA4A90 /* FileFinder */,
 				5219C75F16786B3E00AA4A90 /* HUD */,
@@ -4607,6 +4611,15 @@
 			path = ChipViewArrow;
 			sourceTree = "<group>";
 		};
+		52FB1D9C16F02A3C00E1A0DD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				52FB1D9D16F02ABE00E1A0DD /* HelperMethods.h */,
+				52FB1D9E16F02ABE00E1A0DD /* HelperMethods.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -5568,6 +5581,7 @@
 				52F10C2716EF0E2F005FEB9C /* SBBetRecordView.m in Sources */,
 				52F10C2B16EF0F50005FEB9C /* SBBetRecordInfo.m in Sources */,
 				52F10C2E16EF2EFB005FEB9C /* SBBetRecordCell.m in Sources */,
+				52FB1D9F16F02ABE00E1A0DD /* HelperMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

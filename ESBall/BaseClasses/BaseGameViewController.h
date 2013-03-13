@@ -16,6 +16,7 @@
 #import "Constant.h"
 #import "SoundManager.h"
 #import "AppDelegate.h"
+#import "HelperMethods.h"
 
 
 /*

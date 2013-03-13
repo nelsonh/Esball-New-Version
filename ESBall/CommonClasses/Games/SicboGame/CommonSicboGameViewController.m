@@ -20,6 +20,7 @@
 @synthesize sbBetView = _sbBetView;
 @synthesize sbRoadmap = _sbRoadmap;
 @synthesize sbPokerView = _sbPokerView;
+@synthesize sbBetRecordView = _sbBetRecordView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,6 +51,7 @@
     NSMutableArray *allbetRecrods = [[NSMutableArray alloc] init];
     NSArray *allBetSqaures = [betView collectAllBetSquares];
     
+    //create SBBetRecordInfo base on bet squares
     for(SBBetSquareView *betSqaure in allBetSqaures)
     {
         if(betSqaure.betHistory > 0)
@@ -68,6 +70,12 @@
     }
     
     //tell bet record view to refresh
+    [_sbBetRecordView refreshBetRecordWithNewBetRecords:allbetRecrods];
+}
+
+-(void)clearBetRecordViewWithDisplay:(BOOL)yesOrNo
+{
+    [_sbBetRecordView clearBetRecordsWithRefreshDisplay:yesOrNo];
 }
 
 #pragma mark - override
@@ -270,6 +278,9 @@
     //collect history bet information
     NSMutableArray *betInfos = [betView collectHistoryBetInfo];
     
+    //refresh bet records view
+    [self reloadBetRecordView];
+    
     //display total bet this round
     double totalBet = [self totalBetWithInfos:betInfos];
     self.totalBetLabel.text = [NSString stringWithFormat:@"%.2f", totalBet];
@@ -354,6 +365,9 @@
         //clean total bet
         self.totalBetLabel.text = @"0.00";
         
+        //clean bet records
+        [self clearBetRecordViewWithDisplay:YES];
+        
         //enable all bet squares
         [_sbBetView enableAllBetSquares];
         
@@ -393,10 +407,12 @@
     }
     
     //win, lose or tie
+    /*
     if([lastGameStatus isEqualToString:GameStatusDealing] && [info.status isEqualToString:GameStatusWaiting])
     {
         
     }
+     */
     
     
     
@@ -450,6 +466,12 @@
         
         //play sound effect
         [soundManager playSoundEffectWithKey:@"SE_StartBet"];
+    }
+    
+    //show win or lose
+    if([info.status isEqualToString:GameStatusWaiting])
+    {
+        [self promptWinOrLoseIndicatorWithInfo:info];
     }
     
     if([lastGameStatus isEqualToString:GameStatusBetting] && [info.status isEqualToString:GameStatusDealing])

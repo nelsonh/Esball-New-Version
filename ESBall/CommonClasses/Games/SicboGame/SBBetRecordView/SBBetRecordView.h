@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SBBetRecordCell.h"
 
 @interface SBBetRecordView : UIView<UITableViewDataSource, UITableViewDelegate>{
     
@@ -23,11 +24,20 @@
  *
  * @param betRecords the new bet records which is going to replace old one
  */
--(void)refreshBetRecordWithNewBetRecords:(NSArray *)betRecords;
+-(void)refreshBetRecordWithNewBetRecords:(NSArray *)theBetRecords;
 
 /**
  * A method to clear all bet records
  */
--(void)clearBetRecords;
+-(void)clearBetRecordsWithRefreshDisplay:(BOOL)yesOrNo;
+
+/**
+ * A method to configure cell
+ *
+ * @param cell the cell will be configured
+ * @param indexPath the indexPath that associate with cell
+ * @return SBBetRecordCell cell that is SBBetRecordCell and configured
+ */
+-(SBBetRecordCell *)configureCellWithCell:(SBBetRecordCell *)cell withIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -734,17 +734,20 @@
         if(info.payoff > 0)
         {
             //msg = [NSString stringWithFormat:NSLocalizedString(@"您赢了: %.2f", @"您赢了: %.2f"), info.payoff];
-            
+            /*
             NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
             [doubleValueWithMaxTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
             [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:2];
             
             NSString *payOffStr = [doubleValueWithMaxTwoDecimalPlaces stringFromNumber:[NSNumber numberWithDouble:info.payoff]];
+            */
+            
+            NSString *payOffStr= [HelperMethods doubleToStringWithDoubleValue:info.payoff WithMaxFractionDigits:2];
             
 
             msg = [NSString stringWithFormat:NSLocalizedString(@"您赢了: %@元", @"您赢了: %@元"), payOffStr];
             
-            doubleValueWithMaxTwoDecimalPlaces = nil;
+            //doubleValueWithMaxTwoDecimalPlaces = nil;
             
             [_promptMsgView updateWithMessage:msg];
             
@@ -756,16 +759,19 @@
         else if(info.payoff < 0)
         {
             //msg = [NSString stringWithFormat:NSLocalizedString(@"您输了: %.2f", @"您输了: %.2f"), info.payoff*-1];
-            
+            /*
             NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
             [doubleValueWithMaxTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
             [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:2];
             
             NSString *payOffStr = [doubleValueWithMaxTwoDecimalPlaces stringFromNumber:[NSNumber numberWithDouble:(info.payoff*-1)]];
+             */
+            
+            NSString *payOffStr = [HelperMethods doubleToStringWithDoubleValue:(info.payoff*-1) WithMaxFractionDigits:2];
             
             msg = [NSString stringWithFormat:NSLocalizedString(@"您输了: %@元", @"您输了: %@元"), payOffStr];
             
-            doubleValueWithMaxTwoDecimalPlaces = nil;
+            //doubleValueWithMaxTwoDecimalPlaces = nil;
 
             [_promptMsgView updateWithMessage:msg];
             
